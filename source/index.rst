@@ -9,7 +9,9 @@ Welcome to Numbas editor's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
+
+    quickstart
 
 
 
