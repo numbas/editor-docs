@@ -1,24 +1,50 @@
-.. Numbas editor documentation master file, created by
-   sphinx-quickstart on Mon Aug 06 11:05:17 2012.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Numbas editor documentation
+===========================
 
-Welcome to Numbas editor's documentation!
-=========================================
 
-Contents:
+Tutorials
+^^^^^^^^^
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     quickstart
+    upload-vle
+    write-question
+    tut-variables
 
+Exams
+^^^^^
 
+.. toctree::
+    :maxdepth: 1
 
-Indices and tables
-==================
+    exam-reference
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+Questions
+^^^^^^^^^
 
+.. toctree::
+    :maxdepth: 1
+
+    question-overview
+    question-reference
+    question-parts
+
+Maths
+^^^^^
+.. toctree::
+    :maxdepth: 1
+
+    jme-reference
+    simplification
+    functions
+
+Advanced
+^^^^^^^^
+
+.. toctree::
+    :maxdepth: 1
+
+    extensions
+    themes
