@@ -1,0 +1,2 @@
+﻿Statistical functions extension
+===============================

@@ -39,6 +39,7 @@ Maths
     jme-reference
     simplification
     functions
+    stats-extension
 
 Advanced
 ^^^^^^^^
