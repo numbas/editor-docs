@@ -17,7 +17,9 @@ In both cases, a .zip file containing everything needed to run the exam will be 
 Uploading to Blackboard
 -----------------------
 
-At least Blackboard 9.1 Service Pack 6 is required for 
+.. note::
+
+    At least Blackboard 9.1 Service Pack 6 is required to run Numbas exams. There's no way of checking your Blackboard version from within Blackboard, so check with your server admin that you're using a sufficiently recent version.
 
 Log in to Blackboard, and go to the content section of the relevant course. Click on the "Content package (SCORM)" item under the "Build Content" menu.
 
