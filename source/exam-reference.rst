@@ -96,12 +96,16 @@ Feedback
 .. glossary::
     Show actual mark?
         If ticked, the student will be shown their score for each question and part immediately after submitting their answers.
+
     Show total mark?
         If ticked, the student will be shown the maximum attainable score for each question and part.
+
     Show answer state?
         If ticked, then when the student submits an answer an icon will be displayed to let the student know if their answer was marked correct, partially correct or incorrect.
+
     Allow reveal answer?
         If ticked, then the "Reveal answer" button is enabled on each question. If the student chooses to reveal the answer to a question, they are shown the correct answer but lose all their marks and can not re-attempt the question.
+
     Advice threshold
         If the student's score is below this threshold, then the question advice is displayed.
 
