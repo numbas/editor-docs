@@ -1,3 +1,5 @@
+.. _question-parts:
+
 Question parts
 ==============
 
