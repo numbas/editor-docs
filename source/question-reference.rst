@@ -14,6 +14,9 @@ Admin buttons
             Do **NOT** use this link to deliver the question to students. It will put considerable load on the server. 
             Instead, download the question and put it either on your own webspace or in a VLE.
 
+    Switch to simplified/advanced editing mode
+        In simplified editing mode, some properties are hidden. We're going to work on this a bit more with the aim of presenting a really simple interface for non-technical users who just want to take an existing question and make minimal changes like rewording the statement.
+
     Delete
         Delete the question permanently from the database.
 
@@ -26,6 +29,7 @@ Admin buttons
         * **standalone .zip** - a compiled package of the question, ready to run anywhere without connecting to a VLE. 
         * **SCORM package** - a compiled package of the question with SCORM files included, so it can be uploaded to a VLE and communicate with its gradebook.
         * **source** - a plain-text representation of the question, to be used with the Numbas command-line tools.
+
 
 Metadata
 ========
@@ -45,10 +49,13 @@ Metadata
     Author's Notes
         Use this field to record notes for yourself or other authors about the design of the question.
 
+    Extensions
+        Extensions can provide new functionality, such as extra JME functions or content types. To use an extension, tick its checkbox here.
+
 Statement
 =========
 
-The statement appears at the top of the question, before any input boxes. Use the statement to set the question and provide any information the student needs to answer it.
+The statement is a :ref:`content-area` which appears at the top of the question, before any input boxes. Use the statement to set the question and provide any information the student needs to answer it.
 
 Rulesets
 ========
@@ -84,6 +91,15 @@ If you need to do something a bit more complicated with variables, or you find y
 
         Javascript functions should return their result with a ``return`` expression. You don't need to write the ``function(parameters) {`` part - just write the function body.
 
+Parts
+=====
+
+See :ref:`question-parts`
+
+Advice
+======
+
 .. note::
     
     IN PROGRESS!
+
