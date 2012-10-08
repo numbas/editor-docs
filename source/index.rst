@@ -6,7 +6,7 @@ Tutorials
 ^^^^^^^^^
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     quickstart
     upload-vle
@@ -17,7 +17,7 @@ Exams
 ^^^^^
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     exam-reference
 
@@ -25,7 +25,7 @@ Questions
 ^^^^^^^^^
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     question-overview
     question-reference
@@ -34,7 +34,7 @@ Questions
 Maths
 ^^^^^
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     jme-reference
     simplification
@@ -45,7 +45,7 @@ Advanced
 ^^^^^^^^
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     extensions
     themes

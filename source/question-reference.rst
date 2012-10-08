@@ -1,5 +1,5 @@
 Question reference
-==================
+******************
 
 A complete reference for every bit of the question edit page (apart from parts; see :doc:`question-parts`)
 
@@ -89,17 +89,16 @@ If you need to do something a bit more complicated with variables, or you find y
     Language
         Functions can be defined either with a JME expression or with JavaScript code. In the case of a JME expression, the value returned is the result of evaluating the expression on the function's parameters. You can also refer to the question's variables.
 
-        Javascript functions should return their result with a ``return`` expression. You don't need to write the ``function(parameters) {`` part - just write the function body.
+        JavaScript functions should return their result with a ``return`` expression. You don't need to write the ``function(parameters) {}`` part - just write the function body.
 
 Parts
 =====
 
-See :ref:`question-parts`
+See the page on :ref:`question-parts`.
 
 Advice
 ======
 
-.. note::
-    
-    IN PROGRESS!
+"Advice" is a :ref:`content-area` which is shown when the student presses the "Reveal" button to reveal the question's answers, or when they receive less than the exam's :term:`Advice threshold` after submitting their answers.
 
+The advice area is normally used to present a worked solution to the question.
