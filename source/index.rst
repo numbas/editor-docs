@@ -1,6 +1,8 @@
 Numbas editor documentation
 ===========================
 
+This documentation is a work in progress and missing a lot of stuff at the moment. While we're writing the new documentation, you might find `the old manual <http://www.ncl.ac.uk/maths/numbas/manual.pdf>`_ useful.
+
 
 Tutorials
 ^^^^^^^^^
