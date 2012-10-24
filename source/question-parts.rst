@@ -90,10 +90,15 @@ Number entry
 .. glossary::
     Minimum value
         The smallest value accepted as correct.
+
     Maximum value
         The largest value accepted as correct.
+
     Must answer be an integer?
         If this is ticked and the student's answer is not a whole number, the penalty is applied.
+
+    Precision restriction
+        You can insist that the student gives their answer to a particular number of decimal places or significant figures. For example, if you want the answer to be given to 3 decimal places, :math:`3.1` will fail this restriction, while :math:`3.100` will pass. If the precision doesn't matter, select "None".
 
 Match text pattern
 ------------------
