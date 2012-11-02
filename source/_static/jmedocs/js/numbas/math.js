@@ -345,12 +345,13 @@ re_scientificNumber: /(\-?(?:0|[1-9]\d*)(?:\.\d+)?)[eE]([\+\-]?\d+)/,
 	},
 
 	//display a number nicely - rounds off to 10dp so floating point errors aren't displayed
-	niceNumber: function(n)
+	niceNumber: function(n,options)
 	{
+		options = options || {};
 		if(n.complex)
 		{
-			var re = math.niceNumber(n.re);
-			var im = math.niceNumber(n.im);
+			var re = math.niceNumber(n.re,options);
+			var im = math.niceNumber(n.im,options);
 			if(math.precround(n.im,10)==0)
 				return re+'';
 			else if(math.precround(n.re,10)==0)
@@ -386,7 +387,33 @@ re_scientificNumber: /(\-?(?:0|[1-9]\d*)(?:\.\d+)?)[eE]([\+\-]?\d+)/,
 			if((piD = math.piDegree(n)) > 0)
 				n /= Math.pow(Math.PI,piD);
 
-			var	out = math.precround(n,10)+'';
+			var out;
+			switch(options.precisionType) {
+			case 'sigfig':
+				var precision = options.precision;
+				out = math.siground(n,precision)+'';
+				var sigFigs = math.countSigFigs(out);
+				if(sigFigs<precision) {
+					if(out.indexOf('.')==-1)
+						out += '.';
+					for(var i=0;i<precision-sigFigs;i++)
+						out+='0';
+				}
+				break;
+			case 'dp':
+				var precision = options.precision;
+				out = math.precround(n,precision)+'';
+				var dp = math.countDP(out);
+				if(dp<precision) {
+					if(out.indexOf('.')==-1)
+						out += '.';
+					for(var i=0;i<precision-dp;i++)
+						out+='0';
+				}
+				break;
+			default:
+				out = math.precround(n,10)+'';
+			}
 			switch(piD)
 			{
 			case 0:
@@ -416,6 +443,16 @@ re_scientificNumber: /(\-?(?:0|[1-9]\d*)(?:\.\d+)?)[eE]([\+\-]?\d+)/,
 		for (J=0 ; J<N ; J++)
 			{ K = math.randomint(J+1) ; Q[J] = Q[K] ; Q[K] = J; }
 		return Q; 
+	},
+
+	shuffle: function(list) {
+		var l = list.length;
+		var permutation = math.deal(l);
+		var list2 = new Array(l);
+		for(var i=0;i<l;i++) {
+			list2[i]=(list[permutation[i]]);
+		}
+		return list2;
 	},
 
 	//returns the inverse of a shuffling
@@ -465,6 +502,22 @@ re_scientificNumber: /(\-?(?:0|[1-9]\d*)(?:\.\d+)?)[eE]([\+\-]?\d+)/,
 			b = Math.pow(10,Math.ceil(math.log10(s*a))-b);
 			return Math.round(a/b)*b;
 		}
+	},
+
+	countDP: function(n) {
+		var m = n.match(/\.(\d*)$/);
+		if(!m)
+			return 0;
+		else
+			return m[1].length;
+	},
+	
+	countSigFigs: function(n) {
+		var m = n.match(/^(?:(\d$)|(?:([1-9]\d*[1-9])0*$)|([1-9]\d*\.\d+$)|(0\.0+$)|(?:0\.0*([1-9]\d*))$)/);
+		if(!m)
+			return 0;
+		var sigFigs = m[1] || m[2] || m[3] || m[4] || m[5];
+		return sigFigs.replace('.','').length;
 	},
 
 	factorial: function(n)
