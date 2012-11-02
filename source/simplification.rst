@@ -1,3 +1,5 @@
+.. _simplification-rules:
+
 Simplification rules
 ====================
 
