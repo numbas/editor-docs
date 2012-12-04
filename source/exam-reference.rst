@@ -70,15 +70,11 @@ The navigation settings control how the student can move through the exam, and w
     Show front page?
         If ticked, then an intro screen is shown to the student before the exam starts, 
 
-    On advance (event)
-        What to do when the student moves to the next question.
+    Confirm before leaving the exam while it's running?
+        If ticked, when the student tries to leave the exam page (by closing the browser, or pressing the back button, or anything like that), they will be asked to confirm that's what they want to do.
 
-    On reverse (event)
-        What to do when the student moves to the previous question.
-
-    On move (event)
-        What to do when the student moves to any other question.
-
+    On leaving a question
+        What to do when the student changes question, or tries to end the exam. You can either warn the student and make them confirm that they'd like to leave, or prevent them from leaving the question entirely until they've answered it.
 
 Timing
 ======

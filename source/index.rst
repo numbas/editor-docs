@@ -15,6 +15,9 @@ Tutorials
     write-question
     tut-variables
 
+.. toctree::
+    write-content
+
 Exams
 ^^^^^
 
