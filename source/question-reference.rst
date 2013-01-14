@@ -14,14 +14,11 @@ Admin buttons
             Do **NOT** use this link to deliver the question to students. It will put considerable load on the server. 
             Instead, download the question and put it either on your own webspace or in a VLE.
 
-    Switch to simplified/advanced editing mode
-        In simplified editing mode, some properties are hidden. We're going to work on this a bit more with the aim of presenting a really simple interface for non-technical users who just want to take an existing question and make minimal changes like rewording the statement.
-
     Delete
         Delete the question permanently from the database.
 
     Make a Copy
-        Create a copy of the question. Use this to make changes to an question which does not belong to you.
+        Create a copy of the question and edit that instead. Use this to make changes to a question which does not belong to you.
 
     Download
         Links to download standalone packages of the question. 
@@ -31,17 +28,12 @@ Admin buttons
         * **source** - a plain-text representation of the question, to be used with the Numbas command-line tools.
 
 
-Metadata
+General
 ========
 
 .. glossary::
     Question name
         The name of the question. This is shown to the student and used for searching within the editor, so make it something intelligible.
-
-    Tags
-        Use tags to categorise questions so they can be found through the search function. Your guiding principle should be "more is better" - try to write down all words that someone searching for this question might use.
-
-        After typing a tag in the box, press the Enter key to add it to the list. You can click on an existing tag to edit or remove it.
 
     Description
         Use this field to describe the question's contents, what it assesses, and so on. This is shown in the questions index and in the questions list of any exams containing this question, so make sure it's fairly concise.
@@ -52,15 +44,16 @@ Metadata
     Extensions
         Extensions can provide new functionality, such as extra JME functions or content types. To use an extension, tick its checkbox here.
 
+    Tags
+        Use tags to categorise questions so they can be found through the search function. Your guiding principle should be "more is better" - try to write down all words that someone searching for this question might use.
+
+        After typing a tag in the box, press the Enter key to add it to the list. You can click on an existing tag to edit or remove it.
+
 Statement
 =========
 
 The statement is a :ref:`content-area` which appears at the top of the question, before any input boxes. Use the statement to set the question and provide any information the student needs to answer it.
 
-Rulesets
-========
-
-A "ruleset" defines a list of named :doc:`simplification` used to manipulate mathematical expressions.
 
 Variables
 =========
@@ -80,16 +73,19 @@ If you need to do something a bit more complicated with variables, or you find y
     Name
         The name of the function. Should be a valid JME name - it should start with a letter, and contain only letters and numbers, with no spaces or punctuation.
 
-    Parameters
-        The parameters given to the function. You can refer to them by name in the function's definition. Make sure you correctly set the types of the parameters. You can define several functions with the same name but different parameter signatures, if it makes sense to do so.
-
-    Output type
-        The type of the value returned by the function. 
-
     Language
         Functions can be defined either with a JME expression or with JavaScript code. In the case of a JME expression, the value returned is the result of evaluating the expression on the function's parameters. You can also refer to the question's variables.
 
         JavaScript functions should return their result with a ``return`` expression. You don't need to write the ``function(parameters) {}`` part - just write the function body.
+
+    Output type
+        The type of the value returned by the function. 
+
+    Parameters
+        The parameters given to the function. You can refer to them by name in the function's definition. Make sure you correctly set the types of the parameters. You can define several functions with the same name but different parameter types, if it makes sense to do so.
+
+    Rulesets
+        A "ruleset" defines a list of named :doc:`simplification` used to manipulate mathematical expressions.
 
 Parts
 =====

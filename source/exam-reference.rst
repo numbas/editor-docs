@@ -27,29 +27,23 @@ Admin buttons
         * **SCORM package** - a compiled package of the exam with SCORM files included, so it can be uploaded to a VLE and communicate with its gradebook.
         * **source** - a plain-text representation of the exam, to be used with the Numbas command-line tools.
 
-Metadata
+General
 ========
 
 .. glossary::
-    Name
-        The name of the exam. This is shown to the student and used for searching within the editor, so make it something intelligible.
+    Exam name
+        This is shown to the student and used for searching within the editor, so make it something intelligible.
 
     Theme
         Themes control the user interface of an exam, changing the look and feel. The `default` theme is designed for exams which will be delivered over the web. There is also an experimental `worksheet` theme which can be used to print out multiple, randomised copies of an exam for students to complete on paper.
 
-    Duration
-        The length of time students are allowed to attempt the exam. If set to zero, then there is no time limit.
-
     Pass threshold
         Define a pass/fail threshold for the exam. The pass/fail message will be displayed when the student ends the exam. If set to zero, then no message is displayed.
-
-    Shuffle questions?
-        If ticked, then the questions will be shown to the student in a random order. The order is randomised on each attempt.
 
     Description
         Use this field to describe the exam's contents, what it assesses, and so on. This is shown in the exams index, so make sure it's fairly concise.
 
-    Author's Notes
+    Author's notes
         Use this field to record notes for yourself or other authors about the design of the exam.
 
 Navigation
@@ -70,34 +64,34 @@ The navigation settings control how the student can move through the exam, and w
     Show front page?
         If ticked, then an intro screen is shown to the student before the exam starts, 
 
-    On advance (event)
-        What to do when the student moves to the next question.
+    Confirm before leaving the exam while it's running?
+        If ticked, the student will be asked to confirm that they really want to leave if they try to close the exam while it's running, for example by pressing the browser's back button or closing the tab the exam is running in.
 
-    On reverse (event)
-        What to do when the student moves to the previous question.
-
-    On move (event)
-        What to do when the student moves to any other question.
+    On leaving a question (event)
+        What to do when the student tries to leave a question without submitting their answers, either by moving to another question or by ending the exam.
 
 
 Timing
 ======
 
 .. glossary::
-    On timeout
-        Display a message when the student runs out of time
+    Exam duration
+        The length of time students are allowed to attempt the exam. If set to zero, then there is no time limit.
 
-    5 minutes before timeout
-        Display a message five minutes before the student runs out of time
+    On timeout (event)
+        If set to :guilabel:`Warn`, the given message is displayed when the student runs out of time.
+
+    5 minutes before timeout (event)
+        If set to :guilabel:`Warn`, the given message is displayed five minutes before the student runs out of time.
 
 Feedback
 ========
 
 .. glossary::
-    Show actual mark?
+    Show current score?
         If ticked, the student will be shown their score for each question and part immediately after submitting their answers.
 
-    Show total mark?
+    Show maximum score?
         If ticked, the student will be shown the maximum attainable score for each question and part.
 
     Show answer state?
@@ -112,10 +106,14 @@ Feedback
 Events
 ======
 
-Some of the properties described above are marked as *events*. These all have the same structure: an *action* setting which determines how to react to the event, and a *message* to display to the student when appropriate.
+Some of the properties described above are marked as *events*. These all have the same structure: an :guilabel:`action` setting which determines how to react to the event, and a :guilabel:`message` to display to the student when appropriate.
 
 Questions
 =========
+
+.. glossary::
+    Shuffle questions?
+        If ticked, then the questions will be shown to the student in a random order. The order is randomised on each attempt.
 
 Select the questions to be included in the exam by searching for them in the box on the right-hand side and clicking the plus icon on questions you wish to use.
 

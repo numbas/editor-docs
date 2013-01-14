@@ -3,6 +3,10 @@
 Question parts
 ==============
 
+Each question has one or more :term:`parts`. Parts are listed on the left of the screen; click on a part's entry in the list to edit it.
+
+The part currently being edited can be moved up and down the order by clicking the blue arrows to the right of the list.
+
 Generic part properties
 -----------------------
 
@@ -42,104 +46,129 @@ For questions where the student is asked to rearrange an expression, clearly jus
 
 Before length restrictions are applied, surplus brackets and whitespace are removed, and spaces are inserted between some operations, to minimise the possibility of the length restrictions being triggered for the wrong reasons.
 
-.. glossary::
-    Correct answer
-        The expected answer to the part. Question variables (or, more broadly, JME expressions which should be evaluated to a single value when the question is generated), can be included by enclosing them in curly braces.
+.. topic:: Marking
 
-    Answer simplification rules
-        :ref:`simplification-rules` to apply to the correct answer, if it is displayed to the student (for example, after clicking the :guilabel:`Reveal answers` button). This shouldn't affect marking.
+    .. glossary::
+        Correct answer
+            The expected answer to the part. Question variables (or, more broadly, JME expressions which should be evaluated to a single value when the question is generated), can be included by enclosing them in curly braces.
 
-    Checking type
-        The rule to use to compare the student's answer with the correct answer. In the lines below, :math:`x` represents the value of the student's answer at a particular point and :math:`y` represents the value of the correct answer, while :math:`\delta` is the value of the checking accuracy property.
+        Answer simplification rules
+            :ref:`simplification-rules` to apply to the correct answer, if it is displayed to the student (for example, after clicking the :guilabel:`Reveal answers` button). This shouldn't affect marking.
 
-        * Absolute difference. Fail if :math:`\left| x-y \right| > \delta`.
-        * Relative difference. Fail if :math:`\frac{x}{y} - 1 > \delta`.
-        * Decimal points. :math:`x` and :math:`y` are rounded to :math:`\delta` decimal places, and the test fails if the rounded values are unequal.
-        * Significant figures. :math:`x` and :math:`y` are rounded to :math:`\delta` significant figures, and the test fails if the rounded values are unequal.
+.. topic:: Accuracy and string restrictions
 
-    Checking accuracy
-        The parameter for the checking type.
+    .. glossary::
+        Checking type
+            The rule to use to compare the student's answer with the correct answer. In the lines below, :math:`x` represents the value of the student's answer at a particular point and :math:`y` represents the value of the correct answer, while :math:`\delta` is the value of the checking accuracy property.
 
-    Points to check
-        The number of comparisons to make between the student's answer and the correct answer.
+            * Absolute difference. Fail if :math:`\left| x-y \right| > \delta`.
+            * Relative difference. Fail if :math:`\frac{x}{y} - 1 > \delta`.
+            * Decimal points. :math:`x` and :math:`y` are rounded to :math:`\delta` decimal places, and the test fails if the rounded values are unequal.
+            * Significant figures. :math:`x` and :math:`y` are rounded to :math:`\delta` significant figures, and the test fails if the rounded values are unequal.
 
-    Maximum no. of failures
-        If the comparison fails this many times or more, the student's answer is marked as wrong.
+        Checking accuracy
+            The parameter for the checking type.
 
-    Checking range start
-        The minimum value sample points can take.
+        Points to check
+            The number of comparisons to make between the student's answer and the correct answer.
 
-    Checking range end
-        The maximum value sample points can take.
+        Maximum no. of failures
+            If the comparison fails this many times or more, the student's answer is marked as wrong.
 
-    Maximum length restriction
-        If the student's answer contains more than this many characters, the penalty is applied.
+        Checking range start
+            The minimum value sample points can take.
 
-    Minimum length restriction
-        If the student's answer contains fewer than this many characters, the penalty is applied.
+        Checking range end
+            The maximum value sample points can take.
 
-    Required strings
-        If the student's answer doesn't contain all of these strings, the penalty is applied.
+        Maximum length restriction
+            If the student's answer contains more than this many characters, the penalty is applied. A value of zero means no restriction is applied.
 
-    Forbidden strings
-        If the student's answer contains any of these strings, the penalty is applied.
+        Minimum length restriction
+            If the student's answer contains fewer than this many characters, the penalty is applied. A value of zero means no restriction is applied.
+
+        Required strings
+            If the student's answer doesn't contain all of these strings, the penalty is applied.
+
+        Forbidden strings
+            If the student's answer contains any of these strings, the penalty is applied.
 
 Number entry
 ------------
 
-.. glossary::
-    Minimum value
-        The smallest value accepted as correct.
+Number entry parts ask the student to enter a number, which is marked if it is in a specified range.
 
-    Maximum value
-        The largest value accepted as correct.
+.. topic:: Marking
 
-    Must answer be an integer?
-        If this is ticked and the student's answer is not a whole number, the penalty is applied.
+    .. glossary::
+        Minimum accepted value
+            The smallest value accepted as correct.
 
-    Precision restriction
-        You can insist that the student gives their answer to a particular number of decimal places or significant figures. For example, if you want the answer to be given to 3 decimal places, :math:`3.1` will fail this restriction, while :math:`3.100` will pass. If the precision doesn't matter, select :guilabel:`None`.
+        Maximum accepted value
+            The largest value accepted as correct.
+
+        Must the answer be an integer?
+            If this is ticked and the student's answer is not a whole number, the penalty is applied.
+
+        Precision restriction
+            You can insist that the student gives their answer to a particular number of decimal places or significant figures. For example, if you want the answer to be given to 3 decimal places, :math:`3.1` will fail this restriction, while :math:`3.100` will pass. If the precision doesn't matter, select :guilabel:`None`.
 
 Match text pattern
 ------------------
 
-.. glossary::
-    Answer pattern
-        A `regular expression <https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Regular_Expressions>`_ defining the strings to be accepted as correct. If you just want to accept a single string, just writing it out here should work. IF there are several valid answers, separate them with a `|` character.
+Use a text pattern part when you want the student to enter short, non-mathematical text.
 
-    Correct answer
-        A representative correct answer string to display to the student, in case they press the :guilabel:`Reveal answers` button.
+.. topic:: Marking
+
+    .. glossary::
+        Answer pattern
+            A `regular expression <https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Regular_Expressions>`_ defining the strings to be accepted as correct. If you just want to accept a single string, just writing it out here should work. IF there are several valid answers, separate them with a `|` character.
+
+        Correct answer
+            A representative correct answer string to display to the student, in case they press the :guilabel:`Reveal answers` button.
 
 Choose one from a list / Choose several from a list / Match choices with answers
 --------------------------------------------------------------------------------
 
-.. glossary::
-    Minimum marks
-        If the student would have scored less than this many marks, they are instead awarded this many. Useful in combination with negative marking.
+.. topic:: Marking
 
-    Maximum marks
-        If the student would have scored more than this many marks, they are instead awarded this many. The value 0 means "no maximum mark".
+    .. glossary::
+        Minimum marks
+            If the student would have scored less than this many marks, they are instead awarded this many. Useful in combination with negative marking.
 
-    Minimum answers
-        For "choose several from a list" and "match choices with answers" parts, the student must select at least this many choices.
+        Maximum marks
+            If the student would have scored more than this many marks, they are instead awarded this many. The value 0 means "no maximum mark".
 
-    Maximum answers
-        For "choose several from a list" and "match choices with answers" parts, the student must select at most this many choices.
+        Minimum answers
+            For :term:`choose several from a list` and :term:`match choices with answers` parts, the student must select at least this many choices.
 
-    Shuffle order of choices?
-        If this is ticked, the choices are displayed in random order.
+        Maximum answers
+            For :term:`choose several from a list` and :term:`match choices with answers` parts, the student must select at most this many choices.
 
-    Number of display columns
-        For "choose one/several from a list" parts, this dictates how many columns the choices are displayed in. If 0, the choices are displayed on a single line, wrapped at the edges of the screen.
+        Shuffle order of choices?
+            If this is ticked, the choices are displayed in random order.
 
-    Selection type
-        Only applies to "match choices with answers" parts. "One from each row" means that the student can only select one answer from each row. "Checkboxes" means that the student can select any number of choice-answer pairs.
+        Number of display columns
+            For :term:`choose one/several from a list` parts, this dictates how many columns the choices are displayed in. If 0, the choices are displayed on a single line, wrapped at the edges of the screen.
 
-    Custom marking matrix
-        If the checkbox is ticked, the :ref:`jme` expression in the box below is evaluated and used to assign numbers of marks to choices. For "choose one/several from a list" parts, the expression should evaluate to a list of numbers, while for "match choices with answers" it should evaluate to a list of lists of numbers. 
+        Selection type
+            Only applies to :term:`match choices with answers` parts. "One from each row" means that the student can only select one answer from each row. "Checkboxes" means that the student can select any number of choice-answer pairs.
+
+        Custom marking matrix
+            If the checkbox is ticked, the :ref:`jme` expression in the box below is evaluated and used to assign numbers of marks to choices. For :term:`choose one/several from a list` parts, the expression should evaluate to a list of numbers, while for :term:`match choices with answers` it should evaluate to a list of lists of numbers. 
+        
+        Marking matrix
+            Define the choices available to the student and the number of marks to award for choosing them.
+
+.. topic:: Choices (:term:`Choose one from a list` / :term:`Choose several from a list` only)
+
+    .. glossary::
+        Marks
+            The number of marks to award (or take away, if you enter a negative number) when the student picks this choice.
+
+        Distractor message
+            A message to display to the student in the part's feedback section after they select a particular choice. Useful to give some explanation of why a choice is incorrect.
+
+.. topic:: Marking matrix (:term:`Match choices with answers` only)
     
-    Marking matrix
-        Define the choices available to the student and the number of marks to award for choosing them.
-
-    Distractor message
-        A message to display to the student in the part's feedback section after they select a particular choice. Useful to give some explanation of why a choice is incorrect.
+    Add answers and choices using the buttons, and assign marks using the input boxes.
