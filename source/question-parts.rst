@@ -47,7 +47,7 @@ Before length restrictions are applied, surplus brackets and whitespace are remo
         The expected answer to the part. Question variables (or, more broadly, JME expressions which should be evaluated to a single value when the question is generated), can be included by enclosing them in curly braces.
 
     Answer simplification rules
-        :ref:`simplification-rules` to apply to the correct answer, if it is displayed to the student (for example, after clicking the "Reveal answers" button). This shouldn't affect marking.
+        :ref:`simplification-rules` to apply to the correct answer, if it is displayed to the student (for example, after clicking the :guilabel:`Reveal answers` button). This shouldn't affect marking.
 
     Checking type
         The rule to use to compare the student's answer with the correct answer. In the lines below, :math:`x` represents the value of the student's answer at a particular point and :math:`y` represents the value of the correct answer, while :math:`\delta` is the value of the checking accuracy property.
@@ -98,7 +98,7 @@ Number entry
         If this is ticked and the student's answer is not a whole number, the penalty is applied.
 
     Precision restriction
-        You can insist that the student gives their answer to a particular number of decimal places or significant figures. For example, if you want the answer to be given to 3 decimal places, :math:`3.1` will fail this restriction, while :math:`3.100` will pass. If the precision doesn't matter, select "None".
+        You can insist that the student gives their answer to a particular number of decimal places or significant figures. For example, if you want the answer to be given to 3 decimal places, :math:`3.1` will fail this restriction, while :math:`3.100` will pass. If the precision doesn't matter, select :guilabel:`None`.
 
 Match text pattern
 ------------------
@@ -108,7 +108,7 @@ Match text pattern
         A `regular expression <https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Regular_Expressions>`_ defining the strings to be accepted as correct. If you just want to accept a single string, just writing it out here should work. IF there are several valid answers, separate them with a `|` character.
 
     Correct answer
-        A representative correct answer string to display to the student, in case they press the "Reveal answers" button.
+        A representative correct answer string to display to the student, in case they press the :guilabel:`Reveal answers` button.
 
 Choose one from a list / Choose several from a list / Match choices with answers
 --------------------------------------------------------------------------------

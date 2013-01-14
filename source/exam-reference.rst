@@ -59,7 +59,7 @@ The navigation settings control how the student can move through the exam, and w
 
 .. glossary::
     Allow user to regenerate questions?
-        If ticked, then the "Try another question like this one" button is displayed at the bottom of each question, allowing the student to re-randomise the question and have another attempt at it.
+        If ticked, then the :guilabel:`Try another question like this one` button is displayed at the bottom of each question, allowing the student to re-randomise the question and have another attempt at it.
 
     Allow move to previous question?
         If ticked, then the user is allowed to move back to a question after leaving it.
@@ -104,7 +104,7 @@ Feedback
         If ticked, then when the student submits an answer an icon will be displayed to let the student know if their answer was marked correct, partially correct or incorrect.
 
     Allow reveal answer?
-        If ticked, then the "Reveal answer" button is enabled on each question. If the student chooses to reveal the answer to a question, they are shown the correct answer but lose all their marks and can not re-attempt the question.
+        If ticked, then the :guilabel:`Reveal answer` button is enabled on each question. If the student chooses to reveal the answer to a question, they are shown the correct answer but lose all their marks and can not re-attempt the question.
 
     Advice threshold
         If the student's score is below this threshold, then the question advice is displayed.
@@ -121,4 +121,4 @@ Select the questions to be included in the exam by searching for them in the box
 
 The order of questions can be rearranged by dragging and dropping questions using the up/down arrow handles on the left of each item.
 
-Deleting a question from an exam does not remove it from the database. To permanently delete a question, click on its name and click the "Delete" button on the question's edit page.
+Deleting a question from an exam does not remove it from the database. To permanently delete a question, click on its name and click the :guilabel:`Delete` button on the question's edit page.

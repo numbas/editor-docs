@@ -67,7 +67,7 @@ Variables
 
 Variables are defined using :doc:`jme-reference` syntax. 
 
-The "Computed value" column shows a generated value for each variable. Note that when the question is delivered to students, the variable values are generated with each new attempt, so students won't necessarily see the same values as those displayed here. It's a good idea to use the "Regenerate values" button a few times to check that randomised variables don't take unsuitable values.
+The :guilabel:`Computed value` column shows a generated value for each variable. Note that when the question is delivered to students, the variable values are generated with each new attempt, so students won't necessarily see the same values as those displayed here. It's a good idea to use the :guilabel:`Regenerate values` button a few times to check that randomised variables don't take unsuitable values.
 
 You can reorder the variables in the list by dragging the arrow icons. Doing this doesn't affect the way values are computed.
 
@@ -99,6 +99,6 @@ See the page on :ref:`question-parts`.
 Advice
 ======
 
-"Advice" is a :ref:`content-area` which is shown when the student presses the "Reveal" button to reveal the question's answers, or when they receive less than the exam's :term:`Advice threshold` after submitting their answers.
+:guilabel:`Advice` is a :ref:`content-area` which is shown when the student presses the :guilabel:`Reveal` button to reveal the question's answers, or when they receive less than the exam's :term:`Advice threshold` after submitting their answers.
 
 The advice area is normally used to present a worked solution to the question.
