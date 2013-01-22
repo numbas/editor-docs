@@ -22,7 +22,7 @@ var math = Numbas.math;
 var vectormath = Numbas.vectormath;
 var matrixmath = Numbas.matrixmath;
 
-var re_whitespace = '[\\s \\f\\n\\r\\t\\v\\u00A0\\u2028\\u2029]';
+var re_whitespace = '(?:[\\s \\f\\n\\r\\t\\v\\u00A0\\u2028\\u2029]|(?:\&nbsp;))';
 var re_strip_whitespace = new RegExp('^'+re_whitespace+'+|'+re_whitespace+'+$','g');
 
 var jme = Numbas.jme = {
@@ -815,7 +815,7 @@ var jme = Numbas.jme = {
 			return new jme.types.TBool(v);
 		default:
 			if($.isArray(v)) {
-				v = v.map(wrapValue);
+				v = v.map(jme.wrapValue);
 				return new jme.types.TList(v);
 			}
 			return v;
@@ -1383,6 +1383,19 @@ newBuiltin('#', [TRange,TNum], TRange, math.rangeSteps, {doc: {usage: ['a..b#c',
 
 newBuiltin('html',[TString],THTML,function(html) { return $(html) }, {doc: {usage: ['html(\'<div>things</div>\')'], description: 'Parse HTML from a string', tags: ['element','node']}});
 
+newBuiltin('latex',[TString],TString,null,{
+	evaluate: function(args,scope) {
+		var s = jme.evaluate(args[0],scope);
+		s.latex = true;
+		console.log(s);
+		return s;
+	},
+	doc: {
+		usage: ['latex("something")'],
+		description: 'Output a string as raw LaTeX. Normally, strings are wrapped in a \\textrm command.'
+	}
+});
+
 //the next three versions of the `except` operator
 //exclude numbers from a range, given either as a range, a list or a single value
 newBuiltin('except', [TRange,TRange], TList,
@@ -1589,6 +1602,8 @@ newBuiltin('max', [TNum,TNum], TNum, math.max, {doc: {usage: 'max(x,y)', descrip
 newBuiltin('min', [TNum,TNum], TNum, math.min, {doc: {usage: 'min(x,y)', description: 'Minimum of two numbers.', tags: ['smallest','least']}} );
 newBuiltin('precround', [TNum,TNum], TNum, math.precround, {doc: {usage: 'precround(x,3)', description: 'Round to given number of decimal places.', tags: ['dp']}} );
 newBuiltin('siground', [TNum,TNum], TNum, math.siground, {doc: {usage: 'siground(x,3)', description: 'Round to given number of significant figures.', tags: ['sig figs','sigfig']}} );
+newBuiltin('dpformat', [TNum,TNum], TString, function(n,p) {return math.niceNumber(n,{precisionType: 'dp', precision:p});}, {doc: {usage: 'dpformat(x,3)', description: 'Round to given number of decimal points and pad with zeroes if necessary.', tags: ['dp','decimal points','format','display','precision']}} );
+newBuiltin('sigformat', [TNum,TNum], TString, function(n,p) {return math.niceNumber(n,{precisionType: 'sigfig', precision:p});}, {doc: {usage: 'dpformat(x,3)', description: 'Round to given number of significant figures and pad with zeroes if necessary.', tags: ['sig figs','sigfig','format','display','precision']}} );
 newBuiltin('perm', [TNum,TNum], TNum, math.permutations, {doc: {usage: 'perm(6,3)', description: 'Count permutations. $^n \\kern-2pt P_r$.', tags: ['combinatorics']}} );
 newBuiltin('comb', [TNum,TNum], TNum, math.combinations , {doc: {usage: 'comb(6,3)', description: 'Count combinations. $^n \\kern-2pt C_r$.', tags: ['combinatorics']}});
 newBuiltin('root', [TNum,TNum], TNum, math.root, {doc: {usage: ['root(8,3)','root(x,n)'], description: '$n$<sup>th</sup> root.', tags: ['cube']}} );
