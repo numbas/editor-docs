@@ -37,6 +37,9 @@ General
     Theme
         Themes control the user interface of an exam, changing the look and feel. The `default` theme is designed for exams which will be delivered over the web. There is also an experimental `worksheet` theme which can be used to print out multiple, randomised copies of an exam for students to complete on paper.
 
+    Interface language
+        Specify which translation to use for the text in the user interface, i.e. button labels, error messages, etc.
+
     Pass threshold
         Define a pass/fail threshold for the exam. The pass/fail message will be displayed when the student ends the exam. If set to zero, then no message is displayed.
 

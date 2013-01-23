@@ -7,6 +7,10 @@ Admin buttons
 =============
 
 .. glossary::
+
+    Progress
+        Use this setting to keep track of questions' progress through the authoring and testing process.
+
     Test Run
         Opens a preview of the question in a new window. A specially simplified theme will be used, different from the one used for exams.
 
@@ -98,3 +102,8 @@ Advice
 :guilabel:`Advice` is a :ref:`content-area` which is shown when the student presses the :guilabel:`Reveal` button to reveal the question's answers, or when they receive less than the exam's :term:`Advice threshold` after submitting their answers.
 
 The advice area is normally used to present a worked solution to the question.
+
+Exams using this question
+=========================
+
+A list of links to each of the exams which contain this question, for convenience.
