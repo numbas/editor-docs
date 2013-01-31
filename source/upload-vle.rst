@@ -21,6 +21,10 @@ Uploading to Blackboard
 
     At least Blackboard 9.1 Service Pack 6 is required to run Numbas exams. There's no way of checking your Blackboard version from within Blackboard, so check with your server admin that you're using a sufficiently recent version.
 
+.. raw:: html
+
+    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/58532194" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
 Log in to Blackboard, and go to the content section of the relevant course. Click on the :guilabel:`Content package (SCORM)` item under the :guilabel:`Build Content` menu.
 
 .. image:: _static/images/screenshots/blackboard_content.png
@@ -33,7 +37,7 @@ On the next screen you can set some options for your exam.
 
 .. image:: _static/images/screenshots/blackboard_edit.png
 
-The default options are usually fine, but you should make sure the settings under :guilabel:`SCORM availability` in particular are how you want them.
+The default options are usually fine, but you should make sure that the settings under :guilabel:`SCORM availability` in particular are how you want them.
 
 .. image:: _static/images/screenshots/blackboard_availability.png
 
@@ -41,6 +45,10 @@ Click :guilabel:`Submit`, and your exam is ready to use!
 
 Uploading to Moodle
 -------------------
+
+.. raw:: html
+    
+    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/58534018" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
 Log in to Moodle, and go to the relevant course. Turn editing mode on, then click on the :guilabel:`Add an activity...` dropdown and select :guilabel:`SCORM package`.
 
