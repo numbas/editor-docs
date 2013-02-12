@@ -402,9 +402,11 @@ Vector arithmetic
 
 .. function:: vector(a1,a2,...,aN)
 
-    Create a vector with given components
+    Create a vector with given components. Alternately, you can create a vector from a single list of numbers.
 
-    **Example**: ``vector(1,2,3)``
+    **Examples**:
+        * ``vector(1,2,3)``
+        * ``vector([1,2,3])``
 
 .. function:: matrix(row1,row2,...,rowN)
 
@@ -416,9 +418,11 @@ Vector arithmetic
 
 .. function:: rowvector(a1,a2,...,aN)
 
-    Create a row vector (:math:`n \times 1` matrix) with the given components.
+    Create a row vector (:math:`n \times 1` matrix) with the given components. Alternately, you can create a row vector from a single list of numbers.
 
-    **Example**: ``rowvector(1,2)`` → ``matrix([1,2])``
+    **Examples**: 
+        * ``rowvector(1,2)`` → ``matrix([1,2])``
+        * ``rowvector([1,2])`` → ``matrix([1,2])``
 
 .. function:: dot(x,y)
 
