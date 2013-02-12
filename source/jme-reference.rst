@@ -11,7 +11,7 @@ JME expressions are used by students to enter answers to algebraic questions, an
     
     In progress!
 
-Variables names
+Variable names
 ***************
 
 Variable names are case-insensitive, so ``x`` represents the same thing as ``X``. The first character of a variable name must be an alphabet letter; after that, any combination of letters and numbers is allowed, with any number of ``'`` on the end.
