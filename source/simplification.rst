@@ -95,6 +95,12 @@ Sets of rules can be given names in the exam's :ref:`rulesets` section, so they 
 Simplification rules
 ********************
 
+The ``\simplify`` command takes an optional list of names of rules to use, separated by commas. Lists of simplification rule names are read from left to right, and rules are added or removed from the set in use as their names are read. To include a rule, use its name, e.g. ``unitfactor``. To exclude a rule, put an exclamation mark in front of its name, e.g. ``!unitfactor``.
+
+Rule names are not case-sensitive: any mix of lower-case or upper-case works. 
+
+To turn all built-in rules on, use the name ``all``. To turn all built-in rules off, use ``!all``.
+
 .. glossary::
 
     basic
@@ -229,3 +235,9 @@ Simplification rules
         Evaluate powers of numbers. This rule is only applied if ``n`` and ``m`` are numbers.
 
         * ``n^m`` → ``eval(n^m)``
+
+    fractionNumbers
+        This rule doesn't rewrite expressions, but tells the maths renderer that you'd like non-integer numbers to be displayed as fractions (e.g. :math:`\frac{1}{2}`) instead of decimals (e.g. :math:`0.5`).
+
+    rowVector
+        This rule doesn't rewrite expressions, but tells the maths renderer that you'd like vectors to be rendered as rows instead of columns.
