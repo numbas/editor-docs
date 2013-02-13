@@ -68,6 +68,19 @@ The :guilabel:`Computed value` column shows a generated value for each variable.
 
 You can reorder the variables in the list by dragging the arrow icons. Doing this doesn't affect the way values are computed.
 
+This screencast gives a quick summary of how the variable editing interface works:
+
+.. raw:: html
+    
+    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59575797" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+This screencast describes which variable names are valid, and gives some advice on how you should pick names:
+
+.. raw:: html
+    
+    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59577617" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
 Functions
 =========
 

@@ -35,6 +35,12 @@ Names can be given annotations to change how they are displayed. The following a
 
 Any other annotation is taken to be a LaTeX command. For example, a name ``vec:x`` is rendered in LaTeX as ``\vec{x}``, which places an arrow above the name.
 
+This screencast describes which variable names are valid, and gives some advice on how you should pick names:
+
+.. raw:: html
+    
+    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59577617" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
 Data types
 **********
 

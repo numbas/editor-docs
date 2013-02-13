@@ -21,6 +21,8 @@ Uploading to Blackboard
 
     At least Blackboard 9.1 Service Pack 6 is required to run Numbas exams. There's no way of checking your Blackboard version from within Blackboard, so check with your server admin that you're using a sufficiently recent version.
 
+Click to watch a screencast taking you through the instructions below:
+
 .. raw:: html
 
     <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/58532194" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
@@ -45,6 +47,8 @@ Click :guilabel:`Submit`, and your exam is ready to use!
 
 Uploading to Moodle
 -------------------
+
+Click to watch a screencast taking you through the instructions below:
 
 .. raw:: html
     
