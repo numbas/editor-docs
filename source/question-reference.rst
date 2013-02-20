@@ -81,8 +81,8 @@ This screencast describes which variable names are valid, and gives some advice 
     <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59577617" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
 
-Functions
-=========
+Functions & Rulesets
+====================
 
 If you need to do something a bit more complicated with variables, or you find yourself repeating the same pattern over and over, you can define a custom function. Custom functions can be used in any JME expression in the question, such as variable definitions or part answers.
 
@@ -101,8 +101,10 @@ If you need to do something a bit more complicated with variables, or you find y
     Parameters
         The parameters given to the function. You can refer to them by name in the function's definition. Make sure you correctly set the types of the parameters. You can define several functions with the same name but different parameter types, if it makes sense to do so.
 
+    .. _rulesets:
+
     Rulesets
-        A "ruleset" defines a list of named :doc:`simplification` used to manipulate mathematical expressions.
+        A "ruleset" defines a list of named :doc:`simplification rules <simplification>` used to manipulate mathematical expressions.
 
 Parts
 =====

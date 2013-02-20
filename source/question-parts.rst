@@ -3,7 +3,7 @@
 Question parts
 ==============
 
-Each question has one or more :term:`parts`. Parts are listed on the left of the screen; click on a part's entry in the list to edit it.
+Each question has one or more parts. Parts are listed on the left of the screen; click on a part's entry in the list to edit it.
 
 The part currently being edited can be moved up and down the order by clicking the blue arrows to the right of the list.
 
@@ -12,7 +12,7 @@ Generic part properties
 
 .. glossary::
     Prompt
-        A :ref:`content-area` used to prompt the student for an answer.
+        A :ref:`content area <content-area>` used to prompt the student for an answer.
 
     Marks
         The number of marks to award for answering the part correctly.
@@ -38,7 +38,7 @@ The "gaps" are sub-parts. Include them in text by writing their number (surround
 Mathematical expression
 -----------------------
 
-Mathematical expression parts require the student to enter an algebraic expression, using :ref:`JME` syntax.
+Mathematical expression parts require the student to enter an algebraic expression, using :ref:`JME <jme>` syntax.
 
 These parts are marked by picking a sample of points uniformly from a given range for the free variables in the expression, and evaluating both the student's answer and the correct answer on those points. If the two expressions agree on enough inputs, then they are considered to be equivalent and the student's answer is marked as correct.
 
@@ -53,7 +53,7 @@ Before length restrictions are applied, surplus brackets and whitespace are remo
             The expected answer to the part. Question variables (or, more broadly, JME expressions which should be evaluated to a single value when the question is generated), can be included by enclosing them in curly braces.
 
         Answer simplification rules
-            :ref:`simplification-rules` to apply to the correct answer, if it is displayed to the student (for example, after clicking the :guilabel:`Reveal answers` button). This shouldn't affect marking.
+            :ref:`Simplification rules <simplification-rules>` to apply to the correct answer, if it is displayed to the student (for example, after clicking the :guilabel:`Reveal answers` button). This shouldn't affect marking.
 
 .. topic:: Accuracy and string restrictions
 
@@ -155,7 +155,7 @@ Choose one from a list / Choose several from a list / Match choices with answers
             Only applies to :term:`match choices with answers` parts. "One from each row" means that the student can only select one answer from each row. "Checkboxes" means that the student can select any number of choice-answer pairs.
 
         Custom marking matrix
-            If the checkbox is ticked, the :ref:`jme` expression in the box below is evaluated and used to assign numbers of marks to choices. For :term:`choose one/several from a list` parts, the expression should evaluate to a list of numbers, while for :term:`match choices with answers` it should evaluate to a list of lists of numbers. 
+            If the checkbox is ticked, the :ref:`JME <jme>` expression in the box below is evaluated and used to assign numbers of marks to choices. For :term:`choose one/several from a list` parts, the expression should evaluate to a list of numbers, while for :term:`match choices with answers` it should evaluate to a list of lists of numbers. 
         
         Marking matrix
             Define the choices available to the student and the number of marks to award for choosing them.
