@@ -7,10 +7,10 @@ To begin, let's make a question asking the student to add two numbers.
 
 Log in to the Numbas editor, and click on the :guilabel:`Questions` heading at the top of the page. Click on :guilabel:`Create a new question`.
 
+.. image:: _static/images/tutorial/1.png
+
 The structure of a question
 ---------------------------
-
-.. image:: _static/images/tutorial/1.png
 
 You are taken to the *editing page* for your new question. At the top of the page are the question's name, some information about who can access the question, and links to run, delete, copy or download the question.
 
