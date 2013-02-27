@@ -248,7 +248,7 @@ texinfo_documents = [
 epub_title = u'Numbas editor'
 epub_author = u'Newcastle University'
 epub_publisher = u'Newcastle University'
-epub_copyright = u'2012, Newcastle University'
+epub_copyright = u'2013, Newcastle University'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
