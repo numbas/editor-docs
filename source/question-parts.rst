@@ -23,10 +23,14 @@ Generic part properties
     Penalty for revealing steps
         If the student reveals the Steps, reduce the total available marks by this amount. Credit for the part is scaled down accordingly. For example, if there are 6 marks available and the penalty for revealing steps is 2 marks, the total available after revealing steps is 4. An answer worth 3 marks without revealing steps is instead worth :math:`3 \times \frac{4}{6} = 2` marks after revealing steps.
 
+.. _information-only:
+
 Information only
 ----------------
 
 An information part contains only a prompt and no answer input. It is most often used as a Step to provide a hint for a parent part.
+
+.. _gap-fill:
 
 Gap-fill
 -------------
@@ -34,6 +38,8 @@ Gap-fill
 Gap-fill parts allow you to include answer inputs inline with the prompt text, instead of at the end of the part.
 
 The "gaps" are sub-parts. Include them in text by writing their number (surrounded by double square brackets. For example, ``[[0]]`` inserts the first gap, and ``[[1]]`` includes the second one.
+
+.. _mathematical-expression:
 
 Mathematical expression
 -----------------------
@@ -54,6 +60,8 @@ Before length restrictions are applied, surplus brackets and whitespace are remo
 
         Answer simplification rules
             :ref:`Simplification rules <simplification-rules>` to apply to the correct answer, if it is displayed to the student (for example, after clicking the :guilabel:`Reveal answers` button). This shouldn't affect marking.
+
+.. _string-restrictions:
 
 .. topic:: Accuracy and string restrictions
 
@@ -93,6 +101,8 @@ Before length restrictions are applied, surplus brackets and whitespace are remo
         Forbidden strings
             If the student's answer contains any of these strings, the penalty is applied.
 
+.. _number-entry:
+
 Number entry
 ------------
 
@@ -113,6 +123,8 @@ Number entry parts ask the student to enter a number, which is marked if it is i
         Precision restriction
             You can insist that the student gives their answer to a particular number of decimal places or significant figures. For example, if you want the answer to be given to 3 decimal places, :math:`3.1` will fail this restriction, while :math:`3.100` will pass. If the precision doesn't matter, select :guilabel:`None`.
 
+.. _match-text-pattern:
+
 Match text pattern
 ------------------
 
@@ -126,6 +138,8 @@ Use a text pattern part when you want the student to enter short, non-mathematic
 
         Correct answer
             A representative correct answer string to display to the student, in case they press the :guilabel:`Reveal answers` button.
+
+.. _multiple-choice:
 
 Choose one from a list / Choose several from a list / Match choices with answers
 --------------------------------------------------------------------------------

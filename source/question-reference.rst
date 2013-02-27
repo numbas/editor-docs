@@ -53,6 +53,8 @@ General
 
         After typing a tag in the box, press the Enter key to add it to the list. You can click on an existing tag to edit or remove it.
 
+.. _statement:
+
 Statement
 =========
 
@@ -110,6 +112,9 @@ Parts
 =====
 
 See the page on :ref:`question-parts`.
+
+
+.. _advice:
 
 Advice
 ======
