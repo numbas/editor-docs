@@ -1,25 +1,9 @@
 .. _simplification-rules:
 
-Displaying maths
-====================
+Substituting variables into displayed maths
+===========================================
 
-Maths is displayed using LaTeX. A good place to learn LaTeX is the `Art of Problem Solving LaTeX Guide <http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Commands>`_.
-
-Write in-line maths between dollar signs, like so::
-
-    $e^{\pi i} + 1 = 0$
-
-Which produces: :math:`e^{\pi i} + 1 = 0`.
-
-Larger formulae and equations should be written in display mode, like so::
-
-    \[ \int_0^1 e^{-x^2} dx \]
-
-Which produces:
-
-.. math::
-    
-    \int_0^1 e^{-x^2} dx
+In Numbas, maths is displayed using LaTeX. For help with LaTeX, see :ref:``LaTeX notation``.
 
 LaTeX is purely a typesetting language and is ill-suited for representing *meaning* in addition to *layout*. For this reason, dynamic or randomised maths expressions must be written in JME syntax and converted to LaTeX. Numbas provides two new LaTeX commands to do this for you.
 
