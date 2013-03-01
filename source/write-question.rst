@@ -3,6 +3,8 @@ Writing your first question
 
 In this tutorial you will learn about the structure and features of a Numbas question by creating a simple arithmetic test, starting with basic functionality and elaborating on that as we cover the more advanced tools available.
 
+We've embedded screencasts of someone running through this tutorial at the start of each section. You might like to follow along with the video while reading the tutorial.
+
 To begin, let's make a question asking the student to add two numbers.
 
 Log in to the Numbas editor, and click on the :guilabel:`Questions` heading at the top of the page. Click on :guilabel:`Create a new question`.
@@ -11,6 +13,10 @@ Log in to the Numbas editor, and click on the :guilabel:`Questions` heading at t
 
 The structure of a question
 ---------------------------
+
+.. raw:: html
+
+    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/60822898" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
 You are taken to the *editing page* for your new question. At the top of the page are the question's name, some information about who can access the question, and links to run, delete, copy or download the question.
 
@@ -72,6 +78,10 @@ You have created your first complete question!
 
 Better maths display and randomised numbers
 -------------------------------------------
+
+.. raw:: html
+
+    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/60823979" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
 Now let’s add another part to the question, asking the student to multiply two numbers.
 
@@ -143,6 +153,10 @@ Now your question has nicely rendered maths and uses randomised numbers.
 
 More complicated mathematical expressions
 -----------------------------------------
+
+.. raw:: html
+
+    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/60825921" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
 Until now, you’ve only written very simple mathematical expressions, where the randomised variables could be substituted in without any changes to the surrounding symbols. Often, this isn’t the case; for such occasions, there is the ``\simplify`` command.
 
