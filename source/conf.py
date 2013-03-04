@@ -98,6 +98,8 @@ html_theme = 'default'
 # documentation.
 #html_theme_options = {}
 
+html_style = 'numbas-style.css'
+
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
 
