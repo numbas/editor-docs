@@ -55,3 +55,4 @@ Advanced
 
     extensions
     themes
+    server-installation
