@@ -31,13 +31,13 @@ Installation
 Configuration
 *************
 
-#. Copy :file:`numbas\settings.py.dist` to :file:`numbas\settings.py`
+#. Copy :file:`numbas/settings.py.dist` to :file:`numbas/settings.py`
 #. Change ``STATIC_ROOT`` to ``'editor/static'``
 #. Change ``NUMBAS_PATH`` to ``'../numbas_runtime'``
 #. Change ``PREVIEW_PATH`` to ``'editor/static/previews'``, and create that directory.
 #. Change ``PREVIEW_URL`` to ``'/static/previews/'``
 #. Change ``PYTHON_EXEC`` to ``'c:/python33/python'``
-#. Copy :file:`numbas\database.py.dist` to :file:`numbas\database.py`
+#. Copy :file:`numbas/database.py.dist` to :file:`numbas/database.py`
     #. Change ``ENGINE`` to ``'django.db.backends.sqlite3'``
     #. Change ``NAME`` to ``'database.sqlite'``
 #. Sync the database:
@@ -78,13 +78,13 @@ Installation
 Configuration
 *************
 
-#. Copy :file:`numbas\settings.py.dist` to :file:`numbas\settings.py`
+#. Copy :file:`numbas/settings.py.dist` to :file:`numbas/settings.py`
 #. Change ``STATIC_ROOT`` to ``'editor/static'``
 #. Change ``NUMBAS_PATH`` to ``'../numbas_runtime'``
 #. Change ``PREVIEW_PATH`` to ``'editor/static/previews'``, and create that directory.
 #. Change ``PREVIEW_URL`` to ``'/static/previews/'``
 #. Change ``PYTHON_EXEC`` to ``'python3'``
-#. Copy :file:`numbas\database.py.dist` to :file:`numbas\database.py`
+#. Copy :file:`numbas/database.py.dist` to :file:`numbas/database.py`
     #. Change ``ENGINE`` to ``'django.db.backends.sqlite3'``
     #. Change ``NAME`` to ``'database.sqlite'``
 #. Sync the database:
@@ -109,6 +109,7 @@ Essential package installation
 Packages that would be installed as part of a standard Ubuntu install are not listed. Python 3 is required for compilation of Numbas exams; Python 2.6 (or greater) is required for Django.
 
 Install Apache, Git, Apache WSGI module, MySQL, Python 3, and the Python Imaging Library using the packaging system::
+
     apt-get install apache2 git-core libapache2-mod-wsgi mysql-server mysql-common python3 python-imaging 
     
 Virtualenv
@@ -125,6 +126,7 @@ Rather than rely on the packaged version of Django, a more flexible approach is 
     pip install virtualenv
 
 #. Create the virtualenv in a suitable location::
+
     virtualenv /opt/python/numbas-editor
 #. 
     Activate the virtualenv::
@@ -237,8 +239,8 @@ Required packages
 Configuration
 *******************
 
-#. Copy :file:`ldap_auth.py.dist` to :file:`ldap_auth.py` and edit, following the comments in that file.
-#. In :file:`settings.py` uncomment the LDAP auth line in ``AUTHENTICATION_BACKENDS`` and the ``ldap_auth`` import line.
+#. Copy :file:`numbas/ldap_auth.py.dist` to :file:`numbas/ldap_auth.py` and edit, following the comments in that file.
+#. In :file:`numbas/settings.py` uncomment the LDAP auth line in ``AUTHENTICATION_BACKENDS`` and the ``ldap_auth`` import line.
 
 Shibboleth authentication
 -------------------------
