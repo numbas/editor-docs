@@ -122,3 +122,28 @@ Select the questions to be included in the exam by searching for them in the box
 The order of questions can be rearranged by dragging and dropping questions using the up/down arrow handles on the left of each item.
 
 Deleting a question from an exam does not remove it from the database. To permanently delete a question, click on its name and click the :guilabel:`Delete` button on the question's edit page.
+
+Access
+======
+
+You can control who is allowed to see, and edit, your exams.
+
+.. topic:: Public visibility
+
+    .. glossary::
+        Hidden
+            Only you and users named in the :guilabel:`Individual access rights` section can see this exam.
+        Anyone can see this
+            Anyone, even users who are not logged in, can see this exam. Only you and users named in the :guilabel:`Individual access rights` section can edit this exam.
+        Anyone can edit this
+            Anyone, even users who are not logged in, can see and edit this exam.
+
+.. topic:: Individual access rights
+
+    Type a name into the search box to find a user. Click on a user's name in the results list to add them to the access list. Named users can have the following rights:
+
+    .. glossary::
+        Can view this
+            The named user can see, but not edit, this exam.
+        Can edit this
+            The named user can see this exam and make changes to it.

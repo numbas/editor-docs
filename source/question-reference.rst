@@ -127,3 +127,29 @@ Exams using this question
 =========================
 
 A list of links to each of the exams which contain this question, for convenience.
+
+Access
+======
+
+You can control who is allowed to see, and edit, your questions.
+
+.. topic:: Public visibility
+
+    .. glossary::
+        Hidden
+            Only you and users named in the :guilabel:`Individual access rights` section can see this question.
+        Anyone can see this
+            Anyone, even users who are not logged in, can see this question. Only you and users named in the :guilabel:`Individual access rights` section can edit this question.
+        Anyone can edit this
+            Anyone, even users who are not logged in, can see and edit this question.
+
+.. topic:: Individual access rights
+
+    Type a name into the search box to find a user. Click on a user's name in the results list to add them to the access list. Named users can have the following rights:
+
+    .. glossary::
+        Can view this
+            The named user can see, but not edit, this question.
+        Can edit this
+            The named user can see this question and make changes to it.
+
