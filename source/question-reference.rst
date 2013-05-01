@@ -105,8 +105,103 @@ If you need to do something a bit more complicated with variables, or you find y
 
     .. _rulesets:
 
-    Rulesets
-        A "ruleset" defines a list of named :doc:`simplification rules <simplification>` used to manipulate mathematical expressions.
+JME functions
+-------------
+
+Functions defined using JME work similarly to variables - the function's parameters are substituted into the expression, which is then evaluated.
+
+Comments can be added to function definitions in the same way as variable definitions - anything on a line after two forward slashes is interpreted as a comment and not evaluated. For example::
+
+    map(
+        log(n),    //take log of n
+        n,         //for n in
+        1..10      //the range 1 to 10 (inclusive)
+    )
+
+JME does not allow for much control over program flow. Most importantly, there are no loops. Some functions can naturally be defined recursively, but note that recursive function calls can be very slow, since recursion isn't optimised.
+
+Here's an example of a function which computes the :math:`n`\ :sup:`th` Fibonacci number recursively::
+
+    //nth fibonacci number
+    //f(0) = f(1) = 1
+    //f(n+2) = f(n)+f(n+1)
+    if(n<=1,
+        1,
+    //else
+        f(n-2)+f(n-1)
+    )
+
+Javascript functions
+--------------------
+
+Writing a function in Javascript allows you to use all of that language's features, such as loops, anonymous functions and DOM manipulation. Functions defined in Javasript don't need the ``function(parameters) { ... }`` enclosure - that's provided by Numbas - but they do need to return a value.
+
+Numbas provides a large library of functions which you can use. These are accessed from the objects ``Numbas.math`` and ``Numbas.util``. The best way to see what's available is to look at the Numbas source code - `math.js <https://github.com/numbas/Numbas/blob/master/runtime/scripts/math.js>`_; `util.js <https://github.com/numbas/Numbas/blob/master/runtime/scripts/util.js>`_. jQuery is also available. 
+
+While the JME system has its own type system for variables, separate from Javascript's, function parameters are unwrapped to native Javascript values on evaluation so you normally don't need to worry about it.
+
+.. topic:: Examples
+
+    .. highlight:: javascript
+
+    This function takes a list of strings and returns an HTML bullet list::
+        
+        var ol = $('<ol>');  // create list element
+
+        for(var i=0; i<things.length; i++) {
+            ol.append($('<li>').html(things[i]));	//append list item to list
+        }
+          
+        return ol;	//return list
+
+    This function creates an HTML5 ``canvas`` element and draws a rectangle with the given dimensions, along with labels::
+
+        var c = document.createElement('canvas');
+        $(c).attr('width',w+40).attr('height',h+40);
+        var context = c.getContext('2d');
+
+        //fill in rectangle with a light shade
+        context.fillStyle = '#eee';
+        context.fillRect(5,5,w,h);
+
+        //draw outline
+        context.strokeStyle = '#000';
+        context.lineWidth = 3;
+        context.strokeRect(5,5,w,h);
+
+        //draw labels
+        context.fillStyle = '#000';
+        context.font = '20px sans-serif';
+        var wstring = w+'m';
+        var tw = context.measureText(wstring).width;
+        console.log(tw);
+        context.fillText(wstring,5+(w-tw)/2,5+h+25);
+
+        var hstring = h+'m';
+        var hw = context.measureText(hstring).width;
+        context.save();
+        context.translate(5+w+25,5+(h+hw)/2);
+        context.rotate(-Math.PI/2);
+        context.fillText(hstring,0,0);
+
+        return c;
+
+    You can see this function in use at https://numbas.mathcentre.ac.uk/question/759/use-canvas-to-draw-a-rectangle/.
+
+    This function formats a number with commas to separate every third digit, i.e. :math:`1,\!000,\!000` instead of :math:`1000000`::
+
+        var parts=n.toString().split(".");
+        if(parts[1] && parts[1].length<2) {
+          parts[1]+='0';
+        }
+        return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
+
+    You can see this function in use at https://numbas.mathcentre.ac.uk/question/396/numerical-reasoning-average-salary/.
+
+Rulesets
+--------
+
+A "ruleset" defines a list of named :doc:`simplification rules <simplification>` used to manipulate mathematical expressions.
 
 Parts
 =====
@@ -138,8 +233,10 @@ You can control who is allowed to see, and edit, your questions.
     .. glossary::
         Hidden
             Only you and users named in the :guilabel:`Individual access rights` section can see this question.
+
         Anyone can see this
             Anyone, even users who are not logged in, can see this question. Only you and users named in the :guilabel:`Individual access rights` section can edit this question.
+
         Anyone can edit this
             Anyone, even users who are not logged in, can see and edit this question.
 
@@ -150,6 +247,7 @@ You can control who is allowed to see, and edit, your questions.
     .. glossary::
         Can view this
             The named user can see, but not edit, this question.
+
         Can edit this
             The named user can see this question and make changes to it.
 

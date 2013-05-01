@@ -44,7 +44,6 @@ Maths
     latex
     jme-reference
     simplification
-    functions
     stats-extension
 
 Advanced
