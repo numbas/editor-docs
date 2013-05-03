@@ -16,7 +16,7 @@ Tutorials
     tut-variables
 
 .. toctree::
-    write-content
+    how-do-i
 
 Exams
 ^^^^^
