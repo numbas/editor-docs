@@ -10,6 +10,10 @@ How do I...
 
     You can resize images and add a title attribute by selecting the image in the :ref:`content-area` and clicking on the :guilabel:`Insert/Edit Image` button.
 
+    .. raw:: html
+
+        <iframe src="http://player.vimeo.com/video/65654893" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
 ... embed a video?
 ------------------
 
