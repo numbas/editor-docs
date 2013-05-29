@@ -16,15 +16,15 @@ Installation
 
     c:\python27\Scripts\easy_install pip
 
-#. Either `download the Numbas runtime tools from github <https://github.com/numbas/Numbas/archive/master.zip>`_ and extract to a folder called numbas_runtime, or git clone the repository::
+#. Either `download the Numbas runtime tools from github <https://github.com/numbas/Numbas/archive/master.zip>`_ and extract to a folder called :file:`numbas_runtime`, or git clone the repository::
 
     git clone git://github.com/numbas/Numbas.git numbas_runtime
 
-#. Either download the Numbas editor from github and extract to a folder called numbas_editor, or git-clone the repository::
+#. Either `download the Numbas editor from github <https://github.com/numbas/editor/archive/master.zip>`_ and extract to a folder called :file:`numbas_editor`, or git-clone the repository::
 
     git clone git://github.com/numbas/editor.git numbas_editor
 
-#. Go into the editor directory, and install all the required Python2 modules::
+#. Go into the directory containing the Numbas editor files, and install all the required Python2 modules::
 
     c:\python27\Scripts\pip install -r requirements.pip
 
