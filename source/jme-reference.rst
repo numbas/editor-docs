@@ -326,7 +326,7 @@ Number theory
 
 .. function:: fact(x)
 
-    Factorial. When ``x`` is not an integer, $\Gamma(x+1)`` is used instead.
+    Factorial. When ``x`` is not an integer, :math:`\Gamma(x+1)` is used instead.
 
     **Examples**: 
         * ``fact(3)`` → ``6``
