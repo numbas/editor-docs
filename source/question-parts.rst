@@ -70,7 +70,7 @@ Before length restrictions are applied, surplus brackets and whitespace are remo
             The rule to use to compare the student's answer with the correct answer. In the lines below, :math:`x` represents the value of the student's answer at a particular point and :math:`y` represents the value of the correct answer, while :math:`\delta` is the value of the checking accuracy property.
 
             * Absolute difference. Fail if :math:`\left| x-y \right| > \delta`.
-            * Relative difference. Fail if :math:`\frac{x}{y} - 1 > \delta`.
+            * Relative difference. Fail if :math:`\left| \frac{x}{y} - 1 \right| > \delta`.
             * Decimal points. :math:`x` and :math:`y` are rounded to :math:`\delta` decimal places, and the test fails if the rounded values are unequal.
             * Significant figures. :math:`x` and :math:`y` are rounded to :math:`\delta` significant figures, and the test fails if the rounded values are unequal.
 
