@@ -174,7 +174,6 @@ While the JME system has its own type system for variables, separate from Javasc
         context.font = '20px sans-serif';
         var wstring = w+'m';
         var tw = context.measureText(wstring).width;
-        console.log(tw);
         context.fillText(wstring,5+(w-tw)/2,5+h+25);
 
         var hstring = h+'m';
