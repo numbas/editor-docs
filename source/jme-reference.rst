@@ -426,7 +426,7 @@ Vector arithmetic
 
 .. function:: rowvector(a1,a2,...,aN)
 
-    Create a row vector (:math:`n \times 1` matrix) with the given components. Alternately, you can create a row vector from a single list of numbers.
+    Create a row vector (:math:`1 \times n` matrix) with the given components. Alternately, you can create a row vector from a single list of numbers.
 
     **Examples**: 
         * ``rowvector(1,2)`` → ``matrix([1,2])``
