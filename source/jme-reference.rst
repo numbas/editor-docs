@@ -687,8 +687,9 @@ HTML
 
 .. function:: image(url)
 
-    Create an HTML `img` element loading the image from the given URL. Images uploaded through the resources tab are stored in the relative URL `resources/<filename>.png`, where `<filename>` is the name of the original file.
+    Create an HTML `img` element loading the image from the given URL. Images uploaded through the resources tab are stored in the relative URL `resources/images/<filename>.png`, where `<filename>` is the name of the original file.
 
     **Examples**: 
-        * ``image('resources/picture.png')``
-        * ``image(chosen_image)``
+        * ``image('resources/images/picture.png')``
+        * ``image(chosenimage)``
+        * `Question using randomly chosen images <https://numbas.mathcentre.ac.uk/question/1132/using-a-randomly-chosen-image/>`_.
