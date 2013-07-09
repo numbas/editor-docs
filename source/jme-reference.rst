@@ -684,3 +684,11 @@ HTML
     Create an HTML with cell contents defined by ``data``, which should be a list of lists of data, and column headers defined by the list of strings ``headers``.
 
     **Example**: ``table([[0,1],[1,0]], ["Column A","Column B"])``
+
+.. function:: image(url)
+
+    Create an HTML `img` element loading the image from the given URL. Images uploaded through the resources tab are stored in the relative URL `resources/<filename>.png`, where `<filename>` is the name of the original file.
+
+    **Examples**: 
+        * ``image('resources/picture.png')``
+        * ``image(chosen_image)``
