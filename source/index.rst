@@ -1,22 +1,10 @@
 Numbas editor documentation
 ===========================
 
-This documentation is a work in progress and missing a lot of stuff at the moment. While we're writing the new documentation, you might find `the old manual <http://www.ncl.ac.uk/maths/numbas/manual.pdf>`_ useful.
+This documentation is a work in progress and is still missing a few things. If you have any questions, please `email us <mailto:numbas.ncl.ac.uk>`_.
 
 
-Tutorials
-^^^^^^^^^
-
-.. toctree::
-    :maxdepth: 2
-
-    quickstart
-    upload-vle
-    write-question
-    tut-variables
-
-.. toctree::
-    how-do-i
+.. include:: tutorials.rst
 
 Exams
 ^^^^^
