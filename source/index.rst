@@ -21,6 +21,7 @@ Questions
     :maxdepth: 2
 
     question-overview
+    question-cheatsheet
     question-reference
     question-parts
 
