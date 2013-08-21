@@ -101,6 +101,12 @@ Before length restrictions are applied, surplus brackets and whitespace are remo
         Forbidden strings
             If the student's answer contains any of these strings, the penalty is applied.
 
+        Warn if student uses an unexpected variable name?
+            If this is ticked, all variable names used in the student's are checked against the list you provide. The first variable name which is not in the list will trigger a warning. You can use this option to prevent students incorrectly entering answers such as ``xy``, which is interpreted as a single variable, when they mean ``x*y``, the product of two variables.
+
+        Expected variable names
+            Variable names in this list will not prompt the "unexpected variable name" warning when the student uses them. 
+
 .. _number-entry:
 
 Number entry
@@ -134,10 +140,11 @@ Use a text pattern part when you want the student to enter short, non-mathematic
 
     .. glossary::
         Answer pattern
-            A `regular expression <https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Regular_Expressions>`_ defining the strings to be accepted as correct. If you just want to accept a single string, just writing it out here should work. IF there are several valid answers, separate them with a `|` character.
+            A `regular expression <https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Regular_Expressions>`_ defining the strings to be accepted as correct. If you just want to accept a single string, just writing it out here should work. If there are several valid answers, separate them with a `|` character.
+            You can substitute variables, the same as in content areas, by enclosing expressions in curly braces, e.g. ``{answervar}``. If you're using the full regular expression functionality, note that ``^`` and ``$`` are automatically added to the start and end of the answer pattern to ensure that the student's whole answer matches the pattern.
 
         Correct answer
-            A representative correct answer string to display to the student, in case they press the :guilabel:`Reveal answers` button.
+            A representative correct answer string to display to the student, in case they press the :guilabel:`Reveal answers` button. You can substitute variables by enclosing expressions in curly braces, the same as in content areas.
 
 .. _multiple-choice:
 
