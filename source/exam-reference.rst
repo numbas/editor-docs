@@ -80,6 +80,9 @@ Timing
     Exam duration
         The length of time students are allowed to attempt the exam. If set to zero, then there is no time limit.
 
+    Allow pausing?
+        If ticked, the student can pause the exam while running it, and the timer will stop. If unticked, there is no pause button, and the end time is fixed when the session starts - leaving and resuming through the VLE will not affect the end time.
+
     On timeout (event)
         If set to :guilabel:`Warn`, the given message is displayed when the student runs out of time.
 
