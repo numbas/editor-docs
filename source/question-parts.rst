@@ -58,6 +58,9 @@ Before length restrictions are applied, surplus brackets and whitespace are remo
         Correct answer
             The expected answer to the part. Question variables (or, more broadly, JME expressions which should be evaluated to a single value when the question is generated), can be included by enclosing them in curly braces.
 
+        Show preview of student's answer?
+            If ticked, a rendering of the student's answer in mathematical notation is displayed beeside the input box. You should leave this on unless you expect the answer to be veery simple and need the space - the feedback about how their answer is interpreted is very useful to students.
+
         Answer simplification rules
             :ref:`Simplification rules <simplification-rules>` to apply to the correct answer, if it is displayed to the student (for example, after clicking the :guilabel:`Reveal answers` button). This shouldn't affect marking.
 
