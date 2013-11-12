@@ -93,10 +93,10 @@ Before length restrictions are applied, surplus brackets and whitespace are remo
             The maximum value sample points can take.
 
         Maximum length restriction
-            If the student's answer contains more than this many characters, the penalty is applied. A value of zero means no restriction is applied.
+            If the student's answer contains more than this many characters, the penalty is applied. A value of zero means no restriction is applied. The student's answer is tidied up slightly so that things like extra or missing space characters don't affect the calculated length. All spaces are removed, and then spaces are inserted between binary operations. For example, the answer ``1+x`` (three characters) is marked as ``1 + x`` (five characters). 
 
         Minimum length restriction
-            If the student's answer contains fewer than this many characters, the penalty is applied. A value of zero means no restriction is applied.
+            If the student's answer contains fewer than this many characters, the penalty is applied. A value of zero means no restriction is applied. See the comment above on how the length is calculated.
 
         Required strings
             If the student's answer doesn't contain all of these strings, the penalty is applied.

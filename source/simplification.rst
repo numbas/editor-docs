@@ -45,11 +45,11 @@ produces::
 
 Variables can be substituted in by enclosing them in curly braces. For example::
 
-    \[ \simplify{ {x} + {y} } \]
+    \[ \simplify{ {x} / {y} } \]
 
-produces::
+produces, when :math:`x=2,y=3`::
 
-    \[ 3 - 4 \]
+    \[ \frac{ 2 }{ 3 } \]
 
 The ``\simplify`` command automatically rearranges expressions, according to a set of simplification rules, to make them look more natural. Sometimes you might not want this to happen, for example while writing out the steps in a worked solution.
 

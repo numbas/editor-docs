@@ -651,9 +651,9 @@ Control flow
 
 .. function:: award(a,b)
 
-    Return ``b`` if ``a`` is ``true``, else return ``0``.
+    Return ``a`` if ``b`` is ``true``, else return ``0``.
 
-    **Example**: ``award(true,5)`` → ``5``
+    **Example**: ``award(5,true)`` → ``5``
 
 .. function:: if(p,a,b)
 
