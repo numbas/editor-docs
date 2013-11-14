@@ -8,9 +8,6 @@ Admin buttons
 
 .. glossary::
 
-    Progress
-        Use this setting to keep track of questions' progress through the authoring and testing process.
-
     Test Run
         Opens a preview of the question in a new window. A specially simplified theme will be used, different from the one used for exams.
 
