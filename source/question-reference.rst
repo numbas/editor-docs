@@ -214,6 +214,11 @@ Advice
 
 The advice area is normally used to present a worked solution to the question.
 
+Resources
+=========
+
+You can upload any file as a :ref:`resource` to make it available for use elsewhere in the question. Uploaded files are available from the relative URL ``resources/images/``. The most common use case is to include images in content areas; see :ref:`the tutorial on including an image in a question<include-an-image>`.
+
 Exams using this question
 =========================
 

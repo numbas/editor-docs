@@ -1,6 +1,8 @@
 How do I...
 ==============
 
+.. _include-an-image:
+
 ... include an image?
 -----------------------
 
@@ -13,6 +15,9 @@ How do I...
     .. raw:: html
 
         <iframe src="http://player.vimeo.com/video/65654893" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+.. _embed-a-video:
 
 ... embed a video?
 ------------------
