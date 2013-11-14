@@ -152,6 +152,9 @@ Use a text pattern part when you want the student to enter short, non-mathematic
         Display answer
             A representative correct answer string to display to the student, in case they press the :guilabel:`Reveal answers` button. You can substitute variables by enclosing expressions in curly braces, the same as in content areas.
 
+        Must the answer be in the correct case?
+            If this is ticked, the capitalisation of the student's answer must match that of the answer pattern. If it doesn't, partial credit (defined using the slider below the checkbox) will be awarded.
+
 .. _multiple-choice:
 
 Choose one from a list / Choose several from a list / Match choices with answers
