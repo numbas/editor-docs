@@ -187,7 +187,7 @@ Choose one from a list / Choose several from a list / Match choices with answers
         Custom marking matrix
             If the checkbox is ticked, the :ref:`JME <jme>` expression in the box below is evaluated and used to assign numbers of marks to choices. For :term:`choose one/several from a list` parts, the expression should evaluate to a list of numbers, while for :term:`match choices with answers` it should evaluate to a list of lists of numbers. 
         
-        Marking matrix
+        Custom matrix expression
             Define the choices available to the student and the number of marks to award for choosing them.
 
 .. topic:: Choices (:term:`Choose one from a list` / :term:`Choose several from a list` only)
