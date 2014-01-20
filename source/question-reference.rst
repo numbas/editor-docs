@@ -199,6 +199,15 @@ Rulesets
 
 A "ruleset" defines a list of named :doc:`simplification rules <simplification>` used to manipulate mathematical expressions.
 
+Preamble
+--------
+
+The preambles allow you to add some code which affects the entire question. 
+
+The code written in the :guilabel:`Javascript` preamble is executed when the question is generated, just before the question's variables are calculated. The Javascript preamble can access the question's properties through the `question` variable.  You can see an example of the Javascript preamble in use at https://numbas.mathcentre.ac.uk/question/2705/jsxgraph-test-preamble-version/.
+
+The CSS preamble can be used to change the look of elements in your question. You can see an example of the CSS preamble in use at https://numbas.mathcentre.ac.uk/question/2704/css-preamble/.
+
 Parts
 =====
 
