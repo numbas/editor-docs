@@ -1,6 +1,10 @@
 Writing your first question
 ===========================
 
+.. note::
+    
+    The screencasts in this tutorial use an old version of the editor interface. We're going to redo them, but for now be aware that there are some differences between what you see here and what you see in the editor.
+
 In this tutorial you will learn about the structure and features of a Numbas question by creating a simple arithmetic test, starting with basic functionality and elaborating on that as we cover the more advanced tools available.
 
 We've embedded screencasts of someone running through this tutorial at the start of each section. You might like to follow along with the video while reading the tutorial.
@@ -115,7 +119,7 @@ The most important feature of computer-based assessment is the ability to dynami
 
 Let’s change the question so that the two numbers to be added are picked at random.
 
-Click on the Variables tab. Click on the Add a variable button. Every variable needs a name and a definition. The definition is given in JME syntax
+Click on the :guilabel:`Variables` tab. Click on the :guilabel:`Add a variable` button. Every variable needs a name and a definition. The definition is given in JME syntax.
 
 .. note:: For information on what constitutes a valid variable name, see :ref:`Variable names <variable-names>`. For more on JME syntax, see :ref:`the JME reference <jme>`.
 
@@ -125,7 +129,7 @@ Call this variable ``a``, and give it the definition::
 
 The variable will take a random whole-number value between :math:`1` and :math:`9` (inclusive).
 
-To the right of the definition, a possible value for the variable is displayed. You can get a feel for what values a variable can take by pressing the :guilabel:`Regenerate values` button a few times.
+To the right of the variable's name, a possible value for the variable is displayed. You can get a feel for what values a variable can take by pressing the :guilabel:`Regenerate values` button a few times.
 
 Add a second variable called ``b`` and give it the same definition. 
 
