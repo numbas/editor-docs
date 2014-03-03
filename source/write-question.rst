@@ -22,7 +22,7 @@ The structure of a question
 
     <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/60822898" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
-You are taken to the *editing page* for your new question. At the top of the page are the question's name, some information about who can access the question, and links to run, delete, copy or download the question.
+You are taken to the *editing page* for your new question. At the top of the page are the question's name and links to run, delete, copy or download the question.
 
 .. image:: _static/images/tutorial/2.png
 
