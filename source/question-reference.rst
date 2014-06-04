@@ -61,8 +61,6 @@ The statement is a :ref:`content-area` which appears at the top of the question,
 Variables
 =========
 
-Variables are defined using :doc:`jme-reference` syntax. 
-
 The :guilabel:`Computed value` column shows a generated value for each variable. Note that when the question is delivered to students, the variable values are generated with each new attempt, so students won't necessarily see the same values as those displayed here. It's a good idea to use the :guilabel:`Regenerate values` button a few times to check that randomised variables don't take unsuitable values.
 
 You can reorder the variables in the list by dragging the arrow icons. Doing this doesn't affect the way values are computed.
@@ -78,6 +76,25 @@ This screencast describes which variable names are valid, and gives some advice 
 .. raw:: html
     
     <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59577617" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+.. glossary::
+    Name
+        The name of the variable. See the :ref:`section on variable names <variable-names>`.
+
+    Data type
+        Specify what type of data the variable should hold. `JME code` allows you to define the variable using :doc:`jme-reference` syntax, while the other options provide simplified forms.
+
+    Value
+        Define the variable's value. This depends on the data type.
+
+    Description
+        Describe what the variable means, and how it is used. It's also often helpful to explain how it's defined, and what changes can be made to it.
+
+    Depends on
+        A list of all variables used in this variable's definition. You can click on a variable name to go to its definition.
+
+    Used by
+        A list of all variables which use this variable in their definition. You can click on a variable name to go to its definition.
 
 
 Functions & Rulesets
@@ -133,7 +150,7 @@ Javascript functions
 
 Writing a function in Javascript allows you to use all of that language's features, such as loops, anonymous functions and DOM manipulation. Functions defined in Javasript don't need the ``function(parameters) { ... }`` enclosure - that's provided by Numbas - but they do need to return a value.
 
-Numbas provides a large library of functions which you can use. These are accessed from the objects ``Numbas.math`` and ``Numbas.util``. The best way to see what's available is to look at the Numbas source code - `math.js <https://github.com/numbas/Numbas/blob/master/runtime/scripts/math.js>`_; `util.js <https://github.com/numbas/Numbas/blob/master/runtime/scripts/util.js>`_. jQuery is also available. 
+Numbas provides a large library of functions which you can use. These are accessed from the objects ``Numbas.math`` and ``Numbas.util``. The best way to see what's available is to look at `the Numbas code documentation <http://numbas.github.io/Numbas>`_. `jQuery <http://jquery.com>`_ /Pis also available. 
 
 While the JME system has its own type system for variables, separate from Javascript's, function parameters are unwrapped to native Javascript values on evaluation so you normally don't need to worry about it.
 
@@ -205,6 +222,8 @@ Preamble
 The preambles allow you to add some code which affects the entire question. 
 
 The code written in the :guilabel:`Javascript` preamble is executed when the question is generated, just before the question's variables are calculated. The Javascript preamble can access the question's properties through the `question` variable.  You can see an example of the Javascript preamble in use at https://numbas.mathcentre.ac.uk/question/2705/jsxgraph-test-preamble-version/.
+
+You can see what functions are available in JavaScript at `the Numbas code documentation <http://numbas.github.io/Numbas>`_.
 
 The CSS preamble can be used to change the look of elements in your question. You can see an example of the CSS preamble in use at https://numbas.mathcentre.ac.uk/question/2704/css-preamble/.
 

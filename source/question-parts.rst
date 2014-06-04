@@ -26,6 +26,23 @@ Generic part properties
     Show correct answer on reveal?
         When the student reveals answers to the question, or views the question in review mode, should a correct answer be shown? You might want to turn this off if you're doing custom marking and the part has no "correct" answer.
 
+.. _part-scripts:
+
+Scripts
+-------
+
+The script fields allow you to override the built-in algorithms used by Numbas. They take JavaScript code; `the Numbas JavaScript API documentation for parts <http://numbas.github.io/Numbas/Numbas.parts.Part.html>`_ is a useful reference.
+
+.. glossary::
+
+    Mark student's answer
+        This function runs when the student clicks the :guilabel:`Submit part` button. It should establish what proportion of the available credit to award to the student for their answer, and give feedback messages. Use ``this.setCredit(credit,message)`` to set the credit and (optionally) give a message.
+
+    Validate student's answer
+        This functions runs after the marking function, and should return ``true`` if the student's answer is in a form that can be marked, or ``false`` otherwise. If the answer can't be marked, you should use ``this.giveWarning(message)`` to tell the student what's wrong.
+
+There are several example questions using custom scripts at `numbas.mathcentre.ac.uk/exam/1016/custom-marking/ <https://numbas.mathcentre.ac.uk/exam/1016/custom-marking/>`_.
+
 .. _information-only:
 
 Information only
