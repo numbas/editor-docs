@@ -6,9 +6,11 @@ Tutorials
 
     create-an-account
     create-exam
+    upload-web
     upload-vle
     write-question
 
 .. toctree::
     how-do-i
+
 

@@ -41,6 +41,7 @@ Advanced
 .. toctree::
     :maxdepth: 2
 
+    javascript-api
     extensions
     themes
     server-installation
