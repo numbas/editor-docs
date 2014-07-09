@@ -35,6 +35,9 @@ The script fields allow you to override the built-in algorithms used by Numbas. 
 
 .. glossary::
 
+    When the part is created
+        This function runs when the part is created (either at the start of the exam, or when the question is regenerated), after the built-in constructor for the part. You could use this to change any of the part's settings, if it's not convenient to do so by other means.
+
     Mark student's answer
         This function runs when the student clicks the :guilabel:`Submit part` button. It should establish what proportion of the available credit to award to the student for their answer, and give feedback messages. Use ``this.setCredit(credit,message)`` to set the credit and (optionally) give a message. Note that ``this.answered`` should be set to true if the student's answer can be marked - otherwise, the student will be shown a warning message.
 
