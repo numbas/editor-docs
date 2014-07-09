@@ -33,7 +33,6 @@ Maths
     latex
     jme-reference
     simplification
-    stats-extension
 
 Advanced
 ^^^^^^^^

@@ -1,5 +1,5 @@
-﻿Statistical functions extension
-===============================
+﻿Statistical functions
+=====================
 
 The statistical functions extension provides many new functions for generating samples from random distributions, and calculating statistics.
 

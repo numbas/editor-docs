@@ -1,34 +1,46 @@
 Extensions
 ==========
 
-.. ref:: jsxgraph-extension
+Creating an extension
+--------------------
 
-JSXGraph
---------
+An extension is a folder containing one or more files that should be included in an exam. They can be javascript files, CSS stylesheets, or any other kind of resource. By default, the Numbas compiler will look for extensions in its :file:`extensions` subdirectory.
 
-The JSXGraph extension provides a function ``Numbas.extensions.jsxgraph.makeBoard`` which creates a JSXGraph board and wraps it inside an HTML `div` element to embed in the page.
+The minimum an extension must contain is a file named `<extension-name>.js`, containing the following::
 
-The simplest use is to define a custom function in Javascript which returns an HTML value, like so::
+    Numbas.queueScript('extensions/extension-name/extension-name.js',['base'],function() {
 
-    // First, make the JSXGraph board.
-    // The function provided by the JSXGraph extension wraps the board up in 
-    // a div tag so that it's easier to embed in the page.
-    var div = Numbas.extensions.jsxgraph.makeBoard('400px','400px',
-        {boundingBox: [-13,16,13,-16],
-         axis: false,
-         showNavigation: false,
-         grid: true
-        });
+    });
 
-    // div.board is the object created by JSXGraph, which you use to 
-    // manipulate elements
-    var board = div.board;  
+This wrapper tells Numbas that the extension has loaded. Because Numbas can't guarantee the order script files will be loaded in, code which uses the `Numbas` object must be placed inside this wrapper.
 
-    // Then do whatever you want with the board....
+Using an extension with the editor
+----------------------------------
 
-    // and return the container div
-    return div;
+To make an extension available in the editor, use the admin page to add a new :guilabel:`Extension` object. The :guilabel:`location` field is the path to the extension's folder, relative to the Numbas compiler's :file:`extensions` subdirectory. Once you've added the extension through the admin interface, you must also copy :file:`extension-name/extension-name.js` to :file:`{STATIC_ROOT}/js/numbas/extensions/extension-name/extension-name.js` so that any commands it provides can be used in the question editor.
 
-The question `Using student input in a JSXGraph diagram <https://numbas.mathcentre.ac.uk/question/2223/using-student-input-in-a-jsxgraph-diagram/>`_ is a more complete example of creating a JSXGraph diagram based on question variables and student input.
+Adding JME functions
+--------------------
 
-For help on using JSXGraph, see `the official documentation <http://jsxgraph.uni-bayreuth.de/wp/documentation/>`_.
+An extension can add JME functions (or rulesets, or anything else that goes in a `Scope <http://numbas.github.io/Numbas/Numbas.jme.Scope.html>`_ object by defining ``Numbas.extensions.<extension-name>.scope``. Here's an example which adds a single JME function::
+
+    Numbas.queueScript('extensions/myExtension/myExtension.js',['jme'],function() {
+        var myExtension = Numbas.extensions.myExtension = {};
+        var extensionScope = myExtension.scope = new Numbas.jme.Scope();
+
+        var funcObj = Numbas.jme.funcObj;
+        var TNum = Numbas.jme.types.TNum;
+
+        extensionScope.addFunction(new funcObj('difference',[TNum,TNum],TNum,function(a,b){ return Math.abs(a-b); }, {unwrapValues:true}));
+    })
+
+
+First-party extensions
+----------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    extensions/jsxgraph
+    extensions/stats
+
