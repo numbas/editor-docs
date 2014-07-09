@@ -7,10 +7,6 @@ JME expressions are used by students to enter answers to algebraic questions, an
 
 `Interactive JME function reference and sandbox <_static/jmedocs/jme.html>`_.
 
-.. note::
-    
-    In progress!
-
 .. _variable-names:
 
 Variable names
