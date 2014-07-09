@@ -36,7 +36,7 @@ The script fields allow you to override the built-in algorithms used by Numbas. 
 .. glossary::
 
     Mark student's answer
-        This function runs when the student clicks the :guilabel:`Submit part` button. It should establish what proportion of the available credit to award to the student for their answer, and give feedback messages. Use ``this.setCredit(credit,message)`` to set the credit and (optionally) give a message.
+        This function runs when the student clicks the :guilabel:`Submit part` button. It should establish what proportion of the available credit to award to the student for their answer, and give feedback messages. Use ``this.setCredit(credit,message)`` to set the credit and (optionally) give a message. Note that ``this.answered`` should be set to true if the student's answer can be marked - otherwise, the student will be shown a warning message.
 
     Validate student's answer
         This functions runs after the marking function, and should return ``true`` if the student's answer is in a form that can be marked, or ``false`` otherwise. If the answer can't be marked, you should use ``this.giveWarning(message)`` to tell the student what's wrong.
