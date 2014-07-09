@@ -333,6 +333,14 @@ Number theory
         * ``3!`` → ``6``
         * ``fact(5.5)`` → ``287.885277815``
 
+.. function:: factorise(n)
+
+    Factorise ``n``. Returns the exponents of the prime factorisation of ``n`` as a list.
+
+    **Examples**
+        * ``factorise(18)`` → ``[1,2]``
+        * ``factorise(70)`` → ``[1,0,1,1]``
+
 .. function:: gamma(x)
 
     Gamma function.
@@ -367,7 +375,7 @@ Number theory
 
     Fractional part of a number. Equivalent to ``x-trunc(x)``.
 
-    **Examples**: ``fract(4.3)`` → ``0.3``
+    **Example**: ``fract(4.3)`` → ``0.3``
 
 .. function:: mod(a,b)
 
@@ -395,9 +403,11 @@ Number theory
 
 .. function:: lcm(a,b)
 
-    Lowest common multiple of integers ``a`` and ``b``.
+    Lowest common multiple of integers ``a`` and ``b``. Can be used with any number of arguments; it returns the lowest common multiple of all the arguments.
 
-    **Example**: ``lcm(8,12)`` → ``24``
+    **Examples** 
+        * ``lcm(8,12)`` → ``24``
+        * ``lcm(8,12,5)`` → ``120``
 
 .. function:: x|y
 
@@ -469,25 +479,31 @@ Strings
 
     Mark string ``x`` as containing raw LaTeX, so when it's included in a mathmode environment it doesn't get wrapped in a ``\textrm`` environment.
 
-    **Examples**: ``latex('\frac{1}{2}')``.
+    **Example**: ``latex('\frac{1}{2}')``.
 
 .. function:: capitalise(x)
 
     Capitalise the first letter of a string.
 
-    **Examples**: ``capitalise('hello there')``.
+    **Example**: ``capitalise('hello there')``.
+
+.. function:: pluralise(n,singular,plural)
+
+    Return ``singular`` if ``n`` is 1, otherwise return ``plural``.
+
+    **Example**: ``pluralise(num_things,"thing","things")``
 
 .. function:: upper(x)
 
     Convert string to upper-case.
 
-    **Examples**: ``upper('Hello there')``.
+    **Example**: ``upper('Hello there')``.
 
 .. function:: lower(x)
 
     Convert string to lower-case.
 
-    **Examples**: ``lower('CLAUS, Santa')``.
+    **Example**: ``lower('CLAUS, Santa')``.
 
 Logic
 -----
@@ -614,6 +630,12 @@ Lists
 
     **Example**: ``sort([4,2,1,3])`` → ``[1,2,3,4]``
 
+.. function:: distinct(x)
+
+    Return a copy of the list ``x`` with duplicates removed.
+
+    **Example**: ``distinct([1,2,3,1,4,3])`` → ``[1,2,3,4]``
+
 .. function:: list(x)
 
     Convert vector or matrix ``x`` to a list of components or rows, respectively.
@@ -621,6 +643,12 @@ Lists
     **Examples**: 
         * ``list(vector(1,2))`` → ``[1,2]``
         * ``list(matrix([1,2],[3,4]))`` → ``[[1,2], [3,4]]``
+
+.. function:: satisfy(names,definitions,conditions,maxRuns)
+
+    Each variable name in ``names`` should have a corresponding definition expression in ``definitions``. ``conditions`` is a list of expressions which you want to evaluate to ``true``. The definitions will be evaluated repeatedly until all the conditions are satisfied, or the number of attempts is greater than ``maxRuns``. If ``maxRuns`` isn't given, it defaults to 100 attempts.
+
+    **Example**: ``satisfy([a,b,c],[random(1..10),random(1..10),random(1..10)],[b^2-4*a*c>0])
 
 Randomisation
 -------------
