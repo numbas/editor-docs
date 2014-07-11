@@ -33,6 +33,22 @@ Scripts
 
 The script fields allow you to override the built-in algorithms used by Numbas. They take JavaScript code; `the Numbas JavaScript API documentation for parts <http://numbas.github.io/Numbas/Numbas.parts.Part.html>`_ is a useful reference.
 
+Scripts have access to the global ``Numbas`` object, as well as the following variables:
+
+.. attribute:: part
+
+    The current part
+
+.. attribute:: question
+
+    The part's parent question
+
+.. attribute:: variables
+
+    The question's variables, unwrapped to JavaScript objects (so numbers can be used as JavaScript numbers, instead of having to go through the JME system)
+
+The following scripts can be customised:
+
 .. glossary::
 
     When the part is created
