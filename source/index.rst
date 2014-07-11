@@ -44,4 +44,3 @@ Advanced
     extensions
     themes
     server-installation
-    api-documentation
