@@ -40,6 +40,7 @@ Advanced
 .. toctree::
     :maxdepth: 2
 
+    pattern-matching
     javascript-api
     extensions
     themes
