@@ -68,11 +68,11 @@ To help with learning the new syntax, there is an online tool to test expression
 Examples
 --------
 
-Get all $x$ terms in a polynomial::
+Get all :math:`x` terms in a polynomial::
 
     m_all(m_pm(m_all(??)*m_any(x,x^?)));xs+m_all(??);rest
 
-Get the coefficient and degree of an $x$ term::
+Get the coefficient and degree of an :math:`x` term::
 
     m_pm(m_all(??);coefficient*m_any(x,x^?;degree))
 
@@ -80,7 +80,7 @@ Get both sides of an equation::
 
     ?;left=?;right
 
-Check $x$ terms are collected on one side of an equation::
+Check :math:`x` terms are collected on one side of an equation::
 
     m_uses(x);xside = m_not(m_uses(x));otherside
 
@@ -88,6 +88,6 @@ Check that a quadratic is factorised::
 
     (m_pm(??*x);a+?;b)*(m_pm(??*x);c+?;d)
 
-Capture multiple powers of $x$ and $y$::
+Capture multiple powers of :math:`x` and :math:`y`::
 
     m_all( m_any( ??x, ??y, ??x^??, ??y^??, m_any(x,x^??)*m_any(y,y^??)*?? ) );terms + m_all(??;rest)
