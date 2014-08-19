@@ -33,3 +33,4 @@ Examples
 ********
 
 * Replace the Numbas logo: :download:`change-logo-theme.zip <change-logo-theme.zip>`
+* Add custom CSS rules: :download:`extra-css-theme.zip <extra-css-theme.zip>`
