@@ -8,9 +8,9 @@ Contents of a theme
 
 A theme is a folder containing the following three things:
 
-* A ``files`` folder containing files to be included in the compiled exam. At the minimum, this contains a file ``index.html`` and a JavaScript file ``display.js``.
-* An ``xslt`` folder containing a file ``question.xslt`` to be used when generating the HTML to accompany questions.
 * An optional file called ``inherit.txt`` containing the name of a theme to extend.
+* A folder called ``files`` containing files to be included in the compiled exam. For a theme which does not extend another, this contains at the minimum a file ``index.html`` and a JavaScript file ``display.js``.
+* An folder called ``xslt`` containing a file ``question.xslt`` to be used when generating the HTML to accompany questions.
 
 JavaScript and CSS files
 ************************
@@ -21,3 +21,10 @@ Building off an existing theme
 ------------------------------
 
 At the top of your theme folder, place a file called ``inherit.txt`` containing the name of the theme to extend, e.g. `default`. When an exam is compiled using your theme, all of the parent theme's files will be included, and then all of the files belonging to your theme, overriding any files of the same name from the parent theme.
+
+Uploading a theme to the editor
+-------------------------------
+
+Package your theme's files into a .zip file. Next, go to the Numbas editor and click on the :guilabel:`Your profile` link, then :guilabel:`Your themes`. The :guilabel:`Upload a new theme` take you to a form where you can upload the .zip file you created, and give it a human-readable name. You will be able to select any of your themes in the exam edit page.
+
+If you make changes to your theme, go back to the :guilabel:`Your themes` page and click on the :guilabel:`Edit` link, then upload a revised .zip file.
