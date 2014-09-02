@@ -1,38 +1,53 @@
 Extensions
 ==========
 
-Creating an extension
---------------------
+An extension is a folder containing one or more files that should be included in an exam. They can be javascript files, CSS stylesheets, or any other kind of resource. 
 
-An extension is a folder containing one or more files that should be included in an exam. They can be javascript files, CSS stylesheets, or any other kind of resource. By default, the Numbas compiler will look for extensions in its :file:`extensions` subdirectory.
+Each extension must have a unique :term:`short name`, which is used both in the Numbas editor and by the script-loader in compiled exams.
 
-The minimum an extension must contain is a file named `<extension-name>.js`, containing the following::
+The minimum an extension must contain is a file named ``<extension-name>.js``, containing the following::
 
-    Numbas.queueScript('extensions/extension-name/extension-name.js',['base'],function() {
+    Numbas.addExtension('<extension-name>',['base'],function(extension) {
 
     });
 
-This wrapper tells Numbas that the extension has loaded. Because Numbas can't guarantee the order script files will be loaded in, code which uses the `Numbas` object must be placed inside this wrapper.
+(See the API documentation for `Numbas.addExtension <http://numbas.github.io/Numbas/Numbas.html#addExtension>`_ for details on how this function works)
+
+This function call tells Numbas that the extension has loaded. Because Numbas can't guarantee the order script files will be loaded in, code which uses the `Numbas` object must be placed inside the callback function given to ``Numbas.addExtension``.
+
 
 Using an extension with the editor
 ----------------------------------
 
-To make an extension available in the editor, use the admin page to add a new :guilabel:`Extension` object. The :guilabel:`location` field is the path to the extension's folder, relative to the Numbas compiler's :file:`extensions` subdirectory. Once you've added the extension through the admin interface, you must also copy :file:`extension-name/extension-name.js` to :file:`{STATIC_ROOT}/js/numbas/extensions/extension-name/extension-name.js` so that any commands it provides can be used in the question editor.
+Package your extension's files into a .zip file. Next, go to the Numbas editor click on the :guilabel:`Your profile` link, then :guilabel:`Your extensions`. The :guilabel:`Upload a new extension` link takes you to a form where you can upload the .zip file you created.
+
+.. glossary::
+    Name:
+        A human-readable name for the extension. This should concisely describe what it does, or what feature it provides.
+
+    Short name:
+        A unique identifier for the extension.
+
+        .. warning::
+            An extension's short name must be **unique**, and match the short name used when uploading it to the editor. This means that if you reuse an extension and use a different name when uploading it to the editor, you must rename its JavaScript file and change the name given to ``Numbas.addExtension``.
+
+    Documentation URL:
+        The URL of a page describing how to use the extension.
+
 
 Adding JME functions
 --------------------
 
-An extension can add JME functions (or rulesets, or anything else that goes in a `Scope <http://numbas.github.io/Numbas/Numbas.jme.Scope.html>`_ object by defining ``Numbas.extensions.<extension-name>.scope``. Here's an example which adds a single JME function::
+An extension can add JME functions (or rulesets, or anything else that goes in a `Scope <http://numbas.github.io/Numbas/Numbas.jme.Scope.html>`_ object by manipulating the ``extension.scope`` object. Here's an example which adds a single JME function::
 
-    Numbas.queueScript('extensions/myExtension/myExtension.js',['jme'],function() {
-        var myExtension = Numbas.extensions.myExtension = {};
-        var extensionScope = myExtension.scope = new Numbas.jme.Scope();
-
+    Numbas.addExtension('difference',['jme'],function(extension) {
         var funcObj = Numbas.jme.funcObj;
         var TNum = Numbas.jme.types.TNum;
 
-        extensionScope.addFunction(new funcObj('difference',[TNum,TNum],TNum,function(a,b){ return Math.abs(a-b); }, {unwrapValues:true}));
+        extension.scope.addFunction(new funcObj('difference',[TNum,TNum],TNum,function(a,b){ return Math.abs(a-b); }, {unwrapValues:true}));
     })
+
+(Download this extension: :download:`difference.zip`)
 
 Adding a new JME data type
 --------------------------
@@ -41,11 +56,9 @@ JME data types are JavaScript objects, distinguished by their ``type`` property.
 
 Here's an example extension which defines a toy "chemical" data type (excuse the bad chemistry)::
 
-    Numbas.queueScript('extensions/chemicals/chemicals.js',['jme','jme-display'],function() {
+    Numbas.addExtension('chemicals',['jme','jme-display'],function(chemicals) {
 
-        // set up the extension's scope
-        var chemicals = Numbas.extensions.chemicals = {};
-        var chemicalsScope = chemicals.scope = new Numbas.jme.Scope();
+        var chemicalsScope = chemicals.scope;
 
         // Define the constructor for a new data type representing a chemical formula
         // `formula` is a dictionary mapping element symbols to the number of atoms present
@@ -61,7 +74,7 @@ Here's an example extension which defines a toy "chemical" data type (excuse the
         // Code to render a chemical formula as LaTeX
         Numbas.jme.display.typeToTeX.chemical = function(thing,tok,texArgs,settings) {
             var out = '';
-            for(var element in tok.value){ 
+            for(var element in tok.value){
                 out += element;
                 var num = tok.value[element];
                 if(num>1) {
@@ -121,6 +134,7 @@ Here's an example extension which defines a toy "chemical" data type (excuse the
         }));
     });
 
+(Download this extension: :download:`chemicals.zip`)
 
 First-party extensions
 ----------------------

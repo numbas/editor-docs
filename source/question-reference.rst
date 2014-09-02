@@ -43,7 +43,7 @@ General
         Use this field to record notes for yourself or other authors about the design of the question.
 
     Extensions
-        Extensions can provide new functionality, such as extra JME functions or content types. To use an extension, tick its checkbox here.
+        Extensions can provide new functionality, such as extra JME functions or content types. To use an extension, tick its checkbox here. See :doc:`extensions`.
 
     Tags
         Use tags to categorise questions so they can be found through the search function. Your guiding principle should be "more is better" - try to write down all words that someone searching for this question might use.
