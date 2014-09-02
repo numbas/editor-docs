@@ -29,6 +29,11 @@ Package your theme's files into a .zip file. Next, go to the Numbas editor and c
 
 If you make changes to your theme, go back to the :guilabel:`Your themes` page and click on the :guilabel:`Edit` link, then upload a revised .zip file.
 
+This screencast gives a quick summary of a theme package's contents, then shows how to create a theme which replaces the Numbas logo.
+
+.. raw:: html
+    
+    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59575797" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 Examples
 ********
 
