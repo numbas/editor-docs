@@ -154,11 +154,12 @@ Number operations
 
 .. function:: abs(x)
 
-    Absolute value, or modulus. Defined for numbers, ranges, vectors and lists. In the case of a list, returns the number of elements. For a range, returns the difference between the upper and lower bounds.
+    Absolute value, or modulus. Defined for numbers, strings, ranges, vectors and lists. In the case of a list, returns the number of elements. For a range, returns the difference between the upper and lower bounds.
 
     **Examples**: 
         * ``abs(-8)`` → ``8``
         * ``abs(3-4i)`` → ``5``
+        * ``abs("Hello")`` → ``5``
         * ``abs([1,2,3])`` → ``3``
         * ``len([1,2,3])`` → ``3``
         * ``length(vector(3,4))`` → ``5``
