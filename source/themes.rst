@@ -33,7 +33,7 @@ This screencast gives a quick summary of a theme package's contents, then shows 
 
 .. raw:: html
     
-    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59575797" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/105023576" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 Examples
 ********
 
