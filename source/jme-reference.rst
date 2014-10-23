@@ -502,6 +502,12 @@ Strings
 
     **Example**: ``lower('CLAUS, Santa')``.
 
+.. function:: join(strings, delimiter)
+
+    Join a list of strings with the given delimiter.
+
+    **Example**: ``join(['a','b','c'],',')`` → ``'a,b,c'``
+
 Logic
 -----
 
@@ -645,7 +651,13 @@ Lists
 
     Each variable name in ``names`` should have a corresponding definition expression in ``definitions``. ``conditions`` is a list of expressions which you want to evaluate to ``true``. The definitions will be evaluated repeatedly until all the conditions are satisfied, or the number of attempts is greater than ``maxRuns``. If ``maxRuns`` isn't given, it defaults to 100 attempts.
 
-    **Example**: ``satisfy([a,b,c],[random(1..10),random(1..10),random(1..10)],[b^2-4*a*c>0])
+    **Example**: ``satisfy([a,b,c],[random(1..10),random(1..10),random(1..10)],[b^2-4*a*c>0])``
+
+.. function:: sum(numbers)
+
+    Add up a list of numbers
+
+    **Example**: ``sum([1,2,3])`` → ``6``
 
 Randomisation
 -------------
