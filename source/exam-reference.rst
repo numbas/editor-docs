@@ -119,6 +119,10 @@ Questions
 .. glossary::
     Shuffle questions?
         If ticked, then the questions will be shown to the student in a random order. The order is randomised on each attempt.
+    Use all questions?
+        If ticked, then every question in the list will be shown to the student. If not, then only the number specified below will be used.
+    Number of questions to display
+        The number of questions to show to the student.
 
 Select the questions to be included in the exam by searching for them in the box on the right-hand side and clicking the plus icon on questions you wish to use.
 
