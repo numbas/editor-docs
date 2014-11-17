@@ -63,6 +63,14 @@ Pattern-matching syntax
 
     Match nothing. Useful as an empty term to act as the right-hand side of an addition, where you want to capture all terms in the left-hand side.
 
+.. object:: m_number
+
+    Match a single number.
+
+.. object:: m_type(type)
+
+    Match a single token of the given type. For example, ``m_type(vector)`` matches a vector, while ``m_type(op)`` matches any operator. See :ref:`jme-data-types` for a list of data types.
+
 To help with learning the new syntax, there is an online tool to test expressions against patterns at http://www.staff.ncl.ac.uk/christian.perfect/patternmatching/matching.html
 
 Examples

@@ -39,6 +39,8 @@ This screencast describes which variable names are valid, and gives some advice 
     
     <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59577617" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
+.. _jme-data-types:
+
 Data types
 **********
 
