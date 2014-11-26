@@ -214,6 +214,9 @@ Choose one from a list / Choose several from a list / Match choices with answers
         Maximum answers
             For :term:`choose several from a list` and :term:`match choices with answers` parts, the student must select at most this many choices.
 
+        What to do if wrong number of answers selected
+            If the student selects too few or too many answers, either do nothing, show them a warning but allow them to submit, or prevent submission until they pick an acceptable number of answers.
+
         Shuffle order of choices?
             If this is ticked, the choices are displayed in random order.
 
