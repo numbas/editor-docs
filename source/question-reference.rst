@@ -3,6 +3,11 @@ Question reference
 
 A complete reference for every bit of the question edit page (apart from parts; see :doc:`question-parts`)
 
+Undo/Redo
+=========
+
+You can undo or redo changes made since you opened the question editing page by clicking on the arrows at the top-right of the page.
+
 Admin buttons
 =============
 
@@ -263,6 +268,13 @@ Exams using this question
 =========================
 
 A list of links to each of the exams which contain this question, for convenience.
+
+Editing history
+===============
+
+Each time you make a change to a question, it's saved to the database. You can see the full editing history of your question in this tab, and revert back to a previous state by clicking on a version's timestamp.
+
+You can add a comment describing what you've changed by clicking on the corresponding entry in the current version's :guilabel:`Comment` column. 
 
 Access
 ======

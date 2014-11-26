@@ -3,6 +3,11 @@ Exam reference
 
 A complete reference for every bit of the exam edit page.
 
+Undo/Redo
+=========
+
+You can undo or redo changes made since you opened the question editing page by clicking on the arrows at the top-right of the page.
+
 Admin buttons
 =============
 
@@ -129,6 +134,13 @@ Select the questions to be included in the exam by searching for them in the box
 The order of questions can be rearranged by dragging and dropping questions using the up/down arrow handles on the left of each item.
 
 Deleting a question from an exam does not remove it from the database. To permanently delete a question, click on its name and click the :guilabel:`Delete` button on the question's edit page.
+
+Editing history
+===============
+
+Each time you make a change to a question, it's saved to the database. You can see the full editing history of your question in this tab, and revert back to a previous state by clicking on a version's timestamp.
+
+You can add a comment describing what you've changed by clicking on the corresponding entry in the current version's :guilabel:`Comment` column. 
 
 Access
 ======
