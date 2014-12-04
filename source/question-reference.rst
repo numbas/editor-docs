@@ -82,6 +82,9 @@ This screencast describes which variable names are valid, and gives some advice 
     
     <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59577617" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
+Definition
+----------
+
 .. glossary::
     Name
         The name of the variable. See the :ref:`section on variable names <variable-names>`.
@@ -100,6 +103,29 @@ This screencast describes which variable names are valid, and gives some advice 
 
     Used by
         A list of all variables which use this variable in their definition. You can click on a variable name to go to its definition.
+
+Testing
+-------
+
+The :guilabel:`Testing` tab provides tools to test your variables for desired properties, so you can automatically re-randomise your questions' variables until you get a suitable set of values.
+
+.. warning::
+    While this tool allows you to pick sets of variables that would be hard to generate constructively, it's a random process so you must be aware that there's a chance no suitable set of values will ever be found. Use the :guilable:`Test condition` button to see how likely this is.
+
+.. glossary::
+
+    Condition to satisfy
+        A JME expression which should evaluate to `true` when the set of variables generated has the properties you want. For example, if `a`, `b` and `c` are the coefficients of a quadratic equation and you want it to have real roots, the condition could be `b^2-4*a*c>=0`.
+
+        When the student runs this question, the system will regenerate the set of variables until it finds one which satisfies this condition.
+
+    Test condition
+        When you press this button, the editor will generate as many sets of variables as possible within the time given. When it finishes, you'll be presented with statistics including the proportion of runs which produced acceptable sets of values, and the expected number of runs before an acceptable set of values is found.
+
+        If the calculate probability of getting an acceptable set of variables within 1 second is lower than 99%, you should make changes to your variable definitions.
+
+    Maximum number of runs
+        The maximum number of times the system should regenerate the set of variables without finding a set which satisfies the condition before giving up. If the system exceeds this number in a compiled exam, the entire exam will fail, so try to avoid it!
 
 
 Functions & Rulesets
