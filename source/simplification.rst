@@ -170,7 +170,7 @@ To turn all built-in rules on, use the name ``all``. To turn all built-in rules 
         * ``m*(n*x)`` → ``eval(n*m)*x``
 
     simplifyFractions
-        Cancel fractions to lowest form. The rules below are only applied if ``n`` and ``m`` are numbers and :math:`gcd(n,m) \gt 1`.
+        Cancel fractions to lowest form. The rules below are only applied if ``n`` and ``m`` are numbers and :math:`gcd(n,m) > 1`.
 
         * ``n/m`` → ``eval(n/gcd(n,m))/eval(m/gcd(n,m))`` (cancel simple fractions)
         * ``(n*x)/m`` → ``(eval(n/gcd(n,m))*x)/eval(m/gcd(n,m))`` (cancel algebraic fractions)
