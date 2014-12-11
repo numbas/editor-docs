@@ -8,9 +8,9 @@ How do I...
 
     It's best practice to attach images to questions so that they're distributed with the final compiled exam, rather than linking to images stored on a webserver. 
 
-    When editing a :ref:`content-area`, click on the :guilabel:`Insert/Edit Image` button. You can then either pick an image you've already uploaded, or click the :term:`Choose file` button to upload an image from your computer.
+    When editing a content area, click on the :guilabel:`Insert/Edit Image` button. You can then either pick an image you've already uploaded, or click the :guilabel:`Choose file` button to upload an image from your computer.
 
-    You can resize images and add a title attribute by selecting the image in the :ref:`content-area` and clicking on the :guilabel:`Insert/Edit Image` button.
+    You can resize images and add a title attribute by selecting the image in the content area and clicking on the :guilabel:`Insert/Edit Image` button.
 
     .. raw:: html
 

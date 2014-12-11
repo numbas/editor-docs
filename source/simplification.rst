@@ -73,7 +73,7 @@ I have turned off the unitFactor rule, leaving the expression as it was::
 
 When a list of rules is given, the list is processed from left to right. Initially, no rules are switched on. When a rule's name is read, that rule is switched on, or if it has an exclamation mark in front of it, that rule is switched off.
 
-Sets of rules can be given names in the exam's :ref:`rulesets` section, so they can be turned on or off in one go.
+Sets of rules can be given names in the question's :ref:`rulesets` section, so they can be turned on or off in one go.
 
 
 Simplification rules

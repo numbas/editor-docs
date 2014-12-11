@@ -12,7 +12,7 @@ Generic part properties
 
 .. glossary::
     Prompt
-        A :ref:`content area <content-area>` used to prompt the student for an answer.
+        A content area used to prompt the student for an answer.
 
     Marks
         The number of marks to award for answering the part correctly.
@@ -199,9 +199,22 @@ Use a text pattern part when you want the student to enter short, non-mathematic
 Choose one from a list / Choose several from a list / Match choices with answers
 --------------------------------------------------------------------------------
 
+.. glossary::
+
+    Choose one from a list
+        The student must choose one of several options
+
+    Choose several from a list
+        The student can choose any of a list of options
+
+    Match choices with answers
+        The student is presented with a 2D grid of :guilabel:`choices` and :guilabel:`answers`. Depending on how the part is set up, they must either match up each choice with an answer, or select any number of choice-answer pairs.
+
+
 .. topic:: Marking
 
     .. glossary::
+
         Minimum marks
             If the student would have scored less than this many marks, they are instead awarded this many. Useful in combination with negative marking.
 
@@ -221,13 +234,13 @@ Choose one from a list / Choose several from a list / Match choices with answers
             If this is ticked, the choices are displayed in random order.
 
         Number of display columns
-            For :term:`choose one/several from a list` parts, this dictates how many columns the choices are displayed in. If 0, the choices are displayed on a single line, wrapped at the edges of the screen.
+            For :term:`choose one from a list` and :term:`choose several from a list` parts, this dictates how many columns the choices are displayed in. If 0, the choices are displayed on a single line, wrapped at the edges of the screen.
 
         Selection type
             Only applies to :term:`match choices with answers` parts. "One from each row" means that the student can only select one answer from each row. "Checkboxes" means that the student can select any number of choice-answer pairs.
 
         Custom marking matrix
-            If the checkbox is ticked, the :ref:`JME <jme>` expression in the box below is evaluated and used to assign numbers of marks to choices. For :term:`choose one/several from a list` parts, the expression should evaluate to a list of numbers, while for :term:`match choices with answers` it should evaluate to a list of lists of numbers. 
+            If the checkbox is ticked, the :ref:`JME <jme>` expression in the box below is evaluated and used to assign numbers of marks to choices. For :term:`choose one from a list` and :term:`choose several from a list` parts, the expression should evaluate to a list of numbers, while for :term:`match choices with answers` it should evaluate to a list of lists of numbers. 
         
         Custom matrix expression
             Define the choices available to the student and the number of marks to award for choosing them.

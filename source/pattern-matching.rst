@@ -1,7 +1,7 @@
 Pattern-matching mathematical expressions
 =========================================
 
-.. ref:: pattern-matching
+.. _pattern-matching:
 
 .. warning::
 

@@ -3,7 +3,7 @@ Extensions
 
 An extension is a folder containing one or more files that should be included in an exam. They can be javascript files, CSS stylesheets, or any other kind of resource. 
 
-Each extension must have a unique :term:`short name`, which is used both in the Numbas editor and by the script-loader in compiled exams.
+Each extension must have a unique :guilabel:`short name`, which is used both in the Numbas editor and by the script-loader in compiled exams.
 
 The minimum an extension must contain is a file named ``<extension-name>.js``, containing the following::
 

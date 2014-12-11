@@ -1,4 +1,4 @@
-﻿.. _create-exam
+﻿.. _create-exam:
 
 Create an exam
 --------------

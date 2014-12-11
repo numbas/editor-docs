@@ -4,7 +4,20 @@ Numbas editor documentation
 This documentation is a work in progress and is still missing a few things. If you have any questions, please `email us <mailto:numbas.ncl.ac.uk>`_.
 
 
-.. include:: tutorials.rst
+Tutorials
+^^^^^^^^^
+
+.. toctree::
+    :maxdepth: 2
+
+    create-an-account
+    create-exam
+    upload-web
+    upload-vle
+    write-question
+
+.. toctree::
+    how-do-i
 
 Exams
 ^^^^^

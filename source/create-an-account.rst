@@ -1,4 +1,4 @@
-.. _signup
+.. _signup:
 
 Create an account
 -----------------

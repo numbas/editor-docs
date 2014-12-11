@@ -122,10 +122,13 @@ Questions
 =========
 
 .. glossary::
+
     Shuffle questions?
         If ticked, then the questions will be shown to the student in a random order. The order is randomised on each attempt.
+
     Use all questions?
         If ticked, then every question in the list will be shown to the student. If not, then only the number specified below will be used.
+
     Number of questions to display
         The number of questions to show to the student.
 
@@ -150,10 +153,13 @@ You can control who is allowed to see, and edit, your exams.
 .. topic:: Public visibility
 
     .. glossary::
+
         Hidden
             Only you and users named in the :guilabel:`Individual access rights` section can see this exam.
+
         Anyone can see this
             Anyone, even users who are not logged in, can see this exam. Only you and users named in the :guilabel:`Individual access rights` section can edit this exam.
+
         Anyone can edit this
             Anyone, even users who are not logged in, can see and edit this exam.
 
@@ -162,7 +168,9 @@ You can control who is allowed to see, and edit, your exams.
     Type a name into the search box to find a user. Click on a user's name in the results list to add them to the access list. Named users can have the following rights:
 
     .. glossary::
+
         Can view this
             The named user can see, but not edit, this exam.
+
         Can edit this
             The named user can see this exam and make changes to it.

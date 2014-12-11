@@ -60,7 +60,7 @@ General
 Statement
 =========
 
-The statement is a :ref:`content-area` which appears at the top of the question, before any input boxes. Use the statement to set the question and provide any information the student needs to answer it.
+The statement is a content area which appears at the top of the question, before any input boxes. Use the statement to set the question and provide any information the student needs to answer it.
 
 
 Variables
@@ -127,6 +127,8 @@ The :guilabel:`Testing` tab provides tools to test your variables for desired pr
     Maximum number of runs
         The maximum number of times the system should regenerate the set of variables without finding a set which satisfies the condition before giving up. If the system exceeds this number in a compiled exam, the entire exam will fail, so try to avoid it!
 
+
+.. _rulesets:
 
 Functions & Rulesets
 ====================
@@ -281,14 +283,14 @@ See the page on :ref:`question-parts`.
 Advice
 ======
 
-:guilabel:`Advice` is a :ref:`content-area` which is shown when the student presses the :guilabel:`Reveal` button to reveal the question's answers, or when they receive less than the exam's :term:`Advice threshold` after submitting their answers.
+:guilabel:`Advice` is a content area which is shown when the student presses the :guilabel:`Reveal` button to reveal the question's answers, or when they receive less than the exam's :term:`Advice threshold` after submitting their answers.
 
 The advice area is normally used to present a worked solution to the question.
 
 Resources
 =========
 
-You can upload any file as a :ref:`resource` to make it available for use elsewhere in the question. Uploaded files are available from the relative URL ``resources/images/``. The most common use case is to include images in content areas; see :ref:`the tutorial on including an image in a question<include-an-image>`.
+You can upload any file as a :guilabel:`resource` to make it available for use elsewhere in the question. Uploaded files are available from the relative URL ``resources/images/``. The most common use case is to include images in content areas; see :ref:`the tutorial on including an image in a question<include-an-image>`.
 
 Exams using this question
 =========================

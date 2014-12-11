@@ -97,7 +97,7 @@ Now, for the second part’s *Prompt*, enter:
 
     What is 3*5?
 
-And set the correct answer to ``15``. When you :guilabel:`Test Run` the question, you should be immediately offended by the unattractiveness of the rendering of the multiplication **3*5**. Mathematical notation is distinct from normal text and needs to be treated separately. For this reason, Numbas uses :ref:`LaTeX` to mark up mathematical notation.
+And set the correct answer to ``15``. When you :guilabel:`Test Run` the question, you should be immediately offended by the unattractiveness of the rendering of the multiplication **3*5**. Mathematical notation is distinct from normal text and needs to be treated separately. For this reason, Numbas uses *LaTeX* to mark up mathematical notation.
 
 .. note::
     
