@@ -74,6 +74,12 @@ Data types
 
     **Examples**: ``1..3``, ``1..3#0.1``, ``1..3#0``
 
+.. data:: set
+
+    An unordered set of elements of any data type. The elements are pairwise distinct - if you create a set from a list with duplicate elements, the resulting set will not contain the duplicates. 
+
+    **Examples**: ``set(a,b,c)``, ``set([1,2,3,4])``, ``set(1..5)``
+
 .. data:: vector
 
     The components of a vector must be numbers.
@@ -610,15 +616,23 @@ Lists
 
     **Example**: ``[0,1,2,3,4,5][1..3]`` → ``[1,2,3]``
 
+.. function:: x in collection
+
+    Is element ``x`` in the list, set or range ``collection``?
+
+    **Examples**: ``3 in [1,2,3,4]`` → ``true``, ``3 in (set(1,2,3,4) and set(2,4,6,8))`` → ``false``
+
 .. function:: repeat(expression,n)
 
     Evaluate ``expression`` ``n`` times, and return the results in a list.
 
     **Example**: ``repeat(random(1..4),5)`` → ``[2, 4, 1, 3, 4]``
 
-.. function:: map(expression,name,d)
+.. function:: map(expression,name[s],d)
 
     Evaluate ``expression`` for each item in list or range ``d``, replacing variable ``name`` with the element from ``d`` each time.
+
+    You can also give a list of names if each element of ``d`` is a list of values. The Nth element of the list will be mapped to the Nth name.
 
     .. note::
         Do not use ``i`` or ``e`` as the variable name to map over - they're already defined as mathematical constants!
@@ -626,6 +640,7 @@ Lists
     **Examples**: 
         * ``map(x+1,x,1..3)`` → ``[2,3,4]``
         * ``map(capitalise(s),s,["jim","bob"])`` → ``["Jim","Bob"]``
+        * ``map(sqrt(x^2+y^2),[x,y],[ [3,4], [5,12] ])`` → ``[5,13]``
 
 .. function:: sort(x)
 
@@ -641,9 +656,10 @@ Lists
 
 .. function:: list(x)
 
-    Convert vector or matrix ``x`` to a list of components or rows, respectively.
+    Convert set, vector or matrix ``x`` to a list of components (or rows, for a matrix).
 
     **Examples**: 
+        * ``list(set(1,2,3))`` → ``[1,2,3]`` (note that you can't depend on the elements of sets being in any order)
         * ``list(vector(1,2))`` → ``[1,2]``
         * ``list(matrix([1,2],[3,4]))`` → ``[[1,2], [3,4]]``
 
@@ -658,6 +674,61 @@ Lists
     Add up a list of numbers
 
     **Example**: ``sum([1,2,3])`` → ``6``
+
+.. function:: product(list1,list2,...,listN)
+
+    Cartesian product of lists. In other words, every possible combination of choices of one value from each given list.
+
+    **Example**: ``product([1,2],[a,b])`` → ``[ [1,a], [1,b], [2,a], [2,b] ]``
+
+.. function:: combinations(collection,r)
+
+    All ordered choices of ``r`` elements from ``collection``, without replacement.
+
+    **Example**: ``combinations([1,2,3],2)`` → ``[ [1,2], [1,3], [2,3] ]``
+
+.. function:: combinations_with_replacement(collection,r)
+
+    All ordered choices of ``r`` elements from ``collection``, with replacement.
+
+    **Example**: ``combinations([1,2,3],2)`` → ``[ [1,1], [1,2], [1,3], [2,2], [2,3], [3,3] ]``
+
+.. function:: permutations(collection,r)
+
+    All choices of ``r`` elements from ``collection``, in any order, without replacement.
+
+    **Example**: ``permutations([1,2,3],2)`` → ``[ [1,2], [1,3], [2,1], [2,3], [3,1], [3,2] ]``
+
+Sets
+----
+
+.. function:: set(a,b,c,...) or set([elements])
+
+    Create a set with the given elements. Either pass the elements as individual arguments, or as a list.
+
+    **Examples**: ``set(1,2,3)``, ``set([1,2,3])``
+
+.. function:: union(a,b)
+
+    Union of sets ``a`` and ``b``
+
+    **Examples**:
+        * ``union(set(1,2,3),set(2,4,6))`` → ``set(1,2,3,4,6)``
+        * ``set(1,2,3) or set(2,4,6)`` → ``set(1,2,3,4,6)``
+
+.. function:: intersection(a,b)
+
+    Intersection of sets ``a`` and ``b``, i.e. elements which are in both sets
+
+    **Examples**:
+        * ``intersection(set(1,2,3),set(2,4,6))`` → ``set(2)``
+        * ``set(1,2,3) and set(2,4,6)`` → ``set(2)``
+
+.. function:: a-b
+
+    Set minus - elements which are in a but not b
+
+    **Example**: ``set(1,2,3,4) - set(2,4,6)`` → ``set(1,3)``
 
 Randomisation
 -------------

@@ -183,7 +183,7 @@ Javascript functions
 
 Writing a function in Javascript allows you to use all of that language's features, such as loops, anonymous functions and DOM manipulation. Functions defined in Javasript don't need the ``function(parameters) { ... }`` enclosure - that's provided by Numbas - but they do need to return a value.
 
-Numbas provides a large library of functions which you can use. These are accessed from the objects ``Numbas.math`` and ``Numbas.util``. The best way to see what's available is to look at `the Numbas code documentation <http://numbas.github.io/Numbas>`_. `jQuery <http://jquery.com>`_ /Pis also available. 
+Numbas provides a large library of functions which you can use. These are accessed from the objects ``Numbas.math`` and ``Numbas.util``. The best way to see what's available is to look at `the Numbas code documentation <http://numbas.github.io/Numbas>`_. `jQuery <http://jquery.com>`_ is also available. 
 
 While the JME system has its own type system for variables, separate from Javascript's, function parameters are unwrapped to native Javascript values on evaluation so you normally don't need to worry about it.
 
