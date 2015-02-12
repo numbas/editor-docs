@@ -76,7 +76,9 @@ Gap-fill
 
 Gap-fill parts allow you to include answer inputs inline with the prompt text, instead of at the end of the part.
 
-The "gaps" are sub-parts. Include them in text by writing their number (surrounded by double square brackets. For example, ``[[0]]`` inserts the first gap, and ``[[1]]`` includes the second one.
+The "gaps" are sub-parts. Include them in text by clicking on the :guilabel:`Insert gap` button on the toolbar, and entering the number of the gap you want to insert in the dialog box. You can double-click on a gap placeholder to change its number.
+
+To insert a gap in the plain text editor, type the gap's number between two square brackets, e.g. `[[0]]` for the first gap.
 
 .. _mathematical-expression:
 
