@@ -39,6 +39,9 @@ General
     Exam name
         This is shown to the student and used for searching within the editor, so make it something intelligible.
 
+    Licence
+        You can specify the licence under which you are making your resources available. Different licences allow other users to copy, modify or reuse your content in differnet ways - consider which licence to choose carefully. *CC BY* allows other users to reuse your content however you like, as long as they give appropriate credit to you.
+
     Theme
         Themes control the user interface of an exam, changing the look and feel. The `default` theme is designed for exams which will be delivered over the web. There is also an experimental `worksheet` theme which can be used to print out multiple, randomised copies of an exam for students to complete on paper.
 

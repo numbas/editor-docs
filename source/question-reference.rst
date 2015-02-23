@@ -41,6 +41,9 @@ General
     Question name
         The name of the question. This is shown to the student and used for searching within the editor, so make it something intelligible.
 
+    Licence
+        You can specify the licence under which you are making your resources available. Different licences allow other users to copy, modify or reuse your content in differnet ways - consider which licence to choose carefully. *CC BY* allows other users to reuse your content however you like, as long as they give appropriate credit to you.
+
     Description
         Use this field to describe the question's contents, what it assesses, and so on. This is shown in the questions index and in the questions list of any exams containing this question, so make sure it's fairly concise.
 
