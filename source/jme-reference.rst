@@ -598,6 +598,12 @@ Ranges
 
     **Examples**: ``-9..9 except 0``, ``-9..9 except [-1,1]``. ``3..8 except 4..6``, ``[1,2,3,4,5] except [2,3]``.
 
+.. function:: list(range)
+
+    Convert a range to a list of its elements.
+
+    **Example**: ``list(-2..2)`` → ``[-2,-1,0,1,2]``
+
 Lists
 -----
 
