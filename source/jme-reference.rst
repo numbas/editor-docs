@@ -648,6 +648,14 @@ Lists
         * ``map(capitalise(s),s,["jim","bob"])`` → ``["Jim","Bob"]``
         * ``map(sqrt(x^2+y^2),[x,y],[ [3,4], [5,12] ])`` → ``[5,13]``
 
+.. function:: let(name,definition,...,expression)
+
+    Evaluate ``expression``, temporarily defining variables with the given names. Use this to cut down on repetition. You can define any number of variables - follow a variable name with its definition. The last argument is the expression to be evaluated.
+
+    **Examples**: 
+        * ``let(d,sqrt(b^2-4*a*ac), [(-b+d)/2, (-b-d)/2])`` → ``[-2,-3]`` (when ``[a,b,c]`` = ``[1,5,6]``)
+        * ``let(x,1, y,2, x+y)`` → ``3``
+
 .. function:: sort(x)
 
     Sort list ``x``.
@@ -686,6 +694,12 @@ Lists
     Cartesian product of lists. In other words, every possible combination of choices of one value from each given list.
 
     **Example**: ``product([1,2],[a,b])`` → ``[ [1,a], [1,b], [2,a], [2,b] ]``
+
+.. function:: zip(list1,list2,...,listN)
+
+    Combine two (or more) lists into one - the Nth element of the output is a list containing the Nth elements of each of the input lists.
+
+    **Example**: ``zip([1,2,3],[4,5,6])`` → ``[ [1,4], [2,5], [3,6] ]``
 
 .. function:: combinations(collection,r)
 
