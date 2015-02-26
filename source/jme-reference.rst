@@ -253,11 +253,23 @@ Number operations
 
     **Example**: ``max(46,2)`` → ``46``
 
+.. function:: max(list)
+
+    Greatest of a list of numbers.
+
+    **Example**: ``max([1,2,3])`` → ``3``
+
 .. function:: min(a,b)
 
     Least of two numbers.
 
     **Example**: ``min(3,2)`` → ``2``
+
+.. function:: min(list)
+
+    Least of a list of numbers.
+
+    **Example**: ``min([1,2,3])`` → ``1``
 
 .. function:: precround(n,d)
 
