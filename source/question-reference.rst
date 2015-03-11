@@ -20,6 +20,14 @@ Admin buttons
             Do **NOT** use this link to deliver the question to students. It will put considerable load on the server. 
             Instead, download the question and put it either on your own webspace or in a VLE.
 
+    Feedback
+        Use this button to give feedback about the quality of an question, after test running it. The options are listed in descending order of "suitability for use":
+
+        * **This is ready to use** - this question is of sufficient quality to give to students.
+        * **This should not be used** - this question works, but you deprecate its use - for questionple, if it's not intended for use by students, or there's a better version elsewhere.
+        * **This has some problems** - this question works, but has some problems which mean it's not ready for use by students - for questionple, the question is incomplete, or changes need to be made to the text. Further work is needed before this question can be given to students.
+        * **This doesn't work** - this question doesn't even run!
+
     Delete
         Delete the question permanently from the database.
 
@@ -304,6 +312,8 @@ Editing history
 ===============
 
 Each time you make a change to a question, it's saved to the database. You can see the full editing history of your question in this tab, and revert back to a previous state by clicking on a version's timestamp.
+
+Each time somebody uses the :guilabel:`Feedback` button to provide feedback on the suitability for use of this question, an entry is added to the editing history so you can see when the question was last usable.
 
 You can add a comment describing what you've changed by clicking on the corresponding entry in the current version's :guilabel:`Comment` column. 
 

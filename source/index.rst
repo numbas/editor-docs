@@ -17,6 +17,7 @@ Tutorials
     write-question
 
 .. toctree::
+    collaboration
     how-do-i
 
 Exams
@@ -33,7 +34,6 @@ Questions
 .. toctree::
     :maxdepth: 2
 
-    question-overview
     question-cheatsheet
     question-reference
     question-parts

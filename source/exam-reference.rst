@@ -19,6 +19,14 @@ Admin buttons
             Do **NOT** use this link to deliver the exam to students. It will put considerable load on the server. 
             Instead, download the exam and put it either on your own webspace or in a VLE.
 
+    Feedback
+        Use this button to give feedback about the quality of an exam, after test running it. The options are listed in descending order of "suitability for use":
+
+        * **This is ready to use** - this exam is of sufficient quality to give to students.
+        * **This should not be used** - this exam works, but you deprecate its use - for example, if it's not intended for use by students, or there's a better version elsewhere.
+        * **This has some problems** - this exam works, but has some problems which mean it's not ready for use by students - for example, the exam is incomplete, or changes need to be made to the text. Further work is needed before this exam can be given to students.
+        * **This doesn't work** - this exam doesn't even run!
+
     Delete
         Delete the exam permanently from the database. The associated questions are not deleted - you must delete them individually, if you want them to be deleted too.
 
@@ -146,7 +154,9 @@ Editing history
 
 Each time you make a change to a question, it's saved to the database. You can see the full editing history of your question in this tab, and revert back to a previous state by clicking on a version's timestamp.
 
-You can add a comment describing what you've changed by clicking on the corresponding entry in the current version's :guilabel:`Comment` column. 
+Each time somebody uses the :guilabel:`Feedback` button to provide feedback on the suitability for use of this exam, an entry is added to the editing history so you can see when the exam was last usable.
+
+You can add a comment describing what you've changed by clicking in the corresponding text field. 
 
 Access
 ======
