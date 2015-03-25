@@ -152,11 +152,13 @@ Deleting a question from an exam does not remove it from the database. To perman
 Editing history
 ===============
 
-Each time you make a change to a question, it's saved to the database. You can see the full editing history of your question in this tab, and revert back to a previous state by clicking on a version's timestamp.
+Each time you make a change to a exam, it's saved to the database. You can see the full editing history of your exam in this tab, and revert back to a previous state by clicking on the :guilabel:`Restore` link.
+
+You can add a comment describing what you've changed by clicking on the corresponding entry in the current version's :guilabel:`Comment` column. 
 
 Each time somebody uses the :guilabel:`Feedback` button to provide feedback on the suitability for use of this exam, an entry is added to the editing history so you can see when the exam was last usable.
 
-You can add a comment describing what you've changed by clicking in the corresponding text field. 
+You and your co-authors can write general comments on a exam by clicking the :guilabel:`Write a comment` button.
 
 Access
 ======

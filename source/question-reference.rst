@@ -311,11 +311,13 @@ A list of links to each of the exams which contain this question, for convenienc
 Editing history
 ===============
 
-Each time you make a change to a question, it's saved to the database. You can see the full editing history of your question in this tab, and revert back to a previous state by clicking on a version's timestamp.
+Each time you make a change to a question, it's saved to the database. You can see the full editing history of your question in this tab, and revert back to a previous state by clicking on the :guilabel:`Restore` link.
+
+You can add a comment describing what you've changed by clicking on the corresponding entry in the current version's :guilabel:`Comment` column. 
 
 Each time somebody uses the :guilabel:`Feedback` button to provide feedback on the suitability for use of this question, an entry is added to the editing history so you can see when the question was last usable.
 
-You can add a comment describing what you've changed by clicking on the corresponding entry in the current version's :guilabel:`Comment` column. 
+You and your co-authors can write general comments on a question by clicking the :guilabel:`Write a comment` button.
 
 Access
 ======
