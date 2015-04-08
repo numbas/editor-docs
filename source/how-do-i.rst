@@ -53,4 +53,12 @@ See the question `Using a randomly chosen image <https://numbas.mathcentre.ac.uk
 ... show one of several blocks of text based on a random variable?
 ------------------------------------------------------------------
 
-See the question `Show a block of HTML based on a random value <https://numbas.mathcentre.ac.uk/question/1191/show-a-block-of-html-based-on-a-random-value/>`_ for an example of one method.
+Suppose you have a random variable ``a``, which has the value 1,2 or 3, corresponding to three different scenarios. First, write out the text for each scenario. 
+
+.. image:: _static/images/screenshots/conditional_visibility.png
+
+There is a button in the content editor labelled :guilabel:`Conditional visibility`. This allows you to give an expression (in :ref:`JME` syntax) which dictates whether or not the selected text is shown. For each scenario, select the corresponding text and click on the :guilabel:`Conditional visibility` button. Enter ``a=1`` for the first block, ``a==2`` for the second, and ``a=3`` for the third.
+
+When you run the question, only the block of text corresponding to the value of ``a`` is shown.
+
+You can see an example of this technique in the question `Conditional visibility <https://numbas.mathcentre.ac.uk/question/7711/conditional-visibility/>`_.
