@@ -115,10 +115,14 @@ Definition
     Used by
         A list of all variables which use this variable in their definition. You can click on a variable name to go to its definition.
 
+.. _variable-testing:
+
 Testing
 -------
 
 The :guilabel:`Testing` tab provides tools to test your variables for desired properties, so you can automatically re-randomise your questions' variables until you get a suitable set of values.
+
+`Example question using variable testing tools <https://numbas.mathcentre.ac.uk/question/6789/variable-testing/>`_.
 
 .. warning::
     While this tool allows you to pick sets of variables that would be hard to generate constructively, it's a random process so you must be aware that there's a chance no suitable set of values will ever be found. Use the :guilabel:`Test condition` button to see how likely this is.

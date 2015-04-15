@@ -45,6 +45,24 @@ How do I...
 
     The question `GeoGebra demo <https://numbas.mathcentre.ac.uk/question/2207/geogebra-demo/>`_ contains examples of of GeoGebra applets embedded as standalone resources, and through `GeoGebraTube <http://www.geogebratube.org/>`_.
 
+.. _change-how-the-question-looks:
+
+... change how the question looks?
+----------------------------------
+
+You can use the formatting tools in the question editor to style your text. However, if you repeat the same styles over and over, or want to change aspects of the layout such as space between elements or decoration, you'll need to write some CSS.
+
+CSS is a language for defining how things should look - there's `a good introduction at Khan Academy <https://www.khanacademy.org/computing/computer-programming/html-css/intro-to-css/>`_. In the Numbas editor, you can add CSS rules to a question in the :ref:`preamble` section.
+
+The following questions demonstrate how to use CSS to change the look of a Numbas question:
+
+* `Style a table of sales figures <https://numbas.mathcentre.ac.uk/question/2717/style-a-table-of-sales-figures/>`_ - 
+* `Use CSS to style parallel translation <https://numbas.mathcentre.ac.uk/question/5599/use-css-to-style-parallel-translation/>`_ - CSS classes "english" and "cymraeg" apply different background colours to English and Welsh portions of text.
+* `CSS Lemma environment <https://numbas.mathcentre.ac.uk/question/2704/css-lemma-environment/>`_ - defines a CSS class in the preamble which styles the "Lemma" environment, used in the statement.
+* `More space between multiple choice answers <https://numbas.mathcentre.ac.uk/question/5307/more-space-between-multiple-choice-answers/>`_
+
+.. _conditional-visibility:
+
 ... show one of several images based on a random variables?
 -----------------------------------------------------------
 
@@ -62,3 +80,13 @@ There is a button in the content editor labelled :guilabel:`Conditional visibili
 When you run the question, only the block of text corresponding to the value of ``a`` is shown.
 
 You can see an example of this technique in the question `Conditional visibility <https://numbas.mathcentre.ac.uk/question/7711/conditional-visibility/>`_.
+
+... make sure my generated variables satisfy a condition?
+---------------------------------------------------------
+
+Use the :ref:`variable testing <variable-testing>` tools.
+
+... display a dollar sign?
+--------------------------
+
+Because the dollar symbol is used to delimit portions of LaTeX maths, you need to escape dollar signs intended for display by placing a backslash before them -- that is, write ``\$``. See `this example question <https://numbas.mathcentre.ac.uk/question/4528/displaying-a-dollar-sign/>`_.
