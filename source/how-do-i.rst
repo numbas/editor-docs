@@ -75,7 +75,7 @@ Suppose you have a random variable ``a``, which has the value 1,2 or 3, correspo
 
 .. image:: _static/images/screenshots/conditional_visibility.png
 
-There is a button in the content editor labelled :guilabel:`Conditional visibility`. This allows you to give an expression (in :ref:`JME` syntax) which dictates whether or not the selected text is shown. For each scenario, select the corresponding text and click on the :guilabel:`Conditional visibility` button. Enter ``a=1`` for the first block, ``a==2`` for the second, and ``a=3`` for the third.
+There is a button in the content editor labelled :guilabel:`Conditional visibility`. This allows you to give an expression (in :ref:`JME` syntax) which dictates whether or not the selected text is shown. For each scenario, select the corresponding text and click on the :guilabel:`Conditional visibility` button. Enter ``a=1`` for the first block, ``a=2`` for the second, and ``a=3`` for the third.
 
 When you run the question, only the block of text corresponding to the value of ``a`` is shown.
 
