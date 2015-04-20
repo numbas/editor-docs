@@ -1,12 +1,47 @@
 Question reference
 ******************
 
-A complete reference for every bit of the question edit page (apart from parts; see :doc:`question-parts`)
+Every Numbas question consists of three sections: :ref:`Statement <statement>`, :ref:`Parts <question-parts>`, and :ref:`Advice <advice>`. In the Statement, the context for the question is given to the student. Parts are where the student enters their answers. A question can have one or more parts, each of which is one of several types, depending on what kind of input you want from the student. Finally, the optional Advice section can be used to give a full solution to the question, which the student can request to see if they're stuck.
+
+This page is a reference for each part of the Numbas question editor.
 
 Undo/Redo
 =========
 
 You can undo or redo changes made since you opened the question editing page by clicking on the arrows at the top-right of the page.
+
+Content areas
+=============
+
+Each portion of text displayed to the student (for example, the statement and question prompts) is a *content area*, and is edited using the rich text editor. Click on the :guilabel:`Toggle rich text editor` button to edit the raw HTML code for the content area.
+
+.. figure:: _static/images/screenshots/content_area_editor.png
+    :align: center
+
+    The rich text editor, and the raw HTML editor.
+
+
+You can write mathematical notation in content areas using LaTeX; see the page on :ref:`LaTeX notation`.
+
+You're not limited to just text in content areas - you can insert tables, images, and even more dynamic content such as videos and interactive diagrams. 
+
+Substituting variables into content areas
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are two modes of variable subsitution: substitution into plain text (or HTML), and substitution into mathematical expressions. 
+
+Substitution of variables into plain text is straightforward - just enclose the variable name (or any :ref:`JME` expression) in curly braces. For example::
+
+    Bob the farmer has {num_animals} {animal_name}.
+
+produces::
+
+    Bob the farmer has 12 sheep.
+
+when ``num_animals = 12`` and ``animal_name = "sheep"``.
+
+The substitution of variables into a mathematical expression is more complicated - depending on context, the surrounding expression may need to be change for different values of the substituted variables. See the page on :ref:`simplification-rules`.
+
 
 Admin buttons
 =============

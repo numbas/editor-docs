@@ -40,8 +40,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Numbas editor'
-copyright = u'2012, Newcastle University'
+project = u'Numbas'
+copyright = u'2012-2015, Newcastle University'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
