@@ -660,6 +660,15 @@ Lists
         * ``map(capitalise(s),s,["jim","bob"])`` → ``["Jim","Bob"]``
         * ``map(sqrt(x^2+y^2),[x,y],[ [3,4], [5,12] ])`` → ``[5,13]``
 
+.. function:: filter(expression,name,d)
+
+    Filter each item in list or range ``d``, replacing variable ``name`` with the element from ``d`` each time, returning only the elements for which ``expression`` evaluates to ``true``.
+
+    .. note::
+        Do not use ``i`` or ``e`` as the variable name to map over - they're already defined as mathematical constants!
+
+    **Example**: ``filter(x>5,x,[1,3,5,7,9])`` → ``[7,9]``
+
 .. function:: let(name,definition,...,expression)
 
     Evaluate ``expression``, temporarily defining variables with the given names. Use this to cut down on repetition. You can define any number of variables - follow a variable name with its definition. The last argument is the expression to be evaluated.
