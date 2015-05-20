@@ -1,5 +1,5 @@
-Exam reference
-**************
+Exam editor
+***********
 
 A complete reference for every bit of the exam edit page.
 
@@ -143,11 +143,24 @@ Questions
     Number of questions to display
         The number of questions to show to the student.
 
-Select the questions to be included in the exam by searching for them in the box on the right-hand side and clicking the plus icon on questions you wish to use.
+The tabs on the right hand side offer different ways of finding questions to add to the exam.
 
-The order of questions can be rearranged by dragging and dropping questions using the up/down arrow handles on the left of each item.
+* The :guilabel:`Recent questions` tab shows questions you have recently edited.
+* The :guilabel:`Basket` tab shows questions you've added to your basket: you can browse the question editor to find questions, add them to your basket, and then go back to the exam editing page and add them in.
+* Finally, the :guilabel:`Search` tab offers a small search interface, which is useful if you know the title of the question you want to add.
 
-Deleting a question from an exam does not remove it from the database. To permanently delete a question, click on its name and click the :guilabel:`Delete` button on the question's edit page.
+You can click on any question's name to open it in a new window, so you can check the question does what you want and give it a test run before including it in your exam.
+
+Click the plus icon on one of the question results to add it to your exam. 
+
+.. image:: _static/images/screenshots/exam_edit_add_question.png
+
+You can drag and drop questions in the list on the left to reorder them.
+
+.. image:: _static/images/screenshots/exam_edit_drag.png
+
+Deleting a question from an exam does not remove it from the database. 
+To permanently delete a question, click on its name and click the :guilabel:`Delete` button on the question's edit page.
 
 Editing history
 ===============
