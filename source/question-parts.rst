@@ -293,6 +293,11 @@ Choose one from a list / Choose several from a list / Match choices with answers
         Custom matrix expression
             Define the choices available to the student and the number of marks to award for choosing them.
 
+        Layout (:term:`Match choices with answers` only)
+            Define which choices are available to be picked. 
+            If :guilabel:`Custom expression` is selected, give either a list of lists of boolean values, or a matrix with as many rows as the part has choices and as many columns as the part has answers. 
+            Any non-zero value in the matrix indicates that the corresponding choice-answer pair should be available to the student.
+
 .. topic:: Choices (:term:`Choose one from a list` / :term:`Choose several from a list` only)
 
     .. glossary::
