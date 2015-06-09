@@ -1,5 +1,9 @@
 @import url('css/theme.css');
 
+.rst-content .topic-title {
+	font-size: 1.3em;
+}
+
 img {
 	border: 1px solid #999;
 }
