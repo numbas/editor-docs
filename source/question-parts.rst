@@ -281,6 +281,9 @@ Choose one from a list / Choose several from a list / Match choices with answers
         Shuffle order of choices?
             If this is ticked, the choices are displayed in random order.
 
+        Shuffle order of answers? (:term:`Match choices with answers` only)
+            If this is ticked, the answersare displayed in random order.
+
         Number of display columns
             For :term:`choose one from a list` and :term:`choose several from a list` parts, this dictates how many columns the choices are displayed in. If 0, the choices are displayed on a single line, wrapped at the edges of the screen.
 
@@ -291,13 +294,15 @@ Choose one from a list / Choose several from a list / Match choices with answers
             If the checkbox is ticked, the :ref:`JME <jme>` expression in the box below is evaluated and used to assign numbers of marks to choices. For :term:`choose one from a list` and :term:`choose several from a list` parts, the expression should evaluate to a list of numbers, while for :term:`match choices with answers` it should evaluate to a list of lists of numbers. 
         
         Custom matrix expression
-            Define the choices available to the student and the number of marks to award for choosing them.
+            Define the number of marks to award for each of the choices. 
+            Either a list of lists representing a 2d array, or a matrix object, giving the number of marks to associate with each choice-answer pair.
 
         Layout (:term:`Match choices with answers` only)
             Define which choices are available to be picked. 
             If :guilabel:`Custom expression` is selected, give either a list of lists of boolean values, or a matrix with as many rows as the part has choices and as many columns as the part has answers. 
             Any non-zero value in the matrix indicates that the corresponding choice-answer pair should be available to the student.
 
+.. _choices:
 .. topic:: Choices (:term:`Choose one from a list` / :term:`Choose several from a list` only)
 
     .. glossary::
@@ -307,6 +312,7 @@ Choose one from a list / Choose several from a list / Match choices with answers
         Distractor message
             A message to display to the student in the part's feedback section after they select a particular choice. Useful to give some explanation of why a choice is incorrect.
 
+.. _marking-matrix:
 .. topic:: Marking matrix (:term:`Match choices with answers` only)
     
     Add answers and choices using the buttons, and assign marks using the input boxes.
