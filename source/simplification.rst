@@ -149,6 +149,7 @@ To turn all built-in rules on, use the name ``all``. To turn all built-in rules 
         Rearrange expressions so they don't start with a unary minus
 
         * ``-x+y`` → ``y-x``
+        * ``-0`` → ``0``
 
     collectNumbers
         Collect together numerical (as opposed to variable) products and sums. The rules below are only applied if ``n`` and ``m`` are numbers.
