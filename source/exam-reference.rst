@@ -83,6 +83,10 @@ The navigation settings control how the student can move through the exam, and w
     Show front page?
         If ticked, then an intro screen is shown to the student before the exam starts, 
 
+    Show results page?
+        If ticked, then the student is shown a page summarising the results of their exam after finishing. 
+        If this is not ticked, then the exam exits as soon as the student finishes, and they get no immediate feedback about their scores.
+
     Confirm before leaving the exam while it's running?
         If ticked, the student will be asked to confirm that they really want to leave if they try to close the exam while it's running, for example by pressing the browser's back button or closing the tab the exam is running in.
 
