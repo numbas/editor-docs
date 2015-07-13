@@ -684,6 +684,21 @@ Lists
 
     **Example**: ``sort([4,2,1,3])`` → ``[1,2,3,4]``
 
+.. function:: reverse(x)
+
+    Reverse list ``x``.
+
+    **Example**: ``reverse([1,2,3])`` → ``[3,2,1]``
+
+.. function:: indices(list,value)
+
+    Find the indices at which ``value`` occurs in ``list``.
+
+    **Examples**:
+        * ``indices([1,0,1,0],1)`` → ``[0,2]``
+        * ``indices([2,4,6],4)`` → ``[1]``
+        * ``indices([1,2,3],5)`` → ``[]``
+
 .. function:: distinct(x)
 
     Return a copy of the list ``x`` with duplicates removed.
