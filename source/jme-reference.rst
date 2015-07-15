@@ -805,11 +805,13 @@ Randomisation
 
     **Example**: ``deal(3)`` → ``[2,0,1]``
 
-.. function:: shuffle(x)
+.. function:: shuffle(x) or shuffle(a..b)
 
-    Random shuffling of list ``x``.
+    Random shuffling of list or range.
 
-    **Example**: ``shuffle(["a","b","c"])`` → ``["c","b","a"]``
+    **Examples**: 
+        * ``shuffle(["a","b","c"])`` → ``["c","b","a"]``
+        * ``shuffle(0..4)`` → ``[2,3,0,4,1]``
 
 Control flow
 ------------
