@@ -58,10 +58,11 @@ Admin buttons
     Feedback
         Use this button to give feedback about the quality of an question, after test running it. The options are listed in descending order of "suitability for use":
 
-        * **This is ready to use** - this question is of sufficient quality to give to students.
-        * **This should not be used** - this question works, but you deprecate its use - for questionple, if it's not intended for use by students, or there's a better version elsewhere.
-        * **This has some problems** - this question works, but has some problems which mean it's not ready for use by students - for questionple, the question is incomplete, or changes need to be made to the text. Further work is needed before this question can be given to students.
-        * **This doesn't work** - this question doesn't even run!
+        * **Ready to use** - this question is of sufficient quality to give to students.
+        * **Should not be used** - this question works, but you deprecate its use - for questionple, if it's not intended for use by students, or there's a better version elsewhere.
+        * **Has some problems** - this question works, but has some problems which mean it's not ready for use by students - for questionple, the question is incomplete, or changes need to be made to the text. Further work is needed before this question can be given to students.
+        * **Doesn't work** - this question doesn't even run!
+        * **Needs to be tested** - this question looks alright to me, but it should be checked thoroughly before being used.
 
     Delete
         Delete the question permanently from the database.

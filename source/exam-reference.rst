@@ -22,10 +22,11 @@ Admin buttons
     Feedback
         Use this button to give feedback about the quality of an exam, after test running it. The options are listed in descending order of "suitability for use":
 
-        * **This is ready to use** - this exam is of sufficient quality to give to students.
-        * **This should not be used** - this exam works, but you deprecate its use - for example, if it's not intended for use by students, or there's a better version elsewhere.
-        * **This has some problems** - this exam works, but has some problems which mean it's not ready for use by students - for example, the exam is incomplete, or changes need to be made to the text. Further work is needed before this exam can be given to students.
-        * **This doesn't work** - this exam doesn't even run!
+        * **Ready to use** - this exam is of sufficient quality to give to students.
+        * **Should not be used** - this exam works, but you deprecate its use - for example, if it's not intended for use by students, or there's a better version elsewhere.
+        * **Has some problems** - this exam works, but has some problems which mean it's not ready for use by students - for example, the exam is incomplete, or changes need to be made to the text. Further work is needed before this exam can be given to students.
+        * **Doesn't work** - this exam doesn't even run!
+        * **Needs to be tested** - this exam looks alright to me, but it should be checked thoroughly before being used.
 
     Delete
         Delete the exam permanently from the database. The associated questions are not deleted - you must delete them individually, if you want them to be deleted too.
