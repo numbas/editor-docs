@@ -62,17 +62,87 @@ The following scripts can be customised:
 
 There are several example questions using custom scripts at `numbas.mathcentre.ac.uk/exam/1016/custom-marking/ <https://numbas.mathcentre.ac.uk/exam/1016/custom-marking/>`_.
 
+.. _adaptive-marking:
+
+Adaptive marking
+----------------
+
+Adaptive marking allows you to incorporate the student's answers to earlier parts when marking their answer to another part.
+You could use this to allow an "error carried forward" marking scheme, or in more free-form questions where one part has no correct answer - for example, "think of a number and find its square root".
+This is achieved by replacing the values of question variables with the student's answers to other parts.
+When a variable is replaced, any other variables depending on that one are recalculated using the new value.
+
+.. warning::
+    This can be very powerful, but make sure you don't introduce any new random variation in these dependent variables, or the correct answer will change each time the student submits their answer.
+
+As an example, suppose part **a** of your question asks the student to calculate the mean of a set of numbers. 
+The correct answer for this part is the variable ``sample_mean``.
+Part **b** then asks the student to calculate a *z*-statistic based on the mean of the sample. 
+The correct answer to this part is the variable ``z_statistic``, which is defined as ``(sample_mean-population_mean)/sqrt(population_variance)``.
+(``population_mean`` and ``population_variance`` in this case are random numbers)
+
+If the student makes an error in calculating the sample mean but uses the right method to find a *z*-statistic, they shouldn't be penalised in part **b**. We can ensure this by replacing the value of ``sample_mean`` with the student's answer to part **a** when marking part **b**.
+When the student submits an answer to part **b**, the value of ``z_statistic`` will be automatically recalculated using the student's value of ``sample_mean``. 
+Then, if the student correctly applies the formula, their answer will match the new value of ``z_statistic`` and they will receive full credit for the part.
+
+.. topic:: Variable replacements
+.. glossary::
+
+    Variable
+        The name of the variable to replace
+
+    Answer to use
+        The part whose answer the variable's value should be replaced with. 
+        Different part types produce different types of values.
+
+    Must be answered?
+        If this is ticked, the student must submit an answer to the referenced part before they can submit an answer to this part.
+
+There are two variable replacement strategies:
+
+.. glossary::
+
+    Try without replacements first
+        The student's answer is first marked using the original values of the question variables.
+        If the credit given by this method is less than the maximum available, the marking is repeated using the defined variable replacements.
+        If the credit gained with variable replacements is greater than the credit gained under the original marking, that score is used, and the student is told that their answers to previous parts have been used in the marking for this part.
+
+    Always replace variables
+        The student's answer is only marked once, with the defined variable replacements applied.
+
+.. _part_type_variable_replacement:
+
+.. topic:: Values obtained from the answers to each part types
+
+=========================== ==============
+Part type                   Value obtained
+=========================== ==============
+Gap-fill                    A list containing the values obtained from each of the gaps
+Mathematical expression     A JME subexpression. 
+                            When used in a variable definition, the subexpression will be substituted in, and any references to question variables in the subexpression will be replaced with their respective values.
+Number entry                A number
+Matrix entry                A matrix
+Match text pattern          A string
+Choose one from a list      The index of the answer the student chose
+Choose several from a list  A list of booleans: true if the student ticked the corresponding choice, false otherwise
+Match choices with answers  A 2D list of lists of boolean values, in the same format as a :term:`custom marking matrix` for this part - cells are addressed by choice first, and answer second.
+=========================== ==============
+
+
+Part types
+----------
+
 .. _information-only:
 
 Information only
-----------------
+^^^^^^^^^^^^^^^^
 
 An information part contains only a prompt and no answer input. It is most often used as a Step to provide a hint for a parent part.
 
 .. _gap-fill:
 
 Gap-fill
--------------
+^^^^^^^^
 
 Gap-fill parts allow you to include answer inputs inline with the prompt text, instead of at the end of the part.
 
@@ -83,7 +153,7 @@ To insert a gap in the plain text editor, type the gap's number between two squa
 .. _mathematical-expression:
 
 Mathematical expression
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Mathematical expression parts require the student to enter an algebraic expression, using :ref:`JME <jme>` syntax.
 
@@ -154,7 +224,7 @@ Before length restrictions are applied, surplus brackets and whitespace are remo
 .. _number-entry:
 
 Number entry
-------------
+^^^^^^^^^^^^
 
 Number entry parts ask the student to enter a number, which is marked if it is in a specified range.
 
@@ -185,7 +255,7 @@ Number entry parts ask the student to enter a number, which is marked if it is i
 .. _matrix-entry:
 
 Matrix entry
-------------
+^^^^^^^^^^^^
 
 Matrix entry parts ask the student to enter a matrix of numbers. Marks are awarded if every cell in the student's answer is equal to the corresponding cell in the correct answer, within the allowed margin of error.
 
@@ -225,7 +295,7 @@ Matrix entry parts ask the student to enter a matrix of numbers. Marks are award
 .. _match-text-pattern:
 
 Match text pattern
-------------------
+^^^^^^^^^^^^^^^^^^
 
 Use a text pattern part when you want the student to enter short, non-mathematical text.
 
@@ -245,7 +315,7 @@ Use a text pattern part when you want the student to enter short, non-mathematic
 .. _multiple-choice:
 
 Choose one from a list / Choose several from a list / Match choices with answers
---------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. glossary::
 
