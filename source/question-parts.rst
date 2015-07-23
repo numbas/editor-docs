@@ -128,6 +128,11 @@ Choose several from a list  A list of booleans: true if the student ticked the c
 Match choices with answers  A 2D list of lists of boolean values, in the same format as a :term:`custom marking matrix` for this part - cells are addressed by choice first, and answer second.
 =========================== ==============
 
+The following screencast shows the addition of adaptive marking to a question:
+
+.. raw:: html
+
+    <iframe src="https://player.vimeo.com/video/134209217" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Part types
 ----------
