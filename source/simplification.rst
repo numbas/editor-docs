@@ -226,3 +226,56 @@ To turn all built-in rules on, use the name ``all``. To turn all built-in rules 
 
     rowVector
         This rule doesn't rewrite expressions, but tells the maths renderer that you'd like vectors to be rendered as rows instead of columns.
+        
+.. _display_only_functions:
+
+Display-only JME functions
+==========================
+
+There are a few "virtual" JME functions which can not be evaluated, but allow you to express certain constructs for the purposes of display, while interacting properly with the simplification rules.
+
+.. function:: int(expression, variable)
+
+    An indefinite integration, with respect to the given variable.
+
+    * ``int(x^2+2,x)`` → :math:`\displaystyle{\int \! x^2+2 \, \mathrm{d}x}`
+    * ``int(cos(u),u)`` → :math:`\displaystyle{\int \! \cos(u) \, \mathrm{d}u}`
+
+.. function:: defint(expression, variable,lower bound, upper bound)
+
+    A definite integration between the two given bounds.
+
+    * ``defint(x^2+2,x,0,1)`` → :math:`\displaystyle{\int_{0}^{1} \! x^2+2 \, \mathrm{d}x}`
+    * ``defint(cos(u),u,x,x+1)`` → :math:`\displaystyle{\int_{x}^{x+1} \! \cos(u) \, \mathrm{d}u}`
+
+.. function:: diff(expression, variable, n)
+
+    :math:`n`-th derivative of expression with respect to the given variable
+
+    * ``diff(y,x,1)`` → :math:`\frac{\mathrm{d}y}{\mathrm{d}x}`
+    * ``diff(x^2+2,x,1)`` → :math:`\frac{\mathrm{d}}{\mathrm{d}x} \left (x^2+2 \right )`
+    * ``diff(y,x,2)`` → :math:`\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}`
+
+.. function:: partialdiff(expression, variable, n)
+
+    :math:`n`-th partial derivative of expression with respect to the given variable
+
+    * ``partialdiff(y,x,1)`` → :math:`\frac{\partial y}{\partial x}`
+    * ``partialdiff(x^2+2,x,1)`` → :math:`\frac{\partial }{\partial x} \left (x^2+2 \right )`
+    * ``partialdiff(y,x,2)`` → :math:`\frac{\partial ^{2}y}{\partial x^{2}}`
+
+.. function:: sub(expression,index)
+
+    Add a subscript to a variable name. 
+    Note that variable names with constant subscripts are already rendered properly -- see :ref:`variable-names` -- but this function allows you to use an arbitray index, or a more complicated expression.
+
+    * ``sub(x,1)`` → :math:`x_{1}`
+    * ``sub(x,n+2)`` → :math:`x_{n+2}`
+
+.. function:: sup(expression,index)
+
+    Add a superscript to a variable name.
+    Note that the simplification rules to do with powers won't be applied to this function, since it represents a generic superscript notation, rather than the operation of raising to a power.
+
+    * ``sup(x,1)`` → :math:`x^{1}`
+    * ``sup(x,n+2)`` → :math:`x^{n+2}`
