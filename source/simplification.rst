@@ -230,7 +230,7 @@ To turn all built-in rules on, use the name ``all``. To turn all built-in rules 
 .. _display_only_functions:
 
 Display-only JME functions
-==========================
+**************************
 
 There are a few "virtual" JME functions which can not be evaluated, but allow you to express certain constructs for the purposes of display, while interacting properly with the simplification rules.
 
