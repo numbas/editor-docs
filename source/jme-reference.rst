@@ -855,7 +855,7 @@ HTML
 
     **Examples**: 
         * ``table([[0,1],[1,0]], ["Column A","Column B"])``
-        * ``table([[0,1],[1,0]])
+        * ``table([[0,1],[1,0]])``
 
 .. function:: image(url)
 
