@@ -272,6 +272,17 @@ There are a few "virtual" JME functions which can not be evaluated, but allow yo
     * ``sub(x,1)`` → :math:`x_{1}`
     * ``sub(x,n+2)`` → :math:`x_{n+2}`
 
+    The reason this function exists is to allow you to randomise the subscript. 
+    For example, if the index to be used in the subscript is held in the variable ``n``, then this::
+
+        \simplify{ sub(x,{n}) }
+
+    will be rendered as 
+
+        :math:`x_{1}`
+
+    when ``n = 1``.
+
 .. function:: sup(expression,index)
 
     Add a superscript to a variable name.
