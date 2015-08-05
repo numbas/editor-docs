@@ -849,11 +849,13 @@ HTML
 
     **Examples**: ``html('<div>Text!</div>')``.
 
-.. function:: table(data,headers)
+.. function:: table(data), table(data,headers)
 
     Create an HTML with cell contents defined by ``data``, which should be a list of lists of data, and column headers defined by the list of strings ``headers``.
 
-    **Example**: ``table([[0,1],[1,0]], ["Column A","Column B"])``
+    **Examples**: 
+        * ``table([[0,1],[1,0]], ["Column A","Column B"])``
+        * ``table([[0,1],[1,0]])
 
 .. function:: image(url)
 
