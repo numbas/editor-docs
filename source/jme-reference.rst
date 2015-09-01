@@ -635,8 +635,9 @@ Lists
 .. function:: x[a..b]
 
     Slice list ``x`` - return elements with indices in the given range.
+    Note that list indices start at 0, and the final index is not included.
 
-    **Example**: ``[0,1,2,3,4,5][1..3]`` → ``[1,2,3]``
+    **Example**: ``[0,1,2,3,4,5][1..3]`` → ``[1,2]``
 
 .. function:: x in collection
 
