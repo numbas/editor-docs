@@ -20,7 +20,10 @@ All JavaScript and CSS files used by a Numbas exam are collected into two files,
 Building off an existing theme
 ------------------------------
 
-At the top of your theme folder, place a file called ``inherit.txt`` containing the name of the theme to extend, e.g. `default`. When an exam is compiled using your theme, all of the parent theme's files will be included, and then all of the files belonging to your theme, overriding any files of the same name from the parent theme.
+At the top of your theme folder, place a file called ``inherit.txt`` containing the name of the theme to extend, e.g. `default`. 
+When an exam is compiled using your theme, all of the parent theme's files will be included, and then all of the files belonging to your theme, overriding any files of the same name from the parent theme.
+
+The default theme is packaged with the Numbas compiler; if you want to modify it you should first download the Numbas repository from https://github.com/numbas/Numbas and copy the folder ``themes/default``.
 
 Uploading a theme to the editor
 -------------------------------
