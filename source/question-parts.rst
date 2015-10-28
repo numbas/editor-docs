@@ -52,13 +52,18 @@ The following scripts can be customised:
 .. glossary::
 
     When the part is created
-        This function runs when the part is created (either at the start of the exam, or when the question is regenerated), after the built-in constructor for the part. You could use this to change any of the part's settings, if it's not convenient to do so by other means.
+        This function runs when the part is created (either at the start of the exam, or when the question is regenerated), after the built-in constructor for the part. 
+        You could use this to change any of the part's settings, if it's not convenient to do so by other means.
 
     Mark student's answer
-        This function runs when the student clicks the :guilabel:`Submit part` button. It should establish what proportion of the available credit to award to the student for their answer, and give feedback messages. Use ``this.setCredit(credit,message)`` to set the credit and (optionally) give a message. Note that ``this.answered`` should be set to true if the student's answer can be marked - otherwise, the student will be shown a warning message.
+        This function runs when the student clicks the :guilabel:`Submit part` button. 
+        It should establish what proportion of the available credit to award to the student for their answer, and give feedback messages. 
+        Use ``this.setCredit(credit,message)`` to set the credit and (optionally) give a message. 
+        Note that ``this.answered`` should be set to true if the student's answer can be marked - otherwise, the student will be shown a warning message.
 
     Validate student's answer
-        This functions runs after the marking function, and should return ``true`` if the student's answer is in a form that can be marked, or ``false`` otherwise. If the answer can't be marked, you should use ``this.giveWarning(message)`` to tell the student what's wrong.
+        This functions runs after the marking function, and should return ``true`` if the student's answer is in a form that can be marked, or ``false`` otherwise. 
+        If the answer can't be marked, you should use ``this.giveWarning(message)`` to tell the student what's wrong.
 
 There are several example questions using custom scripts at `numbas.mathcentre.ac.uk/exam/1016/custom-marking/ <https://numbas.mathcentre.ac.uk/exam/1016/custom-marking/>`_.
 
@@ -81,7 +86,8 @@ Part **b** then asks the student to calculate a *z*-statistic based on the mean 
 The correct answer to this part is the variable ``z_statistic``, which is defined as ``(sample_mean-population_mean)/sqrt(population_variance)``.
 (``population_mean`` and ``population_variance`` in this case are random numbers)
 
-If the student makes an error in calculating the sample mean but uses the right method to find a *z*-statistic, they shouldn't be penalised in part **b**. We can ensure this by replacing the value of ``sample_mean`` with the student's answer to part **a** when marking part **b**.
+If the student makes an error in calculating the sample mean but uses the right method to find a *z*-statistic, they shouldn't be penalised in part **b**. 
+We can ensure this by replacing the value of ``sample_mean`` with the student's answer to part **a** when marking part **b**.
 When the student submits an answer to part **b**, the value of ``z_statistic`` will be automatically recalculated using the student's value of ``sample_mean``. 
 Then, if the student correctly applies the formula, their answer will match the new value of ``z_statistic`` and they will receive full credit for the part.
 
@@ -366,11 +372,11 @@ Choose one from a list / Choose several from a list / Match choices with answers
             Only applies to :term:`match choices with answers` parts. "One from each row" means that the student can only select one answer from each row. "Checkboxes" means that the student can select any number of choice-answer pairs.
 
         Custom marking matrix
-            If the checkbox is ticked, the :ref:`JME <jme>` expression in the box below is evaluated and used to assign numbers of marks to choices. For :term:`choose one from a list` and :term:`choose several from a list` parts, the expression should evaluate to a list of numbers, while for :term:`match choices with answers` it should evaluate to a list of lists of numbers. 
+            If the checkbox is ticked, the :ref:`JME <jme>` expression in the box below is evaluated and used to assign numbers of marks to choices. 
         
         Custom matrix expression
             Define the number of marks to award for each of the choices. 
-            Either a list of lists representing a 2d array, or a matrix object, giving the number of marks to associate with each choice-answer pair.
+            For :term:`choose one from a list` and :term:`choose several from a list` parts, the expression should evaluate to a list of numbers, while for :term:`match choices with answers` it should evaluate to a list of lists of numbers representing a 2d array, or a matrix object, giving the number of marks to associate with each choice-answer pair.
 
         Layout (:term:`Match choices with answers` only)
             Define which choices are available to be picked. 
@@ -378,16 +384,41 @@ Choose one from a list / Choose several from a list / Match choices with answers
             Any non-zero value in the matrix indicates that the corresponding choice-answer pair should be available to the student.
 
 .. _choices:
-.. topic:: Choices (:term:`Choose one from a list` / :term:`Choose several from a list` only)
+.. topic:: Choices
 
     .. glossary::
-        Marks
+        Variable list of choices?
+            Should the list of choices be defined by a JME expression? If this is ticked, you must give a :term:`custom matrix expression`.
+
+        List of choices
+            If :guilabel:`Variable list of choices?` is ticked, this JME expression defines the list of choice strings to display to the student. 
+
+        Marks (:term:`choose one from a list` / :term:`choose several from a list` only)
             The number of marks to award (or take away, if you enter a negative number) when the student picks this choice.
 
-        Distractor message
-            A message to display to the student in the part's feedback section after they select a particular choice. Useful to give some explanation of why a choice is incorrect.
+        Distractor message (:term:`choose one from a list` / :term:`choose several from a list` only)
+            A message to display to the student in the part's feedback section after they select a particular choice. 
+            It can be useful to give some explanation of why a choice is incorrect.
+
+.. _answers:
+.. topic:: Answers (:term:`Match choices with answers` only)
+
+    .. glossary::
+        Variable list of answers?
+            Should the list of answers be defined by a JME expression? If this is ticked, you must give a :term:`custom matrix expression`.
+
+        List of answers
+            If :guilabel:`Variable list of answers?` is ticked, this JME expression defines the list of answer strings to display to the student. 
 
 .. _marking-matrix:
 .. topic:: Marking matrix (:term:`Match choices with answers` only)
+
+    Assign marks to each pair of choice and answer using the input boxes.
     
-    Add answers and choices using the buttons, and assign marks using the input boxes.
+    .. glossary::
+        Custom marking matrix
+            If the checkbox is ticked, the :ref:`JME <jme>` expression in the box below is evaluated and used to assign numbers of marks to choices. 
+        
+        Custom matrix expression
+            Define the number of marks to award for each of the choices. 
+            Either a list of lists representing a 2d array, or a matrix object, giving the number of marks to associate with each choice-answer pair.
