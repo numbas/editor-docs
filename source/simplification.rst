@@ -75,15 +75,52 @@ When a list of rules is given, the list is processed from left to right. Initial
 
 Sets of rules can be given names in the question's :ref:`rulesets` section, so they can be turned on or off in one go.
 
+Display options
+***************
+
+The ``\simplify`` and ``\var`` commands take an optional list of settings, separated by commas. 
+These affect how certain elements, such as numbers or vectors, are displayed.
+
+The following display options are available:
+
+.. glossary::
+
+    fractionNumbers
+        This rule doesn't rewrite expressions, but tells the maths renderer that you'd like non-integer numbers to be displayed as fractions instead of decimals.
+
+        **Example:** ``\var[fractionNumbers]{0.5}`` produces :math:`\frac{1}{2}`.
+
+    rowVector
+        This rule doesn't rewrite expressions, but tells the maths renderer that you'd like vectors to be rendered as rows instead of columns.
+        
 
 Simplification rules
 ********************
 
-The ``\simplify`` command takes an optional list of names of rules to use, separated by commas. Lists of simplification rule names are read from left to right, and rules are added or removed from the set in use as their names are read. To include a rule, use its name, e.g. ``unitfactor``. To exclude a rule, put an exclamation mark in front of its name, e.g. ``!unitfactor``.
+As well as the display options, the ``\simplify`` command takes an optional list of names of simplification rules to use, separated by commas.
+These rules affect how the command rearranges the expression you give it.
+
+Lists of simplification rule names are read from left to right, and rules are added or removed from the set in use as their names are read. 
+To include a rule, use its name, e.g. ``unitfactor``. 
+To exclude a rule, put an exclamation mark in front of its name, e.g. ``!unitfactor``.
 
 Rule names are not case-sensitive: any mix of lower-case or upper-case works. 
 
 To turn all built-in rules on, use the name ``all``. To turn all built-in rules off, use ``!all``.
+
+If you don't give a list of options, e.g. ``\simplify{ ... }``, all the built-in rules are used.
+If you give an empty list of options, e.g. ``\simplify[]{ ... }``, **no** rules are used.
+
+For example, the following code::
+
+    \simplify[all,!collectNumbers,fractionNumbers]{ 0.5*x + 1*x^2 - 2 - 3 }
+
+turns on every rule, but then turns off the ``collectNumbers`` rule, so every rule *except* ``collectNumbers`` can be applied.
+Additionally, the display option ``fractionNumbers`` is turned on, so the ``0.5`` is displayed as :math:`\frac{1}{2}`.
+
+Altogether, this produces the following rendering: :math:`\frac{1}{2} x + x^2 - 2 - 3`
+
+The following simplification rules are available:
 
 .. glossary::
 
@@ -221,12 +258,6 @@ To turn all built-in rules on, use the name ``all``. To turn all built-in rules 
 
         * ``n^m`` → ``eval(n^m)``
 
-    fractionNumbers
-        This rule doesn't rewrite expressions, but tells the maths renderer that you'd like non-integer numbers to be displayed as fractions (e.g. :math:`\frac{1}{2}`) instead of decimals (e.g. :math:`0.5`).
-
-    rowVector
-        This rule doesn't rewrite expressions, but tells the maths renderer that you'd like vectors to be rendered as rows instead of columns.
-        
 .. _display_only_functions:
 
 Display-only JME functions
