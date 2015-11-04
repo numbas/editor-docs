@@ -351,13 +351,31 @@ A list of links to each of the exams which contain this question, for convenienc
 Editing history
 ===============
 
-Each time you make a change to a question, it's saved to the database. You can see the full editing history of your question in this tab, and revert back to a previous state by clicking on the :guilabel:`Restore` link.
+Each time you make a change to a question, it's saved to the database. 
+You can see the full editing history of your question in this tab, and revert back to a previous state by clicking on the :guilabel:`Restore` link.
 
 You can add a comment describing what you've changed by clicking on the corresponding entry in the current version's :guilabel:`Comment` column. 
 
 Each time somebody uses the :guilabel:`Feedback` button to provide feedback on the suitability for use of this question, an entry is added to the editing history so you can see when the question was last usable.
 
 You and your co-authors can write general comments on a question by clicking the :guilabel:`Write a comment` button.
+
+Other versions
+==============
+
+In this tab you can see all questions which are related to this one. 
+Questions are related if one is a copy of the other, or they are both copies of a common ancestor.
+You can use this tab to compare the current question with related versions, and offer to merge your version of the question into another.
+
+Click on the :guilabel:`Compare` link to go to a screen where you can offer to replace the other version with your version, or vice versa.
+If you have editing access to the destination question, you can replace it with the other version automatically.
+If you don't have editing access, the owner of the question will be sent a *Request to merge*, which they must accept before the questions are merged.
+
+Before creating the request, you'll be asked to describe how your version differs from the one you want to replace.
+Try to sum up all your changes - this will show up in the question's editing history if your request is accepted.
+
+Active requests to merge other versions into the current question are shown underneath the list of related versions.
+You can :guilabel:`accept` the request, in which case your version will be replaced with the other version, or :guilabel:`reject` it, in which case your version will be unchanged and the person who made the request will be notified that it was rejected.
 
 Access
 ======
