@@ -374,6 +374,11 @@ If you don't have editing access, the owner of the question will be sent a *Requ
 Before creating the request, you'll be asked to describe how your version differs from the one you want to replace.
 Try to sum up all your changes - this will show up in the question's editing history if your request is accepted.
 
+.. warning::
+    If the question you want to replace has changed since you made a copy of it, those changes will be lost if the request to merge is accepted - the question is completely overwritten with the new version. 
+
+    You can always restore an old version of a question after a merge, by clicking on the appropriate :guilabel:`restore` link in the :guilabel:`Editing history` tab.
+
 Active requests to merge other versions into the current question are shown underneath the list of related versions.
 You can :guilabel:`accept` the request, in which case your version will be replaced with the other version, or :guilabel:`reject` it, in which case your version will be unchanged and the person who made the request will be notified that it was rejected.
 
