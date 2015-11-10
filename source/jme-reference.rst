@@ -278,14 +278,22 @@ Number operations
 .. function:: precround(n,d)
 
     Round ``n`` to ``d`` decimal places.
+    On matrices and vectors, this rounds each element independently.
 
-    **Example**: ``precround(pi,5)`` → ``3.14159``
+    **Examples**: 
+        * ``precround(pi,5)`` → ``3.14159``
+        * ``precround(matrix([[0.123,4.56],[54,98.765]]),2)`` → ``matrix([[0.12,4.56],[54,98.77]])``
+        * ``precround(vector(1/3,2/3),1)`` → ``vector(0.3,0.7)``
 
-.. function:: siground(n,d)
+.. function:: siground(n,f)
 
-    Round ``n`` to ``d`` significant figures.
+    Round ``n`` to ``f`` significant figures.
+    On matrices and vectors, this rounds each element independently.
 
-    **Example**: ``siground(pi,3)`` → ``3.14``
+    **Examples**: 
+        * ``siground(pi,3)`` → ``3.14``
+        * ``siground(matrix([[0.123,4.56],[54,98.765]]),2)`` → ``matrix([[0.12,4.6],[54,99]])``
+        * ``siground(vector(10/3,20/3),2)`` → ``vector(3.3,6.7)``
 
 .. function:: dpformat(n,d)
 
@@ -297,7 +305,7 @@ Number operations
 
     Round ``n`` to ``d`` significant figures and return a string, padding with zeroes if necessary.
 
-    **Example**: ``sigformat(4,3)`` → ``4.00``
+    **Example**: ``sigformat(4,3)`` → ``"4.00"``
 
 Trigonometry
 ------------
@@ -343,7 +351,7 @@ Trigonometric functions all work in radians, and have domain the complex numbers
 Number theory
 -------------
 
-.. function:: fact(x)
+.. function:: x!
 
     Factorial. When ``x`` is not an integer, :math:`\Gamma(x+1)` is used instead.
 
@@ -653,9 +661,10 @@ Lists
 
 .. function:: map(expression,name[s],d)
 
-    Evaluate ``expression`` for each item in list or range ``d``, replacing variable ``name`` with the element from ``d`` each time.
+    Evaluate ``expression`` for each item in list, range, vector or matrix ``d``, replacing variable ``name`` with the element from ``d`` each time.
 
-    You can also give a list of names if each element of ``d`` is a list of values. The Nth element of the list will be mapped to the Nth name.
+    You can also give a list of names if each element of ``d`` is a list of values. 
+    The Nth element of the list will be mapped to the Nth name.
 
     .. note::
         Do not use ``i`` or ``e`` as the variable name to map over - they're already defined as mathematical constants!
@@ -664,6 +673,8 @@ Lists
         * ``map(x+1,x,1..3)`` → ``[2,3,4]``
         * ``map(capitalise(s),s,["jim","bob"])`` → ``["Jim","Bob"]``
         * ``map(sqrt(x^2+y^2),[x,y],[ [3,4], [5,12] ])`` → ``[5,13]``
+        * ``map(x+1,x,id(2))`` → ``matrix([[2,1],[1,2]])``
+        * ``map(sqrt(x),x,vector(1,4,9))`` → ``vector(1,2,3)``
 
 .. function:: filter(expression,name,d)
 
