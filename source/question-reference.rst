@@ -410,3 +410,10 @@ You can control who is allowed to see, and edit, your questions.
         Can edit this
             The named user can see this question and make changes to it.
 
+.. topic:: Access links
+    
+    The URLs in this section automatically grant access to whoever follows them. 
+    You could use these links to share a question with someone who hasn't yet created an account on the editor, or to share a question with a group of people without inviting each person individually.
+
+    .. warning::
+        These URLs grant access to whoever clicks on them, so be careful about how they're shared.
