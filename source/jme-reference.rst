@@ -23,6 +23,17 @@ The first character of a variable name must be an alphabet letter; after that, a
 
 ``e``, ``i`` and ``pi`` are reserved names representing mathematical constants. They are rewritten by the interpreter to their respective numerical values before evaluation.
 
+This screencast describes which variable names are valid, and gives some advice on how you should pick names:
+
+.. raw:: html
+    
+    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59577617" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+.. _variable-annotations:
+
+Variable name annotations
+-------------------------
+
 Names can be given annotations to change how they are displayed. The following annotations are built-in:
 
 * ``verb`` – does nothing, but names like ``i``, ``pi`` and ``e`` are not interpreted as the famous mathematical constants.
@@ -34,11 +45,8 @@ Names can be given annotations to change how they are displayed. The following a
 
 Any other annotation is taken to be a LaTeX command. For example, a name ``vec:x`` is rendered in LaTeX as ``\vec{x}``, which places an arrow above the name.
 
-This screencast describes which variable names are valid, and gives some advice on how you should pick names:
-
-.. raw:: html
-    
-    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59577617" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+You can apply multiple annotations to a single variable.
+For example, ``v:dot:x`` produces a bold *x* with a dot on top: :math:`\boldsymbol{\dot{x}}`.
 
 .. _jme-data-types:
 
