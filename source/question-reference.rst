@@ -26,7 +26,7 @@ You can write mathematical notation in content areas using LaTeX; see the page o
 You're not limited to just text in content areas - you can insert tables, images, and even more dynamic content such as videos and interactive diagrams. 
 
 Substituting variables into content areas
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------
 
 There are two modes of variable subsitution: substitution into plain text (or HTML), and substitution into mathematical expressions. 
 
@@ -113,9 +113,12 @@ The statement is a content area which appears at the top of the question, before
 Variables
 =========
 
-The :guilabel:`Computed value` column shows a generated value for each variable. Note that when the question is delivered to students, the variable values are generated with each new attempt, so students won't necessarily see the same values as those displayed here. It's a good idea to use the :guilabel:`Regenerate values` button a few times to check that randomised variables don't take unsuitable values.
+The :guilabel:`Computed value` column shows a generated value for each variable. 
+Note that when the question is delivered to students, the variable values are generated with each new attempt, so students won't necessarily see the same values as those displayed here. 
+It's a good idea to use the :guilabel:`Regenerate values` button a few times to check that randomised variables don't take unsuitable values.
 
-You can reorder the variables in the list by dragging the arrow icons. Doing this doesn't affect the way values are computed.
+You can reorder the variables in the list by dragging the arrow icons. 
+Doing this doesn't affect the way values are computed.
 
 This screencast gives a quick summary of how the variable editing interface works:
 
@@ -150,6 +153,19 @@ Definition
 
     Used by
         A list of all variables which use this variable in their definition. You can click on a variable name to go to its definition.
+
+Locking variable values
+-----------------------
+
+The preview values for each question variable are regenerated each time you click on the :guilabel:`Regenerate variables` button, or whenever a variable definition is changed, if the :guilabel:`Automatically regenerate variables when changes are made` option is ticked.
+
+You can **lock** the value of a variable so that it doesn't change when the other variables are regenerated.
+To do so, click on the padlock icon next to the variable's name.
+Any variables used in the definition of the locked variable (those which appear in the :guilabel:`Depends on` list) will also be locked implicitly, so that you don't end up with an inconsistent set of variables.
+You can unlock a variable by clicking on the padlock icon again.
+
+.. warning::
+    Variables are only locked inside the editor's preview area - when you test run the question, or include it in an exam, a fresh value for the variable will be generated, according to its definition.
 
 .. _variable-testing:
 
