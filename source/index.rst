@@ -2,7 +2,7 @@
 
     <img src="_images/numbas-logo-large.png" style="border: none; margin-bottom:2em;"/>
 
-Numbas is an open-source e-assessment system aimed at mathematic and other numerate disciplines. 
+Numbas is an open-source e-assessment system aimed at mathematics and other numerate disciplines. 
 It generates SCORM 2004-compliant, self-contained assessment packages.
 
 Find out more about Numbas, including case studies and the latest blog posts, at `numbas.org.uk <http://www.numbas.org.uk>`_.
