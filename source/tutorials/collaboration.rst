@@ -6,14 +6,14 @@ Numbas has several features to make collaborating with colleagues easier.
 Give editing access to collaborators
 ------------------------------------
 
-.. image:: _static/images/screenshots/access_rights.png
+.. image:: screenshots/access_rights.png
 
 Use the :guilabel:`Access` tab to give editing or viewing access for your questions and exams to your colleagues.
 
 Use the editing history tab
 ---------------------------
 
-.. image:: _static/images/screenshots/sample_editing_history.png
+.. image:: screenshots/sample_editing_history.png
 
 Each time you make a change to a question, write a description of what you've done in the :guilabel:`Editing history` tab. This is useful when you're editing your own questions, but doubly so when editing other people's - they can quickly see what's different, and decide if they're happy with the changes.
 
@@ -22,7 +22,7 @@ You can write comments on the editing history. Use this to suggest changes, repo
 Give feedback on quality
 ------------------------
 
-.. image:: _static/images/screenshots/feedback_dropdown.png
+.. image:: screenshots/feedback_dropdown.png
 
 Use the :guilabel:`Feedback` button on questions and exams to let other users know whether they're ready for use or not.
 
@@ -33,7 +33,7 @@ If a colleague makes a copy of a question and you decide to use that instead, ma
 Add descriptions to variables and use sensible names
 ----------------------------------------------------
 
-.. image:: _static/images/screenshots/variable_description.png
+.. image:: screenshots/variable_description.png
 
 Short variable names are quick to type, but not easy to understand. Try to avoid single-letter variable names as much as possible, and prefer longer names over shorter ones. For example, it isn't immediately obvious what ``sm`` represents, while ``sample_mean`` is very clear.
 

@@ -158,11 +158,11 @@ You can click on any question's name to open it in a new window, so you can chec
 
 Click the plus icon on one of the question results to add it to your exam. 
 
-.. image:: _static/images/screenshots/exam_edit_add_question.png
+.. image:: /_static/images/screenshots/exam_edit_add_question.png
 
 You can drag and drop questions in the list on the left to reorder them.
 
-.. image:: _static/images/screenshots/exam_edit_drag.png
+.. image:: /_static/images/screenshots/exam_edit_drag.png
 
 Deleting a question from an exam does not remove it from the database. 
 To permanently delete a question, click on its name and click the :guilabel:`Delete` button on the question's edit page.

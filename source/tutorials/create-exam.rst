@@ -13,28 +13,28 @@ Creating an exam using existing questions
 Click on the :guilabel:`Questions` link at the top of the page to go to the question database. 
 Once there, search for a topic you're interested in.
 
-.. image:: _static/images/screenshots/question_search.png
+.. image:: screenshots/question_search.png
 
 You'll be shown a list of questions matching your query. 
 Click on the green :guilabel:`Preview` icon to try out a question. 
 When you've found a question you like, click on the :guilabel:`basket` icon to add it to your *question basket*. 
 
-.. image:: _static/images/screenshots/question_search_basket.png
+.. image:: screenshots/question_search_basket.png
 
 Once you've collected a few questions, click on the :guilabel:`basket` icon at the top of the page, and then click :guilabel:`Create an exam from these questions`.
 You'll be taken to the editing page for your new exam.
 
-.. image:: _static/images/screenshots/basket_dropdown.png
+.. image:: screenshots/basket_dropdown.png
 
 Enter a name in the text box. 
 For now, you can ignore most of the options. 
 
-.. image:: _static/images/screenshots/exam_edit_name.png
+.. image:: screenshots/exam_edit_name.png
 
 Click the :guilabel:`Test Run` link at the top of the page. 
 The compiled exam will open in a new window and you can have a go at answering the questions.
 
-.. image:: _static/images/screenshots/exam_edit_testrun.png
+.. image:: screenshots/exam_edit_testrun.png
 
 The last thing to do is to give your exam a description. 
 The description should be short -- one or two lines -- and will appear underneath the exam's name in the exam listing page. 
@@ -53,8 +53,8 @@ You can click on any question's name to open it in a new window, so you can chec
 
 Click the plus icon on one of the question results to add it to your exam. 
 
-.. image:: _static/images/screenshots/exam_edit_add_question.png
+.. image:: screenshots/exam_edit_add_question.png
 
 You can drag and drop questions in the list on the left to reorder them.
 
-.. image:: _static/images/screenshots/exam_edit_drag.png
+.. image:: screenshots/exam_edit_drag.png
