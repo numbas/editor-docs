@@ -1,6 +1,8 @@
+.. title:: Numbas documentation
+
 .. raw:: html
 
-    <img src="_images/numbas-logo-large.png" style="border: none; margin-bottom:2em;"/>
+    <img src="_static/images/numbas-logo-large.png" style="border: none; margin-bottom:2em;"/>
 
 Numbas is an open-source e-assessment system aimed at mathematics and other numerate disciplines. 
 It generates SCORM 2004-compliant, self-contained assessment packages.
