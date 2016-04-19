@@ -89,7 +89,7 @@ Use the :ref:`variable testing <variable-testing>` tools.
 ... display a dollar sign?
 --------------------------
 
-Because the dollar symbol is used to delimit portions of LaTeX maths, you need to escape dollar signs intended for display by placing a backslash before them -- that is, write ``\$``. See `this example question <https://numbas.mathcentre.ac.uk/question/4528/displaying-a-dollar-sign/>`_.
+Because the dollar symbol is used to delimit portions of LaTeX maths, you need to escape dollar signs intended for display by placing a backslash before them -- that is, write ``\$``. See `this example question <https://numbas.mathcentre.ac.uk/question/4528/displaying-a-dollar-sign/>`__.
 
 ... include a randomised LaTeX command?
 ---------------------------------------
@@ -102,4 +102,4 @@ You need to do this because the backslash is used as an escape character in stri
 If you substitute a string variable into a mathematical expression using ``\var``, it's normally assumed to represent plain text and displayed using the plain text font. 
 If your string is really a partial LaTeX expression, you must mark it as such by wrapping it in ``latex()``, e.g. ``\var{latex(mystring)}``.
 
-See `this example question <https://numbas.mathcentre.ac.uk/question/10342/displaying-a-randomised-latex-command/>`_.
+See `this example question <https://numbas.mathcentre.ac.uk/question/10342/displaying-a-randomised-latex-command/>`__.

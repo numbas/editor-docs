@@ -28,7 +28,7 @@ You need to give some information about your new project:
 The project home page
 =====================
 
-A project's home page shows a :term:`timeline` of activity on the project, the list of members, and links to create new content or browse the project's existing content.
+A project's home page shows a *timeline* of activity on the project, the list of members, and links to create new content or browse the project's existing content.
 
 .. todo:: picture of project homepage
 
@@ -79,7 +79,7 @@ To transfer ownership of a project to somebody else, go to the :guilabel:`Member
 That user will become the owner of the project, and you will be given editing access to the project. 
 
 Deleting a project
-=================
+==================
 
 To delete a project, you must be its owner.
 You can't delete your personal workspace.

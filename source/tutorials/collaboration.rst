@@ -8,38 +8,42 @@ Numbas has several features to make collaborating with colleagues easier.
 
     # New bits
 
-    Project
-    -------
+Project
+-------
 
-    Don't collaborate in your own workspace - create a separate project instead.
+Don't collaborate in your own workspace - create a separate project instead.
 
-    Projects grant automatic editing access to their members.
+Projects grant automatic editing access to their members.
 
-    Timeline
-    --------
+Timeline
+--------
 
-    Use the project timeline, and the editing history tab on individual items, to keep track of changes you and your colleagues make.
-    Write comments to discuss changes or problems.
+Use the project timeline, and the editing history tab on individual items, to keep track of changes you and your colleagues make.
+Write comments to discuss changes or problems.
 
-    Restore points
-    --------------
-    Set a restore point to save a snapshot of your question when you make a change.
+Restore points
+--------------
+Set a restore point to save a snapshot of your question when you make a change.
 
-    Write an informative description of the current state of the question, and what you've changed since the last restore point.
+Write an informative description of the current state of the question, and what you've changed since the last restore point.
 
-    Give feedback
-    -------------
+Give feedback
+-------------
 
-    Use the feedback stamps to tell your colleagues which of your questions are ready to use, and which need more attention.
+Use the feedback stamps to tell your colleagues which of your questions are ready to use, and which need more attention.
 
-    Check over your colleagues' work and use feedback stamps to alert them to problems.
+Check over your colleagues' work and use feedback stamps to alert them to problems.
 
-    When you compile an exam, every question in it should be labelled "Ready to use".
+When you compile an exam, every question in it should be labelled "Ready to use".
 
-    Pull requests
-    -------------
+Pull requests
+-------------
 
-    If you see a problem in someone else's question but don't have editing access, make a copy and fix it, but don't just leave the original to languish - create a pull request so your changes can be merged back into the original.
+If you see a problem in someone else's question but don't have editing access, make a copy and fix it, but don't just leave the original to languish - create a pull request so your changes can be merged back into the original.
+
+.. note::
+
+    # end of new bits
 
 
 Give editing access to collaborators

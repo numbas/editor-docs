@@ -92,53 +92,54 @@ When the student submits an answer to part **b**, the value of ``z_statistic`` w
 Then, if the student correctly applies the formula, their answer will match the new value of ``z_statistic`` and they will receive full credit for the part.
 
 .. topic:: Variable replacements
-.. glossary::
 
-    Variable
-        The name of the variable to replace
+    .. glossary::
 
-    Answer to use
-        The part whose answer the variable's value should be replaced with. 
-        Different part types produce different types of values.
+        Variable
+            The name of the variable to replace
 
-    Must be answered?
-        If this is ticked, the student must submit an answer to the referenced part before they can submit an answer to this part.
+        Answer to use
+            The part whose answer the variable's value should be replaced with. 
+            Different part types produce different types of values.
 
-There are two variable replacement strategies:
+        Must be answered?
+            If this is ticked, the student must submit an answer to the referenced part before they can submit an answer to this part.
 
-.. glossary::
+    There are two variable replacement strategies:
 
-    Try without replacements first
-        The student's answer is first marked using the original values of the question variables.
-        If the credit given by this method is less than the maximum available, the marking is repeated using the defined variable replacements.
-        If the credit gained with variable replacements is greater than the credit gained under the original marking, that score is used, and the student is told that their answers to previous parts have been used in the marking for this part.
+    .. glossary::
 
-    Always replace variables
-        The student's answer is only marked once, with the defined variable replacements applied.
+        Try without replacements first
+            The student's answer is first marked using the original values of the question variables.
+            If the credit given by this method is less than the maximum available, the marking is repeated using the defined variable replacements.
+            If the credit gained with variable replacements is greater than the credit gained under the original marking, that score is used, and the student is told that their answers to previous parts have been used in the marking for this part.
 
-.. _part_type_variable_replacement:
+        Always replace variables
+            The student's answer is only marked once, with the defined variable replacements applied.
+
+    .. _part_type_variable_replacement:
 
 .. topic:: Values obtained from the answers to each part types
 
-=========================== ==============
-Part type                   Value obtained
-=========================== ==============
-Gap-fill                    A list containing the values obtained from each of the gaps
-Mathematical expression     A JME subexpression. 
-                            When used in a variable definition, the subexpression will be substituted in, and any references to question variables in the subexpression will be replaced with their respective values.
-Number entry                A number
-Matrix entry                A matrix
-Match text pattern          A string
-Choose one from a list      The index of the answer the student chose
-Choose several from a list  A list of booleans: true if the student ticked the corresponding choice, false otherwise
-Match choices with answers  A 2D list of lists of boolean values, in the same format as a :term:`custom marking matrix` for this part - cells are addressed by choice first, and answer second.
-=========================== ==============
+    =========================== ==============
+    Part type                   Value obtained
+    =========================== ==============
+    Gap-fill                    A list containing the values obtained from each of the gaps
+    Mathematical expression     A JME subexpression. 
+                                When used in a variable definition, the subexpression will be substituted in, and any references to question variables in the subexpression will be replaced with their respective values.
+    Number entry                A number
+    Matrix entry                A matrix
+    Match text pattern          A string
+    Choose one from a list      The index of the answer the student chose
+    Choose several from a list  A list of booleans: true if the student ticked the corresponding choice, false otherwise
+    Match choices with answers  A 2D list of lists of boolean values, in the same format as a :term:`custom marking matrix` for this part - cells are addressed by choice first, and answer second.
+    =========================== ==============
 
-The following screencast shows the addition of adaptive marking to a question:
+    The following screencast shows the addition of adaptive marking to a question:
 
-.. raw:: html
+    .. raw:: html
 
-    <iframe src="https://player.vimeo.com/video/134209217" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/134209217" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Part types
 ----------

@@ -41,5 +41,5 @@ This screencast gives a quick summary of a theme package's contents, then shows 
 Examples
 ********
 
-* Replace the Numbas logo: :download:`change-logo-theme.zip <change-logo-theme.zip>`
-* Add custom CSS rules: :download:`extra-css-theme.zip <extra-css-theme.zip>`
+* Replace the Numbas logo: :download:`change-logo-theme.zip <_static/themes/change-logo-theme.zip>`
+* Add custom CSS rules: :download:`extra-css-theme.zip <_static/themes/extra-css-theme.zip>`

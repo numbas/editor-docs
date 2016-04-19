@@ -316,6 +316,8 @@ Rulesets
 
 A "ruleset" defines a list of named :doc:`simplification rules <simplification>` used to manipulate mathematical expressions.
 
+.. _preamble:
+
 Preamble
 --------
 

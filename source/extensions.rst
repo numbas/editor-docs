@@ -47,7 +47,7 @@ An extension can add JME functions (or rulesets, or anything else that goes in a
         extension.scope.addFunction(new funcObj('difference',[TNum,TNum],TNum,function(a,b){ return Math.abs(a-b); }, {unwrapValues:true}));
     })
 
-(Download this extension: :download:`difference.zip`)
+(Download this extension: :download:`difference.zip <_static/extensions/difference.zip>`)
 
 Adding a new JME data type
 --------------------------
@@ -134,7 +134,7 @@ Here's an example extension which defines a toy "chemical" data type (excuse the
         }));
     });
 
-(Download this extension: :download:`chemicals.zip`)
+(Download this extension: :download:`chemicals.zip <_static/extensions/chemicals.zip>`)
 
 First-party extensions
 ----------------------
