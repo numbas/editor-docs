@@ -15,7 +15,16 @@ This documentation is a work in progress.
 If you have any questions, please `email us <mailto:numbas.ncl.ac.uk>`_ or join `the numbas-users mailing list <https://groups.google.com/forum/^!forum/numbas-users>`_.
 
 .. toctree::
-    tutorials/index
+    :caption: Getting Started
+    :maxdepth: 1
+    :glob:
+
+    tutorials/create-an-account
+    tutorials/create-exam
+    tutorials/upload-web
+    tutorials/upload-vle
+    tutorials/write-question
+    tutorials/collaboration
 
 .. toctree::
     :caption: Reference
@@ -23,10 +32,10 @@ If you have any questions, please `email us <mailto:numbas.ncl.ac.uk>`_ or join 
 
     how-do-i
     project
-    exam-reference
-    question-cheatsheet
-    question-reference
-    question-parts
+    exam/reference
+    question/reference
+    question/parts
+    question/cheatsheet
 
     latex
     jme-reference

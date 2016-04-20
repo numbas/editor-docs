@@ -1,6 +1,7 @@
 How do I...
 ==============
 
+
 .. _include-an-image:
 
 ... include an image?
@@ -8,7 +9,8 @@ How do I...
 
     It's best practice to attach images to questions so that they're distributed with the final compiled exam, rather than linking to images stored on a webserver. 
 
-    When editing a content area, click on the :guilabel:`Insert/Edit Image` button. You can then either pick an image you've already uploaded, or click the :guilabel:`Choose file` button to upload an image from your computer.
+    When editing a content area, click on the :guilabel:`Insert/Edit Image` button. 
+    You can then either pick an image you've already uploaded, or click the :guilabel:`Choose file` button to upload an image from your computer.
 
     You can resize images and add a title attribute by selecting the image in the content area and clicking on the :guilabel:`Insert/Edit Image` button.
 
@@ -22,7 +24,9 @@ How do I...
 ... embed a video?
 ------------------
 
-    Upload your video to somewhere like YouTube or Vimeo. Including videos in downloaded exam packages is a terrible idea, so we discourage that. Click the :guilabel:`Embed image/video` button (it's a blue cloud), and paste in the URL of your video.
+    Upload your video to somewhere like YouTube or Vimeo. 
+    Including videos in downloaded exam packages is a terrible idea, so we discourage that. 
+    Click the :guilabel:`Embed image/video` button (it's a blue cloud), and paste in the URL of your video.
 
     .. raw:: html
 
@@ -33,11 +37,13 @@ How do I...
 ... include an interactive diagram?
 -----------------------------------
 
-    There are a couple of ways of including an interactive diagram in a Numbas question. You can either embed a `GeoGebra <http://www.geogebra.org/>`_ applet, or use `JSXGraph <http://jsxgraph.uni-bayreuth.de/>`_.
+    There are a couple of ways of including an interactive diagram in a Numbas question. 
+    You can either embed a `GeoGebra <http://www.geogebra.org/>`_ applet, or use `JSXGraph <http://jsxgraph.uni-bayreuth.de/>`_.
 
     For JSXGraph diagrams, there is :ref:`an extension <jsxgraph-extension>` which takes care of most of the setup.
 
-    GeoGebra applets can't communicate with the Numbas question and hence can't use randomised variables, but they can be used to illustrate questions in a generic way. This screencast describes how to embed a GeoGebra applet in a Numbas question.
+    GeoGebra applets can't communicate with the Numbas question and hence can't use randomised variables, but they can be used to illustrate questions in a generic way. 
+    This screencast describes how to embed a GeoGebra applet in a Numbas question.
 
     .. raw:: html
 
@@ -50,9 +56,11 @@ How do I...
 ... change how the question looks?
 ----------------------------------
 
-You can use the formatting tools in the question editor to style your text. However, if you repeat the same styles over and over, or want to change aspects of the layout such as space between elements or decoration, you'll need to write some CSS.
+You can use the formatting tools in the question editor to style your text. 
+However, if you repeat the same styles over and over, or want to change aspects of the layout such as space between elements or decoration, you'll need to write some CSS.
 
-CSS is a language for defining how things should look - there's `a good introduction at Khan Academy <https://www.khanacademy.org/computing/computer-programming/html-css/intro-to-css/>`_. In the Numbas editor, you can add CSS rules to a question in the :ref:`preamble` section.
+CSS is a language for defining how things should look - there's `a good introduction at Khan Academy <https://www.khanacademy.org/computing/computer-programming/html-css/intro-to-css/>`_. 
+In the Numbas editor, you can add CSS rules to a question in the :ref:`preamble` section.
 
 The following questions demonstrate how to use CSS to change the look of a Numbas question:
 
@@ -71,11 +79,15 @@ See the question `Using a randomly chosen image <https://numbas.mathcentre.ac.uk
 ... show one of several blocks of text based on a random variable?
 ------------------------------------------------------------------
 
-Suppose you have a random variable ``a``, which has the value 1,2 or 3, corresponding to three different scenarios. First, write out the text for each scenario. 
+Suppose you have a random variable ``a``, which has the value 1,2 or 3, corresponding to three different scenarios. 
+First, write out the text for each scenario. 
 
-.. image:: _static/images/screenshots/conditional_visibility.png
+.. image:: /_static/how_do_i/conditional_visibility.png
 
-There is a button in the content editor labelled :guilabel:`Conditional visibility`. This allows you to give an expression (in :ref:`JME` syntax) which dictates whether or not the selected text is shown. For each scenario, select the corresponding text and click on the :guilabel:`Conditional visibility` button. Enter ``a=1`` for the first block, ``a=2`` for the second, and ``a=3`` for the third.
+There is a button in the content editor labelled :guilabel:`Conditional visibility`. 
+This allows you to give an expression (in :ref:`JME` syntax) which dictates whether or not the selected text is shown. 
+For each scenario, select the corresponding text and click on the :guilabel:`Conditional visibility` button. 
+Enter ``a=1`` for the first block, ``a=2`` for the second, and ``a=3`` for the third.
 
 When you run the question, only the block of text corresponding to the value of ``a`` is shown.
 
@@ -89,13 +101,14 @@ Use the :ref:`variable testing <variable-testing>` tools.
 ... display a dollar sign?
 --------------------------
 
-Because the dollar symbol is used to delimit portions of LaTeX maths, you need to escape dollar signs intended for display by placing a backslash before them -- that is, write ``\$``. See `this example question <https://numbas.mathcentre.ac.uk/question/4528/displaying-a-dollar-sign/>`__.
+Because the dollar symbol is used to delimit portions of LaTeX maths, you need to escape dollar signs intended for display by placing a backslash before them -- that is, write ``\$``. 
+See `this example question <https://numbas.mathcentre.ac.uk/question/4528/displaying-a-dollar-sign/>`__.
 
 ... include a randomised LaTeX command?
 ---------------------------------------
 
 If you want to include a LaTeX command in a string variable, remember that backslashes and curly braces in strings must be escaped. 
-That means you should type two backslashes where you'd normally type one, and add a backslash before each left or right curly brace, for example ``\\frac\{1\}\{2\}`` produces the LaTeX `\frac{1}{2}`.
+That means you should type two backslashes where you'd normally type one, and add a backslash before each left or right curly brace, for example ``\\frac\{1\}\{2\}`` produces the LaTeX ``\frac{1}{2}``.
 You need to do this because the backslash is used as an escape character in strings so you can include quote marks, which would normally end the string. 
 (For example, ``"he said \"hello\" to me"``)
 
