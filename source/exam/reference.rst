@@ -6,6 +6,15 @@ Within an exam you can set a pass mark, as well as configure how much feedback s
 
 For a quick introduction to the workflow involved in putting an exam together, see the :doc:`tutorial on creating an exam </tutorials/create-exam>`.
 
+Creating an exam
+================
+
+To create an exam from any page in the Numbas editor, click on the plus icon at the top of the page, and select :guilabel:`Exam`. 
+
+.. todo:: picture of create exam screen
+
+You must give a name for your exam, and select a :doc:`project </project>` for it to go in. The default project is your personal workspace; you can always move the exam to another of your projects later on.
+
 The exam editor
 ===============
 
@@ -68,23 +77,43 @@ Try to make sure not to ignore the settings tab, even if you just want to get a 
 
         After typing a tag in the box, press the :kbd:`Enter` key to add it to the list.
 
+    Make a copy of this exam
+        Create a copy of the exam. 
+        Use this to make changes to an exam which does not belong to you.
+
+    Delete this exam
+        Delete the exam permanently from the database. 
+        The associated questions are not deleted - you must delete them individually, if you want them to be deleted too.
+
+Metadata
+^^^^^^^^
+
+.. glossary::
+
+    Move to another project
+        Click this button to move the exam to another project.
+        You can move an exam to any project to which you have editing access.
+
     Licence
         You can specify the licence under which you are making your resources available. 
         Different licences allow other users to copy, modify or reuse your content in different ways - consider which licence to choose carefully. 
         *CC BY* allows other users to reuse your content however you like, as long as they give appropriate credit to you.
 
-    Pass threshold
-        Define a pass/fail threshold for the exam. 
-        The pass/fail message will be displayed when the student ends the exam. 
-        If set to zero, then no message is displayed.
+    Subjects and Topics
+        The :guilabel:`Subjects` and :guilabel:`Topics` fields provide a more structured way to categorise exams according to the subjects they assess.
+        Database search results can be filtered by subject or topic.
 
-    Delete
-        Delete the exam permanently from the database. 
-        The associated questions are not deleted - you must delete them individually, if you want them to be deleted too.
+        Once you have selected one or more subjects, topics belonging to those subjects appear underneath.
 
-    Make a Copy
-        Create a copy of the exam. 
-        Use this to make changes to an exam which does not belong to you.
+        The options for these fields are defined by the server administrator.
+
+    Ability levels
+        Use this field to describe which ability levels the exam is appropriate for.
+
+        Several *ability frameworks* are available to choose from - pick the framework which most closely matches your own, and select one or more ability levels.
+        An ability level is modelled as an interval in the range 0 to 1, so when you filter database search results by ability level, any items whose ability levels overlap the ones you selected are included in the results.
+
+        The options for these fields are defined by the server administrator.
 
 Display
 =======
@@ -120,8 +149,9 @@ You can use every question selected, or pick a random subset each time the exam 
         The number of questions to show to the student.
 
     Pass threshold
-        The percentage score the student must obtain over all questions to pass the exam.
-        If this is set to 0, then the student will not be shown a pass/fail message.
+        Define a pass/fail threshold for the student's total score, as a percentage of the available marks.
+        The pass/fail message will be displayed when the student ends the exam. 
+        If this is set to zero, then no message is displayed.
 
 The tabs on the right hand side offer different ways of finding questions to add to the exam.
 
@@ -219,22 +249,13 @@ Events
 Some of the properties described above are marked as *events*. 
 These all have the same structure: an :guilabel:`action` setting which determines how to react to the event, and a :guilabel:`message` to display to the student when appropriate.
 
-Editing history
-===============
-
-Each time you make a change to a exam, it's saved to the database. 
-You can see the full editing history of your exam in this tab, and revert back to a previous state by clicking on the :guilabel:`Restore` link.
-
-You can add a comment describing what you've changed by clicking on the corresponding entry in the current version's :guilabel:`Comment` column. 
-
-Each time somebody uses the :guilabel:`Feedback` button to provide feedback on the suitability for use of this exam, an entry is added to the editing history so you can see when the exam was last usable.
-
-You and your co-authors can write general comments on a exam by clicking the :guilabel:`Write a comment` button.
-
 Access
 ======
 
-You can control who is allowed to see, and edit, your exams.
+You can control who is allowed to see, and to edit, your exams.
+
+When you create a new exam, access is limited to you and any other members of the project the exam belongs to.
+You can grant extra access to indvidual users or *publish* your exam to the public database, where it can be viewed by any other user.
 
 .. topic:: Public visibility
 
@@ -250,10 +271,11 @@ You can control who is allowed to see, and edit, your exams.
         Anyone can edit this
             Anyone, even users who are not logged in, can see and edit this exam.
 
-.. topic:: Individual access rights
+.. topic:: Give access to a user
 
     Type a name into the search box to find a user. 
     Click on a user's name in the results list to add them to the access list. 
+
     Named users can have the following rights:
 
     .. glossary::
@@ -264,10 +286,47 @@ You can control who is allowed to see, and edit, your exams.
         Can edit this
             The named user can see this exam and make changes to it.
 
-.. topic:: Access links
+.. topic:: Access Links
     
     The URLs in this section automatically grant access to whoever follows them. 
     You could use these links to share a question with someone who hasn't yet created an account on the editor, or to share a question with a group of people without inviting each person individually.
 
     .. warning::
         These URLs grant access to whoever clicks on them, so be careful about how they're shared.
+
+Other versions
+==============
+
+In this tab you can see all exams which are related to this one. 
+Exams are related if one is a copy of the other, or they are both copies of a common ancestor.
+You can use this tab to compare the current exam with related versions, and offer to merge your version of the exam into another.
+
+.. todo:: Picture of this tab
+
+Click on the :guilabel:`Compare` link to go to a screen where you can offer to replace the other version with your version, or vice versa.
+If you have editing access to the destination exam, you can replace it with the other version automatically.
+If you don't have editing access, the owner of the exam will be sent a *Request to merge*, which they must accept before the exams are merged.
+
+Before creating the request, you'll be asked to describe how your version differs from the one you want to replace.
+Try to sum up all your changes - this will show up in the exam's editing history if your request is accepted.
+
+.. warning::
+    If the exam you want to replace has changed since you made a copy of it, those changes will be lost if the request to merge is accepted - the exam is completely overwritten with the new version. 
+
+    You can always restore an old version of an exam after a merge, by clicking on the appropriate :guilabel:`restore` link in the :guilabel:`Editing history` tab.
+
+Active requests to merge other versions into the current exam are shown underneath the list of related versions.
+You can :guilabel:`accept` the request, in which case your version will be replaced with the other version, or :guilabel:`reject` it, in which case your version will be unchanged and the person who made the request will be notified that it was rejected.
+
+Editing history
+===============
+
+Use this tab to keep a record of changes made to your exam.
+Write comments to discuss problems or suggested changes.
+
+Each time you make a change to an exam, it's saved to the database. To save a snapshot of the current state of the exam, click the :guilabel:`Set a checkpoint` button.
+You'll be asked to write a description of the exam as it stands - describe what you've changed since the last snapshot, and why you're making a snapshot.
+
+To restore a checkpoint, click its :guilabel:`Restore` button. The current state of the exam will be overwritten with the saved state.
+
+Other activity on this exam will also be shown in this tab: for example, each time somebody uses the :guilabel:`Feedback` button to provide feedback on this exam, an entry is added to the editing history.
