@@ -325,9 +325,11 @@ Editing history
 Use this tab to keep a record of changes made to your exam.
 Write comments to discuss problems or suggested changes.
 
-Each time you make a change to an exam, it's saved to the database. To save a snapshot of the current state of the exam, click the :guilabel:`Set a checkpoint` button.
+Each time you make a change to an exam, it's saved to the database. 
+To save a snapshot of the current state of the exam, click the :guilabel:`Set a checkpoint` button.
 You'll be asked to write a description of the exam as it stands - describe what you've changed since the last snapshot, and why you're making a snapshot.
 
-To restore a checkpoint, click its :guilabel:`Restore` button. The current state of the exam will be overwritten with the saved state.
+To restore a checkpoint, click its :guilabel:`Restore` button. 
+The current state of the exam will be overwritten with the saved state.
 
 Other activity on this exam will also be shown in this tab: for example, each time somebody uses the :guilabel:`Feedback` button to provide feedback on this exam, an entry is added to the editing history.
