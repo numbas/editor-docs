@@ -13,7 +13,8 @@ To create an exam from any page in the Numbas editor, click on the plus icon at 
 
 .. todo:: picture of create exam screen
 
-You must give a name for your exam, and select a :doc:`project </project>` for it to go in. The default project is your personal workspace; you can always move the exam to another of your projects later on.
+You must give a name for your exam, and select a :doc:`project </project/reference>` for it to go in. 
+The default project is your personal workspace; you can always move the exam to another of your projects later on.
 
 The exam editor
 ===============

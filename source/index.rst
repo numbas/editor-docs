@@ -34,7 +34,6 @@ If you have any questions, please `email us <mailto:numbas.ncl.ac.uk>`_ or join 
     project/reference
     exam/reference
     question/reference
-    question/parts
     question/cheatsheet
 
     latex
