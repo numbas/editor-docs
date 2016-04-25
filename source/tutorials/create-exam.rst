@@ -54,4 +54,19 @@ You can drag and drop questions in the list on the left to reorder them.
 
 .. image:: screenshots/exam_edit_drag.png
 
-The changes that you make to the exam content are active straight away, so you can go ahead and see how your exam looks by clicking on :guilabel:`Test Run` again.
+The changes that you make to the exam content are active straight away, so you can see how your exam looks by clicking on :guilabel:`Test Run` again.
+
+Publish your exam
+#################
+
+Once you're happy with your exam, why not publish it the public database, so others can use it?
+Before you can publish an exam, you must fill out its metadata fields so others can find it easily:
+
+* Give the exam a name.
+* Write a description.
+* Select a licence under which others can use your exam. 
+  Make sure this doesn't conflict with the licence attached to your exam's questions.
+* Your exam must contain at least one question.
+
+Once you've filled out the required fields, click on the :guilabel:`Access` tab, and then click :guilabel:`Publish`.
+Your exam will now be included when anyone searches the public database.
