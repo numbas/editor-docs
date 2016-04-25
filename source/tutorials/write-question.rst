@@ -1,19 +1,19 @@
 Writing your first question
 ===========================
 
-.. note::
-    
-    The screencasts in this tutorial use an old version of the editor interface. We're going to redo them, but for now be aware that there are some differences between what you see here and what you see in the editor.
-
 In this tutorial you will learn about the structure and features of a Numbas question by creating a simple arithmetic test, starting with basic functionality and elaborating on that as we cover the more advanced tools available.
 
 We've embedded screencasts of someone running through this tutorial at the start of each section. You might like to follow along with the video while reading the tutorial.
 
 To begin, let's make a question asking the student to add two numbers.
 
-Log in to the Numbas editor, and click on the :guilabel:`Questions` heading at the top of the page. Click on :guilabel:`Create a new question`.
+Log in to the Numbas editor, and in the :guilabel:`Create` box, click on the :guilabel:`Question` link.
 
 .. image:: screenshots/question/1.png
+
+You will be prompted to give your question a name, and to assign it to a project. As this is your first question you will probably want to use the default project, which is your own workspace.
+
+.. image:: screenshots/question/2.png
 
 The structure of a question
 ---------------------------
@@ -22,40 +22,44 @@ The structure of a question
 
     <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/60822898" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
-You are taken to the *editing page* for your new question. At the top of the page are the question's name and links to run, delete, copy or download the question.
+You are taken to the *editing page* for your new question. It is worth spending a few moments finding your way around this page.
 
-.. image:: screenshots/question/2.png
+At the top of the page are the question's name and, above that, a link to the project which it belongs to. Below are options to run, give feedback and download the question. Below this there are options to navigate through the various steps involved in editing a question.
 
-Beneath that is the main editing interface. The editor is split into several tabs, which you can move between by clicking on the headers.
+In the admin box there are links to copy or delete the question. And in the metadata box where you can manage how your question is organised in the Numbas database.
 
 .. image:: screenshots/question/3.png
 
-Before moving any further, give the question a name so you can find it later. Type "Numbas tutorial: arithmetic" in the :guilabel:`Question Name` field.
+
+
+In the centre is the main editing interface. Before moving any further, let's change your question name from "My First Question" to something more descriptive so that you can find it later. Type "Numbas tutorial: arithmetic" in the :guilabel:`Name` field.
 
 .. image:: screenshots/question/4.png
 
-Every Numbas question consists of three sections: :ref:`Statement <statement>`, :ref:`Parts <parts>`, and :ref:`Advice <advice>`. In the Statement, the context for the question is given to the student. Parts are where the student enters their answers. A question can have one or more parts, each of which is one of several types, depending on what kind of input you want from the student. Finally, the optional Advice section can be used to give a full solution to the question, which the student can request to see if they're stuck.
+Every Numbas question consists of three sections: :ref:`Statement <statement>`, :ref:`Parts <question-parts>`, and :ref:`Advice <advice>`. In the Statement, the context for the question is given to the student. Parts are where the student enters their answers. A question can have one or more parts, each of which is one of several types, depending on what kind of input you want from the student. Finally, the optional Advice section can be used to give a full solution to the question, which the student can request to see if they're stuck. 
+
+Each of these sections of the editor can be accessed from the links in the sidebar, or you can use the buttons at the bottom of each section to guide you through in a logical order.
 
 Let's make a question with a short statement, one part asking for a number to be entered, and a little bit of advice.
 
 A very basic arithmetic question
 --------------------------------
 
-We’re going to ask the student to add together the numbers :math:`3` and :math:`5`. First, click on the :guilabel:`Statement` header, and type
+We’re going to ask the student to add together the numbers :math:`3` and :math:`5`. If you are still on the Settings page, click on the :guilabel:`Statement` button at the bottom, or on the :guilabel:`Statement` link in the sidebar. Type 
 
     What is 3+5?
 
-in the box.
+in the :guilabel:`Question statement` box.
 
 .. image:: screenshots/question/5.png
 
-Click on the :guilabel:`Test Run` button at the top of the page. Your question will open in a new browser window. There is a statement, but nowhere to enter an answer. We need to create a number entry part. Go back to the editing window and click on :guilabel:`Parts`.
+Click on the :guilabel:`Test Run` button. Your question will open in a new browser window. There is a statement, but nowhere to enter an answer. We need to create a number entry part. Go back to the editing window and click on :guilabel:`Parts` in the sidebar, or follow the navigation buttons at the bottom of the page, skipping past :guilabel:`Variables`, which we will consider later.
 
-Click on the :guilabel:`Add part` button. The default part type is :ref:`Information only <information-only>`; change it to :ref:`Number entry <number-entry>` by clicking on the drop-down box.
+Once on the Parts page, click on the :guilabel:`Add a part` button. The default part type is :ref:`Information only <information-only>`; change it to :ref:`Number entry <number-entry>` by clicking on the drop-down box.
 
 .. image:: screenshots/question/6.png
 
-Every part has a :term:`Prompt`, which you can use to ask the student for the particular answer the part assesses. We’ve already asked our question in the question’s statement, so we can leave this part’s prompt empty. Instead, click on the :guilabel:`Marking` tab, where you’ll state the correct answer for the part.
+Every part has a :term:`Prompt`, which you can use to ask the student for the particular answer the part assesses. We’ve already asked our question in the question’s statement, so we can leave this part’s prompt empty. Instead, click on the :guilabel:`Marking` link, where you’ll state the correct answer for the part.
 
 .. image:: screenshots/question/7.png
 
@@ -119,7 +123,7 @@ The most important feature of computer-based assessment is the ability to dynami
 
 Let’s change the question so that the two numbers to be added are picked at random.
 
-Click on the :guilabel:`Variables` tab. Click on the :guilabel:`Add a variable` button. Every variable needs a name and a definition. The definition is given in JME syntax.
+Click on the :guilabel:`Variables` link. Click on the :guilabel:`Add a variable` button. Every variable needs a name and a definition. The definition is given in JME syntax.
 
 .. note:: For information on what constitutes a valid variable name, see :ref:`Variable names <variable-names>`. For more on JME syntax, see :ref:`the JME reference <jme>`.
 

@@ -8,7 +8,7 @@ This page contains instructions on uploading a Numbas exam to Blackboard and Moo
 Creating a SCORM package
 ------------------------
 
-Each question and exam has a selection of download links at the top of its edit page. If you just want to make an exam available on the web and don't need to track scores, click the :guilabel:`standalone .zip` link. For a version which can be uploaded to a VLE such as Blackboard or Moodle, click the :guilabel:`SCORM package` link.
+Each question and exam has a download link in the sidebar which, when clicked, offers a selecton of options. If you just want to make an exam available on the web and don't need to track scores, click the :guilabel:`standalone .zip (no SCORM)` link. For a version which can be uploaded to a VLE such as Blackboard or Moodle, click the :guilabel:`SCORM package` link.
 
 .. image:: screenshots/scorm_download.png
 
