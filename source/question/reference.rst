@@ -1,5 +1,5 @@
-Question editor
-***************
+Questions
+*********
 
 In Numbas, a *question* is a self-contained assessment of a particular scenario. 
 Every Numbas question consists of three sections: :ref:`Statement <statement>`, :ref:`Parts <parts>`, and :ref:`Advice <advice>`.
