@@ -13,6 +13,8 @@ A project is effectively a "fenced off" area of the editor where you can concent
 Creating a new project
 ======================
 
+.. image:: images/create_project.png
+
 Click on the :guilabel:`New` button at the top of the page, and then on :guilabel:`Project`.
 You need to give some information about your new project:
 
@@ -30,7 +32,7 @@ The project home page
 
 A project's home page shows a *timeline* of activity on the project, the list of members, and links to create new content or browse the project's existing content.
 
-.. todo:: picture of project homepage
+.. image:: images/project_homepage.png
 
 The timeline shows all activity on exams or questions belonging to the question, as well as comments attached to the project itself.
 Timeline items belonging to each project you're a member of will also be shown in your personal timeline on the editor homepage.
@@ -44,7 +46,7 @@ Finding content inside a project
 From the project homepage, click on either of the :guilabel:`Browse` links to see the questions or exams belonging to the project. 
 You can narrow down your search by adding a query in the search bar at the top of the page, or selecting one of the filters.
 
-.. todo:: picture of search page
+.. image:: images/search.png
 
 Adding someone to a project
 ===========================
@@ -53,7 +55,7 @@ From the project's homepage, click on the settings icon at the top of the list o
 In the :guilabel:`Add a member` box, type the name of the person you want to invite.
 If they don't have an account yet, their email address; they'll get an email asking them to create an account and when they do, they'll be given access to your project immediately.
 
-.. todo:: picture of add member box
+.. image:: images/add_member.png
 
 You can control what project members are allowed to do: if you select :guilabel:`Can view` then the user will be able to look at, comment on, and download all content in the project, but not change anything. 
 If you select :guilabel:`Can edit`, then they will also be able to create new content or change existing content.
@@ -64,7 +66,7 @@ Changing or removing a project member's access
 
 From the project's homepage, click on the settings icon at the top of the list of members to go to the member settings page. 
 
-.. todo:: Picture of project members form
+.. image:: images/manage_members.png
 
 Change a project member's access rights by selecting an option from the dropdown next to their name.
 

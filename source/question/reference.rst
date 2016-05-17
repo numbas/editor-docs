@@ -16,7 +16,7 @@ Creating a question
 
 To create a question from any page in the Numbas editor, click on the plus icon at the top of the page, and select :guilabel:`Question`. 
 
-.. todo:: picture of create question screen
+.. image:: images/create_question.png
 
 You must give a name for your question, and select a :doc:`project </project/reference>` for it to go in. 
 The default project is your personal workspace; you can always move the question to another of your projects later on.
@@ -31,6 +31,8 @@ On the left of the screen are :ref:`question-admin-controls` and labels for each
 
 Admin controls
 ==============
+
+.. image:: images/admin_controls.png
 
 .. glossary::
 
@@ -64,6 +66,8 @@ Admin controls
         * **source** - a plain-text representation of the question, to be used with the Numbas command-line tools.
 
 
+    Add to your basket
+        Add this question to your basket, so you can include it in an exam.
 
 Content areas
 =============
@@ -73,8 +77,6 @@ A content area can include text, images, or more dynamic content such as videos 
 
 By default, text is edited using the rich text editor. 
 Click on the :guilabel:`Toggle rich text editor` button to edit the raw HTML code for the content area.
-
-.. todo:: Redo picture
 
 .. figure:: images/content_area_editor.png
     :align: center
@@ -137,6 +139,8 @@ Use the statement to set up the question and provide any information the student
 
 Variables
 =========
+
+.. image:: images/variable_definition.png
 
 The :guilabel:`Generated value` column shows a generated value for each variable. 
 Note that when the question is delivered to students, the variable values are generated with each new attempt, so students won't necessarily see the same values as those displayed here. 
@@ -210,6 +214,8 @@ You can unlock a variable by clicking on the padlock icon again.
 Variable testing
 ================
 
+.. image:: images/variable_testing.png
+
 This tab provides tools to test your variables for desired properties, so you can automatically re-randomise your questions' variables until you get a suitable set of values.
 
 `Example question using variable testing tools <https://numbas.mathcentre.ac.uk/question/6789/variable-testing/>`_.
@@ -242,10 +248,13 @@ This tab provides tools to test your variables for desired properties, so you ca
 Parts
 =====
 
-Each question has one or more parts. 
-Parts are listed on the left of the screen; click on a part's entry in the list to edit it.
+.. image:: images/parts.png
 
-The part currently being edited can be moved up and down the order by clicking the blue arrows to the right of the list.
+Each question has one or more parts.
+The student is given a separate score for each part of the question, and their total score is the sum of their scores for each part.
+
+In the editor, parts are displated in a list; you can click on the title bar of a part to hide it, making room for the others.
+Use the :guilabel:`Expand every part` and :guilabel:`Collapse every part` buttons to show or hide every part at once.
 
 Generic part properties
 -----------------------
@@ -418,6 +427,8 @@ The advice area is normally used to present a worked solution to the question.
 Access
 ======
 
+.. image:: images/access.png
+
 You can control who is allowed to see, and to edit, your questions.
 
 When you create a new question, access is limited to you and any other members of the project the question belongs to.
@@ -470,6 +481,8 @@ This tab contains tools to change the behaviour of your question, using pre-buil
 Extensions
 -----------
 
+.. image:: images/extensions.png
+
 Extensions can provide new functionality, such as extra JME functions or content types. 
 To use an extension in your question, tick its checkbox here. 
 All functionality provided by the extension will become available immediately.
@@ -477,6 +490,8 @@ See the section on :doc:`/extensions`.
 
 Functions
 ---------
+
+.. image:: images/functions.png
 
 If you need to do something a bit more complicated with variables, or you find yourself repeating the same pattern over and over, you can define a custom function. 
 Custom functions can be used in any JME expression in the question, such as variable definitions or part answers.
@@ -659,11 +674,11 @@ A list of links to each of the exams which contain this question, for convenienc
 Other versions
 ==============
 
+.. image:: images/other_versions.png
+
 In this tab you can see all questions which are related to this one. 
 Questions are related if one is a copy of the other, or they are both copies of a common ancestor.
 You can use this tab to compare the current question with related versions, and offer to merge your version of the question into another.
-
-.. todo:: Picture of this tab
 
 Click on the :guilabel:`Compare` link to go to a screen where you can offer to replace the other version with your version, or vice versa.
 If you have editing access to the destination question, you can replace it with the other version automatically.
@@ -682,6 +697,8 @@ You can :guilabel:`accept` the request, in which case your version will be repla
 
 Editing history
 ===============
+
+.. image:: images/editing_history.png
 
 Use this tab to keep a record of changes made to your question.
 Write comments to discuss problems or suggested changes.

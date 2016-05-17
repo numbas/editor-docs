@@ -11,7 +11,7 @@ Creating an exam
 
 To create an exam from any page in the Numbas editor, click on the plus icon at the top of the page, and select :guilabel:`Exam`. 
 
-.. todo:: picture of create exam screen
+.. image:: images/create_exam.png
 
 You must give a name for your exam, and select a :doc:`project </project/reference>` for it to go in. 
 The default project is your personal workspace; you can always move the exam to another of your projects later on.
@@ -27,7 +27,7 @@ On the left of the screen are :ref:`exam-admin-controls` and labels for each of 
 Admin controls
 ==============
 
-.. todo:: Pic of admin buttons
+.. image:: images/admin_controls.png
 
 .. glossary::
     Test Run
@@ -163,11 +163,11 @@ You can check a question does what you want and give it a test run before includ
 
 Click the plus icon on one of the question results to add it to your exam. 
 
-.. image:: images/exam_edit_add_question.png
+.. image:: images/add_question.png
 
 You can drag and drop questions in the list on the left to reorder them.
 
-.. image:: images/exam_edit_drag.png
+.. image:: images/drag_question.png
 
 The :guilabel:`Replace this question with a copy` lets you quickly swap in a duplicate of a question you've included in your exam. 
 If you're using a question created by someone else, this is a convenient way of getting a version of the question you can make changes to.
@@ -302,7 +302,7 @@ In this tab you can see all exams which are related to this one.
 Exams are related if one is a copy of the other, or they are both copies of a common ancestor.
 You can use this tab to compare the current exam with related versions, and offer to merge your version of the exam into another.
 
-.. todo:: Picture of this tab
+.. image:: images/other_versions.png
 
 Click on the :guilabel:`Compare` link to go to a screen where you can offer to replace the other version with your version, or vice versa.
 If you have editing access to the destination exam, you can replace it with the other version automatically.
