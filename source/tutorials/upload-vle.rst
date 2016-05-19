@@ -19,15 +19,15 @@ Uploading to Blackboard
 
 .. note::
 
-    At least Blackboard 9.1 Service Pack 6 is required to run Numbas exams. There's no way of checking your Blackboard version from within Blackboard, so check with your server admin that you're using a sufficiently recent version.
-
-Click to watch a screencast taking you through the instructions below:
+    At least Blackboard 9.1 Service Pack 6 is required to run Numbas exams. 
+    There's no way of checking your Blackboard version from within Blackboard, so check with your server admin that you're using a sufficiently recent version.
 
 .. raw:: html
 
-    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/58532194" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    <iframe src="https://player.vimeo.com/video/167121013" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-Log in to Blackboard, and go to the content section of the relevant course. Click on the :guilabel:`Content package (SCORM)` item under the :guilabel:`Build Content` menu.
+Log in to Blackboard, and go to the content section of the relevant course. 
+Click on the :guilabel:`Content package (SCORM)` item under the :guilabel:`Build Content` menu.
 
 .. image:: screenshots/blackboard_content.png
 
@@ -48,11 +48,9 @@ Click :guilabel:`Submit`, and your exam is ready to use!
 Uploading to Moodle
 -------------------
 
-Click to watch a screencast taking you through the instructions below:
-
 .. raw:: html
-    
-    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/58534018" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+    <iframe src="https://player.vimeo.com/video/167123387" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Log in to Moodle, and go to the relevant course. Turn editing mode on, then click on the :guilabel:`Add an activity...` dropdown and select :guilabel:`SCORM package`.
 

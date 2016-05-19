@@ -16,7 +16,7 @@ How do I...
 
     .. raw:: html
 
-        <iframe src="http://player.vimeo.com/video/65654893" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        <iframe src="https://player.vimeo.com/video/167083433" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
 .. _embed-a-video:
@@ -30,7 +30,7 @@ How do I...
 
     .. raw:: html
 
-        <iframe src="http://player.vimeo.com/video/58530295" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        <iframe src="https://player.vimeo.com/video/167082427" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 .. _embed-a-diagram:
 
@@ -47,9 +47,7 @@ How do I...
 
     .. raw:: html
 
-        <iframe src="http://player.vimeo.com/video/80277201" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
-    The question `GeoGebra demo <https://numbas.mathcentre.ac.uk/question/2207/geogebra-demo/>`_ contains examples of of GeoGebra applets embedded as standalone resources, and through `GeoGebraTube <http://www.geogebratube.org/>`_.
+        <iframe src="https://player.vimeo.com/video/167084424" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 .. _change-how-the-question-looks:
 

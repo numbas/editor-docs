@@ -151,17 +151,15 @@ Doing this doesn't affect the way values are computed.
 
 This screencast gives a quick summary of how the variable editing interface works:
 
-.. todo:: Redo these screencasts
-
 .. raw:: html
-    
-    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59575797" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+    <iframe src="https://player.vimeo.com/video/167091112" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 This screencast describes which variable names are valid, and gives some advice on how you should pick names:
 
 .. raw:: html
     
-    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/59577617" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    <iframe src="https://player.vimeo.com/video/167085662" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Definition
 ----------

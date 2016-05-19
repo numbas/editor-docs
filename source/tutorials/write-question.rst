@@ -20,7 +20,7 @@ The structure of a question
 
 .. raw:: html
 
-    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/60822898" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    <iframe src="https://player.vimeo.com/video/167127611" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 You are taken to the *editing page* for your new question. It is worth spending a few moments finding your way around this page.
 
@@ -89,7 +89,7 @@ Better maths display and randomised numbers
 
 .. raw:: html
 
-    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/60823979" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    <iframe src="https://player.vimeo.com/video/167131067" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Now let’s add another part to the question, asking the student to multiply two numbers.
 
@@ -164,7 +164,7 @@ More complicated mathematical expressions
 
 .. raw:: html
 
-    <div style="text-align: center;"><iframe src="http://player.vimeo.com/video/60825921" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    <iframe src="https://player.vimeo.com/video/167137075" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Until now, you’ve only written very simple mathematical expressions, where the randomised variables could be substituted in without any changes to the surrounding symbols. Often, this isn’t the case; for such occasions, there is the ``\simplify`` command.
 
