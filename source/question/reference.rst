@@ -7,7 +7,7 @@ Every Numbas question consists of three sections: :ref:`Statement <statement>`, 
 * In the **Statement**, the context for the question is given to the student. 
 * **Parts** are where the student enters their answers. 
   A question can have one or more parts, each of which is one of several types, depending on what kind of input you want from the student. 
-* Finally, the optional **Advice** section can be used to give a full solution to the question, which the student can request to see if they're stuck, or once they;ve finished the exam.
+* Finally, the optional **Advice** section can be used to give a full solution to the question, which the student can request to see if they're stuck, or once they've finished the exam.
 
 The content in each section is generated each time the question is run, based on the question's :ref:`variables <variables>`.
 
@@ -52,8 +52,8 @@ Admin controls
         The options are listed in descending order of "suitability for use":
 
         * **Ready to use** - this question is of sufficient quality to give to students.
-        * **Should not be used** - this question works, but you deprecate its use - for questionple, if it's not intended for use by students, or there's a better version elsewhere.
-        * **Has some problems** - this question works, but has some problems which mean it's not ready for use by students - for questionple, the question is incomplete, or changes need to be made to the text. 
+        * **Should not be used** - this question works, but you deprecate its use - for example, if it's not intended for use by students, or there's a better version elsewhere.
+        * **Has some problems** - this question works, but has some problems which mean it's not ready for use by students - for example, the question is incomplete, or changes need to be made to the text. 
           Further work is needed before this question can be given to students.
         * **Doesn't work** - this question doesn't even run!
         * **Needs to be tested** - this question looks alright to me, but it should be checked thoroughly before being used.
