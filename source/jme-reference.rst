@@ -552,6 +552,18 @@ Strings
 
     **Example**: ``join(['a','b','c'],',')`` → ``'a,b,c'``
 
+.. function:: currency(n,prefix,suffix)
+
+    Write a currency amount, with the given prefix or suffix characters.
+
+    **Example**: ``currency(123.321,"£","")`` → ``'£123.32'``
+
+.. function:: separateThousands(n,separator)
+
+    Write a number, with the given separator character between every 3 digits
+
+    **Example**: ``separateThousands(1234567.1234,",")`` → ``'1,234,567.1234'``
+
 Logic
 -----
 
