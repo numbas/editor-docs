@@ -41,13 +41,16 @@ How do I...
     You can either embed a `GeoGebra <http://www.geogebra.org/>`_ applet, or use `JSXGraph <http://jsxgraph.uni-bayreuth.de/>`_.
 
     For JSXGraph diagrams, there is :ref:`an extension <jsxgraph-extension>` which takes care of most of the setup.
+    You will need to write a fair amount of JavaScript code to create a diagram using JSXGraph.
 
-    GeoGebra applets can't communicate with the Numbas question and hence can't use randomised variables, but they can be used to illustrate questions in a generic way. 
-    This screencast describes how to embed a GeoGebra applet in a Numbas question.
+    GeoGebra applets are much easier to create and use, but are loaded from `geogebra.org <http://www.geogebra.org>`_ so the student must have internet access in order to use any questions containing GeoGebra applets.
+
+    The screencast below explains how to use a GeoGebra applet in a question. 
+    For more information, see the page on the :ref:`geogebra extension <geogebra-extension>`.
 
     .. raw:: html
 
-        <iframe src="https://player.vimeo.com/video/167084424" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/174512376" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 .. _change-how-the-question-looks:
 

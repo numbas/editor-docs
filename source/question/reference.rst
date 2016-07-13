@@ -285,6 +285,7 @@ Part types
     :maxdepth: 1
 
     parts/information
+    parts/extension
     parts/gapfill
     parts/mathematical-expression
     parts/numberentry

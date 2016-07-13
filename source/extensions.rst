@@ -143,5 +143,6 @@ First-party extensions
     :maxdepth: 1
 
     extensions/jsxgraph
+    extensions/geogebra
     extensions/stats
 
