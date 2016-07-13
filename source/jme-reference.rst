@@ -239,6 +239,12 @@ Number operations
 
     **Example**: ``log(100)`` → ``2``.
 
+.. function:: log(x,b)
+
+    Logarithm with base ``b``.
+
+    **Example**: ``log(8,2)`` → ``3``.
+
 .. function:: degrees(x)
 
     Convert radians to degrees.
