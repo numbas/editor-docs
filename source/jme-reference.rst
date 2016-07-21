@@ -495,6 +495,13 @@ Vector arithmetic
 
     **Examples**: ``cross(vector(1,2,3),vector(4,5,6))``, ``cross(matrix([1],[2]), matrix([3],[4])``.
 
+.. function:: angle(a,b)
+    
+    Angle between vectors ``a`` and ``b``, in radians.
+    Returns ``0`` if either ``a`` or ``b`` has length 0.
+
+    **Example**: ``angle(vector(1,0),vector(0,1))``
+
 .. function:: det(x)
 
     Determinant of a matrix. Only defined for up to 3x3 matrices.
