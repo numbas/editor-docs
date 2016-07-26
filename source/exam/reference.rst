@@ -244,6 +244,17 @@ Feedback
     Advice threshold
         If the student's score is below this threshold, then the question advice is displayed.
 
+    Introduction
+        This text is shown to the student on the front page, before the exam starts. 
+        You could use it to outline the rules of the exam, or just summarise the subjects covered.
+
+    Feedback messages
+        You can write a list of messages, paired with threshold percentages, to show to the student at the end of the exam.
+        The student's score is calculated as a percentage, rounded to the nearest 1%, and compared with the thresholds for each message.
+        The message with the largest threshold less than or equal to the student's score is displayed.
+
+        You could use these messages to suggest topics for the student to revise, direct them to support resources, or detail the consequences of failing the test.
+
 Events
 ======
 
