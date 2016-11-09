@@ -344,9 +344,7 @@ Adaptive marking allows you to incorporate the student's answers to earlier part
 You could use this to allow an "error carried forward" marking scheme, or in more free-form questions where one part has no correct answer - for example, "think of a number and find its square root".
 This is achieved by replacing the values of question variables with the student's answers to other parts.
 When a variable is replaced, any other variables depending on that one are recalculated using the new value.
-
-.. warning::
-    This can be very powerful, but make sure you don't introduce any new random variation in these dependent variables, or the correct answer will change each time the student submits their answer.
+All other variables keep their original values.
 
 As an example, suppose part **a** of your question asks the student to calculate the mean of a set of numbers. 
 The correct answer for this part is the variable ``sample_mean``.
@@ -358,6 +356,27 @@ If the student makes an error in calculating the sample mean but uses the right 
 We can ensure this by replacing the value of ``sample_mean`` with the student's answer to part **a** when marking part **b**.
 When the student submits an answer to part **b**, the value of ``z_statistic`` will be automatically recalculated using the student's value of ``sample_mean``. 
 Then, if the student correctly applies the formula, their answer will match the new value of ``z_statistic`` and they will receive full credit for the part.
+
+.. warning::
+    This feature can be very powerful, but make sure you don't introduce any new random variation in these dependent variables, or the correct answer will change each time the student submits their answer.
+
+    The editor will try to catch these cases and show you a warning, with a list of the problematic variables. 
+    Resolve this by moving the random elements to new variables.
+
+    For example, in the following set of variables, ``b`` depends on ``a`` and also has a random element::
+
+        a = random(1..5)
+        b = a*random(1,-1)
+
+    In a part where ``a`` is replaced with the answer to a previous part, ``b`` will be regenerated with the new value of ``a``. 
+    However, each time this happens, it will be multiplied by a random value. 
+    To fix this, create a new variable ``b_sign``::
+
+        a = random(1..6)
+        b_sign = random(1,-1)
+        b = a*b_sign
+
+    With this setup, ``b`` is always multiplied by the same value because ``b_sign`` does not depend on the replaced variable ``a``, so it is not regenerated when the part is submitted.
 
 .. topic:: Variable replacements
 
