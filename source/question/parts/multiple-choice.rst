@@ -26,10 +26,10 @@ Choose one from a list / Choose several from a list / Match choices with answers
             If the student would have scored more than this many marks, they are instead awarded this many. The value 0 means "no maximum mark".
 
         Minimum answers
-            For :term:`choose several from a list` and :term:`match choices with answers` parts, the student must select at least this many choices.
+            For :term:`choose several from a list` and :term:`match choices with answers` parts, the student must select at least this many choices. The value 0 means "no minimum", though the student must make at least one choice to submit the part.
 
         Maximum answers
-            For :term:`choose several from a list` and :term:`match choices with answers` parts, the student must select at most this many choices.
+            For :term:`choose several from a list` and :term:`match choices with answers` parts, the student must select at most this many choices. The value 0 means "no maximum".
 
         What to do if wrong number of answers selected
             If the student selects too few or too many answers, either do nothing, show them a warning but allow them to submit, or prevent submission until they pick an acceptable number of answers.

@@ -301,7 +301,7 @@ You can grant extra access to indvidual users or *publish* your exam to the publ
 .. topic:: Access Links
     
     The URLs in this section automatically grant access to whoever follows them. 
-    You could use these links to share a question with someone who hasn't yet created an account on the editor, or to share a question with a group of people without inviting each person individually.
+    You could use these links to share a question with someone who hasn't yet created an account on the editor (they'll be prompted to create an account when they click on the link), or to share a question with a group of people without inviting each person individually.
 
     .. warning::
         These URLs grant access to whoever clicks on them, so be careful about how they're shared.
