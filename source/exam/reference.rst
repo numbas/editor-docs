@@ -133,21 +133,26 @@ Questions
 =========
 
 Select the questions you want to include in your exam on this tab.
+
+Questions are organised into groups.
+For each group, you can decide how many of the available questions to show to the student, and the order they should appear.
 You can use every question selected, or pick a random subset each time the exam is started.
 
 .. glossary::
 
-    Shuffle questions?
-        If ticked, then the questions will be shown to the student in a random order. 
-        The order is randomised on each attempt.
+    Show group names?
+        If this is ticked, an input box will appear in each group where you can enter a name.
+        The group names will be shown to the student in the navigation menu and in the score breakdown at the end of the exam.
 
-    Use all questions?
-        This option is only visible if :term:`Shuffle questions?` is ticked.
-        If ticked, then every question in the list will be shown to the student. 
-        If not, then only the number specified below will be used.
+    Questions to use
+        The strategy for picking questions to show to the student.
 
-    Number of questions to display
-        The number of questions to show to the student.
+        * **All questions, in this order** - all of the questions in the list below are shown to the student, in the order you've chosen.
+        * **All questions, in random order** - all of the questions in the list below are shown to the student, in a different order for each attempt.
+        * **Pick a random subset** - A subset of the questions in the list below are shown to the student. The questions chosen, and the order they appear, will differ for each attempt.
+
+    Number of questions to choose
+        If using the "Pick a random subset" strategy, this many questions from this group will be shown to the student.
 
     Pass threshold
         Define a pass/fail threshold for the student's total score, as a percentage of the available marks.
@@ -165,17 +170,15 @@ Click the plus icon on one of the question results to add it to your exam.
 
 .. image:: images/add_question.png
 
-You can drag and drop questions in the list on the left to reorder them.
-
-.. image:: images/drag_question.png
+You can drag and drop questions in the list on the left to reorder them, or move them between groups.
 
 The :guilabel:`Replace this question with a copy` lets you quickly swap in a duplicate of a question you've included in your exam. 
 If you're using a question created by someone else, this is a convenient way of getting a version of the question you can make changes to.
 
 .. note:: 
 
-    Deleting a question from an exam does not remove it from the database. 
-    To permanently delete a question, click on its name and click the :guilabel:`Delete` button on the question's edit page.
+    Removing a question from an exam does not remove it from the database.
+    To permanently delete a question, click on its name to open its edit page, and click the :guilabel:`Delete` button there.
 
 Navigation
 ==========
