@@ -426,13 +426,13 @@ Number theory
 
 .. function:: perm(n,k)
 
-    Count permutations, i.e. :math:`^n \kern-2pt P_r`.
+    Count permutations, i.e. :math:`^n \kern-2pt P_k = \frac{n!}{(n-k)!}`.
 
-    **Example**: ``perm(5,2)`` → ``60``
+    **Example**: ``perm(5,2)`` → ``20``
 
 .. function:: comb(n,k)
 
-    Count combinations, i.e. :math:`^n \kern-2pt C_r`.
+    Count combinations, i.e. :math:`^n \kern-2pt C_k = \frac{n!}{k!(n-k)!}`.
 
     **Example**: ``comb(5,2)`` → ``10``.
 
