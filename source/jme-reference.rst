@@ -309,17 +309,36 @@ Number operations
         * ``siground(matrix([[0.123,4.56],[54,98.765]]),2)`` → ``matrix([[0.12,4.6],[54,99]])``
         * ``siground(vector(10/3,20/3),2)`` → ``vector(3.3,6.7)``
 
-.. function:: dpformat(n,d)
+.. function:: dpformat(n,d,[style])
 
     Round ``n`` to ``d`` decimal places and return a string, padding with zeroes if necessary.
+    
+    If ``style`` is given, the number is rendered using the given notation style.
+    See the page on :ref:`number-notation` for more on notation styles.
 
     **Example**: ``dpformat(1.2,4)`` → ``"1.2000"``
 
-.. function:: sigformat(n,d)
+.. function:: sigformat(n,d,[style])
 
     Round ``n`` to ``d`` significant figures and return a string, padding with zeroes if necessary.
 
     **Example**: ``sigformat(4,3)`` → ``"4.00"``
+
+.. function:: formatnumber(n,style)
+
+    Render the number ``n`` using the given number notation style.
+
+    See the page on :ref:`number-notation` for more on notation styles.
+
+    **Example**: ``formatnumber(1234.567,"fr")`` → ``"1.234,567"``
+
+.. function:: parsenumber(string,style)
+
+    Parse a string representing a number written in the given style.
+
+    See the page on :ref:`number-notation` for more on notation styles.
+
+    **Example**: ``parsenumber("1 234,567","si-fr")`` → ``1234.567``
 
 Trigonometry
 ------------

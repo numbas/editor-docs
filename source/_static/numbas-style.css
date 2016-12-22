@@ -16,3 +16,7 @@ iframe {
     display: block;
     margin: 2em auto;
 }
+
+table.docutils td, table.docutils th {
+    white-space: normal;
+}
