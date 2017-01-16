@@ -71,13 +71,42 @@ Data types
 
     Use strings to create non-mathematical text. Either ``'`` or ``"`` can be used to delimit strings.
 
-    **Examples**: ``"hello there"``, ``'hello there'``
+    You can escape a character by placing a single backslash character before it. 
+    The following escape codes have special behaviour:
+
+    ====== =========
+    ``\n`` New-line
+    ``\{`` ``\{``
+    ``\}`` ``\}``
+    ====== =========
+
+    If you want to write a string which contains a mixture of single and double quotes, you can delimit it with triple-double-quotes or triple-single-quotes, to save escaping too many characters.
+
+    **Examples**: ``"hello there"``, ``'hello there'``, ``""" I said, "I'm Mike's friend" """``
 
 .. data:: list
 
     An ordered list of elements of any data type.
 
     **Examples**: ``[0,1,2,3]``, ``[a,b,c]``, ``[true,false,true]``
+
+.. data:: dict
+
+    A 'dictionary'a, mapping key strings to values of any data type.
+    
+    A dictionary is created by enclosing one or more key-value pairs (a string followed by a colon and any JME expression) in square brackets, or with the ``dict`` function.
+
+    Key strings are case-sensitive.
+
+    **Examples**: 
+    
+    * ``["a": 1, "b": 2]``
+    * ``["name": "Tess Tuser", "age": 106, "hobbies": ["reading","writing","arithmetic"] ]``
+    * ``dict("key1": 0.1, "key2": 1..3)``
+
+    .. warning::
+        Because lists and dicts use similar syntax, ``[]`` produces an empty list, **not** an empty dictionary. 
+        To create an empty dictionary, use ``dict()``.
 
 .. data:: range
 
@@ -121,8 +150,10 @@ Arithmetic
 
 .. function:: x+y
 
-    Addition. Numbers, vectors, matrices, lists, or strings can be added together.
-    ``list1+list2`` concatenates the two lists, while ``list+value`` returns a list with the right-hand-side value appended.
+    Addition. Numbers, vectors, matrices, lists, dicts, or strings can be added together.
+    
+    * ``list1+list2`` concatenates the two lists, while ``list+value`` returns a list with the right-hand-side value appended.
+    * ``dict1+dict2`` merges the two dictionaries, with values from the right-hand side taking precedence when the same key is present in both dictionaries.
 
     **Examples**: 
         * ``1+2`` → ``3``
@@ -170,8 +201,14 @@ Number operations
 -----------------
 
 .. function:: abs(x)
+              len(x)
+              length(x)
 
-    Absolute value, or modulus. Defined for numbers, strings, ranges, vectors and lists. In the case of a list, returns the number of elements. For a range, returns the difference between the upper and lower bounds.
+    Absolute value, or modulus. 
+    Defined for numbers, strings, ranges, vectors, lists and dictionaries.
+    In the case of a list, returns the number of elements. 
+    For a range, returns the difference between the upper and lower bounds.
+    For a dictionary, returns the number of keys.
 
     **Examples**: 
         * ``abs(-8)`` → ``8``
@@ -182,6 +219,7 @@ Number operations
         * ``len(set([1,2,2]))`` → ``2``
         * ``length(vector(3,4))`` → ``5``
         * ``abs(vector(3,4,12))`` → ``13``
+        * ``len(["a": 1, "b": 2, "c": 1])`` → ``3``
 
 .. function:: arg(z)
 
@@ -214,6 +252,7 @@ Number operations
     **Example**: ``isint(4.0)`` → ``true``
 
 .. function:: sqrt(x)
+              sqr(x)
 
     Square root of a number.
 
@@ -258,6 +297,7 @@ Number operations
     **Examples**: ``radians(180)`` → ``pi``
 
 .. function:: sign(x)
+              sgn(x)
 
     Sign of a number. Equivalent to :math:`\frac{x}{|x|}`, or 0 when ``x`` is 0.
 
@@ -343,43 +383,79 @@ Number operations
 Trigonometry
 ------------
 
-Trigonometric functions all work in radians, and have domain the complex numbers.
+Trigonometric functions all work in radians, and have as their domain the complex numbers.
 
 .. function:: sin(x)
 
+    Sine.
+
 .. function:: cos(x)
+
+    Cosine.
 
 .. function:: tan(x)
 
+    Tangent: :math:`\tan(x) = \frac{\sin(x)}{\cos(x)}`
+
 .. function:: cosec(x)
+
+    Cosecant: :math:`\csc(x) = \frac{1}{sin(x)}`
 
 .. function:: sec(x)
 
+    Secant: :math:`\sec(x) = \frac{1}{cos(x)}`
+
 .. function:: cot(x)
+
+    Cotangent: :math:`\cot(x) = \frac{1}{\tan(x)}`
 
 .. function:: arcsin(x)
 
+    Inverse of :func:`sin`. When :math:`x \in [-1,1]`, ``arcsin(x)`` returns a value in :math:`[-\frac{\pi}{2}, \frac{\pi}{2}]`.
+
 .. function:: arccos(x)
+
+    Inverse of :func:`cos`. When :math:`x \in [-1,1]`, ``arccos(x)`` returns a value in :math:`[0, \frac{\pi}]`.
 
 .. function:: arctan(x)
 
+    Inverse of :func:`tan`. When :math:`x` is non-complex, ``arctan(x)`` returns a value in :math:`[-\frac{\pi}{2}, \frac{\pi}{2}]`.
+
 .. function:: sinh(x)
 
+    Hyperbolic sine: :math:`\sinh(x) = \frac{1}{2} \left( \mathrm{e}^x - \mathrm{e}^{-x} \right)`
+
 .. function:: cosh(x)
+    
+    Hyperbolic cosine: :math:`\cosh(x) = \frac{1}{2} \left( \mathrm{e}^x + \mathrm{e}^{-x} \right)`
 
 .. function:: tanh(x)
 
+    Hyperbolic tangent: :math:`tanh(x) = \frac{\sinh(x)}{\cosh(x)}`
+
 .. function:: cosech(x)
+
+    Hyperbolic cosecant: :math:`\operatorname{cosech}(x) = \frac{1}{\sinh(x)}`
 
 .. function:: sech(x)
 
+    Hyperbolic secant: :math:`\operatorname{sech}(x) = \frac{1}{\cosh(x)}`
+
 .. function:: coth(x)
+
+    Hyperbolic cotangent: :math:`\coth(x) = \frac{1}{\tanh(x)}`
 
 .. function:: arcsinh(x)
 
+    Inverse of :func:`sinh`.
+
 .. function:: arccosh(x)
 
+    Inverse of :func:`cosh`.
+
 .. function:: arctanh(x)
+
+    Inverse of :func:`tanh`.
 
 Number theory
 -------------
@@ -456,6 +532,7 @@ Number theory
     **Example**: ``comb(5,2)`` → ``10``.
 
 .. function:: gcd(a,b)
+              gcf(a,b)
 
     Greatest common divisor of integers ``a`` and ``b``. Can also write ``gcf(a,b)``.
 
@@ -548,6 +625,14 @@ Strings
 
     **Example**: ``latex('\frac{1}{2}')``.
 
+.. function:: safe(x)
+
+    Mark string ``x`` as safe: don't substitute variable values into it when this expression is evaluated.
+
+    Use this function to preserve curly braces in string literals.
+
+    **Example**: ``safe('From { to }')``
+
 .. function:: capitalise(x)
 
     Capitalise the first letter of a string.
@@ -578,6 +663,12 @@ Strings
 
     **Example**: ``join(['a','b','c'],',')`` → ``'a,b,c'``
 
+.. function:: split(string,delimiter)
+
+    Split a string at every occurrence of ``delimiter``, returning a list of the the remaining pieces.
+
+    **Example**: ``split("a,b,c,d",",")`` → ``["a","b","c","d"]``
+
 .. function:: currency(n,prefix,suffix)
 
     Write a currency amount, with the given prefix or suffix characters.
@@ -587,6 +678,8 @@ Strings
 .. function:: separateThousands(n,separator)
 
     Write a number, with the given separator character between every 3 digits
+
+    To write a number using notation appropriate to a particular culture or context, see :func:`formatnumber`.
 
     **Example**: ``separateThousands(1234567.1234,",")`` → ``'1,234,567.1234'``
 
@@ -703,7 +796,13 @@ Lists
 
     Is element ``x`` in the list, set or range ``collection``?
 
-    **Examples**: ``3 in [1,2,3,4]`` → ``true``, ``3 in (set(1,2,3,4) and set(2,4,6,8))`` → ``false``
+    If ``collection`` is a dictionary, returns ``true`` if the dictionary has a key ``x``.
+
+    **Examples**: 
+        * ``3 in [1,2,3,4]`` → ``true``
+        * ``3 in (set(1,2,3,4) and set(2,4,6,8))`` → ``false``
+        * ``"a" in ["a": 1]`` → ``true``
+        * ``1 in ["a": 1]`` throws an error because dictionary keys must be strings.
 
 .. function:: repeat(expression,n)
 
@@ -738,12 +837,18 @@ Lists
     **Example**: ``filter(x>5,x,[1,3,5,7,9])`` → ``[7,9]``
 
 .. function:: let(name,definition,...,expression)
+              let(definitions, expression)
 
-    Evaluate ``expression``, temporarily defining variables with the given names. Use this to cut down on repetition. You can define any number of variables - follow a variable name with its definition. The last argument is the expression to be evaluated.
+    Evaluate ``expression``, temporarily defining variables with the given names. 
+    Use this to cut down on repetition. 
+    You can define any number of variables - in the first calling pattern, follow a variable name with its definition.
+    Or you can give a dictionary mapping variable names to their values.
+    The last argument is the expression to be evaluated.
 
     **Examples**: 
         * ``let(d,sqrt(b^2-4*a*ac), [(-b+d)/2, (-b-d)/2])`` → ``[-2,-3]`` (when ``[a,b,c]`` = ``[1,5,6]``)
         * ``let(x,1, y,2, x+y)`` → ``3``
+        * ``let(["x": 1, "y": 2], x+y)`` → ``3``
 
 .. function:: sort(x)
 
@@ -822,6 +927,59 @@ Lists
     All choices of ``r`` elements from ``collection``, in any order, without replacement.
 
     **Example**: ``permutations([1,2,3],2)`` → ``[ [1,2], [1,3], [2,1], [2,3], [3,1], [3,2] ]``
+
+Dictionaries
+------------
+
+.. function:: dict[key]
+
+    Get the value corresponding to the given key string in the dictionary ``d``.
+
+    If the key is not present in the dictionary, an error will be thrown.
+
+    **Example**: ``["a": 1, "b": 2]["a"]`` → ``1``
+
+.. function:: get(dict,key,default)
+
+    Get the value corresponding to the given key string in the dictionary.
+
+    If the key is not present in the dictionary, the ``default`` value will be returned.
+
+    **Examples**:
+        * ``get(["a":1], "a", 0)`` → ``1``
+        * ``get(["a":1], "b", 0)`` → ``0``
+
+.. function:: dict(keys)
+
+    Create a dictionary with the given key-value pairs.
+    Equivalent to ``[ .. ]``, except when no key-value pairs are given: ``[]`` creates an empty *list* instead.
+
+    **Examples**:
+        * ``dict()``
+        * ``dict("a": 1, "b": 2)``
+
+.. function:: keys(dict)
+
+    A list of all of the given dictionary's keys.
+
+    **Example**: ``keys(["a": 1, "b": 2, "c": 1])`` → ``["a","b","c"]``
+
+.. function:: values(dict)
+              values(dict,keys)
+
+    A list of the values corresponding to each of the given dictionary's keys.
+
+    If a list of keys is given, the values corresponding to those keys are returned, in the same order.
+
+    **Examples**: 
+        * ``values(["a": 1, "b": 2, "c": 1])`` → ``[1,2,1]``
+        * ``values(["a": 1, "b": 2, "c": 3], ["b","a"])`` → ``[2,1]``
+
+.. function:: items(dict)
+
+    A list of all of the ``[key,value]`` pairs in the given dictionary.
+
+    **Example**: ``values(["a": 1, "b": 2, "c": 1])`` → ``[ ["a",1], ["b",2], ["c",1] ]``
 
 Sets
 ----
@@ -929,3 +1087,33 @@ HTML
         * ``image('resources/images/picture.png')``
         * ``image(chosenimage)``
         * `Question using randomly chosen images <https://numbas.mathcentre.ac.uk/question/1132/using-a-randomly-chosen-image/>`_.
+
+JSON
+----
+
+`JSON <http://www.json.org/>`_ is a lightweight data-interchange format.
+Many public data sets come in JSON format; it's a good way of encoding data in a way that is easy for both humans and computers to read and write.
+
+For an example of how you can use JSON data in a Numbas question, see the exam `Working with JSON data <https://numbas.mathcentre.ac.uk/exam/4684/working-with-json-data/>`_.
+
+.. function:: json_decode(json)
+
+    Decode a JSON string into JME data types. 
+
+    JSON is decoded into numbers, strings, booleans, lists, or dictionaries. 
+    To produce other data types, such as matrices or vectors, you will have to post-process the resulting data.
+
+    .. warning::
+        The JSON value ``null`` is silently converted to an empty string, because JME has no "null" data type.
+        This may change in the future.
+
+    **Example**: ``json_decode(' {"a": 1, "b": [2,true,"thing"]} ')`` → ``["a": 1, "b": [2,true,"thing"]]``
+
+.. function:: json_encode(data)
+
+    Convert the given object to a JSON string.
+
+    Numbers, strings, booleans, lists, and dictionaries are converted in a straightforward manner.
+    Other data types may behave unexpectedly.
+
+    **Example**: ``json_encode([1,"a",true])`` → ``'[1,"a",true]'``

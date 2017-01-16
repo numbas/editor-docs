@@ -173,6 +173,8 @@ Definition
         Specify what type of data the variable should hold. 
         The :guilabel:`JME code` option allows you to define the variable using :doc:`/jme-reference` syntax, while the other options provide simplified forms.
 
+        The :guilabel:`JSON data` option allows you to enter raw `JSON <http://json.org/>`_ data, which is parsed into JME data.
+
     Value
         Define the variable's value. 
         The format of this field depends on the data type.
