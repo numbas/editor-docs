@@ -244,8 +244,9 @@ Feedback
         If ticked, then the :guilabel:`Reveal answer` button is enabled on each question. 
         If the student chooses to reveal the answer to a question, they are shown the correct answer but lose all their marks and can not re-attempt the question.
 
-    Advice threshold
-        If the student's score is below this threshold, then the question advice is displayed.
+    Show student's name?
+        If ticked, the student's name is shown on the results page after the exam has finished.
+        The student's name is only available when running the exam through a VLE - exams run standalone do not know the student's name.
 
     Introduction
         This text is shown to the student on the front page, before the exam starts. 
