@@ -3,6 +3,11 @@
 Choose one from a list / Choose several from a list / Match choices with answers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+There are three kinds of "multiple response" part types in Numbas, with similar settings.
+They are listed here together.
+
+.. topic:: Multiple response part types
+
 .. glossary::
 
     Choose one from a list

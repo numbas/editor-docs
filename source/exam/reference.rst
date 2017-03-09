@@ -19,7 +19,18 @@ The default project is your personal workspace; you can always move the exam to 
 The exam editor
 ===============
 
-At the top of the exam editor is the exam's name, as well as any feedback stamp which has been attached. 
+At the top of the exam editor is the exam's name, as well as a stamp showing the status of the exam.
+
+Click on the status stamp to give feedback about the quality of an exam, after test running it. 
+The options are listed in descending order of "suitability for use":
+
+* **Ready to use** - this exam is of sufficient quality to give to students.
+* **Should not be used** - this exam works, but you deprecate its use - for example, if it's not intended for use by students, or there's a better version elsewhere.
+* **Has some problems** - this exam works, but has some problems which mean it's not ready for use by students - for example, the exam is incomplete, or changes need to be made to the text. 
+  Further work is needed before this exam can be given to students.
+* **Doesn't work** - this exam doesn't even run!
+* **Needs to be tested** - this exam looks alright to me, but it should be checked thoroughly before being used.
+
 On the left of the screen are :ref:`exam-admin-controls` and labels for each of the editing tabs.
 
 .. _exam-admin-controls:
@@ -38,16 +49,13 @@ Admin controls
             This link is not permanent and could stop working at any time.
             Instead, download the exam and put it either on your own webspace or in a VLE.
 
-    Feedback
-        Use this button to give feedback about the quality of an exam, after test running it. 
-        The options are listed in descending order of "suitability for use":
+    Make a copy
+        Create a copy of the exam. 
+        Use this to make changes to an exam which does not belong to you.
 
-        * **Ready to use** - this exam is of sufficient quality to give to students.
-        * **Should not be used** - this exam works, but you deprecate its use - for example, if it's not intended for use by students, or there's a better version elsewhere.
-        * **Has some problems** - this exam works, but has some problems which mean it's not ready for use by students - for example, the exam is incomplete, or changes need to be made to the text. 
-          Further work is needed before this exam can be given to students.
-        * **Doesn't work** - this exam doesn't even run!
-        * **Needs to be tested** - this exam looks alright to me, but it should be checked thoroughly before being used.
+    Delete
+        Delete the exam permanently from the database. 
+        The associated questions are not deleted - you must delete them individually, if you want them to be deleted too.
 
     Download
         Links to download standalone packages of the exam. 
@@ -55,79 +63,6 @@ Admin controls
         * **SCORM package** - a compiled package of the exam with SCORM files included, so it can be uploaded to a VLE and communicate with its gradebook.
         * **standalone .zip** - a compiled package of the exam, ready to run anywhere without connecting to a VLE. 
         * **source** - a plain-text representation of the exam, to be used with the Numbas command-line tools or as a backup.
-
-Settings
-========
-
-The settings tab is where you set up metadata describing the exam.
-
-Try to make sure not to ignore the settings tab, even if you just want to get a working exam as quickly as possible - a good name and description will make it much easier to find your exam again in the future!
-
-.. glossary::
-    Name
-        This is shown to the student and used for searching within the editor, so make it something intelligible. 
-        "Linear algebra diagnostic test" is a good name; "L.A. t1 v1" is not.
-
-    Description
-        Use this field to describe the exam's contents, what it assesses, and so on. 
-        This is shown in the exams index, so make sure it's fairly concise.
-
-    Tags
-        Use tags to categorise exams so they can be found through the search function. 
-        Your guiding principle should be "more is better" - try to write down all words that someone searching for this exam might use.
-
-        After typing a tag in the box, press the :kbd:`Enter` key to add it to the list.
-
-    Make a copy of this exam
-        Create a copy of the exam. 
-        Use this to make changes to an exam which does not belong to you.
-
-    Delete this exam
-        Delete the exam permanently from the database. 
-        The associated questions are not deleted - you must delete them individually, if you want them to be deleted too.
-
-Metadata
-^^^^^^^^
-
-.. glossary::
-
-    Move to another project
-        Click this button to move the exam to another project.
-        You can move an exam to any project to which you have editing access.
-
-    Licence
-        You can specify the licence under which you are making your resources available. 
-        Different licences allow other users to copy, modify or reuse your content in different ways - consider which licence to choose carefully. 
-        *CC BY* allows other users to reuse your content however you like, as long as they give appropriate credit to you.
-
-    Subjects and Topics
-        The :guilabel:`Subjects` and :guilabel:`Topics` fields provide a more structured way to categorise exams according to the subjects they assess.
-        Database search results can be filtered by subject or topic.
-
-        Once you have selected one or more subjects, topics belonging to those subjects appear underneath.
-
-        The options for these fields are defined by the server administrator.
-
-    Ability levels
-        Use this field to describe which ability levels the exam is appropriate for.
-
-        Several *ability frameworks* are available to choose from - pick the framework which most closely matches your own, and select one or more ability levels.
-        An ability level is modelled as an interval in the range 0 to 1, so when you filter database search results by ability level, any items whose ability levels overlap the ones you selected are included in the results.
-
-        The options for these fields are defined by the server administrator.
-
-Display
-=======
-
-.. glossary::
-
-    Interface theme
-        Themes control the user interface of an exam, changing the look and feel. 
-        The `default` theme is designed for exams which will be delivered over the web. 
-        There is also a `worksheet` theme which can be used to print out multiple, randomised copies of an exam for students to complete on paper.
-
-    Interface language
-        Specify which translation to use for the text in the user interface, i.e. button labels, error messages, etc.
 
 Questions
 =========
@@ -179,6 +114,19 @@ If you're using a question created by someone else, this is a convenient way of 
 
     Removing a question from an exam does not remove it from the database.
     To permanently delete a question, click on its name to open its edit page, and click the :guilabel:`Delete` button there.
+
+Display
+=======
+
+.. glossary::
+
+    Interface theme
+        Themes control the user interface of an exam, changing the look and feel. 
+        The `default` theme is designed for exams which will be delivered over the web. 
+        There is also a `worksheet` theme which can be used to print out multiple, randomised copies of an exam for students to complete on paper.
+
+    Interface language
+        Specify which translation to use for the text in the user interface, i.e. button labels, error messages, etc.
 
 Navigation
 ==========
@@ -264,6 +212,62 @@ Events
 
 Some of the properties described above are marked as *events*. 
 These all have the same structure: an :guilabel:`action` setting which determines how to react to the event, and a :guilabel:`message` to display to the student when appropriate.
+
+Settings
+========
+
+The settings tab is where you set up metadata describing the exam.
+
+Try to make sure not to ignore the settings tab, even if you just want to get a working exam as quickly as possible - a good name and description will make it much easier to find your exam again in the future!
+
+.. glossary::
+    Name
+        This is shown to the student and used for searching within the editor, so make it something intelligible. 
+        "Linear algebra diagnostic test" is a good name; "L.A. t1 v1" is not.
+
+    Description
+        Use this field to describe the exam's contents, what it assesses, and so on. 
+        This is shown in the exams index, so make sure it's fairly concise.
+
+    Tags
+        Use tags to categorise exams so they can be found through the search function. 
+        Your guiding principle should be "more is better" - try to write down all words that someone searching for this exam might use.
+
+        After typing a tag in the box, press the :kbd:`Enter` key to add it to the list.
+
+Metadata
+^^^^^^^^
+
+.. glossary::
+
+    Transfer ownership
+        Click this button to transfer ownership of the exam to somebody else.
+        You will be given editing access automatically, but the new owner can revoke this.
+
+    Move to another project
+        Click this button to move the exam to another project.
+        You can move an exam to any project to which you have editing access.
+
+    Licence
+        You can specify the licence under which you are making your resources available. 
+        Different licences allow other users to copy, modify or reuse your content in different ways - consider which licence to choose carefully. 
+        *CC BY* allows other users to reuse your content however you like, as long as they give appropriate credit to you.
+
+    Subjects and Topics
+        The :guilabel:`Subjects` and :guilabel:`Topics` fields provide a more structured way to categorise exams according to the subjects they assess.
+        Database search results can be filtered by subject or topic.
+
+        Once you have selected one or more subjects, topics belonging to those subjects appear underneath.
+
+        The options for these fields are defined by the server administrator.
+
+    Ability levels
+        Use this field to describe which ability levels the exam is appropriate for.
+
+        Several *ability frameworks* are available to choose from - pick the framework which most closely matches your own, and select one or more ability levels.
+        An ability level is modelled as an interval in the range 0 to 1, so when you filter database search results by ability level, any items whose ability levels overlap the ones you selected are included in the results.
+
+        The options for these fields are defined by the server administrator.
 
 Access
 ======

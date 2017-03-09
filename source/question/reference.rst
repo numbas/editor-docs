@@ -24,7 +24,18 @@ The default project is your personal workspace; you can always move the question
 The question editor
 ===================
 
-At the top of the question editor is the question's name, as well as any feedback stamp which has been attached. 
+At the top of the question editor is the question's name, as well as a stamp showing the status of the question.
+
+Click on the status stamp to give feedback about the quality of an question, after test running it. 
+The options are listed in descending order of "suitability for use":
+
+* **Ready to use** - this question is of sufficient quality to give to students.
+* **Should not be used** - this question works, but you deprecate its use - for example, if it's not intended for use by students, or there's a better version elsewhere.
+* **Has some problems** - this question works, but has some problems which mean it's not ready for use by students - for example, the question is incomplete, or changes need to be made to the text. 
+  Further work is needed before this question can be given to students.
+* **Doesn't work** - this question doesn't even run!
+* **Needs to be tested** - this question looks alright to me, but it should be checked thoroughly before being used.
+
 On the left of the screen are :ref:`question-admin-controls` and labels for each of the editing tabs.
 
 .. _question-admin-controls:
@@ -47,16 +58,12 @@ Admin controls
             This link is not permanent and could stop working at any time.
             Instead, download the question and put it either on your own webspace or in a VLE.
 
-    Feedback
-        Use this button to give feedback about the quality of a question, after test running it. 
-        The options are listed in descending order of "suitability for use":
+    Make a copy
+        Create a copy of the question. 
+        Use this to make changes to an question which does not belong to you.
 
-        * **Ready to use** - this question is of sufficient quality to give to students.
-        * **Should not be used** - this question works, but you deprecate its use - for example, if it's not intended for use by students, or there's a better version elsewhere.
-        * **Has some problems** - this question works, but has some problems which mean it's not ready for use by students - for example, the question is incomplete, or changes need to be made to the text. 
-          Further work is needed before this question can be given to students.
-        * **Doesn't work** - this question doesn't even run!
-        * **Needs to be tested** - this question looks alright to me, but it should be checked thoroughly before being used.
+    Delete
+        Delete the question permanently from the database. 
 
     Download
         Links to download standalone packages of the question. 
@@ -76,12 +83,12 @@ Each portion of text displayed to the student (for example, the statement, advic
 A content area can include text, images, or more dynamic content such as videos and interactive diagrams.
 
 By default, text is edited using the rich text editor. 
-Click on the :guilabel:`Toggle rich text editor` button to edit the raw HTML code for the content area.
+Click on the :guilabel:`Source code` button to edit the raw HTML code for the content area.
 
 .. figure:: images/content_area_editor.png
     :align: center
 
-    The rich text editor, and the raw HTML editor.
+    The rich text editor
 
 You can write mathematical notation in content areas using LaTeX; see the section on :ref:`LaTeX notation`.
 
@@ -104,31 +111,6 @@ when ``num_animals = 12`` and ``animal_name = "sheep"``.
 The substitution of variables into a mathematical expression is more complicated: depending on context, the surrounding expression may need to be change for different values of the substituted variables. 
 Numbas provides a simple system to handle substitution of variables into mathematical expressions; see the section on :ref:`simplification-rules`.
 
-Settings
-========
-
-.. glossary::
-    Name
-        This is shown to the student and used for searching within the editor, so make it something intelligible.
-        "Find the roots of a quadratic equation" is a good name; "Alg102 q2" is not.
-
-    Licence
-        You can specify the licence under which you are making your resources available. 
-        Different licences allow other users to copy, modify or reuse your content in differnet ways - consider which licence to choose carefully. 
-        *CC BY* allows other users to reuse your content however you like, as long as they give appropriate credit to you.
-
-    Description
-        Use this field to describe the question's contents, what it assesses, and so on. 
-        This is shown in the questions index and in the questions list of any exams containing this question, so make sure it's fairly concise.
-
-    Tags
-        Use tags to categorise questions so they can be found through the search function. 
-        Your guiding principle should be "more is better" - try to write down all words that someone searching for this question might use.
-
-        After typing a tag in the box, press the Enter key to add it to the list. 
-
-.. _statement:
-
 Statement
 =========
 
@@ -136,112 +118,6 @@ The statement is a content area which appears at the top of the question, before
 Use the statement to set up the question and provide any information the student needs to answer it.
 
 .. _variables:
-
-Variables
-=========
-
-.. image:: images/variable_definition.png
-
-The :guilabel:`Generated value` column shows a generated value for each variable. 
-Note that when the question is delivered to students, the variable values are generated with each new attempt, so students won't necessarily see the same values as those displayed here. 
-It's a good idea to use the :guilabel:`Regenerate values` button a few times to check that randomised variables don't take unsuitable values.
-
-You can reorder the variables in the list by dragging them. 
-Doing this doesn't affect the way values are computed.
-
-This screencast gives a quick summary of how the variable editing interface works:
-
-.. raw:: html
-
-    <iframe src="https://player.vimeo.com/video/167091112" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-This screencast describes which variable names are valid, and gives some advice on how you should pick names:
-
-.. raw:: html
-    
-    <iframe src="https://player.vimeo.com/video/167085662" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-Definition
-----------
-
-.. glossary::
-    Name
-        The name of the variable. 
-        See the :ref:`section on variable names <variable-names>`.
-
-    Data type
-        Specify what type of data the variable should hold. 
-        The :guilabel:`JME code` option allows you to define the variable using :doc:`/jme-reference` syntax, while the other options provide simplified forms.
-
-        The :guilabel:`JSON data` option allows you to enter raw `JSON <http://json.org/>`_ data, which is parsed into JME data.
-
-    Value
-        Define the variable's value. 
-        The format of this field depends on the data type.
-
-    Description
-        Describe what the variable means, and how it is used. 
-        It's also often helpful to explain how it's defined, and what changes can be made to it.
-        
-        .. note::
-            Don't underestimate the value of the description field!
-            Variables whose meaning seems clear when you write them have a habit of becoming indecipherable months later.
-
-    Depends on
-        A list of all variables used in this variable's definition. 
-        You can click on a variable name to go to its definition.
-        If the variable hasn't been defined yet, it'll be created.
-
-    Used by
-        A list of all variables which use this variable in their definition. 
-        You can click on a variable name to go to its definition.
-
-Locking variable values
------------------------
-
-The preview values for each question variable are regenerated each time you click on the :guilabel:`Regenerate variables` button or, if the :guilabel:`Automatically regenerate variables when changes are made` option is ticked, whenever a variable definition is changed.
-
-You can **lock** the value of a variable so that it doesn't change when the other variables are regenerated.
-To do so, click on the padlock icon next to the variable's name.
-Any variables used in the definition of the locked variable (those which appear in the :guilabel:`Depends on` list) will also be locked implicitly, so that you don't end up with an inconsistent set of variables.
-You can unlock a variable by clicking on the padlock icon again.
-
-.. warning::
-    Variables are only locked inside the editor's preview area - when you test run the question, or include it in an exam, a fresh value for the variable will be generated.
-
-.. _variable-testing:
-
-Variable testing
-================
-
-.. image:: images/variable_testing.png
-
-This tab provides tools to test your variables for desired properties, so you can automatically re-randomise your questions' variables until you get a suitable set of values.
-
-`Example question using variable testing tools <https://numbas.mathcentre.ac.uk/question/6789/variable-testing/>`_.
-
-.. warning::
-    While this tool allows you to pick sets of variables that would be hard to generate constructively, it's a random process so you must be aware that there's a chance no suitable set of values will ever be found. 
-    Use the :guilabel:`Test condition` button to see how likely this is.
-
-.. glossary::
-
-    Condition to satisfy
-        A JME expression which should evaluate to `true` when the set of variables generated has the properties you want. 
-        For example, if `a`, `b` and `c` are the coefficients of a quadratic equation and you want it to have real roots, the condition could be `b^2-4*a*c>=0`.
-
-        When the student runs this question, the system will regenerate the set of variables until it finds one which satisfies this condition.
-
-    Test condition
-        When you press this button, the editor will generate as many sets of variables as possible within the time given. 
-        When it finishes, you'll be presented with statistics including the proportion of runs which produced acceptable sets of values, and the expected number of runs before an acceptable set of values is found.
-
-        If the calculate probability of getting an acceptable set of variables within 1 second is lower than 99%, you should make changes to your variable definitions.
-
-    Maximum number of runs
-        The maximum number of times the system should regenerate the set of variables without finding a set which satisfies the condition before giving up. 
-        If the system exceeds this number in a compiled exam, the entire exam will fail, so try to avoid it!
-
 
 .. _parts:
 
@@ -291,14 +167,14 @@ Part types
 .. toctree::
     :maxdepth: 1
 
-    parts/information
-    parts/extension
-    parts/gapfill
     parts/mathematical-expression
     parts/numberentry
     parts/matrixentry
     parts/match-text-pattern
     parts/multiple-choice
+    parts/gapfill
+    parts/information
+    parts/extension
 
 .. _part-scripts:
 
@@ -439,6 +315,111 @@ Then, if the student correctly applies the formula, their answer will match the 
 
 
 
+Variables
+=========
+
+.. image:: images/variable_definition.png
+
+The :guilabel:`Generated value` column shows a generated value for each variable. 
+Note that when the question is delivered to students, the variable values are generated with each new attempt, so students won't necessarily see the same values as those displayed here. 
+It's a good idea to use the :guilabel:`Regenerate values` button a few times to check that randomised variables don't take unsuitable values.
+
+You can reorder the variables in the list by dragging them. 
+Doing this doesn't affect the way values are computed.
+
+This screencast gives a quick summary of how the variable editing interface works:
+
+.. raw:: html
+
+    <iframe src="https://player.vimeo.com/video/167091112" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+This screencast describes which variable names are valid, and gives some advice on how you should pick names:
+
+.. raw:: html
+    
+    <iframe src="https://player.vimeo.com/video/167085662" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+Definition
+----------
+
+.. glossary::
+    Name
+        The name of the variable. 
+        See the :ref:`section on variable names <variable-names>`.
+
+    Data type
+        Specify what type of data the variable should hold. 
+        The :guilabel:`JME code` option allows you to define the variable using :doc:`/jme-reference` syntax, while the other options provide simplified forms.
+
+        The :guilabel:`JSON data` option allows you to enter raw `JSON <http://json.org/>`_ data, which is parsed into JME data.
+
+    Value
+        Define the variable's value. 
+        The format of this field depends on the data type.
+
+    Description
+        Describe what the variable means, and how it is used. 
+        It's also often helpful to explain how it's defined, and what changes can be made to it.
+        
+        .. note::
+            Don't underestimate the value of the description field!
+            Variables whose meaning seems clear when you write them have a habit of becoming indecipherable months later.
+
+    Depends on
+        A list of all variables used in this variable's definition. 
+        You can click on a variable name to go to its definition.
+        If the variable hasn't been defined yet, it'll be created.
+
+    Used by
+        A list of all variables which use this variable in their definition. 
+        You can click on a variable name to go to its definition.
+
+Locking variable values
+-----------------------
+
+The preview values for each question variable are regenerated each time you click on the :guilabel:`Regenerate variables` button or, if the :guilabel:`Automatically regenerate variables when changes are made` option is ticked, whenever a variable definition is changed.
+
+You can **lock** the value of a variable so that it doesn't change when the other variables are regenerated.
+To do so, click on the padlock icon next to the variable's name.
+Any variables used in the definition of the locked variable (those which appear in the :guilabel:`Depends on` list) will also be locked implicitly, so that you don't end up with an inconsistent set of variables.
+You can unlock a variable by clicking on the padlock icon again.
+
+.. warning::
+    Variables are only locked inside the editor's preview area - when you test run the question, or include it in an exam, a fresh value for the variable will be generated.
+
+.. _variable-testing:
+
+Variable testing
+================
+
+.. image:: images/variable_testing.png
+
+This tab provides tools to test your variables for desired properties, so you can automatically re-randomise your questions' variables until you get a suitable set of values.
+
+`Example question using variable testing tools <https://numbas.mathcentre.ac.uk/question/6789/variable-testing/>`_.
+
+.. warning::
+    While this tool allows you to pick sets of variables that would be hard to generate constructively, it's a random process so you must be aware that there's a chance no suitable set of values will ever be found. 
+    Use the :guilabel:`Test condition` button to see how likely this is.
+
+.. glossary::
+
+    Condition to satisfy
+        A JME expression which should evaluate to `true` when the set of variables generated has the properties you want. 
+        For example, if `a`, `b` and `c` are the coefficients of a quadratic equation and you want it to have real roots, the condition could be `b^2-4*a*c>=0`.
+
+        When the student runs this question, the system will regenerate the set of variables until it finds one which satisfies this condition.
+
+    Test condition
+        When you press this button, the editor will generate as many sets of variables as possible within the time given. 
+        When it finishes, you'll be presented with statistics including the proportion of runs which produced acceptable sets of values, and the expected number of runs before an acceptable set of values is found.
+
+        If the calculate probability of getting an acceptable set of variables within 1 second is lower than 99%, you should make changes to your variable definitions.
+
+    Maximum number of runs
+        The maximum number of times the system should regenerate the set of variables without finding a set which satisfies the condition before giving up. 
+        If the system exceeds this number in a compiled exam, the entire exam will fail, so try to avoid it!
+
 
 .. _advice:
 
@@ -448,53 +429,6 @@ Advice
 :guilabel:`Advice` is a content area which is shown when the student presses the :guilabel:`Reveal` button to reveal the question's answers, or at the end of the exam.
 
 The advice area is normally used to present a worked solution to the question.
-
-Access
-======
-
-.. image:: images/access.png
-
-You can control who is allowed to see, and to edit, your questions.
-
-When you create a new question, access is limited to you and any other members of the project the question belongs to.
-You can grant extra access to indvidual users or *publish* your question to the public database, where it can be viewed by any other user.
-
-.. topic:: Public visibility
-
-    .. glossary::
-
-        Hidden
-            Only you and users named in the :guilabel:`Individual access rights` section can see this question.
-
-        Anyone can see this
-            Anyone, even users who are not logged in, can see this question. 
-            Only you and users named in the :guilabel:`Individual access rights` section can edit this question.
-
-        Anyone can edit this
-            Anyone, even users who are not logged in, can see and edit this question.
-
-.. topic:: Give access to a user
-
-    Type a name into the search box to find a user. 
-    Click on a user's name in the results list to add them to the access list. 
-
-    Named users can have the following rights:
-
-    .. glossary::
-
-        Can view this
-            The named user can see, but not edit, this question.
-
-        Can edit this
-            The named user can see this question and make changes to it.
-
-.. topic:: Access Links
-    
-    The URLs in this section automatically grant access to whoever follows them. 
-    You could use these links to share a question with someone who hasn't yet created an account on the editor, or to share a question with a group of people without inviting each person individually.
-
-    .. warning::
-        These URLs grant access to whoever clicks on them, so be careful about how they're shared.
 
 .. _question-scripts:
 
@@ -690,6 +624,78 @@ Uploaded files are available from the relative URL ``resources/question-resource
 The URL for each resource you've uploaded is displayed next to its thumbnail.
 
 The most common use case is to include images in content areas; see :ref:`the tutorial on including an image in a question<include-an-image>`.
+
+Settings
+========
+
+.. glossary::
+    Name
+        This is shown to the student and used for searching within the editor, so make it something intelligible.
+        "Find the roots of a quadratic equation" is a good name; "Alg102 q2" is not.
+
+    Licence
+        You can specify the licence under which you are making your resources available. 
+        Different licences allow other users to copy, modify or reuse your content in differnet ways - consider which licence to choose carefully. 
+        *CC BY* allows other users to reuse your content however you like, as long as they give appropriate credit to you.
+
+    Description
+        Use this field to describe the question's contents, what it assesses, and so on. 
+        This is shown in the questions index and in the questions list of any exams containing this question, so make sure it's fairly concise.
+
+    Tags
+        Use tags to categorise questions so they can be found through the search function. 
+        Your guiding principle should be "more is better" - try to write down all words that someone searching for this question might use.
+
+        After typing a tag in the box, press the Enter key to add it to the list. 
+
+.. _statement:
+
+Access
+======
+
+.. image:: images/access.png
+
+You can control who is allowed to see, and to edit, your questions.
+
+When you create a new question, access is limited to you and any other members of the project the question belongs to.
+You can grant extra access to indvidual users or *publish* your question to the public database, where it can be viewed by any other user.
+
+.. topic:: Public visibility
+
+    .. glossary::
+
+        Hidden
+            Only you and users named in the :guilabel:`Individual access rights` section can see this question.
+
+        Anyone can see this
+            Anyone, even users who are not logged in, can see this question. 
+            Only you and users named in the :guilabel:`Individual access rights` section can edit this question.
+
+        Anyone can edit this
+            Anyone, even users who are not logged in, can see and edit this question.
+
+.. topic:: Give access to a user
+
+    Type a name into the search box to find a user. 
+    Click on a user's name in the results list to add them to the access list. 
+
+    Named users can have the following rights:
+
+    .. glossary::
+
+        Can view this
+            The named user can see, but not edit, this question.
+
+        Can edit this
+            The named user can see this question and make changes to it.
+
+.. topic:: Access Links
+    
+    The URLs in this section automatically grant access to whoever follows them. 
+    You could use these links to share a question with someone who hasn't yet created an account on the editor, or to share a question with a group of people without inviting each person individually.
+
+    .. warning::
+        These URLs grant access to whoever clicks on them, so be careful about how they're shared.
 
 Exams using this question
 =========================
