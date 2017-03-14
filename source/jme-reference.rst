@@ -1117,3 +1117,13 @@ For an example of how you can use JSON data in a Numbas question, see the exam `
     Other data types may behave unexpectedly.
 
     **Example**: ``json_encode([1,"a",true])`` → ``'[1,"a",true]'``
+
+Sub-expressions
+---------------
+
+.. function:: expression(string)
+
+    Parse a string as a JME expression. 
+    The expression can be substituted into other expressions, such as the answer to a mathematical expression part, or the ``\simplify`` LaTeX command.
+
+    **Example**: `A question using randomly chosen variable names <https://numbas.mathcentre.ac.uk/question/20358/randomise-variable-names-expression-version/>`_.
