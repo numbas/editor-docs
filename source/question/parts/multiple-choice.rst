@@ -43,13 +43,25 @@ They are listed here together.
             If this is ticked, the choices are displayed in random order.
 
         Shuffle order of answers? (:term:`Match choices with answers` only)
-            If this is ticked, the answersare displayed in random order.
+            If this is ticked, the answers are displayed in random order.
 
         Number of display columns
             For :term:`choose one from a list` and :term:`choose several from a list` parts, this dictates how many columns the choices are displayed in. If 0, the choices are displayed on a single line, wrapped at the edges of the screen.
 
         Selection type
-            Only applies to :term:`match choices with answers` parts. "One from each row" means that the student can only select one answer from each row. "Checkboxes" means that the student can select any number of choice-answer pairs.
+            For :term:`match choices with answers` parts, "One from each row" means that the student can only select one answer from each row and "Checkboxes" means that the student can select any number of choice-answer pairs.
+
+            For :term:`choose one from a list` parts, users can select only one of the choices. 
+
+            "Drop down list" means that the choices are shown as a selection box; the student can click to show the choices in a vertical list.
+
+            .. figure:: images/dropdown.png
+                :alt: A dropdown list showing some choices
+
+            "Radio buttons" means that choices are shown separately, in-line with the part prompt.
+
+            .. figure:: images/radiobuttons.png
+                :alt: A list of choices with radio buttons
 
         Custom marking matrix
             If the checkbox is ticked, the :ref:`JME <jme>` expression in the box below is evaluated and used to assign numbers of marks to choices. 
