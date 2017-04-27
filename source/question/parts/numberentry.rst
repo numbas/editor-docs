@@ -20,6 +20,9 @@ Number entry parts ask the student to enter a number, which is marked if it is i
         Allow the student to enter a fraction?
             This option is only available when no precision restriction is applied, since they apply to decimal numbers. If this is ticked, the student can enter a ratio of two whole numbers, e.g. ``-3/8``, as their answer.
 
+        Must the fraction be reduced?
+            This option only applies when "Allow the student to enter a fraction" is ticked. If this is ticked, the student must enter their fractional answer reduced to lowest terms. For example, consider a part whose correct answer is :math:`5/4`. If this is ticked, ``10/8`` will be marked as incorrect.
+
         Display the correct answer as a fraction?
             This option is only available when no precision restriction is applied. If this is ticked, the correct answer to the part will be rendered as a fraction of two whole numbers instead of a decimal. For example, if the answer is :math:`0.5`, it will be displayed as ``1/2`` instead of ``0.5``.
 
