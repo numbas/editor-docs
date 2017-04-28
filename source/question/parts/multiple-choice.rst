@@ -8,16 +8,16 @@ They are listed here together.
 
 .. topic:: Multiple response part types
 
-.. glossary::
+    .. glossary::
 
-    Choose one from a list
-        The student must choose one of several options
+        Choose one from a list
+            The student must choose one of several options
 
-    Choose several from a list
-        The student can choose any of a list of options
+        Choose several from a list
+            The student can choose any of a list of options
 
-    Match choices with answers
-        The student is presented with a 2D grid of :guilabel:`choices` and :guilabel:`answers`. Depending on how the part is set up, they must either match up each choice with an answer, or select any number of choice-answer pairs.
+        Match choices with answers
+            The student is presented with a 2D grid of :guilabel:`choices` and :guilabel:`answers`. Depending on how the part is set up, they must either match up each choice with an answer, or select any number of choice-answer pairs.
 
 
 .. topic:: Marking
