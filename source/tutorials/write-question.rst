@@ -42,7 +42,7 @@ Type "Numbas tutorial: arithmetic" in the :guilabel:`Name` field.
 
 .. image:: screenshots/question/4.png
 
-Every Numbas question consists of three sections: :ref:`Statement <statement>`, :ref:`Parts <question-parts>`, and :ref:`Advice <advice>`.
+Every Numbas question consists of three sections: :ref:`Statement <statement>`, :ref:`Parts <parts>`, and :ref:`Advice <advice>`.
 In the Statement, the context for the question is given to the student.
 Parts are where the student enters their answers.
 A question can have one or more parts, each of which is one of several types, depending on what kind of input you want from the student.
@@ -158,6 +158,7 @@ Every variable needs a name and a definition.
 The definition is given in JME syntax.
 
 .. note:: For information on what constitutes a valid variable name, see :ref:`Variable names <variable-names>`.
+
 For more on JME syntax, see :ref:`the JME reference <jme>`.
 
 Call this variable ``a``, and give it the definition::
@@ -223,8 +224,8 @@ Add two new variables ``x0`` and ``x1``::
 The ``except`` operator in the definition of ``x1`` ensures that it doesn’t take the same value as ``x0``, so the quadratic doesn’t have repeated roots.
 
 .. note:: 
-
     It’s a good idea to add comments to your variable definitions to explain what they represent and how they’re generated.
+
 A comment starts with two forward slashes ``//`` and continues until the end of the line.
 
 Now the *Prompt* for the part might go something like this:
