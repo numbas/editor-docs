@@ -75,9 +75,8 @@ You can use every question selected, or pick a random subset each time the exam 
 
 .. glossary::
 
-    Show group names?
-        If this is ticked, an input box will appear in each group where you can enter a name.
-        The group names will be shown to the student in the navigation menu and in the score breakdown at the end of the exam.
+    Show group names to student?
+        If this is ticked, the names you give to each group of questions will be shown to the student in the navigation menu when they run the exam, and in the score breakdown at the end of the exam.
 
     Questions to use
         The strategy for picking questions to show to the student.
