@@ -513,6 +513,15 @@ Number theory
 
     **Example**: ``fract(4.3)`` → ``0.3``
 
+.. function:: rational_approximation(n,[accuracy])
+
+    Compute a rational approximation to the given number by computing terms of its continued fraction, returning the numerator and denominator separately.
+    The approximation will be within :math:`e^{-\text{accuracy}}` of the true value; the default value for ``accuracy`` is 15.
+
+    **Examples**: 
+        * ``rational_approximation(pi)`` → ``[355,113]``
+        * ``rational_approximation(pi,3)`` → ``[22,7]``
+
 .. function:: mod(a,b)
 
     Modulo; remainder after integral division, i.e. :math:`a \bmod b`.
