@@ -22,6 +22,9 @@ Before length restrictions are applied, surplus brackets and whitespace are remo
 
         Answer simplification rules
             :ref:`Simplification rules <simplification-rules>` to apply to the correct answer, if it is displayed to the student (for example, after clicking the :guilabel:`Reveal answers` button). This shouldn't affect marking.
+            
+            If this field is empty, the following rules are applied: ``basic``,``unitFactor``,``unitPower``,``unitDenominator``,``zeroFactor``,``zeroTerm``,``zeroPower``,``collectNumbers``,``zeroBase``,``constantsFirst``,``sqrtProduct``,``sqrtDivision``,``sqrtSquare``,``otherNumbers``.
+
 
 .. _string-restrictions:
 
