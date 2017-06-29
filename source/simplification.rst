@@ -125,7 +125,9 @@ The following simplification rules are available:
 .. glossary::
 
     basic
-        These rules are always turned on, even if you give an empty list of rules. They must be actively turned off, by including ``!basic`` in the list of rules.
+        These rules are always turned on, even if you give an empty list of rules. 
+        They must be actively turned off, by including ``!basic`` in the list of rules.
+        See `this behaviour in action <https://numbas.mathcentre.ac.uk/question/22839/when-does-the-basic-ruleset-get-turned-on/>`_.
 
         * ``+x`` → ``x`` (get rid of unary plus)
         * ``x+(-y)`` → ``x-y`` (plus minus = minus)
