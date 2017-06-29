@@ -58,6 +58,10 @@ They are listed here together.
             .. figure:: images/dropdown.png
                 :alt: A dropdown list showing some choices
 
+            .. warning::
+                Drop down lists can only display plain text, due to how selection boxes are implemented in HTML. 
+                This means that any formatting applied in the editor will not be displayed, and LaTeX will not render properly.
+
             "Radio buttons" means that choices are shown separately, in-line with the part prompt.
 
             .. figure:: images/radiobuttons.png
