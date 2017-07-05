@@ -613,6 +613,10 @@ Here's an example use::
         alert("a = "+question.unwrappedVariables.a);
     });
 
+.. warning::
+    Since JME variable names are case-insensitive, all names are converted to lower case when used in JavaScript. 
+    For example, a JME variable ``firstItem`` would be available in JavaScript as ``question.unwrappedVariables.firstitem``.
+
 The CSS preamble can be used to change the look of elements in your question. 
 You can see an example of the CSS preamble in use at https://numbas.mathcentre.ac.uk/question/2704/css-preamble/.
 
