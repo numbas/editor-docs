@@ -3,11 +3,18 @@
 Substituting variables into displayed maths
 ===========================================
 
-In Numbas, maths is displayed using LaTeX. For help with LaTeX, see :ref:``LaTeX notation``.
+.. attention::
+    This page is about substituting variables into *mathematical expressions*. 
+    You can substitute text strings into plain text using curly braces; see :ref:`substituting-into-content` for a description of the different methods of substituting variables into question text.
 
-LaTeX is purely a typesetting language and is ill-suited for representing *meaning* in addition to *layout*. For this reason, dynamic or randomised maths expressions must be written in JME syntax and converted to LaTeX. Numbas provides two new LaTeX commands to do this for you.
+In Numbas, maths is displayed using LaTeX. 
+For help with LaTeX, see :ref:`LaTeX notation`.
 
-To *substitute* the result of an expression into a LaTeX expression, use the ``\var`` command. Its parameter is a JME expression, which is evaluated and then converted to LaTeX.
+LaTeX is purely a typesetting language and is ill-suited for representing *meaning* in addition to *layout*. 
+For this reason, dynamic or randomised maths expressions must be written in JME syntax and converted to LaTeX. Numbas provides two new LaTeX commands to do this for you.
+
+To *substitute* the result of an expression into a LaTeX expression, use the ``\var`` command. 
+Its parameter is a JME expression, which is evaluated and then converted to LaTeX.
 
 For example::
 

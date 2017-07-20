@@ -92,10 +92,28 @@ Click on the :guilabel:`Source code` button to edit the raw HTML code for the co
 
 You can write mathematical notation in content areas using LaTeX; see the section on :ref:`LaTeX notation`.
 
+.. _substituting-into-content:
+
 Substituting variables into content areas
 -----------------------------------------
 
 There are two modes of variable subsitution: substitution into plain text (or HTML), and substitution into mathematical expressions. 
+
+Here's a quick summary of the different methods of substituting variables into question text, to help you choose:
+
++---------------------------+--------------------------+----------------------------------------------+
+| I want to substitute      | Such as                  | So use                                       |
++===========================+==========================+==============================================+
+| A text string             | Someone's name           | Curly braces, e.g. ``{name} is a farmer.``   |
++---------------------------+--------------------------+----------------------------------------------+
+| A single number into a    | :math:`x` in             | :ref:`\\var <simplification-rules>`,         |
+| LaTeX expression with     | :math:`a = x`            | e.g. ``$a = \var{x}$``                       |
+| no surrounding operators  |                          |                                              |
++---------------------------+--------------------------+----------------------------------------------+
+| Several numbers into a    | :math:`a`, :math:`b` and | :ref:`\\simplify <simplification-rules>`,    |
+| LaTeX expression          | :math:`c` into           | e.g. ``\simplify{ {a}x^2 + {b}x + {c} }``    |
+|                           | :math:`ax^2+bx+c`        |                                              |
++---------------------------+--------------------------+----------------------------------------------+
 
 Substitution of variables into plain text is straightforward: just enclose the variable name (or any :ref:`JME` expression) in curly braces. 
 For example::
