@@ -145,4 +145,5 @@ First-party extensions
     extensions/jsxgraph
     extensions/geogebra
     extensions/stats
+    extensions/random-person
 

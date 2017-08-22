@@ -5,7 +5,7 @@ GeoGebra
 
 The GeoGebra extension provides a couple of functions to load a GeoGebra material from `geogebra.org <http://www.geogebra.org>`_ and embed it in a question.
 
-For more information on how to use the extension, see `its documentation <https://github.com/numbas/numbas-extension-geogebra>`_.
+For more information on how to use the extension, see `its documentation <https://github.com/numbas/numbas-extension-geogebra>`__.
 
 The screencast below shows how to use GeoGebra in a question.
 
