@@ -268,3 +268,14 @@ Click :guilabel:`Test Run` and check that your question is marked correctly.
 That’s it for this tutorial.
 You’ve created a very simple Numbas question asking the student to enter some numbers and a mathematical expression, with randomised parameters and neatly rendered maths.
 If you got lost along the way, you can compare what you’ve got with `this question we prepared earlier <https://numbas.mathcentre.ac.uk/question/670/numbas-tutorial-arithmetic/>`_.
+
+What next?
+----------
+
+Now you've written your own question, you'll probably want to dive into more advanced topics.
+Here are some things you could try next:
+
+* :ref:`Set up a project <collaboration>` so you can collaborate with your colleagues.
+* If you've got an idea of something you'd like to do, the :ref:`how-do-i` section probably contains an example showing you how to do it.
+* Look at `the question highlights on the Numbas blog <https://www.numbas.org.uk/blog/category/question-highlights/>`_ for some inspiration.
+* Start writing your own questions!
