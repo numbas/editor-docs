@@ -1,3 +1,5 @@
+.. _projects:
+
 Projects
 ********
 
@@ -38,7 +40,8 @@ The timeline shows all activity on exams or questions belonging to the question,
 Timeline items belonging to each project you're a member of will also be shown in your personal timeline on the editor homepage.
 
 The cog icon at the top of the page takes you to the project's options page. 
-On this page you can change any of the project's settings or, if the project isn't your personal workspace, delete it.
+On this page you can change any of the project's settings or, if you're the project's owner and it isn't your personal workspace, delete it.
+
 
 Finding content inside a project
 ================================

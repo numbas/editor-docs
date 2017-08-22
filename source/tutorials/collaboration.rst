@@ -1,91 +1,77 @@
+.. _collaboration:
+
 Collaborating using Numbas
 ==========================
 
 Numbas has several features to make collaborating with colleagues easier. 
 
 
-.. note::
+Gather material in projects
+---------------------------
 
-    # New bits
+:ref:`Projects <projects>` grant automatic editing access to their members.
 
-Project
--------
-
-Don't collaborate in your own workspace - create a separate project instead.
-
-Projects grant automatic editing access to their members.
-
-Timeline
---------
+Rather than granting editing access to each of your colleagues for each item you're collaborating on, organise all the material inside a project and add your colleagues as members.
+Every member of the project will be able to see and give feedback on all the material.
 
 Use the project timeline, and the editing history tab on individual items, to keep track of changes you and your colleagues make.
 Write comments to discuss changes or problems.
 
-Restore points
---------------
-Set a restore point to save a snapshot of your question when you make a change.
-
-Write an informative description of the current state of the question, and what you've changed since the last restore point.
 
 Give feedback
 -------------
 
-Use the feedback stamps to tell your colleagues which of your questions are ready to use, and which need more attention.
+Use the :ref:`feedback stamps <question-stamps>` to tell your colleagues which of your questions are ready to use, and which need more attention.
 
-Check over your colleagues' work and use feedback stamps to alert them to problems.
+It's a good idea to have someone else test a question once it's complete; they should proofread the text and then attempt the question, giving both correct and incorrect answers to check that the marking works as intended. 
 
-When you compile an exam, every question in it should be labelled "Ready to use".
+If a colleague makes a copy of a question and you decide to use that instead, mark the original version as "Should not be used" to avoid confusion later on.
+
+When it's time to compile an exam, every question in it should be labelled "Ready to use". 
+That way, you know there won't be any problems when your students take the exam.
+
+.. image:: screenshots/feedback_dropdown.png
+
 
 Pull requests
 -------------
 
-If you see a problem in someone else's question but don't have editing access, make a copy and fix it, but don't just leave the original to languish - create a pull request so your changes can be merged back into the original.
+If you see a problem in someone else's question but don't have editing access, make a copy and fix it, but don't just leave the original to languish - create a :ref:`pull request <question-other-versions>` so your changes can be merged back into the original.
 
-.. note::
-
-    # end of new bits
-
-
-Give editing access to collaborators
-------------------------------------
-
-.. image:: screenshots/access_rights.png
-
-Use the :guilabel:`Access` tab to give editing or viewing access for your questions and exams to your colleagues.
 
 Use the editing history tab
 ---------------------------
 
 .. image:: screenshots/sample_editing_history.png
 
-Each time you make a change to a question, write a description of what you've done in the :guilabel:`Editing history` tab. This is useful when you're editing your own questions, but doubly so when editing other people's - they can quickly see what's different, and decide if they're happy with the changes.
+Each time you make a change to a question, :ref:`set a checkpoint <question-editing-history>` to save a snapshot of your question when you make a change.
+Write an informative description of the current state of the question, and what you've changed since the last restore point.
 
-You can write comments on the editing history. Use this to suggest changes, report bugs, and so on.
+This is useful when you're editing your own questions, but doubly so when editing other people's - they can quickly see what's different, and decide if they're happy with the changes.
+
+You can write comments on the editing history. 
+Use this to suggest changes, report bugs, and so on.
 
 Give feedback on quality
 ------------------------
-
-.. image:: screenshots/feedback_dropdown.png
-
-Use the :guilabel:`Feedback` button on questions and exams to let other users know whether they're ready for use or not.
-
-It's a good idea to have someone else test a question once it's complete; they should proofread the text and then attempt the question, giving both correct and incorrect answers to check that the marking works as intended. 
-
-If a colleague makes a copy of a question and you decide to use that instead, mark the original version as "Should not be used" to avoid confusion later on.
 
 Add descriptions to variables and use sensible names
 ----------------------------------------------------
 
 .. image:: screenshots/variable_description.png
 
-Short variable names are quick to type, but not easy to understand. Try to avoid single-letter variable names as much as possible, and prefer longer names over shorter ones. For example, it isn't immediately obvious what ``sm`` represents, while ``sample_mean`` is very clear.
+Short variable names are quick to type, but not easy to understand. 
+Try to avoid single-letter variable names as much as possible, and prefer longer names over shorter ones. 
+For example, it isn't immediately obvious what ``sm`` represents, while ``sample_mean`` is very clear.
 
-In addition, make sure to write a description of each variable in the box under its definition. You should explain what the variable represents, and also describe any important points about how the variable is generated, or what values it can take.
+In addition, make sure to write a description of each variable in the box under its definition. 
+You should explain what the variable represents, and also describe any important points about how the variable is generated, or what values it can take.
 
 Tag questions
 -----------------
 
-Use tags to categorise your questions. Agree with your colleagues how to tag questions - if everyone makes up their own tags, they're no use at all!
+Use tags to categorise your questions. 
+Agree with your colleagues how to tag questions - if everyone makes up their own tags, they're no use at all!
 
 Here are some tagging schemes you might want to use:
 

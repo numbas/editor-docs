@@ -26,6 +26,8 @@ The question editor
 
 At the top of the question editor is the question's name, as well as a stamp showing the status of the question.
 
+.. _question-stamps:
+
 Click on the status stamp to give feedback about the quality of an question, after test running it. 
 The options are listed in descending order of "suitability for use":
 
@@ -724,6 +726,8 @@ Exams using this question
 
 A list of links to each of the exams which contain this question, for convenience.
 
+.. _question-other-versions:
+
 Other versions
 ==============
 
@@ -747,6 +751,8 @@ Try to sum up all your changes - this will show up in the question's editing his
 
 Active requests to merge other versions into the current question are shown underneath the list of related versions.
 You can :guilabel:`accept` the request, in which case your version will be replaced with the other version, or :guilabel:`reject` it, in which case your version will be unchanged and the person who made the request will be notified that it was rejected.
+
+.. _question-editing-history:
 
 Editing history
 ===============

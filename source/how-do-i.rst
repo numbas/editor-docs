@@ -1,8 +1,12 @@
+.. _how-do-i:
+
 ###########
 How do I...
 ###########
 
 This section largely draws from `the "How-tos" project <https://numbas.mathcentre.ac.uk/project/697/>`_ on the numbas.mathcentre.ac.uk editor, where we gather example questions created to demonstrate authoring techniques.
+
+If you've got a question that isn't answered here, try asking on `the Numbas users mailing list <https://groups.google.com/forum/#!forum/numbas-users>`_.
 
 .. contents:: :local:
 
@@ -267,7 +271,7 @@ In combination with the normal mathematical expression marking algorithm, this c
 Check that the student has factorised a quadratic expression
 ------------------------------------------------------------
 
-`This question <https://numbas.mathcentre.ac.uk/question/3737/pattern-matching-factorise-an-equation/>`_ uses :ref:`pattern-matching` to check that the student's answer is the product of two factors.
+`This question <https://numbas.mathcentre.ac.uk/question/3737/pattern-matching-factorise-an-equation/>`__ uses :ref:`pattern-matching` to check that the student's answer is the product of two factors.
 In combination with the normal mathematical expression marking algorithm, this confirms that the student has factorised the expression.
 
 

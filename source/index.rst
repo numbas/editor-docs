@@ -25,12 +25,12 @@ If you have any questions, please `email us <mailto:numbas.ncl.ac.uk>`_ or join 
     tutorials/upload-vle
     tutorials/write-question
     tutorials/collaboration
+    how-do-i
 
 .. toctree::
     :caption: Reference
     :maxdepth: 2
 
-    how-do-i
     project/reference
     exam/reference
     question/reference
