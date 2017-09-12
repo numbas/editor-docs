@@ -643,6 +643,13 @@ Strings
 
     **Example**: ``"hello"[1..4]`` → ``"ell"``
 
+.. function:: substring in string
+
+    Test if ``substring`` occurs anywhere in ``string``.
+    This is case-sensitive.
+
+    **Example**: ``"plain" in "explains"`` → ``true``
+
 .. function:: latex(x)
 
     Mark string ``x`` as containing raw LaTeX, so when it's included in a mathmode environment it doesn't get wrapped in a ``\textrm`` environment.
