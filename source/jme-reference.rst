@@ -629,6 +629,20 @@ Vector arithmetic
 Strings
 ------------------
 
+.. function:: x[n]
+
+    Get the Nth character of the string ``x``.
+    Indices start at 0.
+
+    **Example**: ``"hello"[1]`` → ``"e"``
+
+.. function:: x[a..b]
+
+    Slice the string ``x`` - get the substring between the given indices.
+    Note that indices start at 0, and the final index is not included.
+
+    **Example**: ``"hello"[1..4]`` → ``"ell"``
+
 .. function:: latex(x)
 
     Mark string ``x`` as containing raw LaTeX, so when it's included in a mathmode environment it doesn't get wrapped in a ``\textrm`` environment.
