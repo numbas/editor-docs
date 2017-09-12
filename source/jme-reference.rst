@@ -103,6 +103,7 @@ Data types
     * ``["a": 1, "b": 2]``
     * ``["name": "Tess Tuser", "age": 106, "hobbies": ["reading","writing","arithmetic"] ]``
     * ``dict("key1": 0.1, "key2": 1..3)``
+    * ``dict([["key1",1], ["key2",2]])``
 
     .. warning::
         Because lists and dicts use similar syntax, ``[]`` produces an empty list, **not** an empty dictionary. 
