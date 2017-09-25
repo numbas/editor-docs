@@ -261,7 +261,7 @@ Because it doesn’t pay any attention to the form of the student’s answer, it
 To prevent this, you can specify some :ref:`string restrictions <string-restrictions>` to constrain the student’s answer.
 It isn’t a perfect method, but it’s usually good enough. 
 
-Go to the part’s :guilabel:`Accuracy and string restrictions` tab and enter ``(`` and ``)`` in the :guilabel:`Required strings` field, and ``^`` in the :guilabel:`Forbidden strings` field.
+Go to the part’s :guilabel:`Accuracy and string restrictions` tab and enter ``(`` and ``)`` in the :guilabel:`Required strings` field (make sure to press the Enter key between each character, to enter each character as a separate item), and ``^`` in the :guilabel:`Forbidden strings` field.
 
 Click :guilabel:`Test Run` and check that your question is marked correctly.
 
