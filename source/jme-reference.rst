@@ -653,8 +653,10 @@ Strings
 .. function:: latex(x)
 
     Mark string ``x`` as containing raw LaTeX, so when it's included in a mathmode environment it doesn't get wrapped in a ``\textrm`` environment.
+    
+    Note that backslashes must be double up, because the backslash is an escape character in JME strings.
 
-    **Example**: ``latex('\frac{1}{2}')``.
+    **Example**: ``latex('\\frac{1}{2}')``.
 
 .. function:: safe(x)
 
