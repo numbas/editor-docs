@@ -777,7 +777,13 @@ Logic
 
     Logical XOR.
 
-    **Examples**: ``true XOR false``.
+    **Example**: ``true XOR false``.
+
+.. function:: x implies y
+
+    Logical implication.
+
+    **Example**: ``false implies true``.
 
 Ranges
 ------
