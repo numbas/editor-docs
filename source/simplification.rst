@@ -99,6 +99,11 @@ The following display options are available:
 
     rowVector
         This rule doesn't rewrite expressions, but tells the maths renderer that you'd like vectors to be rendered as rows instead of columns.
+
+    alwaysTimes
+        The multiplication symbol is always included between multiplicands.
+
+        **Example:** ``\simplify[alwaysTimes]{ 2x }`` produces :math:`2 \times x`.
         
 
 Simplification rules
