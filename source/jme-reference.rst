@@ -757,32 +757,32 @@ Logic
 
 .. function:: x and y
 
-    Logical AND.
+    Logical AND. Returns ``true`` if both ``x`` and ``y`` are true, otherwise returns false.
 
     **Examples**: ``true and true``, ``true && true``, ``true & true``.
 
 .. function:: not x
 
-    Logical NOT.
+    Logical NOT. 
 
     **Examples**: ``not true``, ``!true``.
 
 .. function:: x or y
 
-    Logical OR.
+    Logical OR. Returns ``true`` when at least one of ``x`` and ``y`` is true. Returns false when both ``x`` and ``y`` are false.
 
     **Examples**: ``true or false``, ``true || false``.
 
 .. function:: x xor y
 
-    Logical XOR.
+    Logical XOR. Returns ``true`` when at either ``x`` or ``y`` is true but not both. Returns false when ``x`` and ``y`` are the same expression.
 
     **Example**: ``true XOR false``.
 
 .. function:: x implies y
 
-    Logical implication.
-
+    Logical implication. If ``x`` is true and ``y`` is false, then the implication is false. Otherwise, the implication is true.
+    
     **Example**: ``false implies true``.
 
 Ranges
