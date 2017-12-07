@@ -35,6 +35,6 @@ Matrix entry parts ask the student to enter a matrix of numbers. Marks are award
         Display numbers in the correct answer as fractions?
             If this is ticked, then non-integer numbers in the correct answer will be displayed as fractions instead of decimals.
 
-        Require trailing zeroes?
-            This option only applies when a precision restriction is selected. If this is ticked, the student must add zeroes to the end of their answer (when appropriate) to make it represent the correct precision. For example, consider a part whose correct answer is :math:`1.4`, and you want the student's answer to be correct to three decimal places. If "Require trailing zeroes?" is ticked, only the answer :math:`1.400` will be marked correct. If it is not ticked, any of :math:`1.4`, :math:`1.40` or :math:`1.400` will be marked as correct. If *too many* zeroes are used, e.g. :math:`1.4000`, the answer is marked as incorrect.
+        Require trailing zeros?
+            This option only applies when a precision restriction is selected. If this is ticked, the student must add zeros to the end of their answer (when appropriate) to make it represent the correct precision. For example, consider a part whose correct answer is :math:`1.4`, and you want the student's answer to be correct to three decimal places. If "Require trailing zeros?" is ticked, only the answer :math:`1.400` will be marked correct. If it is not ticked, any of :math:`1.4`, :math:`1.40` or :math:`1.400` will be marked as correct. If *too many* zeros are used, e.g. :math:`1.4000`, the answer is marked as incorrect.
 

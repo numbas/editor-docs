@@ -125,7 +125,7 @@ Data types
 
     The components of a vector must be numbers.
 
-    When combining vectors of different dimensions, the smaller vector is padded with zeroes to make up the difference.
+    When combining vectors of different dimensions, the smaller vector is padded with zeros to make up the difference.
 
     **Examples**: ``vector(1,2)``, ``vector([1,2,3,4])``
 
@@ -133,7 +133,7 @@ Data types
 
     Matrices are constructed from lists of numbers, representing the rows.
 
-    When combining matrices of different dimensions, the smaller matrix is padded with zeroes to make up the difference.
+    When combining matrices of different dimensions, the smaller matrix is padded with zeros to make up the difference.
     
     **Examples**: ``matrix([1,2,3],[4,5,6])``, ``matrix(row1,row2,row3)``
 
@@ -352,7 +352,7 @@ Number operations
 
 .. function:: dpformat(n,d,[style])
 
-    Round ``n`` to ``d`` decimal places and return a string, padding with zeroes if necessary.
+    Round ``n`` to ``d`` decimal places and return a string, padding with zeros if necessary.
     
     If ``style`` is given, the number is rendered using the given notation style.
     See the page on :ref:`number-notation` for more on notation styles.
@@ -361,7 +361,7 @@ Number operations
 
 .. function:: sigformat(n,d,[style])
 
-    Round ``n`` to ``d`` significant figures and return a string, padding with zeroes if necessary.
+    Round ``n`` to ``d`` significant figures and return a string, padding with zeros if necessary.
 
     **Example**: ``sigformat(4,3)`` → ``"4.00"``
 

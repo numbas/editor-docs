@@ -26,8 +26,8 @@ Number entry parts ask the student to enter a number, which is marked if it is i
         Display the correct answer as a fraction?
             This option is only available when no precision restriction is applied. If this is ticked, the correct answer to the part will be rendered as a fraction of two whole numbers instead of a decimal. For example, if the answer is :math:`0.5`, it will be displayed as ``1/2`` instead of ``0.5``.
 
-        Require trailing zeroes?
-            This option only applies when a precision restriction is selected. If this is ticked, the student must add zeroes to the end of their answer (when appropriate) to make it represent the correct precision. For example, consider a part whose correct answer is :math:`1.4`, and you want the student's answer to be correct to three decimal places. If "Require trailing zeroes?" is ticked, only the answer :math:`1.400` will be marked correct. If it is not ticked, any of :math:`1.4`, :math:`1.40` or :math:`1.400` will be marked as correct. If *too many* zeroes are used, e.g. :math:`1.4000`, the answer is marked as incorrect.
+        Require trailing zeros?
+            This option only applies when a precision restriction is selected. If this is ticked, the student must add zeros to the end of their answer (when appropriate) to make it represent the correct precision. For example, consider a part whose correct answer is :math:`1.4`, and you want the student's answer to be correct to three decimal places. If "Require trailing zeros?" is ticked, only the answer :math:`1.400` will be marked correct. If it is not ticked, any of :math:`1.4`, :math:`1.40` or :math:`1.400` will be marked as correct. If *too many* zeros are used, e.g. :math:`1.4000`, the answer is marked as incorrect.
             
         Show precision restriction hint?
             If this is ticked, then some text describing the rounding the student must perform is shown next to the input box. For example, "round your answer to 3 decimal places".
