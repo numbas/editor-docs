@@ -373,6 +373,10 @@ Number operations
 
     **Example**: ``formatnumber(1234.567,"fr")`` → ``"1.234,567"``
 
+.. function:: string(n)
+
+    Render the number ``n`` using the ``plain-en`` notation style.
+
 .. function:: parsenumber(string,style)
 
     Parse a string representing a number written in the given style.
@@ -715,6 +719,18 @@ Strings
     To write a number using notation appropriate to a particular culture or context, see :func:`formatnumber`.
 
     **Example**: ``separateThousands(1234567.1234,",")`` → ``'1,234,567.1234'``
+
+.. function:: lpad(str, n, prefix)
+
+    Add copies of ``prefix`` to the start of ``str`` until the result is at least ``n`` characters long.
+
+    **Example**: ``lpad("3", 2, "0")`` → ``"03"``
+
+.. function:: rpad(str, n, suffix)
+
+    Add copies of ``suffix`` to the end of ``str`` until the result is at least ``n`` characters long.
+
+    **Example**: ``rpad("3", 2, "0")`` → ``"30"``
 
 Logic
 -----
