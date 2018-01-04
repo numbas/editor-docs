@@ -288,3 +288,5 @@ epub_copyright = u'2013, Newcastle University'
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'http://docs.python.org/': None}
+
+todo_emit_warnings = True
