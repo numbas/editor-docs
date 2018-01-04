@@ -19,7 +19,7 @@ This function call tells Numbas that the extension has loaded. Because Numbas ca
 Using an extension with the editor
 ----------------------------------
 
-Package your extension's files into a .zip file. Next, go to the Numbas editor click on the :guilabel:`Your profile` link, then :guilabel:`Your extensions`. The :guilabel:`Upload a new extension` link takes you to a form where you can upload the .zip file you created.
+Package your extension's files into a .zip file. Next, go to the Numbas editor click on the :guilabel:`Profile` link, then :guilabel:`Extensions`. The :guilabel:`Upload a new extension` link takes you to a form where you can upload the .zip file you created.
 
 .. glossary::
     Name:

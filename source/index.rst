@@ -49,4 +49,5 @@ If you have any questions, please `email us <mailto:numbas.ncl.ac.uk>`_ or join 
     javascript-api
     extensions
     themes
+    custom-part-types
     server-installation

@@ -51,11 +51,11 @@ Uploading a theme to the editor
 -------------------------------
 
 Package your theme's files into a .zip file. 
-Next, go to the Numbas editor and click on the :guilabel:`Your profile` link, then :guilabel:`Your themes`. 
+Next, go to the Numbas editor and click on the :guilabel:`Profile` link, then :guilabel:`Themes`. 
 The :guilabel:`Upload a new theme` takes you to a form where you can upload the .zip file you created, and give it a human-readable name. 
 You will be able to select any of your themes in the exam edit page.
 
-If you make changes to your theme, go back to the :guilabel:`Your themes` page and click on the :guilabel:`Edit` link, then upload a revised .zip file.
+If you make changes to your theme, go back to the :guilabel:`Themes` page and click on the :guilabel:`Edit` link, then upload a revised .zip file.
 
 ..  Commented out until we re-record
 

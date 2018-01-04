@@ -186,6 +186,8 @@ The following properties are available on every type of part.
         You might want to turn this off if you've set up a question with a custom marking script which assigns a score based on the answers to two or more parts (or gapfills), meaning the individual parts have no independent "correct" or "incorrect" state.
 
 
+.. _part-types:
+
 Part types
 ----------
 
@@ -202,6 +204,9 @@ The following part types are built-in to Numbas:
     parts/gapfill
     parts/information
     parts/extension
+
+:ref:`Custom part types <custom-part-types>` defined by you or other Numbas users provide extra functionality.
+When editing a question, only custom part types you've made yourself or selected from the list of public part types are available.
 
 .. _part-scripts:
 
