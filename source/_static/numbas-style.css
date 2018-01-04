@@ -1,4 +1,13 @@
 @import url('css/theme.css');
+@import url('fonts/source-sans-pro/source-sans-pro.css');
+
+body {
+    font-family: "Source Sans Pro","Helvetica Neue",Arial,sans-serif;
+}
+h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
+    font-family: "Source Sans Pro","Helvetica Neue",Arial,sans-serif;
+    font-weight: 600;
+}
 
 .rst-content .topic-title {
 	font-size: 1.3em;
