@@ -149,11 +149,16 @@ Parts
 Each question has one or more parts.
 The student is given a separate score for each part of the question, and their total score is the sum of their scores for each part.
 
-In the editor, parts are displated in a list; you can click on the title bar of a part to hide it, making room for the others.
+In the editor, parts are displayed in a list; you can click on the title bar of a part to hide it, making room for the others.
 Use the :guilabel:`Expand every part` and :guilabel:`Collapse every part` buttons to show or hide every part at once.
+
+The **type** of a part defines how it appears to the student, and how it is marked.
+Different part types offer different settings fields to configure the display and marking of the part.
 
 Generic part properties
 -----------------------
+
+The following properties are available on every type of part.
 
 .. glossary::
     Prompt
@@ -183,6 +188,8 @@ Generic part properties
 
 Part types
 ----------
+
+The following part types are built-in to Numbas:
 
 .. toctree::
     :maxdepth: 1
@@ -309,7 +316,7 @@ Then, if the student correctly applies the formula, their answer will match the 
 
     .. _part_type_variable_replacement:
 
-.. topic:: Values obtained from the answers to each part types
+.. topic:: Values obtained from the answers to each part type
 
     =========================== ==============
     Part type                   Value obtained
@@ -320,7 +327,7 @@ Then, if the student correctly applies the formula, their answer will match the 
     Number entry                A number
     Matrix entry                A matrix
     Match text pattern          A string
-    Choose one from a list      The index of the answer the student chose
+    Choose one from a list      The index of the answer the student chose, starting at 0
     Choose several from a list  A list of booleans: true if the student ticked the corresponding choice, false otherwise
     Match choices with answers  A 2D list of lists of boolean values, in the same format as a :term:`custom marking matrix` for this part - cells are addressed by choice first, and answer second.
     =========================== ==============
