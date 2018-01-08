@@ -11,7 +11,7 @@ Variable names
 ***************
 
 Variable names are case-insensitive, so ``y`` represents the same thing as ``Y``. 
-The first character of a variable name must be an alphabet letter; after that, any combination of letters, numbers and underscroes is allowed, with any number of ``'`` on the end.
+The first character of a variable name must be an alphabet letter; after that, any combination of letters, numbers and underscores is allowed, with any number of ``'`` on the end.
 
 **Examples**: 
     * ``x``
@@ -143,6 +143,10 @@ Data types
 
     **Examples**: ``html("<div>things</div>")``
 
+.. data:: expression
+
+    A JME expression.
+
 Function reference
 ******************
 
@@ -187,11 +191,14 @@ Arithmetic
 
     Division. Only defined for numbers. 
 
-    **Example**: ``3/4`` → ``0.75``.
+    **Example**:
+        * ``3/4`` → ``0.75``.
 
 .. function:: x^y
 
     Exponentiation. Only defined for numbers.
+
+    ``exp(x,y)`` is a synoynm for ``x^y``.
 
     **Examples**: 
         * ``3^2`` → ``9``
@@ -226,31 +233,36 @@ Number operations
 
     Argument of a complex number.
 
-    **Example**: ``arg(-1)`` → ``pi``
+    **Example**:
+        * ``arg(-1)`` → ``pi``
 
 .. function:: re(z)
 
     Real part of a complex number.
 
-    **Example**: ``re(1+2i)`` → ``1``
+    **Example**:
+        * ``re(1+2i)`` → ``1``
 
 .. function:: im(z)
 
     Imaginary part of a complex number.
 
-    **Example**: ``im(1+2i)`` → ``2``
+    **Example**:
+        * ``im(1+2i)`` → ``2``
 
 .. function:: conj(z)
 
     Complex conjugate.
 
-    **Example**: ``conj(1+i)`` → ``1-i``
+    **Example**:
+        * ``conj(1+i)`` → ``1-i``
 
 .. function:: isint(x)
 
     Returns ``true`` if ``x`` is an integer.
 
-    **Example**: ``isint(4.0)`` → ``true``
+    **Example**:
+        * ``isint(4.0)`` → ``true``
 
 .. function:: sqrt(x)
               sqr(x)
@@ -265,25 +277,29 @@ Number operations
 
     ``n``:sup:`th` root of ``x``.
 
-    **Example**: ``root(8,3)`` → ``2``.
+    **Example**:
+        * ``root(8,3)`` → ``2``.
 
 .. function:: ln(x)
 
     Natural logarithm.
 
-    **Example**: ``ln(e)`` → ``1``
+    **Example**:
+        * ``ln(e)`` → ``1``
 
 .. function:: log(x)
 
     Logarithm with base 10.
 
-    **Example**: ``log(100)`` → ``2``.
+    **Example**:
+        * ``log(100)`` → ``2``.
 
 .. function:: log(x,b)
 
     Logarithm with base ``b``.
 
-    **Example**: ``log(8,2)`` → ``3``.
+    **Example**:
+        * ``log(8,2)`` → ``3``.
 
 .. function:: degrees(x)
 
@@ -310,25 +326,38 @@ Number operations
 
     Greatest of two numbers.
 
-    **Example**: ``max(46,2)`` → ``46``
+    **Example**:
+        * ``max(46,2)`` → ``46``
 
 .. function:: max(list)
 
     Greatest of a list of numbers.
 
-    **Example**: ``max([1,2,3])`` → ``3``
+    **Example**:
+        * ``max([1,2,3])`` → ``3``
 
 .. function:: min(a,b)
 
     Least of two numbers.
 
-    **Example**: ``min(3,2)`` → ``2``
+    **Example**:
+        * ``min(3,2)`` → ``2``
 
 .. function:: min(list)
 
     Least of a list of numbers.
 
-    **Example**: ``min([1,2,3])`` → ``1``
+    **Example**:
+        * ``min([1,2,3])`` → ``1``
+
+.. function:: rationalapproximation(x,accuracy)
+
+    Compute a rational approximation to ``x``, accurate to within ``exp(-accuracy)`` of the true value.
+
+    Returns a list ``[numerator, denominator]]``
+
+    **Example**:
+        * ``rationalapproximation(pi,5)`` → ``[22, 7]``
 
 .. function:: precround(n,d)
 
@@ -350,6 +379,13 @@ Number operations
         * ``siground(matrix([[0.123,4.56],[54,98.765]]),2)`` → ``matrix([[0.12,4.6],[54,99]])``
         * ``siground(vector(10/3,20/3),2)`` → ``vector(3.3,6.7)``
 
+.. function:: withintolerance(a,b,t)
+
+    Returns ``true`` if :math:`b-t \leq a \leq b+t`.
+
+    **Example**:
+        * ``withintolerance(pi,22/7,0.1)`` → ``true``
+
 .. function:: dpformat(n,d,[style])
 
     Round ``n`` to ``d`` decimal places and return a string, padding with zeros if necessary.
@@ -357,13 +393,51 @@ Number operations
     If ``style`` is given, the number is rendered using the given notation style.
     See the page on :ref:`number-notation` for more on notation styles.
 
-    **Example**: ``dpformat(1.2,4)`` → ``"1.2000"``
+    **Example**:
+        * ``dpformat(1.2,4)`` → ``"1.2000"``
+
+.. function:: countdp(str)
+
+    Assuming ``str`` is a string representing a number, return the number of decimal places used.
+    The string is passed through :func:`cleannumber` first.
+
+    **Example**:
+        * ``countdp("1.0")`` → ``1``
+        * ``countdp("1")`` → ``0``
+        * ``countdp("not a number")`` → ``0``
 
 .. function:: sigformat(n,d,[style])
 
     Round ``n`` to ``d`` significant figures and return a string, padding with zeros if necessary.
 
-    **Example**: ``sigformat(4,3)`` → ``"4.00"``
+    **Example**:
+        * ``sigformat(4,3)`` → ``"4.00"``
+
+.. function:: countsigfigs(str)
+
+    Assuming ``str`` is a string representing a number, return the number of significant figures.
+    The string is passed through :func:`cleannumber` first.
+
+    **Example**:
+        * ``countsigfigs("1")`` → ``1``
+        * ``countsigfigs("100")`` → ``1``
+        * ``countsigfigs("1.0")`` → ``2``
+        * ``countsigfigs("not a number")`` → ``0``
+
+.. function:: togivenprecision(str, precisionType, precision, strict)
+
+    Returns ``true`` if ``str`` is a string representing a number given to the desired number of decimal places or significant figures.
+
+    ``precisionType`` is either ``"dp"``, for decimal places, or ``"sigfig"``, for significant figures.
+
+    If ``strict`` is ``true``, then trailing zeroes **must** be included.
+
+    **Examples**:
+        * ``togivenprecision("1","dp",1,true)`` → ``false``
+        * ``togivenprecision("1","dp",1,false)`` → ``true``
+        * ``togivenprecision("1.0","dp",1,true)`` → ``true``
+        * ``togivenprecision("100","sigfig",1,true)`` → ``true``
+        * ``togivenprecision("100","sigfig",3,true)`` → ``true``
 
 .. function:: formatnumber(n,style)
 
@@ -371,7 +445,22 @@ Number operations
 
     See the page on :ref:`number-notation` for more on notation styles.
 
-    **Example**: ``formatnumber(1234.567,"fr")`` → ``"1.234,567"``
+    **Example**:
+        * ``formatnumber(1234.567,"fr")`` → ``"1.234,567"``
+
+.. function:: cleannumber(str, styles)
+
+    Clean a string potentially representing a number.
+    Remove space, and then try to identify a notation style, and rewrite to the ``plain-en`` style.
+
+    ``styles`` is a list of :ref:`notation styles <number-notation>`.      
+    If ``styles`` is given, `str` will be tested against the given styles. 
+    If it matches, the string will be rewritten using the matched integer and decimal parts, with punctuation removed and the decimal point changed to a dot.
+    
+    **Example**:
+        * ``cleannumber("100 000,02",["si-fr"])`` → ``"100000.02"``
+        * ``cleannumber(" 1 ")`` → ``"1"``
+        * ``cleannumber("1.0")`` → ``"1.0"``
 
 .. function:: string(n)
 
@@ -381,9 +470,28 @@ Number operations
 
     Parse a string representing a number written in the given style.
 
+    If a list of styles is given, the first that accepts the given string is used.
+
     See the page on :ref:`number-notation` for more on notation styles.
 
-    **Example**: ``parsenumber("1 234,567","si-fr")`` → ``1234.567``
+    **Examples**:
+        * ``parsenumber("1 234,567","si-fr")`` → ``1234.567``
+        * ``parsenumber("1.001",["si-fr","eu"])`` → ``1001``
+
+.. function:: parsenumber_or_fraction(string,style)
+
+    Works the same as :func:`parsenumber`, but also accepts strings of the form ``number/number``, which it interprets as fractions.
+
+    **Example**:
+        * ``parsenumber_or_fraction("1/2")`` → ``0.5``
+
+.. function:: isnan(n)
+
+    Is ``n`` the "not a number" value, ``NaN``?
+
+    **Examples**:
+        * ``isnan(1)`` → ``false``
+        * ``isnan(parsenumber("a","en"))`` → ``true``
 
 Trigonometry
 ------------
@@ -469,6 +577,8 @@ Number theory
 
     Factorial. When ``x`` is not an integer, :math:`\Gamma(x+1)` is used instead.
 
+    ``fact(x)`` is a synoynm for ``x!``.
+
     **Examples**: 
         * ``fact(3)`` → ``6``
         * ``3!`` → ``6``
@@ -502,7 +612,18 @@ Number theory
 
     Round down to the nearest integer. When ``x`` is complex, each component is rounded separately.
 
-    **Example**: ``floor(3.5)`` → ``3``
+    **Example**:
+        * ``floor(3.5)`` → ``3``
+
+.. function:: round(x)
+
+    Round to the nearest integer. ``0.5`` is rounded up.
+
+    **Examples**:
+        * ``round(0.1)`` → ``0``
+        * ``round(0.9)`` → ``1``
+        * ``round(4.5)`` → ``5``
+        * ``round(-0.5)`` → ``0``
 
 .. function:: trunc(x)
 
@@ -516,7 +637,8 @@ Number theory
 
     Fractional part of a number. Equivalent to ``x-trunc(x)``.
 
-    **Example**: ``fract(4.3)`` → ``0.3``
+    **Example**:
+        * ``fract(4.3)`` → ``0.3``
 
 .. function:: rational_approximation(n,[accuracy])
 
@@ -531,26 +653,37 @@ Number theory
 
     Modulo; remainder after integral division, i.e. :math:`a \bmod b`.
 
-    **Example**: ``mod(5,3)`` → ``2``
+    **Example**:
+        * ``mod(5,3)`` → ``2``
 
 .. function:: perm(n,k)
 
     Count permutations, i.e. :math:`^n \kern-2pt P_k = \frac{n!}{(n-k)!}`.
 
-    **Example**: ``perm(5,2)`` → ``20``
+    **Example**:
+        * ``perm(5,2)`` → ``20``
 
 .. function:: comb(n,k)
 
     Count combinations, i.e. :math:`^n \kern-2pt C_k = \frac{n!}{k!(n-k)!}`.
 
-    **Example**: ``comb(5,2)`` → ``10``.
+    **Example**:
+        * ``comb(5,2)`` → ``10``.
 
 .. function:: gcd(a,b)
               gcf(a,b)
 
     Greatest common divisor of integers ``a`` and ``b``. Can also write ``gcf(a,b)``.
 
-    **Example**: ``gcd(12,16)`` → ``4``
+    **Example**:
+        * ``gcd(12,16)`` → ``4``
+
+.. function:: gcd_without_pi_or_i(a,b)
+
+    Take out factors of :math:`\pi` or :math:`i` from ``a`` and ``b`` before computing their greatest common denominator.
+
+    **Example**:
+        * ``gcd_without_pi_or_i(6*pi, 9)`` → ``3``
 
 .. function:: lcm(a,b)
 
@@ -564,7 +697,8 @@ Number theory
 
     ``x`` divides ``y``.
 
-    **Example**: ``4|8`` → ``true``
+    **Example**:
+        * ``4|8`` → ``true``
 
 Vector arithmetic
 -----------------
@@ -610,7 +744,8 @@ Vector arithmetic
     Angle between vectors ``a`` and ``b``, in radians.
     Returns ``0`` if either ``a`` or ``b`` has length 0.
 
-    **Example**: ``angle(vector(1,0),vector(0,1))``
+    **Example**:
+        * ``angle(vector(1,0),vector(0,1))``
 
 .. function:: det(x)
 
@@ -628,7 +763,8 @@ Vector arithmetic
 
     Identity matrix with :math:`n` rows and columns.
 
-    **Example**: ``id(3)``.
+    **Example**:
+        * ``id(3)``.
 
 Strings
 ------------------
@@ -638,21 +774,24 @@ Strings
     Get the Nth character of the string ``x``.
     Indices start at 0.
 
-    **Example**: ``"hello"[1]`` → ``"e"``
+    **Example**:
+        * ``"hello"[1]`` → ``"e"``
 
 .. function:: x[a..b]
 
     Slice the string ``x`` - get the substring between the given indices.
     Note that indices start at 0, and the final index is not included.
 
-    **Example**: ``"hello"[1..4]`` → ``"ell"``
+    **Example**:
+        * ``"hello"[1..4]`` → ``"ell"``
 
 .. function:: substring in string
 
     Test if ``substring`` occurs anywhere in ``string``.
     This is case-sensitive.
 
-    **Example**: ``"plain" in "explains"`` → ``true``
+    **Example**:
+        * ``"plain" in "explains"`` → ``true``
 
 .. function:: latex(x)
 
@@ -660,7 +799,8 @@ Strings
     
     Note that backslashes must be double up, because the backslash is an escape character in JME strings.
 
-    **Example**: ``latex('\\frac{1}{2}')``.
+    **Example**:
+        * ``latex('\\frac{1}{2}')``.
 
 .. function:: safe(x)
 
@@ -668,49 +808,57 @@ Strings
 
     Use this function to preserve curly braces in string literals.
 
-    **Example**: ``safe('From { to }')``
+    **Example**:
+        * ``safe('From { to }')``
 
 .. function:: capitalise(x)
 
     Capitalise the first letter of a string.
 
-    **Example**: ``capitalise('hello there')``.
+    **Example**:
+        * ``capitalise('hello there')``.
 
 .. function:: pluralise(n,singular,plural)
 
     Return ``singular`` if ``n`` is 1, otherwise return ``plural``.
 
-    **Example**: ``pluralise(num_things,"thing","things")``
+    **Example**:
+        * ``pluralise(num_things,"thing","things")``
 
 .. function:: upper(x)
 
     Convert string to upper-case.
 
-    **Example**: ``upper('Hello there')``.
+    **Example**:
+        * ``upper('Hello there')``.
 
 .. function:: lower(x)
 
     Convert string to lower-case.
 
-    **Example**: ``lower('CLAUS, Santa')``.
+    **Example**:
+        * ``lower('CLAUS, Santa')``.
 
 .. function:: join(strings, delimiter)
 
     Join a list of strings with the given delimiter.
 
-    **Example**: ``join(['a','b','c'],',')`` → ``'a,b,c'``
+    **Example**:
+        * ``join(['a','b','c'],',')`` → ``'a,b,c'``
 
 .. function:: split(string,delimiter)
 
     Split a string at every occurrence of ``delimiter``, returning a list of the the remaining pieces.
 
-    **Example**: ``split("a,b,c,d",",")`` → ``["a","b","c","d"]``
+    **Example**:
+        * ``split("a,b,c,d",",")`` → ``["a","b","c","d"]``
 
 .. function:: currency(n,prefix,suffix)
 
     Write a currency amount, with the given prefix or suffix characters.
 
-    **Example**: ``currency(123.321,"£","")`` → ``'£123.32'``
+    **Example**:
+        * ``currency(123.321,"£","")`` → ``'£123.32'``
 
 .. function:: separateThousands(n,separator)
 
@@ -718,19 +866,75 @@ Strings
 
     To write a number using notation appropriate to a particular culture or context, see :func:`formatnumber`.
 
-    **Example**: ``separateThousands(1234567.1234,",")`` → ``'1,234,567.1234'``
+    **Example**:
+        * ``separateThousands(1234567.1234,",")`` → ``'1,234,567.1234'``
+
+.. function:: unpercent(str)
+
+    Get rid of the ``%`` on the end of a percentage and parse as a number, then divide by 100.
+
+    **Example**:
+        * ``unpercent("2%")`` → ``0.02``
 
 .. function:: lpad(str, n, prefix)
 
     Add copies of ``prefix`` to the start of ``str`` until the result is at least ``n`` characters long.
 
-    **Example**: ``lpad("3", 2, "0")`` → ``"03"``
+    **Example**:
+        * ``lpad("3", 2, "0")`` → ``"03"``
 
 .. function:: rpad(str, n, suffix)
 
     Add copies of ``suffix`` to the end of ``str`` until the result is at least ``n`` characters long.
 
-    **Example**: ``rpad("3", 2, "0")`` → ``"30"``
+    **Example**:
+        * ``rpad("3", 2, "0")`` → ``"30"``
+
+.. function:: formatstring(str, values)
+
+    For each occurrence of ``%s`` in ``str``, replace it with the corresponding entry in the list ``values``.
+
+    **Example**:
+        * ``formatstring("Their name is %s",["Hortense"])`` → ``"Their name is Hortense"``
+        * ``formatstring("You should %s the %s",["simplify","denominator"])`` → ``You should simplify the denominator"``
+
+.. function:: letterordinal(n)
+
+    Get the :math:`n`:sup:`th` element of the sequence ``a, b, c, ..., aa, ab, ...``.
+
+    Note that the numbering starts from 0.
+
+    **Examples**:
+        * ``letterordinal(0)`` → ``"a"``
+        * ``letterordinal(1)`` → ``"b"``
+        * ``letterordinal(26)`` → ``"aa"``
+
+.. function:: match_regex(pattern,str,flags)
+
+    If ``str`` matches the regular expression ``pattern``, returns a list of matched groups, otherwise returns an empty list.
+
+    This function uses `JavaScript regular expression syntax <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp>`_.
+
+    ``flags`` is an optional string listing the options flags to use.
+
+    **Examples**:
+        * ``match_regex("\\d+","01234")`` → ``["01234"]``
+        * ``match_regex("a(b+)","abbbb")`` → ``["abbbb","bbbb"]``
+        * ``match_regex("a(b+)","ABBBB")`` → ``[]``
+        * ``match_regex("a(b+)","ABBBB","i")`` → ``["ABBBB","BBBB"]``
+
+.. function:: translate(str, arguments)
+
+    Translate the given string, if it's in the localisation file.
+
+    Look at `the default localisation file <https://github.com/numbas/Numbas/blob/master/locales/en-GB.json>`_ for strings which can be translated.
+    This function takes a key representing a string to be translated, and returns the corresponding value from the current localisation file.
+
+    ``arguments`` is a dictionary of named substitutions to make in the string. 
+
+    **Examples**:
+        * ``translate("question.header",["number": 2])`` → ``"Question 2"`` (when the ``en-GB`` locale is in use)
+        * ``translate("question.header",["number": 2])`` → ``"Pregunta 2"`` (when the ``es-ES`` locale is in use)
 
 Logic
 -----
@@ -771,6 +975,18 @@ Logic
 
     **Examples**: ``vector(1,2)=vector(1,2,0)``, ``4.0=4``.
 
+.. function:: resultsequal(a,b,checkingFunction,accuracy)
+
+    Returns ``true`` if ``a`` and ``b`` are both of the same data type, and "close enough" according to the given checking function.
+
+    Vectors, matrices, and lists are considered equal only if every pair of corresponding elements in ``a`` and ``b`` is "close enough".
+
+    ``checkingFunction`` is the name of a checking function to use. These are documented in `the Numbas runtime documentation <http://numbas.github.io/Numbas/Numbas.jme.html#.checkingFunctions>`_.
+
+    **Examples**:
+        * ``resultsequal(22/7,pi,"absdiff",0.001)`` → ``false``
+        * ``resultsequal(22/7,pi,"reldiff",0.001)`` → ``true``
+
 .. function:: x and y
 
     Logical AND. Returns ``true`` if both ``x`` and ``y`` are true, otherwise returns false.
@@ -793,13 +1009,15 @@ Logic
 
     Logical XOR. Returns ``true`` when at either ``x`` or ``y`` is true but not both. Returns false when ``x`` and ``y`` are the same expression.
 
-    **Example**: ``true XOR false``.
+    **Example**:
+        * ``true XOR false``.
 
 .. function:: x implies y
 
     Logical implication. If ``x`` is true and ``y`` is false, then the implication is false. Otherwise, the implication is true.
     
-    **Example**: ``false implies true``.
+    **Example**:
+        * ``false implies true``.
 
 Ranges
 ------
@@ -826,7 +1044,8 @@ Ranges
 
     Convert a range to a list of its elements.
 
-    **Example**: ``list(-2..2)`` → ``[-2,-1,0,1,2]``
+    **Example**:
+        * ``list(-2..2)`` → ``[-2,-1,0,1,2]``
 
 Lists
 -----
@@ -835,7 +1054,7 @@ Lists
 
     Get the ``n``:sup:`th` element of list, vector or matrix ``x``. For matrices, the ``n``:sup:`th` row is returned.
 
-    **Example**: 
+    **Examples**: 
         * ``[0,1,2,3][1]`` → ``1``
         * ``vector(0,1,2)[2]`` → ``2``
         * ``matrix([0,1,2],[3,4,5],[6,7,8])[0]`` → ``matrix([0,1,2])``
@@ -845,7 +1064,8 @@ Lists
     Slice list ``x`` - return elements with indices in the given range.
     Note that list indices start at 0, and the final index is not included.
 
-    **Example**: ``[0,1,2,3,4,5][1..3]`` → ``[1,2]``
+    **Example**:
+        * ``[0,1,2,3,4,5][1..3]`` → ``[1,2]``
 
 .. function:: x in collection
 
@@ -863,7 +1083,27 @@ Lists
 
     Evaluate ``expression`` ``n`` times, and return the results in a list.
 
-    **Example**: ``repeat(random(1..4),5)`` → ``[2, 4, 1, 3, 4]``
+    **Example**:
+        * ``repeat(random(1..4),5)`` → ``[2, 4, 1, 3, 4]``
+
+.. function:: all(list)
+
+    Returns ``true`` if every element of ``list`` is ``true``.
+    
+
+    **Examples**:
+        * ``all([true,true])`` → ``true``
+        * ``all([true,false])`` → ``false``
+        * ``all([])`` → ``true``
+
+.. function:: some(list)
+
+    Returns ``true`` if at least one element of ``list`` is ``true``.
+
+    **Examples**:
+        * ``some([false,true,false])`` → ``true``
+        * ``some([false,false,false])`` → ``false``
+        * ``some([])`` → ``false``
 
 .. function:: map(expression,name[s],d)
 
@@ -889,7 +1129,8 @@ Lists
     .. note::
         Do not use ``i`` or ``e`` as the variable name to map over - they're already defined as mathematical constants!
 
-    **Example**: ``filter(x>5,x,[1,3,5,7,9])`` → ``[7,9]``
+    **Example**:
+        * ``filter(x>5,x,[1,3,5,7,9])`` → ``[7,9]``
 
 .. function:: let(name,definition,...,expression)
               let(definitions, expression)
@@ -909,13 +1150,15 @@ Lists
 
     Sort list ``x``.
 
-    **Example**: ``sort([4,2,1,3])`` → ``[1,2,3,4]``
+    **Example**:
+        * ``sort([4,2,1,3])`` → ``[1,2,3,4]``
 
 .. function:: reverse(x)
 
     Reverse list ``x``.
 
-    **Example**: ``reverse([1,2,3])`` → ``[3,2,1]``
+    **Example**:
+        * ``reverse([1,2,3])`` → ``[3,2,1]``
 
 .. function:: indices(list,value)
 
@@ -930,7 +1173,8 @@ Lists
 
     Return a copy of the list ``x`` with duplicates removed.
 
-    **Example**: ``distinct([1,2,3,1,4,3])`` → ``[1,2,3,4]``
+    **Example**:
+        * ``distinct([1,2,3,1,4,3])`` → ``[1,2,3,4]``
 
 .. function:: list(x)
 
@@ -945,43 +1189,50 @@ Lists
 
     Each variable name in ``names`` should have a corresponding definition expression in ``definitions``. ``conditions`` is a list of expressions which you want to evaluate to ``true``. The definitions will be evaluated repeatedly until all the conditions are satisfied, or the number of attempts is greater than ``maxRuns``. If ``maxRuns`` isn't given, it defaults to 100 attempts.
 
-    **Example**: ``satisfy([a,b,c],[random(1..10),random(1..10),random(1..10)],[b^2-4*a*c>0])``
+    **Example**:
+        * ``satisfy([a,b,c],[random(1..10),random(1..10),random(1..10)],[b^2-4*a*c>0])``
 
 .. function:: sum(numbers)
 
     Add up a list of numbers
 
-    **Example**: ``sum([1,2,3])`` → ``6``
+    **Example**:
+        * ``sum([1,2,3])`` → ``6``
 
 .. function:: product(list1,list2,...,listN)
 
     Cartesian product of lists. In other words, every possible combination of choices of one value from each given list.
 
-    **Example**: ``product([1,2],[a,b])`` → ``[ [1,a], [1,b], [2,a], [2,b] ]``
+    **Example**:
+        * ``product([1,2],[a,b])`` → ``[ [1,a], [1,b], [2,a], [2,b] ]``
 
 .. function:: zip(list1,list2,...,listN)
 
     Combine two (or more) lists into one - the Nth element of the output is a list containing the Nth elements of each of the input lists.
 
-    **Example**: ``zip([1,2,3],[4,5,6])`` → ``[ [1,4], [2,5], [3,6] ]``
+    **Example**:
+        * ``zip([1,2,3],[4,5,6])`` → ``[ [1,4], [2,5], [3,6] ]``
 
 .. function:: combinations(collection,r)
 
     All ordered choices of ``r`` elements from ``collection``, without replacement.
 
-    **Example**: ``combinations([1,2,3],2)`` → ``[ [1,2], [1,3], [2,3] ]``
+    **Example**:
+        * ``combinations([1,2,3],2)`` → ``[ [1,2], [1,3], [2,3] ]``
 
 .. function:: combinations_with_replacement(collection,r)
 
     All ordered choices of ``r`` elements from ``collection``, with replacement.
 
-    **Example**: ``combinations([1,2,3],2)`` → ``[ [1,1], [1,2], [1,3], [2,2], [2,3], [3,3] ]``
+    **Example**:
+        * ``combinations([1,2,3],2)`` → ``[ [1,1], [1,2], [1,3], [2,2], [2,3], [3,3] ]``
 
 .. function:: permutations(collection,r)
 
     All choices of ``r`` elements from ``collection``, in any order, without replacement.
 
-    **Example**: ``permutations([1,2,3],2)`` → ``[ [1,2], [1,3], [2,1], [2,3], [3,1], [3,2] ]``
+    **Example**:
+        * ``permutations([1,2,3],2)`` → ``[ [1,2], [1,3], [2,1], [2,3], [3,1], [3,2] ]``
 
 Dictionaries
 ------------
@@ -992,7 +1243,8 @@ Dictionaries
 
     If the key is not present in the dictionary, an error will be thrown.
 
-    **Example**: ``["a": 1, "b": 2]["a"]`` → ``1``
+    **Example**:
+        * ``["a": 1, "b": 2]["a"]`` → ``1``
 
 .. function:: get(dict,key,default)
 
@@ -1017,7 +1269,8 @@ Dictionaries
 
     A list of all of the given dictionary's keys.
 
-    **Example**: ``keys(["a": 1, "b": 2, "c": 1])`` → ``["a","b","c"]``
+    **Example**:
+        * ``keys(["a": 1, "b": 2, "c": 1])`` → ``["a","b","c"]``
 
 .. function:: values(dict)
               values(dict,keys)
@@ -1034,7 +1287,8 @@ Dictionaries
 
     A list of all of the ``[key,value]`` pairs in the given dictionary.
 
-    **Example**: ``values(["a": 1, "b": 2, "c": 1])`` → ``[ ["a",1], ["b",2], ["c",1] ]``
+    **Example**:
+        * ``values(["a": 1, "b": 2, "c": 1])`` → ``[ ["a",1], ["b",2], ["c",1] ]``
 
 Sets
 ----
@@ -1065,7 +1319,8 @@ Sets
 
     Set minus - elements which are in a but not b
 
-    **Example**: ``set(1,2,3,4) - set(2,4,6)`` → ``set(1,3)``
+    **Example**:
+        * ``set(1,2,3,4) - set(2,4,6)`` → ``set(1,3)``
 
 Randomisation
 -------------
@@ -1083,7 +1338,8 @@ Randomisation
 
     Get a random shuffling of the integers :math:`[0 \dots n-1]`
 
-    **Example**: ``deal(3)`` → ``[2,0,1]``
+    **Example**:
+        * ``deal(3)`` → ``[2,0,1]``
 
 .. function:: shuffle(x) or shuffle(a..b)
 
@@ -1100,13 +1356,15 @@ Control flow
 
     Return ``a`` if ``b`` is ``true``, else return ``0``.
 
-    **Example**: ``award(5,true)`` → ``5``
+    **Example**:
+        * ``award(5,true)`` → ``5``
 
 .. function:: if(p,a,b)
 
     If ``p`` is ``true``, return ``a``, else return ``b``. Only the returned value is evaluated.
 
-    **Example**: ``if(false,1,0)`` → ``0``
+    **Example**:
+        * ``if(false,1,0)`` → ``0``
 
 .. function:: switch(p1,a1,p2,a2, ..., pn,an,d)
 
@@ -1116,6 +1374,22 @@ Control flow
         * ``switch(true,1,false,0,3)`` → ``1``
         * ``switch(false,1,true,0,3)`` → ``0``
         * ``switch(false,1,false,0,3)`` → ``3``
+
+.. function:: assert(bool, value)
+
+    If ``bool`` is ``true``, then return ``value``, otherwise don't evaluate ``value`` and return ``false``.
+    This is intended for use in marking scripts, to apply marking feedback only if a condition is met.
+
+    **Example**:
+        * ``assert(studentAnswer>0, correct(x))``
+
+.. function:: try(expression, name, except)
+
+    Try to evaluate ``expression``. If it is successfully evaluated, return the result. Otherwise, evaluate ``except``, with the error message available as ``name``.
+
+    **Examples**:
+        * ``try(eval(expression("x+")),err, "Error: "+err)`` → ``"Error: Not enough arguments for operation <code>+</code>"``
+        * ``try(1+2,err,0)`` → ``3``
 
 HTML
 ----
@@ -1162,7 +1436,8 @@ For an example of how you can use JSON data in a Numbas question, see the exam `
         The JSON value ``null`` is silently converted to an empty string, because JME has no "null" data type.
         This may change in the future.
 
-    **Example**: ``json_decode(' {"a": 1, "b": [2,true,"thing"]} ')`` → ``["a": 1, "b": [2,true,"thing"]]``
+    **Example**:
+        * ``json_decode(' {"a": 1, "b": [2,true,"thing"]} ')`` → ``["a": 1, "b": [2,true,"thing"]]``
 
 .. function:: json_encode(data)
 
@@ -1171,7 +1446,8 @@ For an example of how you can use JSON data in a Numbas question, see the exam `
     Numbers, strings, booleans, lists, and dictionaries are converted in a straightforward manner.
     Other data types may behave unexpectedly.
 
-    **Example**: ``json_encode([1,"a",true])`` → ``'[1,"a",true]'``
+    **Example**:
+        * ``json_encode([1,"a",true])`` → ``'[1,"a",true]'``
 
 Sub-expressions
 ---------------
@@ -1181,4 +1457,165 @@ Sub-expressions
     Parse a string as a JME expression. 
     The expression can be substituted into other expressions, such as the answer to a mathematical expression part, or the ``\simplify`` LaTeX command.
 
-    **Example**: `A question using randomly chosen variable names <https://numbas.mathcentre.ac.uk/question/20358/randomise-variable-names-expression-version/>`_.
+    ``parse(string)`` is a synonym for ``expression(string)``.
+
+    **Example**: 
+        * `A question using randomly chosen variable names <https://numbas.mathcentre.ac.uk/question/20358/randomise-variable-names-expression-version/>`_.
+
+.. function:: eval(expression, values)
+
+    Evaluate the given sub-expression.
+
+    If ``values`` is given, it should be a dictionary mapping names of variables to their values.
+
+    **Example**:
+        * ``eval(expression("1+2"))`` → ``3``
+        * ``eval(expression("x+1"), ["x":1])`` → ``2``
+
+.. function:: args(expression)
+
+    Returns the arguments of the top-level operation of ``expression``, as a list of sub-expressions.
+    If ``expression`` is a data type other than an operation or function, an empty list is returned.
+
+    Binary operations only ever have two arguments.
+    For example, ``1+2+3`` is parsed as ``(1+2)+3``.
+
+    **Examples**:
+        * ``args(expression("f(x)"))`` → ``[expression("x")]``
+        * ``args(expression("1+2+3"))`` → ``[expression("1+2"), expression("3")]``
+        * ``args(expression("1"))`` → ``[]``
+
+.. function:: type(expression)
+
+    Returns the name of the :ref:`data type <jme-data-types>` of the top token in the expression, as a string.
+
+    **Examples**:
+        * ``type(x)`` → ``"name"``
+        * ``type(1)`` → ``"number"``
+        * ``type(x+1)`` → ``"op"``
+        * ``type(sin(x))`` → ``"function"``
+
+.. function:: name(string)
+
+    Construct a :data:`name` token with the given name.
+
+    **Example**:
+        * ``name("x")`` → ``x``
+
+.. function:: string(name)
+
+    Return the given variable name as a string.
+
+    **Example**:
+        * ``string(x)`` → ``"x"``
+
+.. function:: op(name)
+
+    Construct an operator with the given name.
+
+    **Example**:
+        * ``op("+")`` → ``+``
+
+.. function:: exec(op, arguments)
+
+    Returns a sub-expression representing the application of the given operation to the list of arguments.
+
+    **Example**:
+        * ``exec(op("+"), [2,1])`` → ``expression("2+1")``
+        * ``exec(op("-"), [2,name("x")])`` → ``expression("2-x")``
+
+.. function:: findvars(expression)
+
+    Return a list of all unbound variables used in the given expression.
+    Effectively, this is all the variables that need to be given values in order for this expression to be evaluated.
+
+    *Bound variables* are those defined as part of operations which also assign values to those variables, such as ``map`` or ``let``.
+
+    **Examples**:
+        * ``findvars(expression("x+1"))`` → ``[x]``
+        * ``findvars(expression("x + x*y"))`` → ``[x,y]``
+        * ``findvars(expression("map(x+2, x, [1,2,3])"))`` → ``[]``
+
+.. function:: simplify(expression,rules)
+
+    Apply the given simplification rules to ``expression``, until no rules apply.
+
+    ``rules`` is a list of names of rules to apply, given either as a string containing a comma-separated list of names, or a list of strings.
+
+    Unlike the `\\simplify`` command in content areas, the ``basic`` rule is not turned on by default.
+
+    See :ref:`simplification-rules` for a list of rules available.
+
+    **Examples**:
+        * ``simplify(expression("1*x+cos(pi)","unitfactor"))`` → ``expression("x+cos(pi)")``
+        * ``simplify(expression("1*x+cos(pi)"),["basic","unitfactor","trig"])`` → ``expression("x-1")``
+
+Pattern-matching sub-expressions
+--------------------------------
+
+.. function:: match(expr, pattern)
+
+    If ``expr`` matches ``pattern``, return a dictionary of the form ``["match": boolean, "groups": dict]``, where ``"groups"`` is a dictionary mapping names of matches to sub-expressions.
+
+    The match is non-commutative, so for example ``x*y`` is not considered to be the same as ``y*x``. You can use :func:`m_commute` to allow matching up to rearrangement of arguments.
+
+    See ``pattern-matching`` for more on matching mathematical expressions.
+
+    If you don't need to use any parts of the matched expression, use :func:`matches` instead.
+
+    **Examples**: 
+        * ``match(expression("x+1"),"?;a + ?;b")`` → ``["match": true, "groups": ["a": expression("x"), "b": expression("1")])``
+        * ``match(expression("sin(x)", "?;a + ?;b")`` → ``["match": false, "groups": []]``
+        * ``match(expression("x+1"),"1+?;a")`` → ``["match": false, "groups": []]``
+        * ``match(expression("x+1"),"m_commute(1+?;a)")`` → ``["match": true, "groups": ["a": expression("x")]]``
+
+.. function:: matches(expr, pattern)
+
+    Return ``true`` if ``expr`` matches ``pattern``.
+
+    Use this if you're not interested in capturing any parts of the matched expression.
+
+    **Examples**:
+        * ``matches(expression("x+1"),"?;a + ?;b")`` → ``true``
+        * ``match(expression("sin(x)", "?;a + ?;b")`` → ``false``
+
+.. function:: replace(pattern, replacement, expr)
+
+    Replace occurrences of ``pattern`` in ``expr`` with the expression created by substituting the matched items into ``replacement``.
+
+    **Examples**:
+        * ``replace("?;x + ?;y", "x*y", expression("1+2"))`` → ``expression("1*2")``
+        * ``replace("?;x + ?;y", "f(x,y)", expression("1+2+3"))`` → ``expression("f(f(1,2),3)")``
+        * ``replace("0*?", "0", expression("0*sin(x) + x*0 + 2*cos(0*pi)"))`` → ``expression("0 + x*0 + 2*cos(0)")``
+
+Identifying data types
+----------------------
+
+.. function:: type(x)
+
+    Returns the name of the :ref:`data type <jme-data-types>` of ``x``.
+
+    **Example**:
+        * ``type(1)`` → ``"number"``
+
+.. function:: x isa type
+
+    Returns ``true`` if ``x`` is of the :ref:`data type <jme-data-types>` ``type``.
+
+    **Examples**:
+        * ``1 isa "number"`` → ``true``
+        * ``x isa "name"`` → ``true`` (if ``x`` is not defined in this scope)
+        * ``x isa "number"`` → ``true`` (if ``x`` has a numerical value in this scope)
+
+Inspecting the evaluation scope
+-------------------------------
+
+.. function:: definedvariables()
+
+    Returns a list containing the names of every variable defined in the current scope, as strings.
+    
+.. function:: isset(name)
+
+    Returns ``true`` if the variable with the given name has been defined in the current scope.
+
+
