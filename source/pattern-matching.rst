@@ -35,27 +35,27 @@ Pattern-matching syntax
 
     Capture ``expr`` in the group named ``g``.
 
-.. object:: m_any(expr1,expr2,...)
+.. function:: m_any(expr1,expr2,...)
 
     Match any of the expressions ``exprN``.
 
-.. object:: m_all(expr)
+.. function:: m_all(expr)
 
     Capture all terms (in an addition, multiplication, or other commutative operation) matching ``expr``.
 
-.. object:: m_pm(expr)
+.. function:: m_pm(expr)
 
     Capture ``expr`` or ``-(expr)``, i.e. plus or minus the given expression.
 
-.. object:: m_not(expr)
+.. function:: m_not(expr)
 
     Match anything *except* ``expr``.
 
-.. object:: m_uses(name1,name2,...)
+.. function:: m_uses(name1,name2,...)
 
     Match any expression which uses the given variable names.
 
-.. object:: m_commute(expr)
+.. function:: m_commute(expr)
 
     Match the terms in ``expr`` in any order, following the laws of commutativity. (This is only required if you are using ``matchExpression`` with the ``doCommute`` flag set to ``false``, and you only want to use commutativity in certain places)
 
@@ -67,7 +67,7 @@ Pattern-matching syntax
 
     Match a single number.
 
-.. object:: m_type(type)
+.. function:: m_type(type)
 
     Match a single token of the given type. For example, ``m_type(vector)`` matches a vector, while ``m_type(op)`` matches any operator. See :ref:`jme-data-types` for a list of data types.
 
