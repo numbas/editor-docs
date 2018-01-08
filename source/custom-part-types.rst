@@ -40,6 +40,52 @@ Part settings
 =============
 
 Define setting fields to allow question authors to configure your part type.
-Settings can be used to set up the :ref:`answer input <custom-part-type-answer-input>` and in the :ref:`marking algorithm <custom-part-type-marking-algorithm>`.
+They appear in the question editor's :guilabel:`Marking settings` tab for any parts of this type.
+
+Settings can be used to set up the part type's :ref:`answer input <custom-part-type-answer-input>` and in the :ref:`marking algorithm <custom-part-type-marking-algorithm>`.
+
+The following fields are common to all setting types:
+
+.. glossary::
+
+    Name
+        A short name for this setting, used to refer to it in the part type's :ref:`answer input <custom-part-type-answer-input>` or :ref:`marking algorithm <custom-part-type-marking-algorithm>`.
+        The name should uniquely identify the setting, but doesn't need to be very descriptive - the label can do that.
+        A setting with name ``correct_answer`` will be available as ``settings["correct_answer"]``.
+
+    Label
+        The label shown next to the setting in the question editor.
+        Try to make it as clear as possible what the setting is for.
+        For example, a checkbox which dictates whether an input hint is shown should be labelled something like "Hide the input hint?" rather than "Input hint visibility" - the latter doesn't tell the question author whether ticking the checkbox will result in the input hint appearing or not.
+
+    Help URL
+        The address of documentation explaining this setting in further depth.
+        This is optional.
+
+    Input hint for question author
+        Use this field to give further guidance to question authors about this setting, if the label is not enough.
+        For example, you might use this to say what data type a JME code setting should evaluate to.
+
+    Default value
+        The initial value of the setting in the question editor.
+        If the setting has a sensible default value, set it here.
+        If the value of the setting is likely to be different for each instance of this part type, leave this blank.
+        (Not present for :guilabel:`Drop-down box` or :guilabel:`Choose one or more` 
+
+Setting types
+-------------
+
+String
+######
+
+A string of text. 
+If :guilabel:`Substitute values into text` is ticked, then JME expressions enclosed in curly braces will be evaluated and the results substituted back into the text when the question is run.
+Otherwise, the string will be untouched.
+
+Mathematical expression
+#######################
+
+A mathematical expression, in :ref:`JME` syntax.
+If :guilabel:`Substitute values into value` is ticked, then JME expressions enclosed in curly braces will be evaluated and the results substituted back into the expression.
 
 
