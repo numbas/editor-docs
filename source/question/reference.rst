@@ -78,6 +78,8 @@ Admin controls
     Add to your basket
         Add this question to your basket, so you can include it in an exam.
 
+.. _content-areas:
+
 Content areas
 =============
 
@@ -346,6 +348,7 @@ Then, if the student correctly applies the formula, their answer will match the 
         <iframe src="https://player.vimeo.com/video/134209217" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
+.. _question-variables:
 
 Variables
 =========

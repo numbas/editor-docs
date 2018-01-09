@@ -145,7 +145,10 @@ Data types
 
 .. data:: expression
 
-    A JME expression.
+    A JME sub-expression.
+    Sub-expressions can be simplified, rearranged, pattern-matched, or evaluated using given values for their free variables.
+
+.. _jme-functions:
 
 Function reference
 ******************
