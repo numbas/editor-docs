@@ -92,7 +92,7 @@ Data types
 
 .. data:: dict
 
-    A 'dictionary'a, mapping key strings to values of any data type.
+    A 'dictionary', mapping key strings to values of any data type.
     
     A dictionary is created by enclosing one or more key-value pairs (a string followed by a colon and any JME expression) in square brackets, or with the ``dict`` function.
 

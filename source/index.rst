@@ -34,10 +34,12 @@ If you have any questions, please `email us <mailto:numbas.ncl.ac.uk>`_ or join 
     project/reference
     exam/reference
     question/reference
+    question/parts/reference
     question/cheatsheet
 
     latex
     jme-reference
+    marking-algorithm
     number-notation
     simplification
 

@@ -4,10 +4,10 @@ Questions
 In Numbas, a *question* is a self-contained assessment of a particular scenario. 
 Every Numbas question consists of three sections: :ref:`Statement <statement>`, :ref:`Parts <parts>`, and :ref:`Advice <advice>`.
 
-* In the **Statement**, the context for the question is given to the student. 
-* **Parts** are where the student enters their answers. 
+* In the :ref:`Statement`, the context for the question is given to the student. 
+* :ref:`Parts <parts>` are where the student enters their answers. 
   A question can have one or more parts, each of which is one of several types, depending on what kind of input you want from the student. 
-* Finally, the optional **Advice** section can be used to give a full solution to the question, which the student can request to see if they're stuck, or once they've finished the exam.
+* Finally, the optional :ref:`Advice` section can be used to give a full solution to the question, which the student can request to see if they're stuck, or once they've finished the exam.
 
 The content in each section is generated each time the question is run, based on the question's :ref:`variables <variables>`.
 
@@ -31,12 +31,12 @@ At the top of the question editor is the question's name, as well as a stamp sho
 Click on the status stamp to give feedback about the quality of an question, after test running it. 
 The options are listed in descending order of "suitability for use":
 
-* **Ready to use** - this question is of sufficient quality to give to students.
-* **Should not be used** - this question works, but you deprecate its use - for example, if it's not intended for use by students, or there's a better version elsewhere.
-* **Has some problems** - this question works, but has some problems which mean it's not ready for use by students - for example, the question is incomplete, or changes need to be made to the text. 
+* :guilabel:`Ready to use` - this question is of sufficient quality to give to students.
+* :guilabel:`Should not be used` - this question works, but you deprecate its use - for example, if it's not intended for use by students, or there's a better version elsewhere.
+* :guilabel:`Has some problems` - this question works, but has some problems which mean it's not ready for use by students - for example, the question is incomplete, or changes need to be made to the text. 
   Further work is needed before this question can be given to students.
-* **Doesn't work** - this question doesn't even run!
-* **Needs to be tested** - this question looks alright to me, but it should be checked thoroughly before being used.
+* :guilabel:`Doesn't work` - this question doesn't even run!
+* :guilabel:`Needs to be tested` - this question looks alright to me, but it should be checked thoroughly before being used.
 
 On the left of the screen are :ref:`question-admin-controls` and labels for each of the editing tabs.
 
@@ -70,9 +70,9 @@ Admin controls
     Download
         Links to download standalone packages of the question. 
 
-        * **standalone .zip** - a compiled package of the question, ready to run anywhere without connecting to a VLE. 
-        * **SCORM package** - a compiled package of the question with SCORM files included, so it can be uploaded to a VLE and communicate with its gradebook.
-        * **source** - a plain-text representation of the question, to be used with the Numbas command-line tools.
+        * :guilabel:`standalone .zip` - a compiled package of the question, ready to run anywhere without connecting to a VLE. 
+        * :guilabel:`SCORM package` - a compiled package of the question with SCORM files included, so it can be uploaded to a VLE and communicate with its gradebook.
+        * :guilabel:`source` - a plain-text representation of the question, to be used with the Numbas command-line tools.
 
 
     Add to your basket
@@ -133,20 +133,17 @@ when ``num_animals = 12`` and ``animal_name = "sheep"``.
 The substitution of variables into a mathematical expression is more complicated: depending on context, the surrounding expression may need to be change for different values of the substituted variables. 
 Numbas provides a simple system to handle substitution of variables into mathematical expressions; see the section on :ref:`simplification-rules`.
 
+
+.. _statement:
+
 Statement
 =========
 
 The statement is a content area which appears at the top of the question, before any input boxes. 
 Use the statement to set up the question and provide any information the student needs to answer it.
 
-.. _variables:
-
-.. _parts:
-
 Parts
 =====
-
-.. image:: images/parts.png
 
 Each question has one or more parts.
 The student is given a separate score for each part of the question, and their total score is the sum of their scores for each part.
@@ -154,201 +151,10 @@ The student is given a separate score for each part of the question, and their t
 In the editor, parts are displayed in a list; you can click on the title bar of a part to hide it, making room for the others.
 Use the :guilabel:`Expand every part` and :guilabel:`Collapse every part` buttons to show or hide every part at once.
 
-The **type** of a part defines how it appears to the student, and how it is marked.
-Different part types offer different settings fields to configure the display and marking of the part.
-
-Generic part properties
------------------------
-
-The following properties are available on every type of part.
-
-.. glossary::
-    Prompt
-        A content area used to prompt the student for an answer.
-
-    Marks
-        The number of marks to award for answering the part correctly.
-
-    Steps
-        An optional list of sub-parts which the student can reveal by clicking on a button. 
-        Marks awarded for steps don't increase the total available for the part, but are given in case the student gets a lower score for the main part.
-
-    Penalty for revealing steps
-        If the student reveals the Steps, reduce the total available marks by this amount. 
-        Credit for the part is scaled down accordingly. 
-        For example, if there are 6 marks available and the penalty for revealing steps is 2 marks, the total available after revealing steps is 4. 
-        An answer worth 3 marks without revealing steps is instead worth :math:`3 \times \frac{4}{6} = 2` marks after revealing steps.
-
-    Show correct answer on reveal?
-        When the student reveals answers to the question, or views the question in review mode, should a correct answer be shown? You might want to turn this off if you're doing custom marking and the part has no "correct" answer.
-
-    Show score feedback icon?
-        After the student submits an answer to this part, should an icon describing their score be shown?
-        This is usually shown next to the input field, as well as in the feedback box.
-        You might want to turn this off if you've set up a question with a custom marking script which assigns a score based on the answers to two or more parts (or gapfills), meaning the individual parts have no independent "correct" or "incorrect" state.
+See :ref:`parts` for more on part settings.
 
 
-.. _part-types:
-
-Part types
-----------
-
-The following part types are built-in to Numbas:
-
-.. toctree::
-    :maxdepth: 1
-
-    parts/mathematical-expression
-    parts/numberentry
-    parts/matrixentry
-    parts/match-text-pattern
-    parts/multiple-choice
-    parts/gapfill
-    parts/information
-    parts/extension
-
-:ref:`Custom part types <custom-part-types>` defined by you or other Numbas users provide extra functionality.
-When editing a question, only custom part types you've made yourself or selected from the list of public part types are available.
-
-.. _part-scripts:
-
-Scripts
--------
-
-The script fields allow you to override the built-in algorithms used by Numbas. 
-They take JavaScript code; `the Numbas JavaScript API documentation for parts <http://numbas.github.io/Numbas/Numbas.parts.Part.html>`_ is a useful reference.
-
-Scripts have access to the global ``Numbas`` object, as well as the following variables:
-
-.. attribute:: part
-
-    The current part
-
-.. attribute:: question
-
-    The part's parent question
-
-.. attribute:: variables
-
-    The question's variables, unwrapped to JavaScript objects (so numbers can be used as JavaScript numbers, instead of having to go through the JME system)
-
-The following scripts can be customised:
-
-.. glossary::
-
-    When the part is created
-        This function runs when the part is created (either at the start of the exam, or when the question is regenerated), after the built-in constructor for the part. 
-        You could use this to change any of the part's settings, if it's not convenient to do so by other means.
-
-    Mark student's answer
-        This function runs when the student clicks the :guilabel:`Submit part` button. 
-        It should establish what proportion of the available credit to award to the student for their answer, and give feedback messages. 
-        Use ``this.setCredit(credit,message)`` to set the credit and (optionally) give a message. 
-        Note that ``this.answered`` should be set to true if the student's answer can be marked - otherwise, the student will be shown a warning message.
-
-    Validate student's answer
-        This functions runs after the marking function, and should return ``true`` if the student's answer is in a form that can be marked, or ``false`` otherwise. 
-        If the answer can't be marked, you should use ``this.giveWarning(message)`` to tell the student what's wrong.
-
-There are several example questions using custom scripts at `numbas.mathcentre.ac.uk/exam/1016/custom-marking/ <https://numbas.mathcentre.ac.uk/exam/1016/custom-marking/>`_.
-
-.. _adaptive-marking:
-
-Adaptive marking
-----------------
-
-Adaptive marking allows you to incorporate the student's answers to earlier parts when marking their answer to another part.
-You could use this to allow an "error carried forward" marking scheme, or in more free-form questions where one part has no correct answer - for example, "think of a number and find its square root".
-This is achieved by replacing the values of question variables with the student's answers to other parts.
-When a variable is replaced, any other variables depending on that one are recalculated using the new value.
-All other variables keep their original values.
-
-As an example, suppose part **a** of your question asks the student to calculate the mean of a set of numbers. 
-The correct answer for this part is the variable ``sample_mean``.
-Part **b** then asks the student to calculate a *z*-statistic based on the mean of the sample. 
-The correct answer to this part is the variable ``z_statistic``, which is defined as ``(sample_mean-population_mean)/sqrt(population_variance)``.
-(``population_mean`` and ``population_variance`` in this case are random numbers)
-
-If the student makes an error in calculating the sample mean but uses the right method to find a *z*-statistic, they shouldn't be penalised in part **b**. 
-We can ensure this by replacing the value of ``sample_mean`` with the student's answer to part **a** when marking part **b**.
-When the student submits an answer to part **b**, the value of ``z_statistic`` will be automatically recalculated using the student's value of ``sample_mean``. 
-Then, if the student correctly applies the formula, their answer will match the new value of ``z_statistic`` and they will receive full credit for the part.
-
-.. warning::
-    This feature can be very powerful, but make sure you don't introduce any new random variation in these dependent variables, or the correct answer will change each time the student submits their answer.
-
-    The editor will try to catch these cases and show you a warning, with a list of the problematic variables. 
-    Resolve this by moving the random elements to new variables.
-
-    For example, in the following set of variables, ``b`` depends on ``a`` and also has a random element::
-
-        a = random(1..5)
-        b = a*random(1,-1)
-
-    In a part where ``a`` is replaced with the answer to a previous part, ``b`` will be regenerated with the new value of ``a``. 
-    However, each time this happens, it will be multiplied by a random value. 
-    To fix this, create a new variable ``b_sign``::
-
-        a = random(1..6)
-        b_sign = random(1,-1)
-        b = a*b_sign
-
-    With this setup, ``b`` is always multiplied by the same value because ``b_sign`` does not depend on the replaced variable ``a``, so it is not regenerated when the part is submitted.
-
-.. topic:: Variable replacements
-
-    .. glossary::
-
-        Variable
-            The name of the variable to replace
-
-        Answer to use
-            The part whose answer the variable's value should be replaced with. 
-            Different part types produce different types of values.
-
-        Must be answered?
-            If this is ticked, the student must submit an answer to the referenced part before they can submit an answer to this part.
-
-    There are two variable replacement strategies:
-
-    .. glossary::
-
-        Try without replacements first
-            The student's answer is first marked using the original values of the question variables.
-            If the credit given by this method is less than the maximum available, the marking is repeated using the defined variable replacements.
-            If the credit gained with variable replacements is greater than the credit gained under the original marking, that score is used, and the student is told that their answers to previous parts have been used in the marking for this part.
-
-        Always replace variables
-            The student's answer is only marked once, with the defined variable replacements applied.
-
-    .. _part_type_variable_replacement:
-
-.. topic:: Values obtained from the answers to each part type
-
-    =========================== ==============
-    Part type                   Value obtained
-    =========================== ==============
-    Gap-fill                    A list containing the values obtained from each of the gaps
-    Mathematical expression     A JME subexpression. 
-                                When used in a variable definition, the subexpression will be substituted in, and any references to question variables in the subexpression will be replaced with their respective values.
-    Number entry                A number
-    Matrix entry                A matrix
-    Match text pattern          A string
-    Choose one from a list      The index of the answer the student chose, starting at 0
-    Choose several from a list  A list of booleans: true if the student ticked the corresponding choice, false otherwise
-    Match choices with answers  A 2D list of lists of boolean values, in the same format as a :term:`custom marking matrix` for this part - cells are addressed by choice first, and answer second.
-    =========================== ==============
-
-    The following screencast shows the addition of adaptive marking to a question:
-
-    .. todo:: Redo this screencast
-
-    .. raw:: html
-
-        <iframe src="https://player.vimeo.com/video/134209217" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-
-.. _question-variables:
+.. _variables:
 
 Variables
 =========
@@ -687,7 +493,7 @@ Settings
 
         After typing a tag in the box, press the Enter key to add it to the list. 
 
-.. _statement:
+.. access:
 
 Access
 ======
