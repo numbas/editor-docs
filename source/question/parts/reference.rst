@@ -95,6 +95,39 @@ The name must be a valid :ref:`variable name <variable-names>`.
 The label is an optional string of text enclosed in parentheses, which can describe in more readable language what the note represents.
 The definition is a :ref:`jme` expression used to evaluate the note.
 
+.. _standard-part-settings:
+
+.. data:: settings
+    :noindex:
+
+    The following settings are available for every type of part.
+    Other part types will provide further settings.
+
+    .. data:: stepsPenalty
+
+        The number of marks to deduct when the steps are shown.
+
+    .. data:: enableMinimumMarks
+
+        Is there a lower limit on the score the student can be awarded for this part?
+
+    .. data:: minimumMarks
+
+        Lower limit on the score the student can be awarded for this part.
+
+    .. data:: showCorrectAnswer
+
+        Should the expected answer to this part be shown when answers to this question are revealed?
+
+    .. data:: hasVariableReplacements
+
+        Does this part have any variable replacement rules?
+
+    .. data:: showFeedbackIcon
+
+        Show the tick/cross feedback symbol after this part is submitted?
+        See :term:`Show score feedback icon?`
+
 Test that the marking algorithm works
 -------------------------------------
 

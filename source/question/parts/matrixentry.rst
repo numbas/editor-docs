@@ -38,3 +38,61 @@ Matrix entry parts ask the student to enter a matrix of numbers. Marks are award
         Require trailing zeros?
             This option only applies when a precision restriction is selected. If this is ticked, the student must add zeros to the end of their answer (when appropriate) to make it represent the correct precision. For example, consider a part whose correct answer is :math:`1.4`, and you want the student's answer to be correct to three decimal places. If "Require trailing zeros?" is ticked, only the answer :math:`1.400` will be marked correct. If it is not ticked, any of :math:`1.4`, :math:`1.40` or :math:`1.400` will be marked as correct. If *too many* zeros are used, e.g. :math:`1.4000`, the answer is marked as incorrect.
 
+
+This part type provides the following properties to the :data:`settings` object:
+
+.. data:: correctAnswer
+    :noindex:
+
+    The correct answer to the part, as set in :term:`Correct answer`.
+
+.. data:: numRows
+
+    The default :term:`Number of rows` in the student's answer.
+
+.. data:: numColumns
+
+    The default :term:`Number of columns` in the student's answer.
+
+.. data:: allowResize
+
+    :term:`Allow student to change size of matrix?`
+
+.. data:: tolerance
+
+    :term:`Margin of error allowed in each cell`
+
+.. data:: markPerCell
+
+    :term:`Gain marks for each correct cell?`
+
+.. data:: allowFractions
+    :noindex:
+
+    :term:`Allow the student to enter fractions?`
+
+.. data:: precisionType
+    :noindex:
+
+    The type of precision restriction to apply: one of ``"none"``, ``"dp"`` or ``"sigfig"``, as set in :term:`Precision restriction`.
+
+.. data:: precision
+    :noindex:
+
+    The number of decimal places or significant figures to require.
+
+.. data:: precisionPC
+    :noindex:
+
+    The proportion of credit to award if any cell is not given to the required precision.
+
+.. data:: precisionMessage
+    :noindex:
+
+    A message to display in the marking feedback if any cell in the student's answer was not given to the required precision.
+
+.. data:: strictPrecision
+    :noindex:
+
+    :term:`Require trailing zeros?`
+

@@ -28,8 +28,35 @@ Use a text pattern part when you want the student to enter short, non-mathematic
             A representative correct answer string to display to the student, in case they press the :guilabel:`Reveal answers` button. You can substitute variables by enclosing expressions in curly braces, the same as in content areas.
 
         Must the answer be in the correct case?
-            If this is ticked, the capitalisation of the student's answer must match that of the answer pattern. If it doesn't, partial credit (defined using the slider below the checkbox) will be awarded.
+            If this is ticked, the capitalisation of the student's answer must match that of the answer pattern.
+            If it doesn't, partial credit (defined using the slider below the checkbox) will be awarded.
 
+
+Marking settings
+################
+
+This part type provides the following properties to the :data:`settings` object:
+
+.. data:: correctAnswer
+    :noindex:
+
+    The :term:`Answer pattern` string.
+
+.. data:: displayAnswer
+
+    The :term:`Display answer` string.
+
+.. data:: caseSensitive
+
+    :term:`Must the answer be in the correct case?`
+
+.. data:: partialCredit
+
+    The proportion of credit to award if the answer is correct except for the case.
+
+.. data:: matchMode
+
+    The :term:`Match test` setting: either ``"regex"`` or ``"exact"``.
 
 Examples
 ########

@@ -43,3 +43,60 @@ Number entry parts ask the student to enter a number, which is marked if it is i
         Correct answer style
             The style of number notation to use when displaying the student's answer.
 
+This part type provides the following properties to the :data:`settings` object:
+
+.. data:: minvalue
+
+    :term:`Minimum accepted value`, as a :data:`number`.
+
+.. data:: maxvalue
+
+    :term:`Maximum accepted value`, as a :data:`number`.
+
+.. data:: correctAnswerFraction
+
+    :term:`Display the correct answer as a fraction?`
+
+.. data:: allowFractions
+    :noindex:
+
+    :term:`Allow the student to enter a fraction?`
+
+.. data:: mustBeReduced
+
+    :term:`Must the fraction be reduced?`
+
+.. data:: mustBeReducedPC
+
+    The proportion of credit to award if the student's answer is a non-reduced fraction.
+
+.. data:: notationStyles
+
+    A :data:`list` of the styles of notation to allow, other than ``<digits>.<digits>``.
+    See :ref:`number-notation`.
+
+.. data:: displayAnswer
+    :noindex:
+
+    A representative correct answer to display, as a :data:`number`.
+
+.. data:: precisionType
+
+    The type of precision restriction to apply, as set by :term:`Precision restriction`.
+    One of ``"none"``, ``"dp"``, or ``"sigfig"``.
+
+.. data:: strictPrecision
+
+    :term:`Require trailing zeros?`
+
+.. data:: precision
+
+    The number of decimal places or significant figures to require.
+
+.. data:: precisionPC
+
+    The proportion of credit to award if the student's answer is not given to the required precision.
+
+.. data:: precisionMessage
+
+    A message to display in the marking feedback if the student's answer was not given to the required precision.

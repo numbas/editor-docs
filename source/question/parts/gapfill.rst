@@ -10,3 +10,5 @@ Include them in text by clicking on the :guilabel:`Insert gap` button on the too
 You can double-click on a gap placeholder to change its number.
 
 To insert a gap in the plain text editor, type the gap's number between two square brackets, e.g. `[[0]]` for the first gap.
+
+The gap-fill part does not add any properties to the :data:`settings` object.

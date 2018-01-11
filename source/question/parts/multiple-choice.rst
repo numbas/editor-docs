@@ -42,7 +42,9 @@ They are listed here together.
         Shuffle order of choices?
             If this is ticked, the choices are displayed in random order.
 
-        Shuffle order of answers? (:term:`Match choices with answers` only)
+        Shuffle order of answers? 
+            (:term:`Match choices with answers` only)
+            
             If this is ticked, the answers are displayed in random order.
 
         Number of display columns
@@ -74,7 +76,9 @@ They are listed here together.
             Define the number of marks to award for each of the choices. 
             For :term:`choose one from a list` and :term:`choose several from a list` parts, the expression should evaluate to a list of numbers, while for :term:`match choices with answers` it should evaluate to a list of lists of numbers representing a 2d array, or a matrix object, giving the number of marks to associate with each choice-answer pair.
 
-        Layout (:term:`Match choices with answers` only)
+        Layout 
+            (:term:`Match choices with answers` only)
+
             Define which choices are available to be picked. 
             If :guilabel:`Custom expression` is selected, give either a list of lists of boolean values, or a matrix with as many rows as the part has choices and as many columns as the part has answers. 
             Any non-zero value in the matrix indicates that the corresponding choice-answer pair should be available to the student.
@@ -118,4 +122,50 @@ They are listed here together.
         Custom matrix expression
             Define the number of marks to award for each of the choices. 
             Either a list of lists representing a 2d array, or a matrix object, giving the number of marks to associate with each choice-answer pair.
+
+This part type provides the following properties to the :data:`settings` object:
+
+.. data:: maxMarksEnabled
+
+    Is there a maximum number of marks the student can get? 
+    Set by :term:`Maximum marks`.
+
+.. data:: minAnswers
+
+    The minimum number of responses the student must select, set by :term:`Minimum answers`.
+
+.. data:: maxAnswers
+
+    The maximum number of responses the student must select, set by :term:`Maximum answers`.
+
+.. data:: shuffleChoices
+
+    :term:`Shuffle order of choices?`
+
+.. data:: shuffleAnswers
+
+    :term:`Shuffle order of answers?`
+
+.. data:: matrix
+    :noindex:
+
+    A 2D :data:`list` of marks for each answer/choice pair. 
+    Arranged as ``settings["matrix"][answer][choice]``.
+
+.. data:: displayType
+
+    :term:`Selection type`: one of ``"radiogroup"``, ``"checkbox"`` or ``"dropdownlist"``.
+
+.. data:: warningType
+
+    What to do if the student picks the wrong number of responses? Either ``"none"`` (do nothing), ``"prevent"`` (don't let the student submit), or ``"warn"`` (show a warning but let them submit)
+
+.. data:: layoutType
+
+    The type of layout to use, set by :term:`Layout`.
+    One of ``"all"``, ``"lowertriangle"``, ``"strictlowertriangle"``, ``"uppertriangle"``, ``"strict uppertriangle"``, ``"expression"``.
+
+.. data:: layoutExpression
+
+    :data:`string` form of a JME expression to produce a 2d array or matrix describing the layout when :data`layoutType` is ``"expression"``.
 
