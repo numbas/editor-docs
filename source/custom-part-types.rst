@@ -177,6 +177,11 @@ String
 
 The student enters a single line of text.
 
+.. csv-table:: Input options
+    :header: "Label", "Name", "Data type", "Description"
+
+    "Allow student to submit an empty string?", ``allowEmpty``, :data:`boolean`, "If ``false``, the part will only be marked if their answer is non-empty."
+
 The answer is a :data:`string`.
 
 .. _answer-input-method-number:
@@ -321,3 +326,17 @@ The two required notes, :data:`mark` and :data:`interpreted_answer`, can not be 
     Used by
         A list of all notes which use this note in their definition. 
         You can click on a note name to go to its definition.
+
+Making sure that the marking algorithm works
+--------------------------------------------
+
+You must make sure that your part type will mark all possible answers that a student can enter.
+Decide how you want to handle different kinds of "invalid" input - do you want to strip space characters from the student's answer, for example?
+Use the :func:`fail` function to stop the marking algorithm and force the student to change their answer before resubmitting, if the student's answer is of a form .
+However, it's important not to reject plausible answers that are simply incorrect - you should make every effort to accept answers that follow the :term:`input hints <Input hint>` you've given.
+
+There's no facility to test the marking algorithm inside the custom part type editor - for this, you need to create an instance of the part type inside a question so you can configure its settings.
+
+When a student attempts a question using a custom part type, if any errors are encountered while evaluating your part type's marking algorithm, the student will be shown a generic error asking them to report the problem.
+In order to see what the problem is, you'll have to reproduce the student's input in the question editor's :ref:`marking algorithm <part-marking-algorithm>` tab.
+A more descriptive error message, detailing the note affected and the exact nature of the error, will be shown.
