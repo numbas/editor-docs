@@ -155,67 +155,133 @@ The following fields are common to all input methods:
     Expected answer
         A JME expression which evaluates to the expected answer to the part.
 
+        Available in the marking algorithm as ``input_options["correctAnswer"]``.
+
     Input hint
         A string displayed next to the input field, giving any necessary information about how to enter their answer.
 
         If there are any requirements the student's answer must meet that aren't obvious from the way the input is displayed, for example a maximum length or required number of decimal places, these should be described here.
+
+        Available in the marking algorithm as ``input_options["hint"]``.
 
 .. _custom-part-type-answer-input-methods:
 
 Answer input methods
 --------------------
 
-.. glossary::
 
-    String
-        The student enters a single line of text.
+.. _answer-input-method-string:
 
-        :data:`studentAnswer` is a :data:`string`.
+String
+######
 
-    Number
-        The student enters a number, using the default number notation style.
-        
-        :data:`studentAnswer` is a :data:`number`, as interpreted by :func:`parsenumber`.
-        If the student's answer is not a valid representation of a number, ``NaN`` is returned.
+The student enters a single line of text.
 
-        If you wish to allow other :ref:`number-notation` styles, a string input is more appropriate, so you can parse the student's answer yourself in the marking script.
+The answer is a :data:`string`.
 
-    Mathematical expression
-        The student enters a JME expression.
-        A LaTeX rendering of the expression is displayed beside the input field.
-        
-        If the student's answer is not a valid expression, the part can not be submitted.
-        
-        :data:`studentAnswer` is an :data:`expression` value corresponding to the student's input.
+.. _answer-input-method-number:
 
-    Matrix
-        The student enters a numerical matrix.
+Number
+######
 
-        :data:`studentAnswer` is a :data:`matrix` value corresponding to the student's input.
+The student enters a number, using the default number notation style.
+
+.. csv-table:: Input options
+    :header: "Label", "Name", "Data type", "Description"
+
+    "Allow fractions?", ``allowFractions``, :data:`boolean`, "Allow the student to enter their answer as a fraction?"
+    "Allowed notation styles", ``allowedNotationStyles``, :data:`list` of :data:`string`, "The allowed :ref:`styles of number notation <number-notation>`."
+
+The answer is a :data:`number`, as interpreted by :func:`parsenumber`.
+If the student's answer is not a valid representation of a number, the part will not be submitted.
+
+If you wish to allow :ref:`number notation <number-notation>` styles other than those built-in, a string input is more appropriate, so you can parse the student's answer yourself in the marking script.
+
+.. _answer-input-method-mathematical-expression:
+
+Mathematical expression
+#######################
+
+The student enters a JME expression.
+
+.. csv-table:: Input options
+    :header: "Label", "Name", "Data type", "Description"
+
+    "Show preview of student's answer?", ``showPreview``, :data:`boolean`, "If ``true``, a LaTeX rendering of the student's answer will be shown next to the input box."
+
+The answer is an :data:`expression` value corresponding to the student's input.
+
+If the student's answer is not a valid expression, the part will not be marked.
+
+.. _answer-input-method-matrix:
+
+Matrix
+######
+
+The student enters a two-dimensional array of values.
+
+.. csv-table:: Input options
+    :header: "Label", "Name", "Data type", "Description"
+
+    "Allow student to change size of matrix?", ``allowResize``, :data:`boolean`, "If ``true``, the student can change the size of the matrix. Otherwise, it is fixed to the specified size."
+    "Number of rows", ``numRows``, :data:`number`, "The initial number of rows in the input matrix."
+    "Number of columns", ``numColumns``, :data:`number`, "The initial number of rows in the input matrix."
+    "Parse cell values", ``parseCells``, :data:`boolean`, "If ``true``, the answer will be a :data:`matrix` of numbers. Otherwise, it is a 2-dimensional :data:`list` of lists of :data:`string` values."
+    "Allowed notation styles", ``allowedNotationStyles``, :data:`list` of :data:`string`, "The allowed :ref:`styles of number notation <number-notation>`."
+    "Allow fractions?", ``allowFractions``, :data:`boolean`, "Allow the student to enter numbers as fractions?"
+
+If ``parseCells`` is ``true``, the answer is a :data:`matrix` value corresponding to the student's input.
+The part will not be marked unless all of the cells in the student's matrix are valid numbers.
+
+If ``parseCells`` is ``false``, the answer is a :data:`list` of lists of :data:`string` values.
+
+.. _answer-input-method-radio-buttons:
+
+Radio buttons
+#############
+
+The student chooses one from a list of choices by selecting a radio button.
+
+.. csv-table:: Input options
+    :header: "Label", "Name", "Data type", "Description"
     
-    Radio buttons
-        The chooses one from a list of choices by selecting a radio button.
+    "Choices",``choices``, :data:`list` of :data:`string`, "The labels for the choices to offer to the student."
 
-        The :guilabel:`Choices` field should evaluate to a list of strings which will be shown to the student.
+The answer is the index of the student's choice in the list. 
+The first item in the list is index 0.
 
-        :data:`studentAnswer` is the index of the student's choice in the list. 
-        The first item in the list is index 0.
+The part will not be marked unless the student selects one of the choices.
 
-    Choose several from a list
-        The chooses any number of items from a list of choices by ticking checkboxes.
+.. _answer-input-method-choose-several:
 
-        The :guilabel:`Choices` field should evaluate to a list of strings which will be shown to the student.
+Choose several from a list
+##########################
 
-        :data:`studentAnswer` is a list of the indices of the student's choices in the list. 
-        The first item in the list is index 0.
+The student chooses any number of items from a list of choices by ticking checkboxes.
 
-    Drop-down box
-        The chooses one from a list of choices in a drop-down box.
+.. csv-table:: Input options
+    :header: "Label", "Name", "Data type", "Description"
+    
+    "Choices",``choices``, :data:`list` of :data:`string`, "The labels for the choices to offer to the student."
 
-        The :guilabel:`Choices` field should evaluate to a list of strings which will be shown to the student.
+The answer is a :data:`list` of :data:`booleans` describing whether the student ticked the corresponding choice.
 
-        :data:`studentAnswer` is the index of the student's choice in the list. 
-        The first item in the list is index 0.
+.. _answer-input-method-dropdown:
+
+Drop-down box
+#############
+
+The student chooses one from a list of choices in a drop-down box.
+
+.. csv-table:: Input options
+    :header: "Label", "Name", "Data type", "Description"
+    
+    "Choices",``choices``, :data:`list` of :data:`string`, "The labels for the choices to offer to the student."
+
+The answer is the index of the student's choice in the list. 
+The first item in the list is index 0.
+
+The part will not be marked unless the student selects one of the choices.
 
 
 .. _custom-part-type-marking:

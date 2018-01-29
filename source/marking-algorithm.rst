@@ -84,6 +84,12 @@ The following variables are available for use by marking algorithms:
     A :data:`list` of the :term:`steps` belonging to this part.
     Each element in the list is a :data:`dict` of the same variables that would be available in the gap's own marking algorithm.
 
+.. data:: input_options
+
+    (Only for :ref:`custom part types <custom-part-types>`)
+
+    A :data:`dict` of the options for the part's :ref:`answer input method <custom-part-type-answer-input-methods>`.
+
 .. _jme-marking-functions:
 
 Marking-specific JME functions
