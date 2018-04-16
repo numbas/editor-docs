@@ -146,6 +146,18 @@ Data types
 
     **Examples**: ``matrix([1,2,3],[4,5,6])``, ``matrix(row1,row2,row3)``
 
+.. data:: function
+
+    An application of a function.
+
+    **Examples**: ``f(x)``, ``sin(x)``
+
+.. data:: op
+
+    An infix binary operation, or a pre-/post-fix unary operation.
+
+    **Examples**: ``x+y``, ``n!``, ``a and b``
+
 .. data:: html
 
     An HTML DOM node.
@@ -913,6 +925,13 @@ Strings
     **Example**:
         * ``split("a,b,c,d",",")`` → ``["a","b","c","d"]``
 
+.. function:: trim(str)
+
+    Remove whitespace from the start and end of ``str``.
+
+    **Example**:
+        * ``trim(" a string  ")`` → ``"a string"``
+
 .. function:: currency(n,prefix,suffix)
 
     Write a currency amount, with the given prefix or suffix characters.
@@ -995,6 +1014,16 @@ Strings
     **Examples**:
         * ``translate("question.header",["number": 2])`` → ``"Question 2"`` (when the ``en-GB`` locale is in use)
         * ``translate("question.header",["number": 2])`` → ``"Pregunta 2"`` (when the ``es-ES`` locale is in use)
+
+.. function:: isbool(str)
+
+    After converting to lower case, is ``str`` any of the strings ``"true"``, ``"false"``, ``"yes"`` or ``"no"``?
+    
+    **Examples**:
+        * ``isbool("true")`` → ``true``
+        * ``isbool("YES")`` → ``true``
+        * ``isbool("no")`` → ``true``
+        * ``isbool("y")`` → ``false``
 
 Logic
 -----
@@ -1511,6 +1540,15 @@ Control flow
 HTML
 ----
 
+.. function:: isnonemptyhtml(str)
+
+    Does ``str`` represent a string of HTML containing text?
+    Returns false for the empty string, or HTML elements with no text content.
+
+    **Examples**:
+        * ``isnonemptyhtml("<p>Yes</p>")`` → ``true``
+        * ``isnonemptyhtml("<p></p>")`` → ``false``
+
 .. function:: html(x)
 
     Parse string ``x`` as HTML.
@@ -1668,6 +1706,33 @@ Sub-expressions
     **Examples**:
         * ``simplify(expression("1*x+cos(pi)","unitfactor"))`` → ``expression("x+cos(pi)")``
         * ``simplify(expression("1*x+cos(pi)"),["basic","unitfactor","trig"])`` → ``expression("x-1")``
+
+.. function:: canonical_compare(expr1,expr2)
+
+    Compare expressions ``a`` and ``b`` using the "canonical" ordering.
+    Returns ``-1`` if ``a`` should go before ``b``, ``0`` if they are considered "equal", and ``1`` if ``a`` should go after ``b``.
+
+    Expressions are examined in the following order:
+
+    * 
+        Names used: all variable names used in each expression are collected in a depth-first search and the resulting lists are compared lexicographically.
+    * 
+        Data type: if ``a`` and ``b`` are of different data types, :data:`op` and :data:`function` go first, and then they are compared using the names of their data types.
+    * 
+        Function name: if ``a`` and ``b`` are both function applications, they are compared using the names of the functions. 
+        If the functions are the same, the arguments are compared. 
+        Powers, or multiples of powers, go after anything else.
+    * 
+        Number: if ``a`` and ``b`` are both numbers, the lowest number goes first. 
+        Complex numbers are compared by real part and then by imaginary part.
+    * 
+        Elements of other data types are considered to be equal to any other value of the same data type.
+
+    **Examples**:
+        * ``canonical_compare(a,b)`` → ``-1``
+        * ``canonical_compare(f(y),g(x))`` → ``1``
+        * ``canonical_compare(f(x),g(x))`` → ``-1``
+        * ``canonical_compare("a","b")`` → ``0``
 
 Pattern-matching sub-expressions
 --------------------------------
