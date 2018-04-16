@@ -12,7 +12,7 @@ Find out more about Numbas, including case studies and the latest blog posts, at
 A free to use Numbas editor is open to the public at `numbas.mathcentre.ac.uk <https://numbas.mathcentre.ac.uk>`_.
 
 This documentation is a work in progress. 
-If you have any questions, please `email us <mailto:numbas.ncl.ac.uk>`_ or join `the numbas-users mailing list <https://groups.google.com/forum/#!forum/numbas-users>`_.
+If you have any questions, please `email us <mailto:numbas@ncl.ac.uk>`_ or join `the numbas-users mailing list <https://groups.google.com/forum/#!forum/numbas-users>`_.
 
 .. toctree::
     :caption: Getting Started
