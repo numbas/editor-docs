@@ -148,11 +148,14 @@ Unit tests
 ----------
 
 :dfn:`Unit tests` allow you to save the state of the marking algorithm after it has run, to confirm after making any changes to the part or question that the same behaviour is produced.
+The student's answer and the values of all question variables are saved, along with the value and feedback corresponding to marking notes that you have selected.
 
-The test will automatically re-run whenever something in the question changes.
+Clicking the :guilabel:`Run this test` button inside a unit test will cause the marking algorithm to be run against the stored student answer and variable values.
 If any of the notes included in the test produce a different value or different feedback than expected, the test will fail.
 When that happens, you can use the :guilabel:`Expected` entries in the feedback table to guide the process of fixing the marking algorithm so it produces the expected feedback.
 Alternatively, you can choose to :guilabel:`Accept the current values` if you want to accept the new behaviour - this will update the test to accept the current values, and reject any others.
+
+Click the :guilabel:`Run all unit tests` button to run all unit tests belonging to a part.
 
 
 .. _part-scripts:
@@ -166,7 +169,7 @@ They take JavaScript code; `the Numbas JavaScript API documentation for parts <h
 .. note::
     
     Most customisation of marking can be done using a :ref:`custom marking algorithm <marking-algorithm>`.
-    The scripts feature was introduced before custom amrking algorithms, so the scope for its uses is now quite limited.
+    The scripts feature was introduced before custom marking algorithms, so the scope for its use is now quite limited.
 
 Scripts have access to the global ``Numbas`` object, as well as the following variables:
 
