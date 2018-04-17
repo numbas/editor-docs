@@ -134,6 +134,9 @@ Test that the marking algorithm works
 
 Whether you're using a custom marking algorithm or not, you can test how it behaves given certain answers.
 
+.. image:: images/test-part-works.png
+    :alt: The algorithm testing interface, with an answer entered and some notes selected.
+
 The first half of the testing section provides a field to enter an answer to the part, and the table below shows the feedback notes produced by the marking algorithm.
 Click on a note to toggle its visibility - most of the time, you'll only be interested in a few of the notes.
 
@@ -150,6 +153,11 @@ Unit tests
 
 :dfn:`Unit tests` allow you to save the state of the marking algorithm after it has run, to confirm after making any changes to the part or question that the same behaviour is produced.
 The student's answer and the values of all question variables are saved, along with the value and feedback corresponding to marking notes that you have selected.
+
+Give a unit test a label which describes the behaviour it is testing for, for example, "correct answer" for a test that checks the correct answer earns full credit, or "give feedback when student adds instead of subtracting" for a test that checks the right feedback message is displayed when the student makes a particular error.
+
+.. image:: images/unit-tests.png
+    :alt: Two unit tests, one passing and one failing.
 
 Clicking the :guilabel:`Run this test` button inside a unit test will cause the marking algorithm to be run against the stored student answer and variable values.
 If any of the notes included in the test produce a different value or different feedback than expected, the test will fail.
