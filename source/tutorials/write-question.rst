@@ -11,11 +11,13 @@ To begin, let's make a question asking the student to add two numbers.
 Log in to the Numbas editor and, in the :guilabel:`Create` box, click on the :guilabel:`Question` link.
 
 .. image:: screenshots/question/1.png
+    :alt: The "create a question" link on the homepage is highlighted.
 
 You will be prompted to give your question a name, and to assign it to a project.
 As this is your first question you will probably want to use the default project, which is your own workspace.
 
 .. image:: screenshots/question/2.png
+    :alt: The "create a new question" form.
 
 The structure of a question
 ---------------------------
@@ -35,12 +37,14 @@ In the :guilabel:`Admin` box there are links to copy or delete the question.
 And in the :guilabel:`Metadata` box you can manage how your question is organised in the Numbas database.
 
 .. image:: screenshots/question/3.png
+    :alt: The question editor, showing "My first question".
 
 In the centre is the main editing interface.
 Before moving any further, let's change your question name from "My First Question" to something more descriptive so that you can find it later.
 Type "Numbas tutorial: arithmetic" in the :guilabel:`Name` field.
 
 .. image:: screenshots/question/4.png
+    :alt: The input box to edit the name of the question, showing "Numbas tutorial: arithmetic".
 
 Every Numbas question consists of three sections: :ref:`Statement <statement>`, :ref:`Parts <parts>`, and :ref:`Advice <advice>`.
 In the Statement, the context for the question is given to the student.
@@ -64,6 +68,7 @@ Type
 in the :guilabel:`Question statement` box.
 
 .. image:: screenshots/question/5.png
+    :alt: The question statement box, containing the text "What is 3+5?"
 
 Click on the :guilabel:`Test Run` button.
 Your question will open in a new browser window.
@@ -71,16 +76,17 @@ There is a statement, but nowhere to enter an answer.
 We need to create a number entry part.
 Go back to the editing window and click on :guilabel:`Parts` in the sidebar, or follow the navigation buttons at the bottom of the page, skipping past :guilabel:`Variables`, which we will consider later.
 
-Once on the Parts page, click on the :guilabel:`Add a part` button.
-The default part type is :ref:`Information only <information-only>`; change it to :ref:`Number entry <number-entry>` by clicking on the drop-down box.
+Once on the Parts page, click on the :guilabel:`Add a part` button, and select :ref:`Number entry <number-entry>`.
 
 .. image:: screenshots/question/6.png
+    :alt: The "Add a part" drop-down, with "Number entry" selected.
 
 Every part has a :term:`Prompt`, which you can use to ask the student for the particular answer the part assesses.
 We’ve already asked our question in the question’s statement, so we can leave this part’s prompt empty.
 Instead, click on the :guilabel:`Marking` link, where you’ll state the correct answer for the part.
 
 .. image:: screenshots/question/7.png
+    :alt: The "marking settings" tab, with 8 entered in the minimum and maximum value fields.
 
 Enter ``1`` in the Marks field, so the student is given one mark if their answer is marked correct.
 *Number entry* parts are marked by checking if the student’s answer is within the range defined by the :term:`Minimum accepted value` and :term:`Maximum accepted value` fields.
@@ -96,9 +102,10 @@ There isn’t much to explain for this particular question, so just click on the
 
 in the box.
 
-Now click :guilabel:`Test Run` again; if you press the :guilabel:`Reveal` button at the top of the question page, the number input is filled in with the correct answer, and the advice text you wrote is displayed at the bottom.
+Now click :guilabel:`Test Run` again; if you press the :guilabel:`Reveal answers` button at the bottom of the question page, the number input is filled in with the correct answer, and the advice text you wrote is displayed at the bottom.
 
 .. image:: screenshots/question/8.png
+    :alt: The question, after the student has submitted an answer and then revealed 
 
 You have created your first complete question! 
 
@@ -120,6 +127,7 @@ Add another *Number entry* part to your question.
 Now that we have two parts, it doesn’t make sense to ask for the answer to the first part in the question statement, so remove the text from the *Statement* and put it back in the first part’s *Prompt*.
 
 .. image:: screenshots/question/9.png
+    :alt: The part prompt editor, containing the text "What is 3+5?"
 
 Now, for the second part’s *Prompt*, enter:
 
@@ -142,6 +150,7 @@ The dollar symbols delimit the LaTeX notation.
 Now when you :guilabel:`Test Run` the question again, you will see neatly typeset maths:
 
 .. image:: screenshots/question/10.png
+    :alt: The prompt for the second part, with the mathematical notation rendered using LaTeX
 
 For consistency, go back and change the prompt for the first part to:
 
@@ -173,6 +182,7 @@ You can get a feel for what values a variable can take by pressing the :guilabel
 Add a second variable called ``b`` and give it the same definition. 
 
 .. image:: screenshots/question/11.png
+    :alt: The definition of the variable b.
 
 The next step is to use these variables to define the prompts and acceptable values for both parts.
 
@@ -235,8 +245,10 @@ Now the *Prompt* for the part might go something like this:
 But that can produce unnatural expressions, like these:
 
 .. image:: screenshots/question/12.png
+    :alt: The expression "x^2 + -3x + -4".
 
 .. image:: screenshots/question/13.png
+    :alt: The expression "x^2 + 0x + -8".
 
 In the first, only a subtraction sign should be shown; in the second the x term should be omitted.
 

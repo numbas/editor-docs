@@ -4,6 +4,7 @@ Question parts
 ##############
 
 .. image:: images/parts.png
+    :alt: A question part in the question editor.
 
 Each question has one or more parts.
 The student is given a separate score for each part of the question, and their total score is the sum of their scores for each part.

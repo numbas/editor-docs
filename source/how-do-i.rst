@@ -153,8 +153,9 @@ Suppose you have a random variable ``a``, which has the value 1,2 or 3, correspo
 First, write out the text for each scenario. 
 
 .. image:: /_static/how_do_i/conditional_visibility.png
+    :alt: The conditional visibility button on the toolbar of the content editor
 
-There is a button in the content editor labelled :guilabel:`Conditional visibility`. 
+There is a button in the :ref:`rich text editor <content-areas>` labelled :guilabel:`Conditional visibility`. 
 This allows you to give an expression (in :ref:`JME` syntax) which dictates whether or not the selected text is shown. 
 For each scenario, select the corresponding text and click on the :guilabel:`Conditional visibility` button. 
 Enter ``a=1`` for the first block, ``a=2`` for the second, and ``a=3`` for the third.

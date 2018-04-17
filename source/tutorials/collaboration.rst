@@ -31,6 +31,7 @@ When it's time to compile an exam, every question in it should be labelled "Read
 That way, you know there won't be any problems when your students take the exam.
 
 .. image:: screenshots/feedback_dropdown.png
+    :alt: The feedback dropdown.
 
 
 Pull requests
@@ -43,6 +44,7 @@ Use the editing history tab
 ---------------------------
 
 .. image:: screenshots/sample_editing_history.png
+    :alt: The editing history tab. There are two comments and one feedback label.
 
 Each time you make a change to a question, :ref:`set a checkpoint <question-editing-history>` to save a snapshot of your question when you make a change.
 Write an informative description of the current state of the question, and what you've changed since the last restore point.
@@ -59,6 +61,7 @@ Add descriptions to variables and use sensible names
 ----------------------------------------------------
 
 .. image:: screenshots/variable_description.png
+    :alt: The definition of a variable, with a description of what the variable represents.
 
 Short variable names are quick to type, but not easy to understand. 
 Try to avoid single-letter variable names as much as possible, and prefer longer names over shorter ones. 

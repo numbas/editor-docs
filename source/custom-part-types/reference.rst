@@ -3,6 +3,9 @@
 Custom part types
 *****************
 
+.. image:: images/custom-part-type-editor.png
+    :alt: The custom part type editor
+
 Custom part types allow you to reuse marking algorithms you've written, while providing fields for the part's settings, like the built-in parts.
 
 Creating a new part type
@@ -175,6 +178,9 @@ Answer input methods
 String
 ######
 
+.. image:: images/answer-widget-string.png
+    :alt: The string input method as it appears to the student: a text input box
+
 The student enters a single line of text.
 
 .. csv-table:: Input options
@@ -189,7 +195,11 @@ The answer is a :data:`string`.
 Number
 ######
 
-The student enters a number, using the default number notation style.
+.. image:: images/answer-widget-number.png
+    :alt: The number input method as it appears to the student: a text input box which only accepts numbers.
+
+The student enters a number, using any of the allowed notation styles.
+If the student's answer is not a valid number, they are shown a warning and can not submit the part.
 
 .. csv-table:: Input options
     :header: "Label", "Name", "Data type", "Description"
@@ -207,7 +217,10 @@ If you wish to allow :ref:`number notation <number-notation>` styles other than 
 Mathematical expression
 #######################
 
-The student enters a JME expression.
+.. image:: images/answer-widget-jme.png
+    :alt: The mathematical expression input method as it appears to the student: a text input box with a LaTeX rendering to the right.
+
+The student enters a :ref:`JME` expression.
 
 .. csv-table:: Input options
     :header: "Label", "Name", "Data type", "Description"
@@ -222,6 +235,9 @@ If the student's answer is not a valid expression, the part will not be marked.
 
 Matrix
 ######
+
+.. image:: images/answer-widget-matrix.png
+    :alt: The matrix method as it appears to the student: a grid of text inputs under a pair of boxes to set the number of rows and columns.
 
 The student enters a two-dimensional array of values.
 
@@ -245,6 +261,9 @@ If ``parseCells`` is ``false``, the answer is a :data:`list` of lists of :data:`
 Radio buttons
 #############
 
+.. image:: images/answer-widget-radios.png
+    :alt: The radio buttons input method as it appears to the student: a list of options with radio buttons next to them.
+
 The student chooses one from a list of choices by selecting a radio button.
 
 .. csv-table:: Input options
@@ -262,6 +281,9 @@ The part will not be marked unless the student selects one of the choices.
 Choose several from a list
 ##########################
 
+.. image:: images/answer-widget-checkboxes.png
+    :alt: The "choose several from a list" input method as it appears to the student: a list of options with checkboxes next to them.
+
 The student chooses any number of items from a list of choices by ticking checkboxes.
 
 .. csv-table:: Input options
@@ -275,6 +297,9 @@ The answer is a :data:`list` of :data:`booleans` describing whether the student 
 
 Drop-down box
 #############
+
+.. image:: images/answer-widget-dropdown.png
+    :alt: The drop-down box input method as it appears to the student: a drop-down box containing the available choices.
 
 The student chooses one from a list of choices in a drop-down box.
 

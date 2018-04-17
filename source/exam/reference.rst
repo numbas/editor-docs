@@ -12,6 +12,7 @@ Creating an exam
 To create an exam from any page in the Numbas editor, click on the plus icon at the top of the page, and select :guilabel:`Exam`. 
 
 .. image:: images/create_exam.png
+    :alt: The "create a new exam" form.
 
 You must give a name for your exam, and select a :doc:`project </project/reference>` for it to go in. 
 The default project is your personal workspace; you can always move the exam to another of your projects later on.
@@ -39,6 +40,7 @@ Admin controls
 ==============
 
 .. image:: images/admin_controls.png
+    :alt: The admin controls.
 
 .. glossary::
     Test Run
@@ -103,6 +105,7 @@ You can check a question does what you want and give it a test run before includ
 Click the plus icon on one of the question results to add it to your exam. 
 
 .. image:: images/add_question.png
+    :alt: The "Add questions to this exam" section, listing questions in the basket and recently edited questions in a separate tab.
 
 You can drag and drop questions in the list on the left to reorder them, or move them between groups.
 
@@ -321,6 +324,7 @@ Exams are related if one is a copy of the other, or they are both copies of a co
 You can use this tab to compare the current exam with related versions, and offer to merge your version of the exam into another.
 
 .. image:: images/other_versions.png
+    :alt: The "other versions" tab, showing exams related to the one being edited.
 
 Click on the :guilabel:`Compare` link to go to a screen where you can offer to replace the other version with your version, or vice versa.
 If you have editing access to the destination exam, you can replace it with the other version automatically.

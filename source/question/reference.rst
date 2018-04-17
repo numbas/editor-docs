@@ -17,6 +17,7 @@ Creating a question
 To create a question from any page in the Numbas editor, click on the plus icon at the top of the page, and select :guilabel:`Question`. 
 
 .. image:: images/create_question.png
+    :alt: The "Create a new question" form.
 
 You must give a name for your question, and select a :doc:`project </project/reference>` for it to go in. 
 The default project is your personal workspace; you can always move the question to another of your projects later on.
@@ -46,6 +47,7 @@ Admin controls
 ==============
 
 .. image:: images/admin_controls.png
+    :alt: Admin controls on the question editor.
 
 .. glossary::
 
@@ -160,6 +162,7 @@ Variables
 =========
 
 .. image:: images/variable_definition.png
+    :alt: The variables tab, showing the definition of the selected variable on the left and the list of all variables on the right.
 
 The :guilabel:`Generated value` column shows a generated value for each variable. 
 Note that when the question is delivered to students, the variable values are generated with each new attempt, so students won't necessarily see the same values as those displayed here. 
@@ -234,6 +237,7 @@ Variable testing
 ================
 
 .. image:: images/variable_testing.png
+    :alt: The variable testing tab, showing the testing condition and information on the likelihood of satisfying the condition.
 
 This tab provides tools to test your variables for desired properties, so you can automatically re-randomise your questions' variables until you get a suitable set of values.
 
@@ -282,6 +286,7 @@ Extensions
 -----------
 
 .. image:: images/extensions.png
+    :alt: The list of available extensions.
 
 Extensions can provide new functionality, such as extra JME functions or content types. 
 To use an extension in your question, tick its checkbox here. 
@@ -292,6 +297,7 @@ Functions
 ---------
 
 .. image:: images/functions.png
+    :alt: The function editor.
 
 If you need to do something a bit more complicated with variables, or you find yourself repeating the same pattern over and over, you can define a custom function. 
 Custom functions can be used in any JME expression in the question, such as variable definitions or part answers.
@@ -499,6 +505,7 @@ Access
 ======
 
 .. image:: images/access.png
+    :alt: The access tab.
 
 You can control who is allowed to see, and to edit, your questions.
 
@@ -553,6 +560,7 @@ Other versions
 ==============
 
 .. image:: images/other_versions.png
+    :alt: The "other versions" tab, showing a table of questions related to the one being edited.
 
 In this tab you can see all questions which are related to this one. 
 Questions are related if one is a copy of the other, or they are both copies of a common ancestor.
@@ -579,6 +587,7 @@ Editing history
 ===============
 
 .. image:: images/editing_history.png
+    :alt: The "editing history" tab.
 
 Use this tab to keep a record of changes made to your question.
 Write comments to discuss problems or suggested changes.
