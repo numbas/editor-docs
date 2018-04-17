@@ -174,10 +174,14 @@ Data types
 Function reference
 ******************
 
+.. contents::
+    :local:
+    
+
 Arithmetic
 ----------
 
-.. function:: x+y
+.. jme:function:: x+y
 
     Addition.
     Numbers, vectors, matrices, lists, dicts, or strings can be added together.
@@ -193,7 +197,7 @@ Arithmetic
         * ``[1,2,3]+[4,5,6]`` → ``[1,2,3,4,5,6]``
         * ``"hi "+"there"`` → ``"hi there"``
 
-.. function:: x-y
+.. jme:function:: x-y
 
     Subtraction.
     Defined for numbers, vectors and matrices.
@@ -203,7 +207,7 @@ Arithmetic
         * ``vector(3,2)-vector(1,4)`` → ``vector(2,-2)``
         * ``matrix([5,6],[3,4])-matrix([1,2],[7,8])`` → ``matrix([4,4],[-4,-4])``
 
-.. function:: x*y
+.. jme:function:: x*y
 
     Multiplication.
     Numbers, vectors and matrices can be multiplied together.
@@ -214,7 +218,7 @@ Arithmetic
         * ``matrix([1,2],[3,4])*2`` → ``matrix([2,4],[6,8])``
         * ``matrix([1,2],[3,4])*vector(1,2)`` → ``vector(5,11)``
 
-.. function:: x/y
+.. jme:function:: x/y
 
     Division.
     Only defined for numbers.
@@ -222,7 +226,7 @@ Arithmetic
     **Example**:
         * ``3/4`` → ``0.75``.
 
-.. function:: x^y
+.. jme:function:: x^y
 
     Exponentiation.
     Only defined for numbers.
@@ -237,7 +241,7 @@ Arithmetic
 Number operations
 -----------------
 
-.. function:: abs(x)
+.. jme:function:: abs(x)
               len(x)
               length(x)
 
@@ -258,42 +262,42 @@ Number operations
         * ``abs(vector(3,4,12))`` → ``13``
         * ``len(["a": 1, "b": 2, "c": 1])`` → ``3``
 
-.. function:: arg(z)
+.. jme:function:: arg(z)
 
     Argument of a complex number.
 
     **Example**:
         * ``arg(-1)`` → ``pi``
 
-.. function:: re(z)
+.. jme:function:: re(z)
 
     Real part of a complex number.
 
     **Example**:
         * ``re(1+2i)`` → ``1``
 
-.. function:: im(z)
+.. jme:function:: im(z)
 
     Imaginary part of a complex number.
 
     **Example**:
         * ``im(1+2i)`` → ``2``
 
-.. function:: conj(z)
+.. jme:function:: conj(z)
 
     Complex conjugate.
 
     **Example**:
         * ``conj(1+i)`` → ``1-i``
 
-.. function:: isint(x)
+.. jme:function:: isint(x)
 
     Returns ``true`` if ``x`` is an integer.
 
     **Example**:
         * ``isint(4.0)`` → ``true``
 
-.. function:: sqrt(x)
+.. jme:function:: sqrt(x)
               sqr(x)
 
     Square root of a number.
@@ -302,49 +306,49 @@ Number operations
         * ``sqrt(4)`` → ``2``
         * ``sqrt(-1)`` → ``i``
 
-.. function:: root(x,n)
+.. jme:function:: root(x,n)
 
     ``n``:sup:`th` root of ``x``.
 
     **Example**:
         * ``root(8,3)`` → ``2``.
 
-.. function:: ln(x)
+.. jme:function:: ln(x)
 
     Natural logarithm.
 
     **Example**:
         * ``ln(e)`` → ``1``
 
-.. function:: log(x)
+.. jme:function:: log(x)
 
     Logarithm with base 10.
 
     **Example**:
         * ``log(100)`` → ``2``.
 
-.. function:: log(x,b)
+.. jme:function:: log(x,b)
 
     Logarithm with base ``b``.
 
     **Example**:
         * ``log(8,2)`` → ``3``.
 
-.. function:: degrees(x)
+.. jme:function:: degrees(x)
 
     Convert radians to degrees.
 
     **Example**:
         * ``degrees(pi/2)`` → ``90``
 
-.. function:: radians(x)
+.. jme:function:: radians(x)
 
     Convert degrees to radians.
 
     **Example**:
         * ``radians(180)`` → ``pi``
 
-.. function:: sign(x)
+.. jme:function:: sign(x)
               sgn(x)
 
     Sign of a number.
@@ -354,44 +358,35 @@ Number operations
         * ``sign(3)`` → ``1``
         * ``sign(-3)`` → ``-1``
 
-.. function:: max(a,b)
+.. jme:function:: max(a,b)
 
     Greatest of two numbers.
 
     **Example**:
         * ``max(46,2)`` → ``46``
 
-.. function:: max(list)
+.. jme:function:: max(list)
 
     Greatest of a list of numbers.
 
     **Example**:
         * ``max([1,2,3])`` → ``3``
 
-.. function:: min(a,b)
+.. jme:function:: min(a,b)
 
     Least of two numbers.
 
     **Example**:
         * ``min(3,2)`` → ``2``
 
-.. function:: min(list)
+.. jme:function:: min(list)
 
     Least of a list of numbers.
 
     **Example**:
         * ``min([1,2,3])`` → ``1``
 
-.. function:: rationalapproximation(x,accuracy)
-
-    Compute a rational approximation to ``x``, accurate to within ``exp(-accuracy)`` of the true value.
-
-    Returns a list ``[numerator, denominator]]``
-
-    **Example**:
-        * ``rationalapproximation(pi,5)`` → ``[22, 7]``
-
-.. function:: precround(n,d)
+.. jme:function:: precround(n,d)
 
     Round ``n`` to ``d`` decimal places.
     On matrices and vectors, this rounds each element independently.
@@ -401,7 +396,7 @@ Number operations
         * ``precround(matrix([[0.123,4.56],[54,98.765]]),2)`` → ``matrix([[0.12,4.56],[54,98.77]])``
         * ``precround(vector(1/3,2/3),1)`` → ``vector(0.3,0.7)``
 
-.. function:: siground(n,f)
+.. jme:function:: siground(n,f)
 
     Round ``n`` to ``f`` significant figures.
     On matrices and vectors, this rounds each element independently.
@@ -411,14 +406,14 @@ Number operations
         * ``siground(matrix([[0.123,4.56],[54,98.765]]),2)`` → ``matrix([[0.12,4.6],[54,99]])``
         * ``siground(vector(10/3,20/3),2)`` → ``vector(3.3,6.7)``
 
-.. function:: withintolerance(a,b,t)
+.. jme:function:: withintolerance(a,b,t)
 
     Returns ``true`` if :math:`b-t \leq a \leq b+t`.
 
     **Example**:
         * ``withintolerance(pi,22/7,0.1)`` → ``true``
 
-.. function:: dpformat(n,d,[style])
+.. jme:function:: dpformat(n,d,[style])
 
     Round ``n`` to ``d`` decimal places and return a string, padding with zeros if necessary.
 
@@ -428,7 +423,7 @@ Number operations
     **Example**:
         * ``dpformat(1.2,4)`` → ``"1.2000"``
 
-.. function:: countdp(str)
+.. jme:function:: countdp(str)
 
     Assuming ``str`` is a string representing a number, return the number of decimal places used.
     The string is passed through :func:`cleannumber` first.
@@ -438,14 +433,14 @@ Number operations
         * ``countdp("1")`` → ``0``
         * ``countdp("not a number")`` → ``0``
 
-.. function:: sigformat(n,d,[style])
+.. jme:function:: sigformat(n,d,[style])
 
     Round ``n`` to ``d`` significant figures and return a string, padding with zeros if necessary.
 
     **Example**:
         * ``sigformat(4,3)`` → ``"4.00"``
 
-.. function:: countsigfigs(str)
+.. jme:function:: countsigfigs(str)
 
     Assuming ``str`` is a string representing a number, return the number of significant figures.
     The string is passed through :func:`cleannumber` first.
@@ -456,7 +451,7 @@ Number operations
         * ``countsigfigs("1.0")`` → ``2``
         * ``countsigfigs("not a number")`` → ``0``
 
-.. function:: togivenprecision(str, precisionType, precision, strict)
+.. jme:function:: togivenprecision(str, precisionType, precision, strict)
 
     Returns ``true`` if ``str`` is a string representing a number given to the desired number of decimal places or significant figures.
 
@@ -471,7 +466,7 @@ Number operations
         * ``togivenprecision("100","sigfig",1,true)`` → ``true``
         * ``togivenprecision("100","sigfig",3,true)`` → ``true``
 
-.. function:: formatnumber(n,style)
+.. jme:function:: formatnumber(n,style)
 
     Render the number ``n`` using the given number notation style.
 
@@ -480,7 +475,7 @@ Number operations
     **Example**:
         * ``formatnumber(1234.567,"fr")`` → ``"1.234,567"``
 
-.. function:: cleannumber(str, styles)
+.. jme:function:: cleannumber(str, styles)
 
     Clean a string potentially representing a number.
     Remove space, and then try to identify a notation style, and rewrite to the ``plain-en`` style.
@@ -494,11 +489,11 @@ Number operations
         * ``cleannumber(" 1 ")`` → ``"1"``
         * ``cleannumber("1.0")`` → ``"1.0"``
 
-.. function:: string(n)
+.. jme:function:: string(n)
 
     Render the number ``n`` using the ``plain-en`` notation style.
 
-.. function:: parsenumber(string,style)
+.. jme:function:: parsenumber(string,style)
 
     Parse a string representing a number written in the given style.
 
@@ -510,14 +505,14 @@ Number operations
         * ``parsenumber("1 234,567","si-fr")`` → ``1234.567``
         * ``parsenumber("1.001",["si-fr","eu"])`` → ``1001``
 
-.. function:: parsenumber_or_fraction(string,style)
+.. jme:function:: parsenumber_or_fraction(string,style)
 
     Works the same as :func:`parsenumber`, but also accepts strings of the form ``number/number``, which it interprets as fractions.
 
     **Example**:
         * ``parsenumber_or_fraction("1/2")`` → ``0.5``
 
-.. function:: isnan(n)
+.. jme:function:: isnan(n)
 
     Is ``n`` the "not a number" value, ``NaN``?
 
@@ -530,85 +525,85 @@ Trigonometry
 
 Trigonometric functions all work in radians, and have as their domain the complex numbers.
 
-.. function:: sin(x)
+.. jme:function:: sin(x)
 
     Sine.
 
-.. function:: cos(x)
+.. jme:function:: cos(x)
 
     Cosine.
 
-.. function:: tan(x)
+.. jme:function:: tan(x)
 
     Tangent: :math:`\tan(x) = \frac{\sin(x)}{\cos(x)}`
 
-.. function:: cosec(x)
+.. jme:function:: cosec(x)
 
     Cosecant: :math:`\csc(x) = \frac{1}{sin(x)}`
 
-.. function:: sec(x)
+.. jme:function:: sec(x)
 
     Secant: :math:`\sec(x) = \frac{1}{cos(x)}`
 
-.. function:: cot(x)
+.. jme:function:: cot(x)
 
     Cotangent: :math:`\cot(x) = \frac{1}{\tan(x)}`
 
-.. function:: arcsin(x)
+.. jme:function:: arcsin(x)
 
     Inverse of :func:`sin`.
     When :math:`x \in [-1,1]`, ``arcsin(x)`` returns a value in :math:`[-\frac{\pi}{2}, \frac{\pi}{2}]`.
 
-.. function:: arccos(x)
+.. jme:function:: arccos(x)
 
     Inverse of :func:`cos`.
     When :math:`x \in [-1,1]`, ``arccos(x)`` returns a value in :math:`[0, \frac{\pi}]`.
 
-.. function:: arctan(x)
+.. jme:function:: arctan(x)
 
     Inverse of :func:`tan`.
     When :math:`x` is non-complex, ``arctan(x)`` returns a value in :math:`[-\frac{\pi}{2}, \frac{\pi}{2}]`.
 
-.. function:: sinh(x)
+.. jme:function:: sinh(x)
 
     Hyperbolic sine: :math:`\sinh(x) = \frac{1}{2} \left( \mathrm{e}^x - \mathrm{e}^{-x} \right)`
 
-.. function:: cosh(x)
+.. jme:function:: cosh(x)
 
     Hyperbolic cosine: :math:`\cosh(x) = \frac{1}{2} \left( \mathrm{e}^x + \mathrm{e}^{-x} \right)`
 
-.. function:: tanh(x)
+.. jme:function:: tanh(x)
 
-    Hyperbolic tangent: :math:`tanh(x) = \frac{\sinh(x)}{\cosh(x)}`
+    Hyperbolic tangent: :math:`\tanh(x) = \frac{\sinh(x)}{\cosh(x)}`
 
-.. function:: cosech(x)
+.. jme:function:: cosech(x)
 
     Hyperbolic cosecant: :math:`\operatorname{cosech}(x) = \frac{1}{\sinh(x)}`
 
-.. function:: sech(x)
+.. jme:function:: sech(x)
 
     Hyperbolic secant: :math:`\operatorname{sech}(x) = \frac{1}{\cosh(x)}`
 
-.. function:: coth(x)
+.. jme:function:: coth(x)
 
     Hyperbolic cotangent: :math:`\coth(x) = \frac{1}{\tanh(x)}`
 
-.. function:: arcsinh(x)
+.. jme:function:: arcsinh(x)
 
     Inverse of :func:`sinh`.
 
-.. function:: arccosh(x)
+.. jme:function:: arccosh(x)
 
     Inverse of :func:`cosh`.
 
-.. function:: arctanh(x)
+.. jme:function:: arctanh(x)
 
     Inverse of :func:`tanh`.
 
 Number theory
 -------------
 
-.. function:: x!
+.. jme:function:: x!
 
     Factorial.
     When ``x`` is not an integer, :math:`\Gamma(x+1)` is used instead.
@@ -620,7 +615,7 @@ Number theory
         * ``3!`` → ``6``
         * ``fact(5.5)`` → ``287.885277815``
 
-.. function:: factorise(n)
+.. jme:function:: factorise(n)
 
     Factorise ``n``.
     Returns the exponents of the prime factorisation of ``n`` as a list.
@@ -629,7 +624,7 @@ Number theory
         * ``factorise(18)`` → ``[1,2]``
         * ``factorise(70)`` → ``[1,0,1,1]``
 
-.. function:: gamma(x)
+.. jme:function:: gamma(x)
 
     Gamma function.
 
@@ -637,7 +632,7 @@ Number theory
         * ``gamma(3)`` → ``2``
         * ``gamma(1+i)`` → ``0.4980156681 - 0.1549498283i``
 
-.. function:: ceil(x)
+.. jme:function:: ceil(x)
 
     Round up to the nearest integer.
     When ``x`` is complex, each component is rounded separately.
@@ -646,7 +641,7 @@ Number theory
         * ``ceil(3.2)`` → ``4``
         * ``ceil(-1.3+5.4i)`` → ``-1+6i``
 
-.. function:: floor(x)
+.. jme:function:: floor(x)
 
     Round down to the nearest integer.
     When ``x`` is complex, each component is rounded separately.
@@ -654,7 +649,7 @@ Number theory
     **Example**:
         * ``floor(3.5)`` → ``3``
 
-.. function:: round(x)
+.. jme:function:: round(x)
 
     Round to the nearest integer.
     ``0.5`` is rounded up.
@@ -665,7 +660,7 @@ Number theory
         * ``round(4.5)`` → ``5``
         * ``round(-0.5)`` → ``0``
 
-.. function:: trunc(x)
+.. jme:function:: trunc(x)
 
     If ``x`` is positive, round down to the nearest integer; if it is negative, round up to the nearest integer.
 
@@ -673,7 +668,7 @@ Number theory
         * ``trunc(3.3)`` → ``3``
         * ``trunc(-3.3)`` → ``-3``
 
-.. function:: fract(x)
+.. jme:function:: fract(x)
 
     Fractional part of a number.
     Equivalent to ``x-trunc(x)``.
@@ -681,7 +676,7 @@ Number theory
     **Example**:
         * ``fract(4.3)`` → ``0.3``
 
-.. function:: rational_approximation(n,[accuracy])
+.. jme:function:: rational_approximation(n,[accuracy])
 
     Compute a rational approximation to the given number by computing terms of its continued fraction, returning the numerator and denominator separately.
     The approximation will be within :math:`e^{-\text{accuracy}}` of the true value; the default value for ``accuracy`` is 15.
@@ -690,28 +685,28 @@ Number theory
         * ``rational_approximation(pi)`` → ``[355,113]``
         * ``rational_approximation(pi,3)`` → ``[22,7]``
 
-.. function:: mod(a,b)
+.. jme:function:: mod(a,b)
 
     Modulo; remainder after integral division, i.e. :math:`a \bmod b`.
 
     **Example**:
         * ``mod(5,3)`` → ``2``
 
-.. function:: perm(n,k)
+.. jme:function:: perm(n,k)
 
     Count permutations, i.e. :math:`^n \kern-2pt P_k = \frac{n!}{(n-k)!}`.
 
     **Example**:
         * ``perm(5,2)`` → ``20``
 
-.. function:: comb(n,k)
+.. jme:function:: comb(n,k)
 
     Count combinations, i.e. :math:`^n \kern-2pt C_k = \frac{n!}{k!(n-k)!}`.
 
     **Example**:
         * ``comb(5,2)`` → ``10``.
 
-.. function:: gcd(a,b)
+.. jme:function:: gcd(a,b)
               gcf(a,b)
 
     Greatest common divisor of integers ``a`` and ``b``.
@@ -720,14 +715,14 @@ Number theory
     **Example**:
         * ``gcd(12,16)`` → ``4``
 
-.. function:: gcd_without_pi_or_i(a,b)
+.. jme:function:: gcd_without_pi_or_i(a,b)
 
     Take out factors of :math:`\pi` or :math:`i` from ``a`` and ``b`` before computing their greatest common denominator.
 
     **Example**:
         * ``gcd_without_pi_or_i(6*pi, 9)`` → ``3``
 
-.. function:: lcm(a,b)
+.. jme:function:: lcm(a,b)
 
     Lowest common multiple of integers ``a`` and ``b``.
     Can be used with any number of arguments; it returns the lowest common multiple of all the arguments.
@@ -736,7 +731,7 @@ Number theory
         * ``lcm(8,12)`` → ``24``
         * ``lcm(8,12,5)`` → ``120``
 
-.. function:: x|y
+.. jme:function:: x|y
 
     ``x`` divides ``y``.
 
@@ -746,7 +741,7 @@ Number theory
 Vector and matrix arithmetic
 ----------------------------
 
-.. function:: vector(a1,a2,...,aN)
+.. jme:function:: vector(a1,a2,...,aN)
 
     Create a vector with given components.
     Alternately, you can create a vector from a single list of numbers.
@@ -755,7 +750,7 @@ Vector and matrix arithmetic
         * ``vector(1,2,3)``
         * ``vector([1,2,3])``
 
-.. function:: matrix(row1,row2,...,rowN)
+.. jme:function:: matrix(row1,row2,...,rowN)
 
     Create a matrix with given rows, which should be lists of numbers.
     Or, you can pass in a single list of lists of numbers.
@@ -764,21 +759,21 @@ Vector and matrix arithmetic
         * ``matrix([1,2],[3,4])``
         * ``matrix([[1,2],[3,4]])``
 
-.. function:: numrows(matrix)
+.. jme:function:: numrows(matrix)
 
     The number of rows in the given matrix
 
     **Example**:
         * ``numrows(matrix([1,2],[3,4],[5,6])`` → ``3``
 
-.. function:: numcolumns(matrix)
+.. jme:function:: numcolumns(matrix)
 
     The number of columns in the given matrix
 
     **Example**:
         * ``numrows(matrix([1,2],[3,4],[5,6])`` → ``2``
 
-.. function:: rowvector(a1,a2,...,aN)
+.. jme:function:: rowvector(a1,a2,...,aN)
 
     Create a row vector (:math:`1 \times n` matrix) with the given components.
     Alternately, you can create a row vector from a single list of numbers.
@@ -787,7 +782,7 @@ Vector and matrix arithmetic
         * ``rowvector(1,2)`` → ``matrix([1,2])``
         * ``rowvector([1,2])`` → ``matrix([1,2])``
 
-.. function:: dot(x,y)
+.. jme:function:: dot(x,y)
 
     Dot (scalar) product.
     Inputs can be vectors or column matrices.
@@ -796,7 +791,7 @@ Vector and matrix arithmetic
         * ``dot(vector(1,2,3),vector(4,5,6))``
         * ``dot(matrix([1],[2]), matrix([3],[4])``
 
-.. function:: cross(x,y)
+.. jme:function:: cross(x,y)
 
     Cross product.
     Inputs can be vectors or column matrices.
@@ -805,7 +800,7 @@ Vector and matrix arithmetic
         * ``cross(vector(1,2,3),vector(4,5,6))``
         * ``cross(matrix([1],[2]), matrix([3],[4])``
 
-.. function:: angle(a,b)
+.. jme:function:: angle(a,b)
 
     Angle between vectors ``a`` and ``b``, in radians.
     Returns ``0`` if either ``a`` or ``b`` has length 0.
@@ -813,7 +808,7 @@ Vector and matrix arithmetic
     **Example**:
         * ``angle(vector(1,0),vector(0,1))``
 
-.. function:: det(x)
+.. jme:function:: det(x)
 
     Determinant of a matrix.
     Throws an error if used on anything larger than a 3×3 matrix.
@@ -822,7 +817,7 @@ Vector and matrix arithmetic
         * ``det(matrix([1,2],[3,4]))``
         * ``det(matrix([1,2,3],[4,5,6],[7,8,9]))``
 
-.. function:: transpose(x)
+.. jme:function:: transpose(x)
 
     Matrix transpose.
     Can also take a vector, in which case it returns a single-row matrix.
@@ -831,7 +826,7 @@ Vector and matrix arithmetic
         * ``transpose(matrix([1,2],[3,4]))``
         * ``transpose(vector(1,2,3))``
 
-.. function:: id(n)
+.. jme:function:: id(n)
 
     Identity matrix with :math:`n` rows and columns.
 
@@ -841,7 +836,7 @@ Vector and matrix arithmetic
 Strings
 ------------------
 
-.. function:: x[n]
+.. jme:function:: x[n]
 
     Get the Nth character of the string ``x``.
     Indices start at 0.
@@ -849,7 +844,7 @@ Strings
     **Example**:
         * ``"hello"[1]`` → ``"e"``
 
-.. function:: x[a..b]
+.. jme:function:: x[a..b]
 
     Slice the string ``x`` - get the substring between the given indices.
     Note that indices start at 0, and the final index is not included.
@@ -857,7 +852,7 @@ Strings
     **Example**:
         * ``"hello"[1..4]`` → ``"ell"``
 
-.. function:: substring in string
+.. jme:function:: substring in string
 
     Test if ``substring`` occurs anywhere in ``string``.
     This is case-sensitive.
@@ -865,7 +860,7 @@ Strings
     **Example**:
         * ``"plain" in "explains"`` → ``true``
 
-.. function:: latex(x)
+.. jme:function:: latex(x)
 
     Mark string ``x`` as containing raw LaTeX, so when it's included in a mathmode environment it doesn't get wrapped in a ``\textrm`` environment.
 
@@ -874,7 +869,7 @@ Strings
     **Example**:
         * ``latex('\\frac{1}{2}')``.
 
-.. function:: safe(x)
+.. jme:function:: safe(x)
 
     Mark string ``x`` as safe: don't substitute variable values into it when this expression is evaluated.
 
@@ -883,63 +878,63 @@ Strings
     **Example**:
         * ``safe('From { to }')``
 
-.. function:: capitalise(x)
+.. jme:function:: capitalise(x)
 
     Capitalise the first letter of a string.
 
     **Example**:
         * ``capitalise('hello there')``.
 
-.. function:: pluralise(n,singular,plural)
+.. jme:function:: pluralise(n,singular,plural)
 
     Return ``singular`` if ``n`` is 1, otherwise return ``plural``.
 
     **Example**:
         * ``pluralise(num_things,"thing","things")``
 
-.. function:: upper(x)
+.. jme:function:: upper(x)
 
     Convert string to upper-case.
 
     **Example**:
         * ``upper('Hello there')``.
 
-.. function:: lower(x)
+.. jme:function:: lower(x)
 
     Convert string to lower-case.
 
     **Example**:
         * ``lower('CLAUS, Santa')``.
 
-.. function:: join(strings, delimiter)
+.. jme:function:: join(strings, delimiter)
 
     Join a list of strings with the given delimiter.
 
     **Example**:
         * ``join(['a','b','c'],',')`` → ``'a,b,c'``
 
-.. function:: split(string,delimiter)
+.. jme:function:: split(string,delimiter)
 
     Split a string at every occurrence of ``delimiter``, returning a list of the the remaining pieces.
 
     **Example**:
         * ``split("a,b,c,d",",")`` → ``["a","b","c","d"]``
 
-.. function:: trim(str)
+.. jme:function:: trim(str)
 
     Remove whitespace from the start and end of ``str``.
 
     **Example**:
         * ``trim(" a string  ")`` → ``"a string"``
 
-.. function:: currency(n,prefix,suffix)
+.. jme:function:: currency(n,prefix,suffix)
 
     Write a currency amount, with the given prefix or suffix characters.
 
     **Example**:
         * ``currency(123.321,"£","")`` → ``'£123.32'``
 
-.. function:: separateThousands(n,separator)
+.. jme:function:: separateThousands(n,separator)
 
     Write a number, with the given separator character between every 3 digits
 
@@ -948,28 +943,28 @@ Strings
     **Example**:
         * ``separateThousands(1234567.1234,",")`` → ``'1,234,567.1234'``
 
-.. function:: unpercent(str)
+.. jme:function:: unpercent(str)
 
     Get rid of the ``%`` on the end of a percentage and parse as a number, then divide by 100.
 
     **Example**:
         * ``unpercent("2%")`` → ``0.02``
 
-.. function:: lpad(str, n, prefix)
+.. jme:function:: lpad(str, n, prefix)
 
     Add copies of ``prefix`` to the start of ``str`` until the result is at least ``n`` characters long.
 
     **Example**:
         * ``lpad("3", 2, "0")`` → ``"03"``
 
-.. function:: rpad(str, n, suffix)
+.. jme:function:: rpad(str, n, suffix)
 
     Add copies of ``suffix`` to the end of ``str`` until the result is at least ``n`` characters long.
 
     **Example**:
         * ``rpad("3", 2, "0")`` → ``"30"``
 
-.. function:: formatstring(str, values)
+.. jme:function:: formatstring(str, values)
 
     For each occurrence of ``%s`` in ``str``, replace it with the corresponding entry in the list ``values``.
 
@@ -977,7 +972,7 @@ Strings
         * ``formatstring("Their name is %s",["Hortense"])`` → ``"Their name is Hortense"``
         * ``formatstring("You should %s the %s",["simplify","denominator"])`` → ``You should simplify the denominator"``
 
-.. function:: letterordinal(n)
+.. jme:function:: letterordinal(n)
 
     Get the :math:`n`:sup:`th` element of the sequence ``a, b, c, ..., aa, ab, ...``.
 
@@ -988,7 +983,7 @@ Strings
         * ``letterordinal(1)`` → ``"b"``
         * ``letterordinal(26)`` → ``"aa"``
 
-.. function:: match_regex(pattern,str,flags)
+.. jme:function:: match_regex(pattern,str,flags)
 
     If ``str`` matches the regular expression ``pattern``, returns a list of matched groups, otherwise returns an empty list.
 
@@ -1002,7 +997,7 @@ Strings
         * ``match_regex("a(b+)","ABBBB")`` → ``[]``
         * ``match_regex("a(b+)","ABBBB","i")`` → ``["ABBBB","BBBB"]``
 
-.. function:: translate(str, arguments)
+.. jme:function:: translate(str, arguments)
 
     Translate the given string, if it's in the localisation file.
 
@@ -1015,7 +1010,7 @@ Strings
         * ``translate("question.header",["number": 2])`` → ``"Question 2"`` (when the ``en-GB`` locale is in use)
         * ``translate("question.header",["number": 2])`` → ``"Pregunta 2"`` (when the ``es-ES`` locale is in use)
 
-.. function:: isbool(str)
+.. jme:function:: isbool(str)
 
     After converting to lower case, is ``str`` any of the strings ``"true"``, ``"false"``, ``"yes"`` or ``"no"``?
     
@@ -1028,7 +1023,7 @@ Strings
 Logic
 -----
 
-.. function:: x<y
+.. jme:function:: x<y
 
     Returns ``true`` if ``x`` is less than ``y``.
     Defined only for numbers.
@@ -1036,7 +1031,7 @@ Logic
     **Example**:
         * ``4<5``
 
-.. function:: x>y
+.. jme:function:: x>y
 
     Returns ``true`` if ``x`` is greater than ``y``.
     Defined only for numbers.
@@ -1044,7 +1039,7 @@ Logic
     **Example**:
         * ``5>4``
 
-.. function:: x<=y
+.. jme:function:: x<=y
 
     Returns ``true`` if ``x`` is less than or equal to ``y``.
     Defined only for numbers.
@@ -1052,7 +1047,7 @@ Logic
     **Example**:
         * ``4<=4``
 
-.. function:: x>=y
+.. jme:function:: x>=y
 
     Returns ``true`` if ``x`` is greater than or equal to ``y``.
     Defined only for numbers.
@@ -1060,7 +1055,7 @@ Logic
     **Example**:
         * ``4>=4``
 
-.. function:: x<>y
+.. jme:function:: x<>y
 
     Returns ``true`` if ``x`` is not equal to ``y``.
     Defined for any data type.
@@ -1071,7 +1066,7 @@ Logic
         * ``1<>2``
         * ``'1' <> 1``
 
-.. function:: x=y
+.. jme:function:: x=y
 
     Returns ``true`` if ``x`` is equal to ``y``.
     Defined for any data type.
@@ -1081,7 +1076,7 @@ Logic
         * ``vector(1,2)=vector(1,2,0)``
         * ``4.0=4``
 
-.. function:: resultsequal(a,b,checkingFunction,accuracy)
+.. jme:function:: resultsequal(a,b,checkingFunction,accuracy)
 
     Returns ``true`` if ``a`` and ``b`` are both of the same data type, and "close enough" according to the given checking function.
 
@@ -1094,7 +1089,7 @@ Logic
         * ``resultsequal(22/7,pi,"absdiff",0.001)`` → ``false``
         * ``resultsequal(22/7,pi,"reldiff",0.001)`` → ``true``
 
-.. function:: x and y
+.. jme:function:: x and y
 
     Logical AND.
     Returns ``true`` if both ``x`` and ``y`` are true, otherwise returns false.
@@ -1104,7 +1099,7 @@ Logic
         * ``true && true``
         * ``true & true``
 
-.. function:: not x
+.. jme:function:: not x
 
     Logical NOT.
 
@@ -1112,7 +1107,7 @@ Logic
         * ``not true``
         * ``!true``
 
-.. function:: x or y
+.. jme:function:: x or y
 
     Logical OR.
     Returns ``true`` when at least one of ``x`` and ``y`` is true.
@@ -1122,7 +1117,7 @@ Logic
         * ``true or false``
         * ``true || false``
 
-.. function:: x xor y
+.. jme:function:: x xor y
 
     Logical XOR.
     Returns ``true`` when at either ``x`` or ``y`` is true but not both.
@@ -1131,7 +1126,7 @@ Logic
     **Example**:
         * ``true XOR false``.
 
-.. function:: x implies y
+.. jme:function:: x implies y
 
     Logical implication.
     If ``x`` is true and ``y`` is false, then the implication is false.
@@ -1143,7 +1138,7 @@ Logic
 Ranges
 ------
 
-.. function:: a..b
+.. jme:function:: a..b
 
     Define a range.
     Includes all integers between and including ``a`` and ``b``.
@@ -1152,7 +1147,7 @@ Ranges
         * ``1..5``
         * ``-6..6``
 
-.. function:: a..b#s
+.. jme:function:: a..b#s
 
     Set the step size for a range.
     Default is 1.
@@ -1163,7 +1158,7 @@ Ranges
         * ``2..10 # 2``
         * ``0..1#0``
 
-.. function:: a except b
+.. jme:function:: a except b
 
     Exclude a number, range, or list of items from a list or range.
 
@@ -1173,7 +1168,7 @@ Ranges
         * ``3..8 except 4..6``
         * ``[1,2,3,4,5] except [2,3]``
 
-.. function:: list(range)
+.. jme:function:: list(range)
 
     Convert a range to a list of its elements.
 
@@ -1183,7 +1178,7 @@ Ranges
 Lists
 -----
 
-.. function:: x[n]
+.. jme:function:: x[n]
 
     Get the ``n``:sup:`th` element of list, vector or matrix ``x``.
     For matrices, the ``n``:sup:`th` row is returned.
@@ -1193,7 +1188,7 @@ Lists
         * ``vector(0,1,2)[2]`` → ``2``
         * ``matrix([0,1,2],[3,4,5],[6,7,8])[0]`` → ``matrix([0,1,2])``
 
-.. function:: x[a..b]
+.. jme:function:: x[a..b]
 
     Slice list ``x`` - return elements with indices in the given range.
     Note that list indices start at 0, and the final index is not included.
@@ -1201,7 +1196,7 @@ Lists
     **Example**:
         * ``[0,1,2,3,4,5][1..3]`` → ``[1,2]``
 
-.. function:: x in collection
+.. jme:function:: x in collection
 
     Is element ``x`` in the list, set or range ``collection``?
 
@@ -1213,14 +1208,14 @@ Lists
         * ``"a" in ["a": 1]`` → ``true``
         * ``1 in ["a": 1]`` throws an error because dictionary keys must be strings.
 
-.. function:: repeat(expression,n)
+.. jme:function:: repeat(expression,n)
 
     Evaluate ``expression`` ``n`` times, and return the results in a list.
 
     **Example**:
         * ``repeat(random(1..4),5)`` → ``[2, 4, 1, 3, 4]``
 
-.. function:: all(list)
+.. jme:function:: all(list)
 
     Returns ``true`` if every element of ``list`` is ``true``.
 
@@ -1230,7 +1225,7 @@ Lists
         * ``all([true,false])`` → ``false``
         * ``all([])`` → ``true``
 
-.. function:: some(list)
+.. jme:function:: some(list)
 
     Returns ``true`` if at least one element of ``list`` is ``true``.
 
@@ -1239,7 +1234,7 @@ Lists
         * ``some([false,false,false])`` → ``false``
         * ``some([])`` → ``false``
 
-.. function:: map(expression,name[s],d)
+.. jme:function:: map(expression,name[s],d)
 
     Evaluate ``expression`` for each item in list, range, vector or matrix ``d``, replacing variable ``name`` with the element from ``d`` each time.
 
@@ -1256,7 +1251,7 @@ Lists
         * ``map(x+1,x,id(2))`` → ``matrix([[2,1],[1,2]])``
         * ``map(sqrt(x),x,vector(1,4,9))`` → ``vector(1,2,3)``
 
-.. function:: filter(expression,name,d)
+.. jme:function:: filter(expression,name,d)
 
     Filter each item in list or range ``d``, replacing variable ``name`` with the element from ``d`` each time, returning only the elements for which ``expression`` evaluates to ``true``.
 
@@ -1266,7 +1261,7 @@ Lists
     **Example**:
         * ``filter(x>5,x,[1,3,5,7,9])`` → ``[7,9]``
 
-.. function:: let(name,definition,...,expression)
+.. jme:function:: let(name,definition,...,expression)
               let(definitions, expression)
 
     Evaluate ``expression``, temporarily defining variables with the given names.
@@ -1280,21 +1275,21 @@ Lists
         * ``let(x,1, y,2, x+y)`` → ``3``
         * ``let(["x": 1, "y": 2], x+y)`` → ``3``
 
-.. function:: sort(x)
+.. jme:function:: sort(x)
 
     Sort list ``x``.
 
     **Example**:
         * ``sort([4,2,1,3])`` → ``[1,2,3,4]``
 
-.. function:: reverse(x)
+.. jme:function:: reverse(x)
 
     Reverse list ``x``.
 
     **Example**:
         * ``reverse([1,2,3])`` → ``[3,2,1]``
 
-.. function:: indices(list,value)
+.. jme:function:: indices(list,value)
 
     Find the indices at which ``value`` occurs in ``list``.
 
@@ -1303,14 +1298,14 @@ Lists
         * ``indices([2,4,6],4)`` → ``[1]``
         * ``indices([1,2,3],5)`` → ``[]``
 
-.. function:: distinct(x)
+.. jme:function:: distinct(x)
 
     Return a copy of the list ``x`` with duplicates removed.
 
     **Example**:
         * ``distinct([1,2,3,1,4,3])`` → ``[1,2,3,4]``
 
-.. function:: list(x)
+.. jme:function:: list(x)
 
     Convert set, vector or matrix ``x`` to a list of components (or rows, for a matrix).
 
@@ -1319,7 +1314,7 @@ Lists
         * ``list(vector(1,2))`` → ``[1,2]``
         * ``list(matrix([1,2],[3,4]))`` → ``[[1,2], [3,4]]``
 
-.. function:: satisfy(names,definitions,conditions,maxRuns)
+.. jme:function:: satisfy(names,definitions,conditions,maxRuns)
 
     Each variable name in ``names`` should have a corresponding definition expression in ``definitions``.
     ``conditions`` is a list of expressions which you want to evaluate to ``true``.
@@ -1329,14 +1324,14 @@ Lists
     **Example**:
         * ``satisfy([a,b,c],[random(1..10),random(1..10),random(1..10)],[b^2-4*a*c>0])``
 
-.. function:: sum(numbers)
+.. jme:function:: sum(numbers)
 
     Add up a list of numbers
 
     **Example**:
         * ``sum([1,2,3])`` → ``6``
 
-.. function:: product(list1,list2,...,listN)
+.. jme:function:: product(list1,list2,...,listN)
 
     Cartesian product of lists.
     In other words, every possible combination of choices of one value from each given list.
@@ -1344,28 +1339,28 @@ Lists
     **Example**:
         * ``product([1,2],[a,b])`` → ``[ [1,a], [1,b], [2,a], [2,b] ]``
 
-.. function:: zip(list1,list2,...,listN)
+.. jme:function:: zip(list1,list2,...,listN)
 
     Combine two (or more) lists into one - the Nth element of the output is a list containing the Nth elements of each of the input lists.
 
     **Example**:
         * ``zip([1,2,3],[4,5,6])`` → ``[ [1,4], [2,5], [3,6] ]``
 
-.. function:: combinations(collection,r)
+.. jme:function:: combinations(collection,r)
 
     All ordered choices of ``r`` elements from ``collection``, without replacement.
 
     **Example**:
         * ``combinations([1,2,3],2)`` → ``[ [1,2], [1,3], [2,3] ]``
 
-.. function:: combinations_with_replacement(collection,r)
+.. jme:function:: combinations_with_replacement(collection,r)
 
     All ordered choices of ``r`` elements from ``collection``, with replacement.
 
     **Example**:
         * ``combinations([1,2,3],2)`` → ``[ [1,1], [1,2], [1,3], [2,2], [2,3], [3,3] ]``
 
-.. function:: permutations(collection,r)
+.. jme:function:: permutations(collection,r)
 
     All choices of ``r`` elements from ``collection``, in any order, without replacement.
 
@@ -1375,7 +1370,7 @@ Lists
 Dictionaries
 ------------
 
-.. function:: dict[key]
+.. jme:function:: dict[key]
 
     Get the value corresponding to the given key string in the dictionary ``d``.
 
@@ -1384,7 +1379,7 @@ Dictionaries
     **Example**:
         * ``["a": 1, "b": 2]["a"]`` → ``1``
 
-.. function:: get(dict,key,default)
+.. jme:function:: get(dict,key,default)
 
     Get the value corresponding to the given key string in the dictionary.
 
@@ -1394,7 +1389,7 @@ Dictionaries
         * ``get(["a":1], "a", 0)`` → ``1``
         * ``get(["a":1], "b", 0)`` → ``0``
 
-.. function:: dict(keys)
+.. jme:function:: dict(keys)
 
     Create a dictionary with the given key-value pairs.
     Equivalent to ``[ .. ]``, except when no key-value pairs are given: ``[]`` creates an empty *list* instead.
@@ -1403,14 +1398,14 @@ Dictionaries
         * ``dict()``
         * ``dict("a": 1, "b": 2)``
 
-.. function:: keys(dict)
+.. jme:function:: keys(dict)
 
     A list of all of the given dictionary's keys.
 
     **Example**:
         * ``keys(["a": 1, "b": 2, "c": 1])`` → ``["a","b","c"]``
 
-.. function:: values(dict)
+.. jme:function:: values(dict)
               values(dict,keys)
 
     A list of the values corresponding to each of the given dictionary's keys.
@@ -1421,7 +1416,7 @@ Dictionaries
         * ``values(["a": 1, "b": 2, "c": 1])`` → ``[1,2,1]``
         * ``values(["a": 1, "b": 2, "c": 3], ["b","a"])`` → ``[2,1]``
 
-.. function:: items(dict)
+.. jme:function:: items(dict)
 
     A list of all of the ``[key,value]`` pairs in the given dictionary.
 
@@ -1431,7 +1426,7 @@ Dictionaries
 Sets
 ----
 
-.. function:: set(a,b,c,...) or set([elements])
+.. jme:function:: set(a,b,c,...) or set([elements])
 
     Create a set with the given elements.
     Either pass the elements as individual arguments, or as a list.
@@ -1440,7 +1435,7 @@ Sets
         * ``set(1,2,3)``
         * ``set([1,2,3])``
 
-.. function:: union(a,b)
+.. jme:function:: union(a,b)
 
     Union of sets ``a`` and ``b``
 
@@ -1448,7 +1443,7 @@ Sets
         * ``union(set(1,2,3),set(2,4,6))`` → ``set(1,2,3,4,6)``
         * ``set(1,2,3) or set(2,4,6)`` → ``set(1,2,3,4,6)``
 
-.. function:: intersection(a,b)
+.. jme:function:: intersection(a,b)
 
     Intersection of sets ``a`` and ``b``, i.e. elements which are in both sets.
 
@@ -1456,7 +1451,7 @@ Sets
         * ``intersection(set(1,2,3),set(2,4,6))`` → ``set(2)``
         * ``set(1,2,3) and set(2,4,6)`` → ``set(2)``
 
-.. function:: a-b
+.. jme:function:: a-b
 
     Set minus - elements which are in a but not b
 
@@ -1466,7 +1461,7 @@ Sets
 Randomisation
 -------------
 
-.. function:: random(x)
+.. jme:function:: random(x)
 
     Pick uniformly at random from a range, list, or from the given arguments.
 
@@ -1475,14 +1470,14 @@ Randomisation
         * ``random([1,2,4])``
         * ``random(1,2,3)``
 
-.. function:: deal(n)
+.. jme:function:: deal(n)
 
     Get a random shuffling of the integers :math:`[0 \dots n-1]`
 
     **Example**:
         * ``deal(3)`` → ``[2,0,1]``
 
-.. function:: shuffle(x) or shuffle(a..b)
+.. jme:function:: shuffle(x) or shuffle(a..b)
 
     Random shuffling of list or range.
 
@@ -1493,14 +1488,14 @@ Randomisation
 Control flow
 ------------
 
-.. function:: award(a,b)
+.. jme:function:: award(a,b)
 
     Return ``a`` if ``b`` is ``true``, else return ``0``.
 
     **Example**:
         * ``award(5,true)`` → ``5``
 
-.. function:: if(p,a,b)
+.. jme:function:: if(p,a,b)
 
     If ``p`` is ``true``, return ``a``, else return ``b``.
     Only the returned value is evaluated.
@@ -1508,7 +1503,7 @@ Control flow
     **Example**:
         * ``if(false,1,0)`` → ``0``
 
-.. function:: switch(p1,a1,p2,a2, ..., pn,an,d)
+.. jme:function:: switch(p1,a1,p2,a2, ..., pn,an,d)
 
     Select cases.
     Alternating boolean expressions with values to return, with the final argument representing the default case.
@@ -1519,7 +1514,7 @@ Control flow
         * ``switch(false,1,true,0,3)`` → ``0``
         * ``switch(false,1,false,0,3)`` → ``3``
 
-.. function:: assert(bool, value)
+.. jme:function:: assert(bool, value)
 
     If ``bool`` is ``false``, then return ``value``, otherwise don't evaluate ``value`` and return ``false``.
     This is intended for use in marking scripts, to apply marking feedback only if a condition is met.
@@ -1527,7 +1522,7 @@ Control flow
     **Example**:
         * ``assert(studentAnswer<=0, correct("Student answer is positive"))``
 
-.. function:: try(expression, name, except)
+.. jme:function:: try(expression, name, except)
 
     Try to evaluate ``expression``.
     If it is successfully evaluated, return the result.
@@ -1540,7 +1535,7 @@ Control flow
 HTML
 ----
 
-.. function:: isnonemptyhtml(str)
+.. jme:function:: isnonemptyhtml(str)
 
     Does ``str`` represent a string of HTML containing text?
     Returns false for the empty string, or HTML elements with no text content.
@@ -1549,14 +1544,14 @@ HTML
         * ``isnonemptyhtml("<p>Yes</p>")`` → ``true``
         * ``isnonemptyhtml("<p></p>")`` → ``false``
 
-.. function:: html(x)
+.. jme:function:: html(x)
 
     Parse string ``x`` as HTML.
 
     **Example**:
         * ``html('<div>Text!</div>')``
 
-.. function:: table(data), table(data,headers)
+.. jme:function:: table(data), table(data,headers)
 
     Create an HTML with cell contents defined by ``data``, which should be a list of lists of data, and column headers defined by the list of strings ``headers``.
 
@@ -1564,7 +1559,7 @@ HTML
         * ``table([[0,1],[1,0]], ["Column A","Column B"])``
         * ``table([[0,1],[1,0]])``
 
-.. function:: image(url)
+.. jme:function:: image(url)
 
     Create an HTML `img` element loading the image from the given URL.
     Images uploaded through the resources tab are stored in the relative URL `resources/images/<filename>.png`, where `<filename>` is the name of the original file.
@@ -1582,7 +1577,7 @@ Many public data sets come in JSON format; it's a good way of encoding data in a
 
 For an example of how you can use JSON data in a Numbas question, see the exam `Working with JSON data <https://numbas.mathcentre.ac.uk/exam/4684/working-with-json-data/>`_.
 
-.. function:: json_decode(json)
+.. jme:function:: json_decode(json)
 
     Decode a JSON string into JME data types.
 
@@ -1596,7 +1591,7 @@ For an example of how you can use JSON data in a Numbas question, see the exam `
     **Example**:
         * ``json_decode(' {"a": 1, "b": [2,true,"thing"]} ')`` → ``["a": 1, "b": [2,true,"thing"]]``
 
-.. function:: json_encode(data)
+.. jme:function:: json_encode(data)
 
     Convert the given object to a JSON string.
 
@@ -1609,7 +1604,7 @@ For an example of how you can use JSON data in a Numbas question, see the exam `
 Sub-expressions
 ---------------
 
-.. function:: expression(string)
+.. jme:function:: expression(string)
 
     Parse a string as a JME expression.
     The expression can be substituted into other expressions, such as the answer to a mathematical expression part, or the ``\simplify`` LaTeX command.
@@ -1619,7 +1614,7 @@ Sub-expressions
     **Example**:
         * `A question using randomly chosen variable names <https://numbas.mathcentre.ac.uk/question/20358/randomise-variable-names-expression-version/>`_.
 
-.. function:: eval(expression, values)
+.. jme:function:: eval(expression, values)
 
     Evaluate the given sub-expression.
 
@@ -1629,7 +1624,7 @@ Sub-expressions
         * ``eval(expression("1+2"))`` → ``3``
         * ``eval(expression("x+1"), ["x":1])`` → ``2``
 
-.. function:: args(expression)
+.. jme:function:: args(expression)
 
     Returns the arguments of the top-level operation of ``expression``, as a list of sub-expressions.
     If ``expression`` is a data type other than an operation or function, an empty list is returned.
@@ -1642,7 +1637,7 @@ Sub-expressions
         * ``args(expression("1+2+3"))`` → ``[expression("1+2"), expression("3")]``
         * ``args(expression("1"))`` → ``[]``
 
-.. function:: type(expression)
+.. jme:function:: type(expression)
 
     Returns the name of the :ref:`data type <jme-data-types>` of the top token in the expression, as a string.
 
@@ -1652,28 +1647,28 @@ Sub-expressions
         * ``type(x+1)`` → ``"op"``
         * ``type(sin(x))`` → ``"function"``
 
-.. function:: name(string)
+.. jme:function:: name(string)
 
     Construct a :data:`name` token with the given name.
 
     **Example**:
         * ``name("x")`` → ``x``
 
-.. function:: string(name)
+.. jme:function:: string(name)
 
     Return the given variable name as a string.
 
     **Example**:
         * ``string(x)`` → ``"x"``
 
-.. function:: op(name)
+.. jme:function:: op(name)
 
     Construct an operator with the given name.
 
     **Example**:
         * ``op("+")`` → ``+``
 
-.. function:: exec(op, arguments)
+.. jme:function:: exec(op, arguments)
 
     Returns a sub-expression representing the application of the given operation to the list of arguments.
 
@@ -1681,7 +1676,7 @@ Sub-expressions
         * ``exec(op("+"), [2,1])`` → ``expression("2+1")``
         * ``exec(op("-"), [2,name("x")])`` → ``expression("2-x")``
 
-.. function:: findvars(expression)
+.. jme:function:: findvars(expression)
 
     Return a list of all unbound variables used in the given expression.
     Effectively, this is all the variables that need to be given values in order for this expression to be evaluated.
@@ -1693,7 +1688,7 @@ Sub-expressions
         * ``findvars(expression("x + x*y"))`` → ``[x,y]``
         * ``findvars(expression("map(x+2, x, [1,2,3])"))`` → ``[]``
 
-.. function:: simplify(expression,rules)
+.. jme:function:: simplify(expression,rules)
 
     Apply the given simplification rules to ``expression``, until no rules apply.
 
@@ -1707,7 +1702,7 @@ Sub-expressions
         * ``simplify(expression("1*x+cos(pi)","unitfactor"))`` → ``expression("x+cos(pi)")``
         * ``simplify(expression("1*x+cos(pi)"),["basic","unitfactor","trig"])`` → ``expression("x-1")``
 
-.. function:: canonical_compare(expr1,expr2)
+.. jme:function:: canonical_compare(expr1,expr2)
 
     Compare expressions ``a`` and ``b`` using the "canonical" ordering.
     Returns ``-1`` if ``a`` should go before ``b``, ``0`` if they are considered "equal", and ``1`` if ``a`` should go after ``b``.
@@ -1737,7 +1732,7 @@ Sub-expressions
 Pattern-matching sub-expressions
 --------------------------------
 
-.. function:: match(expr, pattern)
+.. jme:function:: match(expr, pattern)
 
     If ``expr`` matches ``pattern``, return a dictionary of the form ``["match": boolean, "groups": dict]``, where ``"groups"`` is a dictionary mapping names of matches to sub-expressions.
 
@@ -1754,7 +1749,7 @@ Pattern-matching sub-expressions
         * ``match(expression("x+1"),"1+?;a")`` → ``["match": false, "groups": []]``
         * ``match(expression("x+1"),"m_commute(1+?;a)")`` → ``["match": true, "groups": ["a": expression("x")]]``
 
-.. function:: matches(expr, pattern)
+.. jme:function:: matches(expr, pattern)
 
     Return ``true`` if ``expr`` matches ``pattern``.
 
@@ -1764,7 +1759,7 @@ Pattern-matching sub-expressions
         * ``matches(expression("x+1"),"?;a + ?;b")`` → ``true``
         * ``match(expression("sin(x)", "?;a + ?;b")`` → ``false``
 
-.. function:: replace(pattern, replacement, expr)
+.. jme:function:: replace(pattern, replacement, expr)
 
     Replace occurrences of ``pattern`` in ``expr`` with the expression created by substituting the matched items into ``replacement``.
 
@@ -1776,14 +1771,14 @@ Pattern-matching sub-expressions
 Identifying data types
 ----------------------
 
-.. function:: type(x)
+.. jme:function:: type(x)
 
     Returns the name of the :ref:`data type <jme-data-types>` of ``x``.
 
     **Example**:
         * ``type(1)`` → ``"number"``
 
-.. function:: x isa type
+.. jme:function:: x isa type
 
     Returns ``true`` if ``x`` is of the :ref:`data type <jme-data-types>` ``type``.
 
@@ -1795,11 +1790,11 @@ Identifying data types
 Inspecting the evaluation scope
 -------------------------------
 
-.. function:: definedvariables()
+.. jme:function:: definedvariables()
 
     Returns a list containing the names of every variable defined in the current scope, as strings.
 
-.. function:: isset(name)
+.. jme:function:: isset(name)
 
     Returns ``true`` if the variable with the given name has been defined in the current scope.
 
