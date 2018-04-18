@@ -272,6 +272,36 @@ The following simplification rules are available:
 
         * ``n^m`` → ``eval(n^m)``
 
+    cancelTerms
+        Collect together and cancel terms. Like :term:`collectNumbers`, but for any kind of term.
+
+        * ``x +x`` → ``2*x``
+        * ``(z+n*x) - m*x`` → ``z + eval(n-m)*x``
+        * ``1/x + 3/x`` → ``4/x``
+
+    cancelFactors
+        Collect together and cancel factors inside a term.
+
+        * ``x*x`` → ``x^2``
+        * ``x^2 * x`` → ``x^3``
+        * ``(1/x^3)*x`` → ``1*x^(-2)``
+
+    collectLikeFractions
+        Collect together fractions over the same denominator.
+
+        * ``x/3 + 4/x`` → ``(x+4)/3``
+
+    canonicalOrder
+        Rearrange the expression into a "canonical" order, using :jme:func:`canonical_compare`.
+
+        **Note:** This rule can not be used at the same time as :term:`noLeadingMinus` - it can lead to an infinite loop.
+
+    expandBrackets
+        Expand out products of sums.
+
+        * ``(x+y)*z`` → ``x*z + y*z``
+        * ``3*(x-y)`` → ``3x - 3y``
+
 .. _display_only_functions:
 
 Display-only JME functions
