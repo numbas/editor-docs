@@ -140,7 +140,7 @@ Whether you're using a custom marking algorithm or not, you can test how it beha
 The first half of the testing section provides a field to enter an answer to the part, and the table below shows the feedback notes produced by the marking algorithm.
 Click on a note to toggle its visibility - most of the time, you'll only be interested in a few of the notes.
 
-The :guilabel:`Variable values` tab shows the current values of the question's variables.
+The :guilabel:`Variable values` tab shows the current values of the question's variables, which you may need in order to come up with an answer for the part.
 The values here are the same as shown in the :ref:`variables` tab, and are regenerated whenever the question changes, or when you click the :guilabel:`Regenerate values` button.
 You can lock the value of a variable, so it is not regenerated until you unlock it, by clicking on the padlock icon next to its name.
 
