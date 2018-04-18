@@ -78,7 +78,7 @@ Display a random line in a GeoGebra applet
 A neat way to create a random line is to randomly pick the positions of two points on the line.
 
 Create two points in your GeoGebra worksheet, and a line between those two points.
-Set the positions of the points in the parameters to the :func:`geogebra_applet` function.
+Set the positions of the points in the parameters to the :jme:func:`geogebra_applet` function.
 
 See `this example question <https://numbas.mathcentre.ac.uk/question/22835/a-randomised-line-in-a-geogebra-worksheet-set-the-positions-of-two-points/>`__.
 
@@ -189,7 +189,7 @@ Randomise the names of variables in an expression
 Suppose you want the student to solve an equation in terms of some variables, but you want to change the names of those variables each time the question is run.
 There are a couple of ways of achieving this. 
 
-One straightforward method is to use the :func:`expression` command to substitute variable names, randomly generated as strings, into JME expressions as variables. 
+One straightforward method is to use the :jme:func:`expression` command to substitute variable names, randomly generated as strings, into JME expressions as variables. 
 See `this example question <https://numbas.mathcentre.ac.uk/question/20358/randomise-variable-names-expression-version/>`__.
 
 
@@ -198,15 +198,15 @@ Use commas or spaces to separate powers of 1,000 in numbers
 
 By default, numbers substituted into question text do not have any separators between powers of 1,000.
 When working with real-world data, separating blocks of figures can improve readability.
-Use the :func:`formatnumber` function to render numbers following one of the supported :ref:`number-notation` styles.
+Use the :jme:func:`formatnumber` function to render numbers following one of the supported :ref:`number-notation` styles.
 
-`This example question <https://numbas.mathcentre.ac.uk/question/26873/use-formatnumber-to-separate-powers-of-1000-with-commas/>`__ shows how the :func:`formatnumber` function in use.
+`This example question <https://numbas.mathcentre.ac.uk/question/26873/use-formatnumber-to-separate-powers-of-1000-with-commas/>`__ shows how the :jme:func:`formatnumber` function in use.
 
 
 Show amounts of money with trailing zeros
 -----------------------------------------
 
-Use the :func:`currency` function to ensure that amounts of money are displayed as you'd expect: the figure is either a whole number or given to two decimal places, and the appropriate symbol for the unit of currency is shown before or after the figure.
+Use the :jme:func:`currency` function to ensure that amounts of money are displayed as you'd expect: the figure is either a whole number or given to two decimal places, and the appropriate symbol for the unit of currency is shown before or after the figure.
 
 See `this example question <https://numbas.mathcentre.ac.uk/question/26875/show-amounts-of-currency-with-trailing-zeros/>`__.
 
@@ -236,7 +236,7 @@ Substituted randomised raw LaTeX into question text
 The majority of the time, substituting raw LaTeX into a question is not the neatest way of achieving what you want.
 It's often possible to achieve the desired effect by good use of the :ref:`simplify <simplification-rules>` command.
 
-However, if you do need to substitute raw LaTeX code into question text for some reason, the :func:`latex` command is normally what you want.
+However, if you do need to substitute raw LaTeX code into question text for some reason, the :jme:func:`latex` command is normally what you want.
 
 See `this example question <https://numbas.mathcentre.ac.uk/question/22489/how-to-substitute-randomised-raw-latex-into-question-text/>`__, which shows how different methods of substituting a string into question text end up being displayed.
 
@@ -298,7 +298,7 @@ Generate a random list of unique numbers
 
 Suppose you want to pick a list of numbers from a given range, but don't want any repeats. 
 
-Use the :func:`shuffle` function to put the numbers in random order, then take as many as you need from the front of the resulting list.
+Use the :jme:func:`shuffle` function to put the numbers in random order, then take as many as you need from the front of the resulting list.
 The example below picks three distinct numbers between 0 and 10::
 
     shuffle(0..10)[0..3]
@@ -362,8 +362,8 @@ The student is asked to calculate the length of the third side.
 Take a logarithm to a randomly-chosen base.
 -------------------------------------------
 
-The built-in JME functions :func:`ln` and :func:`log` compute logarithms to base :math:`e` and :math:`10`, respectively.
-:func:`log` can take a second parameter defining the base. 
+The built-in JME functions :jme:func:`ln` and :jme:func:`log` compute logarithms to base :math:`e` and :math:`10`, respectively.
+:jme:func:`log` can take a second parameter defining the base. 
 For example::
 
     log(x,3)

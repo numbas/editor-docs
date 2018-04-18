@@ -207,7 +207,7 @@ If the student's answer is not a valid number, they are shown a warning and can 
     "Allow fractions?", ``allowFractions``, :data:`boolean`, "Allow the student to enter their answer as a fraction?"
     "Allowed notation styles", ``allowedNotationStyles``, :data:`list` of :data:`string`, "The allowed :ref:`styles of number notation <number-notation>`."
 
-The answer is a :data:`number`, as interpreted by :func:`parsenumber`.
+The answer is a :data:`number`, as interpreted by :jme:func:`parsenumber`.
 If the student's answer is not a valid representation of a number, the part will not be submitted.
 
 If you wish to allow :ref:`number notation <number-notation>` styles other than those built-in, a string input is more appropriate, so you can parse the student's answer yourself in the marking script.
@@ -357,7 +357,7 @@ Making sure that the marking algorithm works
 
 You must make sure that your part type will mark all possible answers that a student can enter.
 Decide how you want to handle different kinds of "invalid" input - do you want to strip space characters from the student's answer, for example?
-Use the :func:`fail` function to stop the marking algorithm and force the student to change their answer before resubmitting, if the student's answer is of a form .
+Use the :jme:func:`fail` function to stop the marking algorithm and force the student to change their answer before resubmitting, if the student's answer is of a form .
 However, it's important not to reject plausible answers that are simply incorrect - you should make every effort to accept answers that follow the :term:`input hints <Input hint>` you've given.
 
 There's no facility to test the marking algorithm inside the custom part type editor - for this, you need to create an instance of the part type inside a question so you can configure its settings.

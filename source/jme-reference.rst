@@ -426,7 +426,7 @@ Number operations
 .. jme:function:: countdp(str)
 
     Assuming ``str`` is a string representing a number, return the number of decimal places used.
-    The string is passed through :func:`cleannumber` first.
+    The string is passed through :jme:func:`cleannumber` first.
 
     **Example**:
         * ``countdp("1.0")`` → ``1``
@@ -443,7 +443,7 @@ Number operations
 .. jme:function:: countsigfigs(str)
 
     Assuming ``str`` is a string representing a number, return the number of significant figures.
-    The string is passed through :func:`cleannumber` first.
+    The string is passed through :jme:func:`cleannumber` first.
 
     **Example**:
         * ``countsigfigs("1")`` → ``1``
@@ -507,7 +507,7 @@ Number operations
 
 .. jme:function:: parsenumber_or_fraction(string,style)
 
-    Works the same as :func:`parsenumber`, but also accepts strings of the form ``number/number``, which it interprets as fractions.
+    Works the same as :jme:func:`parsenumber`, but also accepts strings of the form ``number/number``, which it interprets as fractions.
 
     **Example**:
         * ``parsenumber_or_fraction("1/2")`` → ``0.5``
@@ -551,17 +551,17 @@ Trigonometric functions all work in radians, and have as their domain the comple
 
 .. jme:function:: arcsin(x)
 
-    Inverse of :func:`sin`.
+    Inverse of :jme:func:`sin`.
     When :math:`x \in [-1,1]`, ``arcsin(x)`` returns a value in :math:`[-\frac{\pi}{2}, \frac{\pi}{2}]`.
 
 .. jme:function:: arccos(x)
 
-    Inverse of :func:`cos`.
+    Inverse of :jme:func:`cos`.
     When :math:`x \in [-1,1]`, ``arccos(x)`` returns a value in :math:`[0, \frac{\pi}]`.
 
 .. jme:function:: arctan(x)
 
-    Inverse of :func:`tan`.
+    Inverse of :jme:func:`tan`.
     When :math:`x` is non-complex, ``arctan(x)`` returns a value in :math:`[-\frac{\pi}{2}, \frac{\pi}{2}]`.
 
 .. jme:function:: sinh(x)
@@ -590,15 +590,15 @@ Trigonometric functions all work in radians, and have as their domain the comple
 
 .. jme:function:: arcsinh(x)
 
-    Inverse of :func:`sinh`.
+    Inverse of :jme:func:`sinh`.
 
 .. jme:function:: arccosh(x)
 
-    Inverse of :func:`cosh`.
+    Inverse of :jme:func:`cosh`.
 
 .. jme:function:: arctanh(x)
 
-    Inverse of :func:`tanh`.
+    Inverse of :jme:func:`tanh`.
 
 Number theory
 -------------
@@ -938,7 +938,7 @@ Strings
 
     Write a number, with the given separator character between every 3 digits
 
-    To write a number using notation appropriate to a particular culture or context, see :func:`formatnumber`.
+    To write a number using notation appropriate to a particular culture or context, see :jme:func:`formatnumber`.
 
     **Example**:
         * ``separateThousands(1234567.1234,",")`` → ``'1,234,567.1234'``
@@ -1737,11 +1737,11 @@ Pattern-matching sub-expressions
     If ``expr`` matches ``pattern``, return a dictionary of the form ``["match": boolean, "groups": dict]``, where ``"groups"`` is a dictionary mapping names of matches to sub-expressions.
 
     The match is non-commutative, so for example ``x*y`` is not considered to be the same as ``y*x``.
-    You can use :func:`m_commute` to allow matching up to rearrangement of arguments.
+    You can use :jme:func:`m_commute` to allow matching up to rearrangement of arguments.
 
     See ``pattern-matching`` for more on matching mathematical expressions.
 
-    If you don't need to use any parts of the matched expression, use :func:`matches` instead.
+    If you don't need to use any parts of the matched expression, use :jme:func:`matches` instead.
 
     **Examples**:
         * ``match(expression("x+1"),"?;a + ?;b")`` → ``["match": true, "groups": ["a": expression("x"), "b": expression("1")])``

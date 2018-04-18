@@ -109,7 +109,7 @@ This part type provides the following properties to the :data:`settings` object:
 
     The :term:`Checking type` setting, representing the name of the checking function to use.
     One of ``"absdiff"``, ``"reldiff"``, ``"dp"`` or ``"sigfig"``.
-    See :func:`resultsequal`.
+    See :jme:func:`resultsequal`.
 
 .. data:: checkingAccuracy
 

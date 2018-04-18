@@ -54,4 +54,4 @@ Numbers in JME
 
 In :ref:`jme` code, and :ref:`mathematical-expression` parts, numbers are written in the "English (plain)" form **only**.
 
-You can parse a string representing a number written in a different style using the :func:`parsenumber` function, and display it using a particular style using the :func:`formatnumber` function, or by giving a style code to :func:`dpformat` or :func:`sigformat`.
+You can parse a string representing a number written in a different style using the :jme:func:`parsenumber` function, and display it using a particular style using the :jme:func:`formatnumber` function, or by giving a style code to :jme:func:`dpformat` or :jme:func:`sigformat`.
