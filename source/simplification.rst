@@ -120,6 +120,9 @@ Rule names are not case-sensitive: any mix of lower-case or upper-case works.
 
 To turn all built-in rules on, use the name ``all``. To turn all built-in rules off, use ``!all``.
 
+**Note:** Because they can conflict with other rules, the :term:`canonicalOrder` and :term:`expandBrackets` rules are not included in ``all``. 
+You must include them separately.
+
 If you don't give a list of options, e.g. ``\simplify{ ... }``, all the built-in rules are used.
 If you give an empty list of options, e.g. ``\simplify[]{ ... }``, **no** rules are used.
 

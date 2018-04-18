@@ -1713,6 +1713,8 @@ Sub-expressions
         Names used: all variable names used in each expression are collected in a depth-first search and the resulting lists are compared lexicographically.
     * 
         Data type: if ``a`` and ``b`` are of different data types, :data:`op` and :data:`function` go first, and then they are compared using the names of their data types.
+    *
+        Polynomials: terms of the form ``x^b`` or ``a*x^b``, where ``a`` and ``b`` are numbers and ``x`` is a variable name, go before anything else.
     * 
         Function name: if ``a`` and ``b`` are both function applications, they are compared using the names of the functions. 
         If the functions are the same, the arguments are compared. 
