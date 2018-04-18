@@ -107,6 +107,13 @@ All the built-in :ref:`JME functions <jme-functions>` are available in marking n
     Set the credit to 0 and give the feedback message ``message``. 
     If ``message`` is omitted, the default "Your answer is incorrect" message for the current locale is used.
 
+.. function:: correctif(condition)
+
+    If ``condition`` evaluates to ``true``, set the credit to 1 and give the default feedback message. 
+    Otherwise, set the credit to 0 and give the default feedback message.
+
+    Equivalent to ``if(condition,correct(),incorrect())``.
+
 .. function:: set_credit(credit, message)
 
     Set the credit to ``credit``, and give the feedback message ``message``. 
