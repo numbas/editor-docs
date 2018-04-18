@@ -66,12 +66,16 @@ Data types
 
     **Examples**: ``0``, ``-1``, ``0.234``, ``i``, ``e``, ``pi``
 
+    See functions related to :ref:`jme-fns-arithmetic`, :ref:`jme-fns-number-operations`, :ref:`jme-fns-trigonometry` and :ref:`jme-fns-number-theory`.
+
 .. data:: boolean
 
     Booleans represent either truth or falsity.
     The logical operations and, or and xor operate on and return booleans.
 
     **Examples**: ``true``, ``false``
+
+    See functions related to :ref:`jme-fns-logic` and :ref:`jme-fns-control-flow`.
 
 .. data:: string
 
@@ -91,11 +95,15 @@ Data types
 
     **Examples**: ``"hello there"``, ``'hello there'``, ``""" I said, "I'm Mike's friend" """``
 
+    See functions related to :ref:`jme-fns-strings`.
+
 .. data:: list
 
     An ordered list of elements of any data type.
 
     **Examples**: ``[0,1,2,3]``, ``[a,b,c]``, ``[true,false,true]``
+
+    See functions related to :ref:`jme-fns-lists`.
 
 .. data:: dict
 
@@ -116,6 +124,8 @@ Data types
         Because lists and dicts use similar syntax, ``[]`` produces an empty list, **not** an empty dictionary.
         To create an empty dictionary, use ``dict()``.
 
+    See functions related to :ref:`jme-fns-dictionaries` and :ref:`jme-fns-json`.
+
 .. data:: range
 
     A range ``a..b#c`` represents (roughly) the set of numbers :math:`\{a+nc \: | \: 0 \leq n \leq \frac{b-a}{c} \}`.
@@ -123,12 +133,16 @@ Data types
 
     **Examples**: ``1..3``, ``1..3#0.1``, ``1..3#0``
 
+    See functions related to :ref:`jme-fns-ranges`.
+
 .. data:: set
 
     An unordered set of elements of any data type.
     The elements are pairwise distinct - if you create a set from a list with duplicate elements, the resulting set will not contain the duplicates.
 
     **Examples**: ``set(a,b,c)``, ``set([1,2,3,4])``, ``set(1..5)``
+
+    See functions related to :ref:`jme-fns-sets`.
 
 .. data:: vector
 
@@ -138,6 +152,8 @@ Data types
 
     **Examples**: ``vector(1,2)``, ``vector([1,2,3,4])``
 
+    See functions related to :ref:`jme-fns-vector-and-matrix-arithmetic`.
+
 .. data:: matrix
 
     Matrices are constructed from lists of numbers, representing the rows.
@@ -145,6 +161,8 @@ Data types
     When combining matrices of different dimensions, the smaller matrix is padded with zeros to make up the difference.
 
     **Examples**: ``matrix([1,2,3],[4,5,6])``, ``matrix(row1,row2,row3)``
+
+    See functions related to :ref:`jme-fns-vector-and-matrix-arithmetic`.
 
 .. data:: function
 
@@ -164,10 +182,14 @@ Data types
 
     **Examples**: ``html("<div>things</div>")``
 
+    See functions related to :ref:`jme-fns-html`.
+
 .. data:: expression
 
     A JME sub-expression.
     Sub-expressions can be simplified, rearranged, pattern-matched, or evaluated using given values for their free variables.
+
+    See functions related to :ref:`jme-fns-subexpressions`.
 
 .. _jme-functions:
 
@@ -176,7 +198,9 @@ Function reference
 
 .. contents::
     :local:
-    
+ 
+
+.. _jme-fns-arithmetic:
 
 Arithmetic
 ----------
@@ -237,6 +261,8 @@ Arithmetic
         * ``3^2`` → ``9``
         * ``exp(3,2)`` → ``9``
         * ``e^(pi * i)`` → ``-1``
+
+.. _jme-fns-number-operations:
 
 Number operations
 -----------------
@@ -520,6 +546,8 @@ Number operations
         * ``isnan(1)`` → ``false``
         * ``isnan(parsenumber("a","en"))`` → ``true``
 
+.. _jme-fns-trigonometry:
+
 Trigonometry
 ------------
 
@@ -599,6 +627,8 @@ Trigonometric functions all work in radians, and have as their domain the comple
 .. jme:function:: arctanh(x)
 
     Inverse of :jme:func:`tanh`.
+
+.. _jme-fns-number-theory:
 
 Number theory
 -------------
@@ -738,6 +768,8 @@ Number theory
     **Example**:
         * ``4|8`` → ``true``
 
+.. _jme-fns-vector-and-matrix-arithmetic:
+
 Vector and matrix arithmetic
 ----------------------------
 
@@ -832,6 +864,8 @@ Vector and matrix arithmetic
 
     **Example**:
         * ``id(3)`` → ``matrix([[1,0,0],[0,1,0],[0,0,1])``
+
+.. _jme-fns-strings:
 
 Strings
 ------------------
@@ -1020,6 +1054,8 @@ Strings
         * ``isbool("no")`` → ``true``
         * ``isbool("y")`` → ``false``
 
+.. _jme-fns-logic:
+
 Logic
 -----
 
@@ -1135,6 +1171,8 @@ Logic
     **Example**:
         * ``false implies true``.
 
+.. _jme-fns-ranges:
+
 Ranges
 ------
 
@@ -1174,6 +1212,8 @@ Ranges
 
     **Example**:
         * ``list(-2..2)`` → ``[-2,-1,0,1,2]``
+
+.. _jme-fns-lists:
 
 Lists
 -----
@@ -1367,6 +1407,8 @@ Lists
     **Example**:
         * ``permutations([1,2,3],2)`` → ``[ [1,2], [1,3], [2,1], [2,3], [3,1], [3,2] ]``
 
+.. _jme-fns-dictionaries:
+
 Dictionaries
 ------------
 
@@ -1423,6 +1465,8 @@ Dictionaries
     **Example**:
         * ``values(["a": 1, "b": 2, "c": 1])`` → ``[ ["a",1], ["b",2], ["c",1] ]``
 
+.. _jme-fns-sets:
+
 Sets
 ----
 
@@ -1458,6 +1502,8 @@ Sets
     **Example**:
         * ``set(1,2,3,4) - set(2,4,6)`` → ``set(1,3)``
 
+.. _jme-fns-randomisation:
+
 Randomisation
 -------------
 
@@ -1484,6 +1530,8 @@ Randomisation
     **Examples**:
         * ``shuffle(["a","b","c"])`` → ``["c","b","a"]``
         * ``shuffle(0..4)`` → ``[2,3,0,4,1]``
+
+.. _jme-fns-control-flow:
 
 Control flow
 ------------
@@ -1532,6 +1580,8 @@ Control flow
         * ``try(eval(expression("x+")),err, "Error: "+err)`` → ``"Error: Not enough arguments for operation <code>+</code>"``
         * ``try(1+2,err,0)`` → ``3``
 
+.. _jme-fns-html:
+
 HTML
 ----
 
@@ -1569,6 +1619,8 @@ HTML
         * ``image(chosenimage)``
         * `Question using randomly chosen images <https://numbas.mathcentre.ac.uk/question/1132/using-a-randomly-chosen-image/>`_.
 
+.. _jme-fns-json:
+
 JSON
 ----
 
@@ -1600,6 +1652,8 @@ For an example of how you can use JSON data in a Numbas question, see the exam `
 
     **Example**:
         * ``json_encode([1,"a",true])`` → ``'[1,"a",true]'``
+
+.. _jme-fns-subexpressions:
 
 Sub-expressions
 ---------------
@@ -1731,6 +1785,8 @@ Sub-expressions
         * ``canonical_compare(f(x),g(x))`` → ``-1``
         * ``canonical_compare("a","b")`` → ``0``
 
+.. _jme-fns-pattern-matching:
+
 Pattern-matching sub-expressions
 --------------------------------
 
@@ -1770,6 +1826,8 @@ Pattern-matching sub-expressions
         * ``replace("?;x + ?;y", "f(x,y)", expression("1+2+3"))`` → ``expression("f(f(1,2),3)")``
         * ``replace("0*?", "0", expression("0*sin(x) + x*0 + 2*cos(0*pi)"))`` → ``expression("0 + x*0 + 2*cos(0)")``
 
+.. _jme-fns-data-types:
+
 Identifying data types
 ----------------------
 
@@ -1788,6 +1846,8 @@ Identifying data types
         * ``1 isa "number"`` → ``true``
         * ``x isa "name"`` → ``true`` (if ``x`` is not defined in this scope)
         * ``x isa "number"`` → ``true`` (if ``x`` has a numerical value in this scope)
+
+.. _jme-fns-inspecting-the-scope:
 
 Inspecting the evaluation scope
 -------------------------------
