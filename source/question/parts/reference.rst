@@ -141,6 +141,8 @@ The first half of the testing section provides a field to enter an answer to the
 Click on a note to toggle its visibility - most of the time, you'll only be interested in a few of the notes.
 
 The :guilabel:`Variable values` tab shows the current values of the question's variables.
+The values here are the same as shown in the :ref:`variables` tab, and are regenerated whenever the question changes, or when you click the :guilabel:`Regenerate values` button.
+You can lock the value of a variable, so it is not regenerated until you unlock it, by clicking on the padlock icon next to its name.
 
 Click on the :guilabel:`Create a unit test` button to add a :ref:`unit test <unit-tests>` with the current variable values and student answer.
 Only the marking notes you've selected to show will be included in the unit test.
