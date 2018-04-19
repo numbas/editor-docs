@@ -365,3 +365,21 @@ There's no facility to test the marking algorithm inside the custom part type ed
 When a student attempts a question using a custom part type, if any errors are encountered while evaluating your part type's marking algorithm, the student will be shown a generic error asking them to report the problem.
 In order to see what the problem is, you'll have to reproduce the student's input in the question editor's :ref:`marking algorithm <part-marking-algorithm>` tab.
 A more descriptive error message, detailing the note affected and the exact nature of the error, will be shown.
+
+Access
+######
+
+Your custom part types are available only to you, and other members of projects you belong to.
+If you've created a part type that could be useful to others, please consider publishing it.
+
+Before a custom part type can be published, the following conditions must be met:
+
+* The part type must have a name and a description.
+* There must be at least one setting, and all settings must be complete.
+* The expected answer and input hint must be set.
+* The ``mark`` and ``interpreted_answer`` notes must be defined.
+
+To publish a part type, click the :guilabel:`Publish` button in the :guilabel:`Access` tab.
+
+You can unpublish a part type by clicking the :guilabel:`Unpublish` button. 
+It will no longer be available to other users when creating new parts, but any instances of the part in existing questions will remain in place.
