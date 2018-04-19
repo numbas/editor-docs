@@ -36,6 +36,10 @@ Description
         Use this field to describe how this part type works, and what kinds of questions it is appropriate for. 
         This text will appear in the list of part types on your profile, and in the public list if you make your part type public, to help question authors decide if the part type is right for their use.
 
+    URL of documentation
+        Use this field to provide a link to any more documentation about your custom part type.
+        You might link to a blog post explaining what the part type is for, or a page giving more information on the theory behind the part type.
+
 .. _custom-part-type-settings:
 
 Part settings
