@@ -17,7 +17,8 @@ They are listed here together.
             The student can choose any of a list of options
 
         Match choices with answers
-            The student is presented with a 2D grid of :guilabel:`choices` and :guilabel:`answers`. Depending on how the part is set up, they must either match up each choice with an answer, or select any number of choice-answer pairs.
+            The student is presented with a 2D grid of :guilabel:`choices` and :guilabel:`answers`. 
+            Depending on how the part is set up, they must either match up each choice with an answer, or select any number of choice-answer pairs.
 
 
 .. topic:: Marking
@@ -25,16 +26,20 @@ They are listed here together.
     .. glossary::
 
         Minimum marks
-            If the student would have scored less than this many marks, they are instead awarded this many. Useful in combination with negative marking.
+            If the student would have scored less than this many marks, they are instead awarded this many. 
+            Useful in combination with negative marking.
 
         Maximum marks
-            If the student would have scored more than this many marks, they are instead awarded this many. The value 0 means "no maximum mark".
+            If the student would have scored more than this many marks, they are instead awarded this many. 
+            The value 0 means "no maximum mark".
 
         Minimum answers
-            For :term:`choose several from a list` and :term:`match choices with answers` parts, the student must select at least this many choices. The value 0 means "no minimum", though the student must make at least one choice to submit the part.
+            For :term:`choose several from a list` and :term:`match choices with answers` parts, the student must select at least this many choices. 
+            The value 0 means "no minimum", though the student must make at least one choice to submit the part.
 
         Maximum answers
-            For :term:`choose several from a list` and :term:`match choices with answers` parts, the student must select at most this many choices. The value 0 means "no maximum".
+            For :term:`choose several from a list` and :term:`match choices with answers` parts, the student must select at most this many choices. 
+            The value 0 means "no maximum".
 
         What to do if wrong number of answers selected
             If the student selects too few or too many answers, either do nothing, show them a warning but allow them to submit, or prevent submission until they pick an acceptable number of answers.
@@ -48,7 +53,8 @@ They are listed here together.
             If this is ticked, the answers are displayed in random order.
 
         Number of display columns
-            For :term:`choose one from a list` and :term:`choose several from a list` parts, this dictates how many columns the choices are displayed in. If 0, the choices are displayed on a single line, wrapped at the edges of the screen.
+            For :term:`choose one from a list` and :term:`choose several from a list` parts, this dictates how many columns the choices are displayed in. 
+            If 0, the choices are displayed on a single line, wrapped at the edges of the screen.
 
         Selection type
             For :term:`match choices with answers` parts, "One from each row" means that the student can only select one answer from each row and "Checkboxes" means that the student can select any number of choice-answer pairs.

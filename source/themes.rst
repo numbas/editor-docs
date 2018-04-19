@@ -1,7 +1,8 @@
 Themes
 ======
 
-A Numbas theme is a package of files containing everything needed to display an exam in the browser. This includes an HTML file, CSS stylesheets, and JavaScript to manage coordination between the page and the exam runtime.
+A Numbas theme is a package of files containing everything needed to display an exam in the browser. 
+This includes an HTML file, CSS stylesheets, and JavaScript to manage coordination between the page and the exam runtime.
 
 Contents of a theme
 -------------------
@@ -9,7 +10,8 @@ Contents of a theme
 A theme is a folder containing the following three things:
 
 * An optional file called ``inherit.txt`` containing the name of a theme to extend.
-* A folder called ``files`` containing static files to be included in the compiled exam. For a theme which does not extend another, this contains at the minimum a JavaScript file ``scripts/display.js``.
+* A folder called ``files`` containing static files to be included in the compiled exam. 
+  For a theme which does not extend another, this contains at the minimum a JavaScript file ``scripts/display.js``.
 * A folder called ``templates`` containing, at the least, two files called ``index.html`` and ``question.xslt``.
   These files are `jinja2 <http://jinja.pocoo.org/>`_ templates which will produce the HTML for the exam and the XSLT stylesheet for questions, respectively.
 

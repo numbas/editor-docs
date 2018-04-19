@@ -5,20 +5,27 @@ Pattern-matching mathematical expressions
 
 .. warning::
 
-    The pattern-matching algorithm is new and experimental. It opens up many new possibilities for providing adaptive feedback and manipulating mathematical expressions in general, but the interface is currently quite cumbersome. This documentation will be expanded as the system is used more.
+    The pattern-matching algorithm is new and experimental. 
+    It opens up many new possibilities for providing adaptive feedback and manipulating mathematical expressions in general, but the interface is currently quite cumbersome. 
+    This documentation will be expanded as the system is used more.
 
-Numbas includes a sophisticated pattern-matching algorithm for mathematical expressions. It's mainly used by the ``\simplify`` command, but can also be used in, for example, custom marking scripts to answer more nuanced questions about the form of the student's answer.
+Numbas includes a sophisticated pattern-matching algorithm for mathematical expressions. 
+It's mainly used by the ``\simplify`` command, but can also be used in, for example, custom marking scripts to answer more nuanced questions about the form of the student's answer.
 
-The pattern-matcher should be considered to work similarly to how a regular expression algorithm, except it operates on algebraic syntax trees instead of text strings. The algorithm will either return ``false``, when the expression doesn't match the pattern, or ``true``, and a dictionary of named matching groups, which are sub-trees of the input expression.
+The pattern-matcher should be considered to work similarly to how a regular expression algorithm, except it operates on algebraic syntax trees instead of text strings. 
+The algorithm will either return ``false``, when the expression doesn't match the pattern, or ``true``, and a dictionary of named matching groups, which are sub-trees of the input expression.
 
 Using the pattern matcher
 -------------------------
 
-The function `Numbas.jme.display.matchExpression(pattern,expression) <http://numbas.github.io/Numbas/Numbas.jme.display.html#matchExpression>`_ matches a JME expression against a pattern. The pattern is also written in JME syntax, but there are extra operators available to allow extra control what does or doesn't match.
+The function `Numbas.jme.display.matchExpression(pattern,expression) <http://numbas.github.io/Numbas/Numbas.jme.display.html#matchExpression>`_ matches a JME expression against a pattern. 
+The pattern is also written in JME syntax, but there are extra operators available to allow extra control what does or doesn't match.
 
-The parameters of a commutative operation in the pattern (i.e. addition, multiplication, or equality) can match in any order. The algorithm matches greedily, reading from left to right in both the pattern to match and the input expression.
+The parameters of a commutative operation in the pattern (i.e. addition, multiplication, or equality) can match in any order. 
+The algorithm matches greedily, reading from left to right in both the pattern to match and the input expression.
 
-Pattern-matching should only be used for assigning marks when the *form* of the student's answer is what's being assessed, for example when the student is asked to factorise a quadratic or reduce a fraction to lowest terms. For answers which are the result of a calculation, you should use the normal numerical marking algorithms because pattern-matching can be too restrictive (or, if you're not careful, too accepting!) In such cases, you could use pattern-matching to provide feedback about possible errors the student made, when their answer is marked wrong by the numerical algorithm.
+Pattern-matching should only be used for assigning marks when the *form* of the student's answer is what's being assessed, for example when the student is asked to factorise a quadratic or reduce a fraction to lowest terms. 
+For answers which are the result of a calculation, you should use the normal numerical marking algorithms because pattern-matching can be too restrictive (or, if you're not careful, too accepting!) In such cases, you could use pattern-matching to provide feedback about possible errors the student made, when their answer is marked wrong by the numerical algorithm.
 
 Pattern-matching syntax
 -----------------------
@@ -61,7 +68,8 @@ Pattern-matching syntax
 
 .. object:: m_nothing
 
-    Match nothing. Useful as an empty term to act as the right-hand side of an addition, where you want to capture all terms in the left-hand side.
+    Match nothing. 
+    Useful as an empty term to act as the right-hand side of an addition, where you want to capture all terms in the left-hand side.
 
 .. object:: m_number
 
@@ -69,7 +77,9 @@ Pattern-matching syntax
 
 .. function:: m_type(type)
 
-    Match a single token of the given type. For example, ``m_type(vector)`` matches a vector, while ``m_type(op)`` matches any operator. See :ref:`jme-data-types` for a list of data types.
+    Match a single token of the given type. 
+    For example, ``m_type(vector)`` matches a vector, while ``m_type(op)`` matches any operator. 
+    See :ref:`jme-data-types` for a list of data types.
 
 To help with learning the new syntax, there is an online tool to test expressions against patterns at http://www.staff.ncl.ac.uk/christian.perfect/patternmatching/matching.html
 

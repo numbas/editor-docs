@@ -1,7 +1,8 @@
 Extensions
 ==========
 
-An extension is a folder containing one or more files that should be included in an exam. They can be javascript files, CSS stylesheets, or any other kind of resource. 
+An extension is a folder containing one or more files that should be included in an exam. 
+They can be javascript files, CSS stylesheets, or any other kind of resource. 
 
 Each extension must have a unique :guilabel:`short name`, which is used both in the Numbas editor and by the script-loader in compiled exams.
 
@@ -13,23 +14,28 @@ The minimum an extension must contain is a file named ``<extension-name>.js``, c
 
 (See the API documentation for `Numbas.addExtension <http://numbas.github.io/Numbas/Numbas.html#addExtension>`_ for details on how this function works)
 
-This function call tells Numbas that the extension has loaded. Because Numbas can't guarantee the order script files will be loaded in, code which uses the `Numbas` object must be placed inside the callback function given to ``Numbas.addExtension``.
+This function call tells Numbas that the extension has loaded. 
+Because Numbas can't guarantee the order script files will be loaded in, code which uses the `Numbas` object must be placed inside the callback function given to ``Numbas.addExtension``.
 
 
 Using an extension with the editor
 ----------------------------------
 
-Package your extension's files into a .zip file. Next, go to the Numbas editor click on the :guilabel:`Profile` link, then :guilabel:`Extensions`. The :guilabel:`Upload a new extension` link takes you to a form where you can upload the .zip file you created.
+Package your extension's files into a .zip file. 
+Next, go to the Numbas editor click on the :guilabel:`Profile` link, then :guilabel:`Extensions`. 
+The :guilabel:`Upload a new extension` link takes you to a form where you can upload the .zip file you created.
 
 .. glossary::
     Name:
-        A human-readable name for the extension. This should concisely describe what it does, or what feature it provides.
+        A human-readable name for the extension. 
+        This should concisely describe what it does, or what feature it provides.
 
     Short name:
         A unique identifier for the extension.
 
         .. warning::
-            An extension's short name must be **unique**, and match the short name used when uploading it to the editor. This means that if you reuse an extension and use a different name when uploading it to the editor, you must rename its JavaScript file and change the name given to ``Numbas.addExtension``.
+            An extension's short name must be **unique**, and match the short name used when uploading it to the editor. 
+            This means that if you reuse an extension and use a different name when uploading it to the editor, you must rename its JavaScript file and change the name given to ``Numbas.addExtension``.
 
     Documentation URL:
         The URL of a page describing how to use the extension.
@@ -38,7 +44,8 @@ Package your extension's files into a .zip file. Next, go to the Numbas editor c
 Adding JME functions
 --------------------
 
-An extension can add JME functions (or rulesets, or anything else that goes in a `Scope <http://numbas.github.io/Numbas/Numbas.jme.Scope.html>`_ object by manipulating the ``extension.scope`` object. Here's an example which adds a single JME function::
+An extension can add JME functions (or rulesets, or anything else that goes in a `Scope <http://numbas.github.io/Numbas/Numbas.jme.Scope.html>`_ object by manipulating the ``extension.scope`` object. 
+Here's an example which adds a single JME function::
 
     Numbas.addExtension('difference',['jme'],function(extension) {
         var funcObj = Numbas.jme.funcObj;
@@ -52,7 +59,11 @@ An extension can add JME functions (or rulesets, or anything else that goes in a
 Adding a new JME data type
 --------------------------
 
-JME data types are JavaScript objects, distinguished by their ``type`` property. The object should have a `value` property which contains the data it represents. The JME system can happily use new data types, but you'll need to tell it how to render them as LaTeX or JME code. This is done by adding methods to ``Numbas.jme.display.typeToTeX`` and ``Numbas.jme.display.typeToJME``. Once you've defined how to create and display the new data type, you can add functions dealing with it in the same way as for the built-in data types.
+JME data types are JavaScript objects, distinguished by their ``type`` property. 
+The object should have a `value` property which contains the data it represents. 
+The JME system can happily use new data types, but you'll need to tell it how to render them as LaTeX or JME code. 
+This is done by adding methods to ``Numbas.jme.display.typeToTeX`` and ``Numbas.jme.display.typeToJME``. 
+Once you've defined how to create and display the new data type, you can add functions dealing with it in the same way as for the built-in data types.
 
 Here's an example extension which defines a toy "chemical" data type (excuse the bad chemistry)::
 

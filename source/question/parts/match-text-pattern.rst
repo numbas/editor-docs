@@ -25,7 +25,8 @@ Use a text pattern part when you want the student to enter short, non-mathematic
             You can substitute variables, the same as in content areas, by enclosing expressions in curly braces, e.g. ``{answervar}``. 
 
         Display answer
-            A representative correct answer string to display to the student, in case they press the :guilabel:`Reveal answers` button. You can substitute variables by enclosing expressions in curly braces, the same as in content areas.
+            A representative correct answer string to display to the student, in case they press the :guilabel:`Reveal answers` button. 
+            You can substitute variables by enclosing expressions in curly braces, the same as in content areas.
 
         Must the answer be in the correct case?
             If this is ticked, the capitalisation of the student's answer must match that of the answer pattern.

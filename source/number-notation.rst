@@ -39,9 +39,10 @@ The entry in the "Code" column is the string you should use to identify the styl
 |                 |              | decimal mark.                                   |                   |
 +-----------------+--------------+-------------------------------------------------+-------------------+
 | Indian          | ``in``       | Groups of digits in the integer part are        | 12,34,567.890123  |
-|                 |              | separated with commas. The rightmost group is   |                   |
-|                 |              | three digits, and other digits are grouped in   |                   |
-|                 |              | pairs. A dot is used for the decimal mark.      |                   |
+|                 |              | separated with commas.                          |                   |
+|                 |              | The rightmost group is three digits, and other  |                   |
+|                 |              | digits are grouped in pairs.                     |                   |
+|                 |              | A dot is used for the decimal mark.             |                   |
 +-----------------+--------------+-------------------------------------------------+-------------------+
 
 .. warning::

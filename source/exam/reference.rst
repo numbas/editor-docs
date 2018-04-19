@@ -85,7 +85,8 @@ You can use every question selected, or pick a random subset each time the exam 
 
         * **All questions, in this order** - all of the questions in the list below are shown to the student, in the order you've chosen.
         * **All questions, in random order** - all of the questions in the list below are shown to the student, in a different order for each attempt.
-        * **Pick a random subset** - A subset of the questions in the list below are shown to the student. The questions chosen, and the order they appear, will differ for each attempt.
+        * **Pick a random subset** - A subset of the questions in the list below are shown to the student. 
+          The questions chosen, and the order they appear, will differ for each attempt.
 
     Number of questions to choose
         If using the "Pick a random subset" strategy, this many questions from this group will be shown to the student.

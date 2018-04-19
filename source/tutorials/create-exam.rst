@@ -10,7 +10,8 @@ Let's create an exam using questions already in the database.
 Creating an exam using existing questions
 #########################################
 
-On your home page, click on the :guilabel:`Questions` link under :guilabel:`Browse the public database`. You can use the options on the left to filter the results, or use the search box at the top of the page to search for content that you are interested in. 
+On your home page, click on the :guilabel:`Questions` link under :guilabel:`Browse the public database`. 
+You can use the options on the left to filter the results, or use the search box at the top of the page to search for content that you are interested in. 
 
 .. image:: screenshots/question_search.png
     :alt: The search box is highlighted at the top of the page.
@@ -27,18 +28,22 @@ You'll be taken to the editing page for your new exam.
 .. image:: screenshots/basket_dropdown.png
     :alt: The basket dropdown at the top of the page is open and highlighted.
 
-Enter a name in the text box. Below is a drop-down list of projects that the exam can be assigned to. By default it will be added to your personal project.
+Enter a name in the text box.
+Below is a drop-down list of projects that the exam can be assigned to.
+By default it will be added to your personal project.
 
 .. image:: screenshots/exam_edit_name.png
     :alt: The "create a new exam" form.
 
-Once created, you can  try out your exam straight away. Click the :guilabel:`Test Run` link in the sidebar on the left. 
+Once created, you can  try out your exam straight away.
+Click the :guilabel:`Test Run` link in the sidebar on the left. 
 The compiled exam will open in a new window and you can have a go at answering the questions.
 
 .. image:: screenshots/exam_edit_testrun.png
     :alt: The "test run" button on the exam editor is highlighted.
 
-Once you have tried out the exam, close its window and return to the exam editor. Consider adding some text to the description field.
+Once you have tried out the exam, close its window and return to the exam editor.
+Consider adding some text to the description field.
 The description should be short -- one or two lines -- and will appear underneath the exam's name in the exam listing page.
 
 Adding more questions to your exam

@@ -14,7 +14,8 @@ produces
 
     Calculate the expansion up to the :math:`x^4` term.
 
-**Display-mode** maths, which is displayed on its own line and rendered less compactly, is delimited by ``\[`` and ``\]``. For example::
+**Display-mode** maths, which is displayed on its own line and rendered less compactly, is delimited by ``\[`` and ``\]``. 
+For example::
 
     The quadratic formula is \[ x = \frac{ -b \pm \sqrt{ b^2-4ac } }{ 2a } \]
 
@@ -26,7 +27,8 @@ produces
 
         x = \frac{ -b \pm \sqrt{ b^2-4ac } }{ 2a }
     
-If you've never used LaTeX before, a couple of good places to start are the `LaTeX maths Wikibook <http://en.wikibooks.org/wiki/LaTeX/Mathematics>`_ and the `Art of Problem Solving LaTeX Guide <http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Commands>`_. Bear in mind that LaTeX is only used for maths-mode, so the text-mode LaTeX commands don't apply.
+If you've never used LaTeX before, a couple of good places to start are the `LaTeX maths Wikibook <http://en.wikibooks.org/wiki/LaTeX/Mathematics>`_ and the `Art of Problem Solving LaTeX Guide <http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Commands>`_. 
+Bear in mind that LaTeX is only used for maths-mode, so the text-mode LaTeX commands don't apply.
 
 To find the command for a symbol you want to use, draw it in `Detexify <http://detexify.kirelabs.org/classify.html>`_ and it will show you the commands for the most similar-looking symbols.
 

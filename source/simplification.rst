@@ -11,7 +11,8 @@ In Numbas, maths is displayed using LaTeX.
 For help with LaTeX, see :ref:`LaTeX notation`.
 
 LaTeX is purely a typesetting language and is ill-suited for representing *meaning* in addition to *layout*. 
-For this reason, dynamic or randomised maths expressions must be written in JME syntax and converted to LaTeX. Numbas provides two new LaTeX commands to do this for you.
+For this reason, dynamic or randomised maths expressions must be written in JME syntax and converted to LaTeX. 
+Numbas provides two new LaTeX commands to do this for you.
 
 To *substitute* the result of an expression into a LaTeX expression, use the ``\var`` command. 
 Its parameter is a JME expression, which is evaluated and then converted to LaTeX.
@@ -32,7 +33,8 @@ produces::
 
     \[ 2^{3} \]
 
-This simple substitution doesn't always produce attractive results, for example when substituted variables might have negative values. If :math:`y=-4`::
+This simple substitution doesn't always produce attractive results, for example when substituted variables might have negative values. 
+If :math:`y=-4`::
 
 \[ \var{x} + \var{y} \]
 
@@ -42,7 +44,9 @@ produces::
 
 To deal with this, and other more complicated substitutions, there is the ``\simplify`` command.
 
-The main parameter of the ``\simplify`` command is a JME expression. It is not evaluated - it is converted into LaTeX as it stands. For example::
+The main parameter of the ``\simplify`` command is a JME expression. 
+It is not evaluated - it is converted into LaTeX as it stands. 
+For example::
 
     \[ \simplify{ x + (-1/y) } \]
 
@@ -50,7 +54,8 @@ produces::
 
     \[ x - \frac{1}{y} \]
 
-Variables can be substituted in by enclosing them in curly braces. For example::
+Variables can be substituted in by enclosing them in curly braces. 
+For example::
 
     \[ \simplify{ {x} / {y} } \]
 
@@ -58,15 +63,18 @@ produces, when :math:`x=2,y=3`::
 
     \[ \frac{ 2 }{ 3 } \]
 
-The ``\simplify`` command automatically rearranges expressions, according to a set of simplification rules, to make them look more natural. Sometimes you might not want this to happen, for example while writing out the steps in a worked solution.
+The ``\simplify`` command automatically rearranges expressions, according to a set of simplification rules, to make them look more natural. 
+Sometimes you might not want this to happen, for example while writing out the steps in a worked solution.
 
-The set of rules to be used is defined in a list enclosed in square brackets before the main argument of the ``\simplify`` command. You can control the ``\simplify`` command's behaviour by switching rules on or off.
+The set of rules to be used is defined in a list enclosed in square brackets before the main argument of the ``\simplify`` command. 
+You can control the ``\simplify`` command's behaviour by switching rules on or off.
 
 For example, in::
 
     \[ \simplify{ 1*x } \]
 
-I have not given a list of rules to use, so they are all switched on. The ``unitFactor`` rule cancels the redundant factor of 1 to produce::
+I have not given a list of rules to use, so they are all switched on. 
+The ``unitFactor`` rule cancels the redundant factor of 1 to produce::
 
     \[ x \]
 
@@ -78,7 +86,9 @@ I have turned off the unitFactor rule, leaving the expression as it was::
 
     \[ 1 x \]
 
-When a list of rules is given, the list is processed from left to right. Initially, no rules are switched on. When a rule's name is read, that rule is switched on, or if it has an exclamation mark in front of it, that rule is switched off.
+When a list of rules is given, the list is processed from left to right. 
+Initially, no rules are switched on. 
+When a rule's name is read, that rule is switched on, or if it has an exclamation mark in front of it, that rule is switched off.
 
 Sets of rules can be given names in the question's :ref:`rulesets` section, so they can be turned on or off in one go.
 
@@ -118,7 +128,8 @@ To exclude a rule, put an exclamation mark in front of its name, e.g. ``!unitfac
 
 Rule names are not case-sensitive: any mix of lower-case or upper-case works. 
 
-To turn all built-in rules on, use the name ``all``. To turn all built-in rules off, use ``!all``.
+To turn all built-in rules on, use the name ``all``. 
+To turn all built-in rules off, use ``!all``.
 
 **Note:** Because they can conflict with other rules, the :term:`canonicalOrder` and :term:`expandBrackets` rules are not included in ``all``. 
 You must include them separately.
@@ -206,7 +217,8 @@ The following simplification rules are available:
         * ``-0`` → ``0``
 
     collectNumbers
-        Collect together numerical (as opposed to variable) products and sums. The rules below are only applied if ``n`` and ``m`` are numbers.
+        Collect together numerical (as opposed to variable) products and sums. 
+        The rules below are only applied if ``n`` and ``m`` are numbers.
     
         * ``-x-y`` → ``-(x+y)`` (collect minuses)
         * ``n+m`` → ``eval(n+m)`` (add numbers)
@@ -225,7 +237,8 @@ The following simplification rules are available:
         * ``m*(n*x)`` → ``eval(n*m)*x``
 
     simplifyFractions
-        Cancel fractions to lowest form. The rules below are only applied if ``n`` and ``m`` are numbers and :math:`gcd(n,m) > 1`.
+        Cancel fractions to lowest form.
+        The rules below are only applied if ``n`` and ``m`` are numbers and :math:`gcd(n,m) > 1`.
 
         * ``n/m`` → ``eval(n/gcd(n,m))/eval(m/gcd(n,m))`` (cancel simple fractions)
         * ``(n*x)/m`` → ``(eval(n/gcd(n,m))*x)/eval(m/gcd(n,m))`` (cancel algebraic fractions)
@@ -271,12 +284,14 @@ The following simplification rules are available:
         * ``tanh(0)`` → ``0``
 
     otherNumbers
-        Evaluate powers of numbers. This rule is only applied if ``n`` and ``m`` are numbers.
+        Evaluate powers of numbers.
+        This rule is only applied if ``n`` and ``m`` are numbers.
 
         * ``n^m`` → ``eval(n^m)``
 
     cancelTerms
-        Collect together and cancel terms. Like :term:`collectNumbers`, but for any kind of term.
+        Collect together and cancel terms.
+        Like :term:`collectNumbers`, but for any kind of term.
 
         * ``x +x`` → ``2*x``
         * ``(z+n*x) - m*x`` → ``z + eval(n-m)*x``
@@ -340,7 +355,7 @@ There are a few "virtual" JME functions which can not be evaluated, but allow yo
 
     * ``partialdiff(y,x,1)`` → :math:`\frac{\partial y}{\partial x}`
     * ``partialdiff(x^2+2,x,1)`` → :math:`\frac{\partial }{\partial x} \left (x^2+2 \right )`
-    * ``partialdiff(y,x,2)`` → :math:`\frac{\partial ^{2}y}{\partial x^{2}}`
+    * ``partialdiff(y,x,2)`` → :math:`\frac{\partial{2}y}{\partial x^{2}}`
 
 .. function:: sub(expression,index)
 

@@ -5,7 +5,8 @@ The statistical functions extension provides many new functions for generating s
 
 It is built on the `jStat <http://www.jstat.org/>`_ library and follows its API quite closely. 
 
-Here's a list of the supported functions, as of January 2013. For information on usage, please see `the jStat documentation <http://jstat.github.com/>`_.
+Here's a list of the supported functions, as of January 2013. 
+For information on usage, please see `the jStat documentation <http://jstat.github.com/>`_.
 
 * ``sum``
 * ``sumsqrd``
