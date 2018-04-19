@@ -66,7 +66,7 @@ The following part types are built-in to Numbas:
     extension
 
 :ref:`Custom part types <custom-part-types>` defined by you or other Numbas users provide extra functionality.
-When editing a question, only custom part types you've made yourself or selected from the list of public part types are available.
+The list of available custom part types comprises those published by their authors, as well as those made by you or other members of the project your question belongs to.
 
 .. _part-marking-algorithm:
 
