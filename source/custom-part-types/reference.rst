@@ -49,6 +49,7 @@ Define setting fields to allow question authors to configure your part type.
 They appear in the question editor's :guilabel:`Marking settings` tab for any parts of this type.
 
 Each setting produces a JME value which can be used to set up the part type's :ref:`answer input <custom-part-type-answer-input>` and in the :ref:`marking algorithm <custom-part-type-marking>`.
+There is a dictionary variable called ``settings`` with keys for each setting.
 For example, a setting with name ``correct_answer`` will be available as ``settings["correct_answer"]``.
 
 The following fields are common to all setting types:
@@ -125,8 +126,6 @@ The evaluation happens inside the question's scope, so any variables and functio
 
 If :guilabel:`Evaluate?` is not ticked, this setting will produce a :data:`expression` value representing the question author's expression.
 
-.. _custom-part-type-answer-input:
-
 Percentage
 ##########
 
@@ -148,12 +147,12 @@ This setting type produces a list of strings entered by the question author.
 
 If :guilabel:`Substitute variables into value?` is ticked, then JME expressions enclosed in curly braces in each string will be evaluated and the results substituted back in.
 
+.. _custom-part-type-answer-input:
+
 Answer input
 ============
 
 The answer input method determines how the student enters their answer to the part.
-
-The student's answer is available inside the :ref:`marking script <custom-part-type-marking>` as :data:`studentAnswer`.
 
 The following fields are common to all input methods:
 
@@ -171,11 +170,18 @@ The following fields are common to all input methods:
 
         Available in the marking algorithm as ``input_options["hint"]``.
 
+Many of the fields can be either *static* or *dynamic*. 
+A static field takes the same value in every instance of the part type.
+A dynamic field is defined by a :ref:`JME` expression which is evaluated when the question is run.
+You can use the part's settings in these expressions with the ``settings`` variable.
+
+The values of input_options are available in the marking script under the :data:`input_options` dictionary.
+In the tables below, the **Name** column gives the key in the dictionary corresponding to the option.
+
 .. _custom-part-type-answer-input-methods:
 
 Answer input methods
 --------------------
-
 
 .. _answer-input-method-string:
 
@@ -337,6 +343,8 @@ The two required notes, :data:`mark` and :data:`interpreted_answer`, can not be 
 
     Definition
         A :ref:`jme` expression used to evaluate the note.
+
+        See :ref:`the list of variables available in a marking script <marking-algorithm-variables>`, in particular :data:`studentAnswer`, :data:`settings` and :data:`input_options`.
 
     Description
         Describe what the note means, and how it is used.

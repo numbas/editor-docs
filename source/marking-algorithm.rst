@@ -40,7 +40,7 @@ Like question variables, marking notes can refer to each other.
 When another note is referred to in another note's definition, its value is substituted in.
 To apply another note's feedback items, use :jme:func:`apply`.
 
-.. marking-algorithm-variables:
+.. _marking-algorithm-variables:
 
 Variables available to marking algorithms
 -----------------------------------------
