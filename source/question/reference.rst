@@ -150,13 +150,13 @@ Parts
 Each question has one or more parts.
 The student is given a separate score for each part of the question, and their total score is the sum of their scores for each part.
 
-In the editor, parts are displayed in a list; you can click on the title bar of a part to hide it, making room for the others.
-Use the :guilabel:`Expand every part` and :guilabel:`Collapse every part` buttons to show or hide every part at once.
+In the editor, parts are displayed in a list on the right of a page; you can click on a part in the list to start editing it.
+You can drag up or down a part to change its position in the question.
 
 .. image:: images/add-a-part.png
     :alt: The "add a part" section. There is a button for each part type, followed by the "more parts" button.
 
-To add a new part to your question, click one of the part types listed under :guilabel:`Add a part`.
+To add a new part to your question, click the :guilabel:`Add a part` button at the bottom of the list, then click on one of the part types shown.
 Click on the :guilabel:`more part types` button to browse the list of custom part types available to you.
 You can filter the list by typing keywords in the search box at the top.
 
