@@ -54,6 +54,15 @@ You can narrow down your search by adding a query in the search bar at the top o
 .. image:: images/search.png
     :alt: A search inside a project.
 
+Project settings
+================
+
+Click on the cog icon at the top-right of the page to change a project's settings.
+
+.. _public-project:
+
+If :guilabel:`Visible to non-members?` is ticked, the project and all of its **published** content will be visible to the general public.
+
 Adding someone to a project
 ===========================
 

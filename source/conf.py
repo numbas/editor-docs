@@ -6,7 +6,6 @@ extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx.ext.coverage'
 
 def setup(app):
     sys.path.insert(0, os.path.abspath('./util'))
-    print(os.path.abspath('./util'))
     from JMEDomain import JMEDomain
     app.add_domain(JMEDomain)
     app.add_stylesheet('numbas-style.css')
