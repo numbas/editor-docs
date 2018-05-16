@@ -11,7 +11,7 @@ Variable names
 ***************
 
 Variable names are case-insensitive, so ``y`` represents the same thing as ``Y``. 
-The first character of a variable name must be an alphabet letter; after that, any combination of letters, numbers and underscroes is allowed, with any number of ``'`` on the end.
+The first character of a variable name must be an alphabet letter; after that, any combination of letters, numbers and underscores is allowed, with any number of ``'`` on the end.
 
 **Examples**: 
     * ``x``
