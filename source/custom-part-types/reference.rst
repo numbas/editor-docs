@@ -379,7 +379,7 @@ In order to see what the problem is, you'll have to reproduce the student's inpu
 A more descriptive error message, detailing the note affected and the exact nature of the error, will be shown.
 
 Access
-######
+======
 
 Your custom part types are available only to you, and other members of projects you belong to.
 If you've created a part type that could be useful to others, please consider publishing it.
