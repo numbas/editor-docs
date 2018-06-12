@@ -98,6 +98,10 @@ Click on the :guilabel:`Source code` button to edit the raw HTML code for the co
 
 You can write mathematical notation in content areas using LaTeX; see the section on :ref:`LaTeX notation`.
 
+There is a button in the :ref:`rich text editor <content-areas>` labelled :guilabel:`Conditional visibility`.
+This allows you to give an expression (in :ref:`JME` syntax) which dictates whether or not the selected text is shown. 
+You can use this to :ref:`show one of several blocks of text based on a random variable <conditional-visibility>`.
+
 .. _substituting-into-content:
 
 Substituting variables into content areas
