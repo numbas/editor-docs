@@ -196,6 +196,10 @@ Scripts have access to the global ``Numbas`` object, as well as the following va
 
     The question's variables, unwrapped to JavaScript objects (so numbers can be used as JavaScript numbers, instead of having to go through the JME system)
 
+Custom scripts can run *before*, *instead of*, or *after* the built-in script.
+If *instead of* is chosen, the built-in script never runs; you must make sure that your script does everything required.
+You might want to run a custom script *before* the built-in one to modify a setting before the normal logic is applied, or run it *after* to do some extra processing or add information.
+
 The following scripts can be customised:
 
 .. glossary::
