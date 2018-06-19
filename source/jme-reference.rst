@@ -1322,6 +1322,14 @@ Lists
     **Example**:
         * ``sort([4,2,1,3])`` → ``[1,2,3,4]``
 
+.. jme:function:: sort_destinations(x)
+
+    Return a list giving the index that each entry in the list will occupy after sorting.
+
+    **Example**:
+        * ``sort_destinations([4,2,1,3])`` → ``[3,1,0,2]``
+        * ``sort_destinations([1,2,3,4])`` → ``[0,1,2,3]``
+
 .. jme:function:: reverse(x)
 
     Reverse list ``x``.
