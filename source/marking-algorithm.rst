@@ -189,9 +189,10 @@ All the built-in :ref:`JME functions <jme-functions>` are available in marking n
     **Example**:
         * ``apply_marking_script("numberentry",studentAnswer,settings+["minvalue":4,"maxvalue":5],1)`` - mark this part using the :ref:`number entry <number-entry>` part's marking script, but with the minimum and maximum accepted values set to 4 and 5.
 
-.. function:: submit_part(path)
+.. function:: submit_part(path,[answer])
 
     Submit the part with the given path. 
+    If ``answer`` is given, the answer stored for that part is overwritten with the given value.
     Returns a dictionary of the following form::
 
         [
