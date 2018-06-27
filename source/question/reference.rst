@@ -603,6 +603,9 @@ Editing history
 Use this tab to keep a record of changes made to your question.
 Write comments to discuss problems or suggested changes.
 
+The :guilabel:`Contributors` list shows everyone who has made a change to this question.
+This list is included with the question when you :term:`download` it, and if you re-upload this question to an instance of the Numbas editor.
+
 Each time you make a change to an question, it's saved to the database. 
 To save a snapshot of the current state of the question, click the :guilabel:`Set a checkpoint` button.
 You'll be asked to write a description of the question as it stands - describe what you've changed since the last snapshot, and why you're making a snapshot.

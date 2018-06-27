@@ -348,6 +348,9 @@ Editing history
 Use this tab to keep a record of changes made to your exam.
 Write comments to discuss problems or suggested changes.
 
+The :guilabel:`Contributors` list shows everyone who has made a change to this exam.
+This list is included with the exam when you :term:`download` it, and if you re-upload this exam to an instance of the Numbas editor.
+
 Each time you make a change to an exam, it's saved to the database. 
 To save a snapshot of the current state of the exam, click the :guilabel:`Set a checkpoint` button.
 You'll be asked to write a description of the exam as it stands - describe what you've changed since the last snapshot, and why you're making a snapshot.
