@@ -1439,14 +1439,18 @@ Dictionaries
         * ``get(["a":1], "a", 0)`` → ``1``
         * ``get(["a":1], "b", 0)`` → ``0``
 
-.. jme:function:: dict(keys)
+.. jme:function:: dict(a:b, c:d, ...) 
+        dict(pairs)
 
     Create a dictionary with the given key-value pairs.
     Equivalent to ``[ .. ]``, except when no key-value pairs are given: ``[]`` creates an empty *list* instead.
 
+    You can alternately pass a list of pairs of the form ``[key, value]``, to transform a list into a dictionary.
+
     **Examples**:
         * ``dict()``
         * ``dict("a": 1, "b": 2)``
+        * ``dict([ ["a",1], ["b",2] ])``
 
 .. jme:function:: keys(dict)
 
