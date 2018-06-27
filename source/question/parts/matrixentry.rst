@@ -34,6 +34,11 @@ Marks are awarded if every cell in the student's answer is equal to the correspo
         Precision restriction
             You can insist that the student gives their answer to a particular number of decimal places or significant figures. 
             For example, if you want the answer to be given to 3 decimal places, :math:`3.1` will fail this restriction, while :math:`3.100` will pass. 
+
+            The cells of the correct answer are rounded off to the maximum precision as the student used in any of their cells, or the required precision - whichever is greater. 
+            If the student's answer is within the specified tolerance of the rounded-off correct value, it is classed as correct.
+            Finally, if any of the cells in the student's answer are not given to the required precision, the penalty is applied.
+
             If the precision doesn't matter, select :guilabel:`None`.
 
         Allow the student to enter fractions?
@@ -51,6 +56,14 @@ Marks are awarded if every cell in the student's answer is equal to the correspo
             If it is not ticked, any of :math:`1.4`, :math:`1.40` or :math:`1.400` will be marked as correct. 
             If *too many* zeros are used, e.g. :math:`1.4000`, the answer is marked as incorrect.
 
+        Partial credit for wrong precision
+            This option only applies when a precision restriction is selected. 
+            If the student does not give all of the cells in their answer to the required precision, they only get this much of the available credit for the part.
+
+        Message if wrong precision
+            This option only applies when a precision restriction is selected. 
+            If the student does not give all of the cells in their answer to the required precision, they are given this feedback message.
+            
 
 This part type provides the following properties to the :data:`settings` object:
 

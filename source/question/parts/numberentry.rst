@@ -17,6 +17,11 @@ Number entry parts ask the student to enter a number, which is marked if it is i
         Precision restriction
             You can insist that the student gives their answer to a particular number of decimal places or significant figures. 
             For example, if you want the answer to be given to 3 decimal places, :math:`3.1` will fail this restriction, while :math:`3.100` will pass. 
+
+            The minimum and maximum answer are both rounded off to the same precision as the student used, or the required precision - whichever is greater. 
+            If the student's answer is between the rounded-off minimum and maximum, then it is marked correct.
+            Finally, if the student's answer is not given to the required precision, the penalty is applied.
+
             If the precision doesn't matter, select :guilabel:`None`.
 
         Allow the student to enter a fraction?
@@ -41,6 +46,14 @@ Number entry parts ask the student to enter a number, which is marked if it is i
             If "Require trailing zeros?" is ticked, only the answer :math:`1.400` will be marked correct. 
             If it is not ticked, any of :math:`1.4`, :math:`1.40` or :math:`1.400` will be marked as correct. 
             If *too many* zeros are used, e.g. :math:`1.4000`, the answer is marked as incorrect.
+
+        Partial credit for wrong precision
+            This option only applies when a precision restriction is selected. 
+            If the student does not give their answer to the required precision, they only get this much of the available credit for the part.
+
+        Message if wrong precision
+            This option only applies when a precision restriction is selected. 
+            If the student does not give their answer to the required precision, they are given this feedback message.
             
         Show precision restriction hint?
             If this is ticked, then some text describing the rounding the student must perform is shown next to the input box. 
