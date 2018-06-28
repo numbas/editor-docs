@@ -1239,12 +1239,14 @@ Lists
         * ``matrix([0,1,2],[3,4,5],[6,7,8])[0]`` → ``matrix([0,1,2])``
 
 .. jme:function:: x[a..b]
+                x[a..b#c]
 
     Slice list ``x`` - return elements with indices in the given range.
     Note that list indices start at 0, and the final index is not included.
 
     **Example**:
         * ``[0,1,2,3,4,5][1..3]`` → ``[1,2]``
+        * ``[0,1,2,3,4,5][1..6#2]`` → ``[1,3,5]``
 
 .. jme:function:: x in collection
 
