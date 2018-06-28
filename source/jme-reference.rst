@@ -752,6 +752,16 @@ Number theory
     **Example**:
         * ``gcd_without_pi_or_i(6*pi, 9)`` → ``3``
 
+.. jme:function:: coprime(a,b)
+
+    Are ``a`` and ``b`` coprime? True if their :jme:func:`gcd` is :math:`1`, or if either of ``a`` or ``b`` is not an integer.
+
+    **Examples**:
+        * ``coprime(12,16)`` → ``false``
+        * ``coprime(2,3)`` → ``true``
+        * ``coprime(1,3)`` → ``true``
+        * ``coprime(1,1)`` → ``true``
+
 .. jme:function:: lcm(a,b)
 
     Lowest common multiple of integers ``a`` and ``b``.
