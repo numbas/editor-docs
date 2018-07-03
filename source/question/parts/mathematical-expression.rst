@@ -11,6 +11,8 @@ If the two expressions agree on enough inputs, then they are considered to be eq
 For questions where the student is asked to rearrange an expression, clearly just evaluating both answers won't detect the difference - you want to look at the *form* of the student's answer, as well as the values it produces.
 The :ref:`string restrictions <string-restrictions>` offer a somewhat blunt method of restricting the form of the student's answer.
 You can do more sophisticated testing with a :ref:`custom marking algorithm <marking-algorithm>` and :ref:`pattern-matching <pattern-matching>` on the student's answer.
+    
+You can find `the mathematical expression part's built-in marking algorithm at GitHub <https://github.com/numbas/Numbas/blob/master/marking_scripts/jme.jme>`_.
 
 .. topic:: Marking
 

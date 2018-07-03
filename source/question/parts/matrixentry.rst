@@ -5,6 +5,8 @@ Matrix entry
 
 Matrix entry parts ask the student to enter a matrix of numbers. 
 Marks are awarded if every cell in the student's answer is equal to the corresponding cell in the correct answer, within the allowed margin of error.
+    
+You can find `the matrix entry part's built-in marking algorithm at GitHub <https://github.com/numbas/Numbas/blob/master/marking_scripts/matrixentry.jme>`_.
 
 .. topic:: Marking
 

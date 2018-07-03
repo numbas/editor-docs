@@ -4,6 +4,8 @@ Number entry
 ^^^^^^^^^^^^
 
 Number entry parts ask the student to enter a number, which is marked if it is in a specified range.
+    
+You can find `the number entry part's built-in marking algorithm at GitHub <https://github.com/numbas/Numbas/blob/master/marking_scripts/numberentry.jme>`_.
 
 .. topic:: Marking
 

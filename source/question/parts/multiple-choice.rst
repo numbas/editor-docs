@@ -5,6 +5,8 @@ Choose one from a list / Choose several from a list / Match choices with answers
 
 There are three kinds of "multiple response" part types in Numbas, with similar settings.
 They are listed here together.
+    
+You can find `the multiple response part's built-in marking algorithm at GitHub <https://github.com/numbas/Numbas/blob/master/marking_scripts/multipleresponse.jme>`_.
 
 .. topic:: Multiple response part types
 

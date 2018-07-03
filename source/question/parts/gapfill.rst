@@ -10,6 +10,8 @@ Include them in text by clicking on the :guilabel:`Insert gap` button on the too
 You can double-click on a gap placeholder to change its number.
 
 To insert a gap in the plain text editor, type the gap's number between two square brackets, e.g. ``[[0]]`` for the first gap.
+    
+You can find `the gap-fill part's built-in marking algorithm at GitHub <https://github.com/numbas/Numbas/blob/master/marking_scripts/gapfill.jme>`_.
 
 .. topic:: Marking
 

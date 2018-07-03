@@ -4,6 +4,8 @@ Match text pattern
 ^^^^^^^^^^^^^^^^^^
 
 Use a text pattern part when you want the student to enter short, non-mathematical text.
+    
+You can find `the match text pattern part's built-in marking algorithm at GitHub <https://github.com/numbas/Numbas/blob/master/marking_scripts/patternmatch.jme>`_.
 
 .. topic:: Marking
 
@@ -58,6 +60,7 @@ This part type provides the following properties to the :data:`settings` object:
 .. data:: matchMode
 
     The :term:`Match test` setting: either ``"regex"`` or ``"exact"``.
+
 
 Examples
 ########
