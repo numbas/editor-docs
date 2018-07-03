@@ -1609,6 +1609,13 @@ Control flow
 HTML
 ----
 
+.. jme:function:: html(x)
+
+    Parse string ``x`` as HTML.
+
+    **Example**:
+        * ``html('<div>Text!</div>')``
+
 .. jme:function:: isnonemptyhtml(str)
 
     Does ``str`` represent a string of HTML containing text?
@@ -1617,13 +1624,6 @@ HTML
     **Examples**:
         * ``isnonemptyhtml("<p>Yes</p>")`` → ``true``
         * ``isnonemptyhtml("<p></p>")`` → ``false``
-
-.. jme:function:: html(x)
-
-    Parse string ``x`` as HTML.
-
-    **Example**:
-        * ``html('<div>Text!</div>')``
 
 .. jme:function:: table(data), table(data,headers)
 
