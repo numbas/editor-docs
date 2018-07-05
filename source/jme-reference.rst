@@ -801,6 +801,13 @@ Vector and matrix arithmetic
         * ``matrix([1,2],[3,4])``
         * ``matrix([[1,2],[3,4]])``
 
+.. jme:function:: id(n)
+
+    Identity matrix with :math:`n` rows and columns.
+
+    **Example**:
+        * ``id(3)`` → ``matrix([[1,0,0],[0,1,0],[0,0,1])``
+
 .. jme:function:: numrows(matrix)
 
     The number of rows in the given matrix
@@ -830,8 +837,8 @@ Vector and matrix arithmetic
     Inputs can be vectors or column matrices.
 
     **Examples**:
-        * ``dot(vector(1,2,3),vector(4,5,6))``
-        * ``dot(matrix([1],[2]), matrix([3],[4])``
+        * ``dot(vector(1,2,3),vector(4,5,6))`` → ``32``
+        * ``dot(matrix([1],[2]), matrix([3],[4]))`` → ``11``
 
 .. jme:function:: cross(x,y)
 
@@ -839,8 +846,8 @@ Vector and matrix arithmetic
     Inputs can be vectors or column matrices.
 
     **Examples**:
-        * ``cross(vector(1,2,3),vector(4,5,6))``
-        * ``cross(matrix([1],[2]), matrix([3],[4])``
+        * ``cross(vector(1,2,3),vector(4,5,6))`` → ``vector(-3,6,-3)``
+        * ``cross(matrix([1],[2],[3]), matrix([4],[5],[6]))`` → ``vector(-3,6,-3)``
 
 .. jme:function:: angle(a,b)
 
@@ -848,7 +855,7 @@ Vector and matrix arithmetic
     Returns ``0`` if either ``a`` or ``b`` has length 0.
 
     **Example**:
-        * ``angle(vector(1,0),vector(0,1))``
+        * ``angle(vector(1,0),vector(0,1))`` → ``pi/2``
 
 .. jme:function:: det(x)
 
@@ -856,8 +863,8 @@ Vector and matrix arithmetic
     Throws an error if used on anything larger than a 3×3 matrix.
 
     **Examples**:
-        * ``det(matrix([1,2],[3,4]))``
-        * ``det(matrix([1,2,3],[4,5,6],[7,8,9]))``
+        * ``det(matrix([1,2],[3,4]))`` → ``-2``
+        * ``det(matrix([1,2,3],[4,5,6],[7,8,9]))`` → ``0``
 
 .. jme:function:: transpose(x)
 
@@ -865,15 +872,15 @@ Vector and matrix arithmetic
     Can also take a vector, in which case it returns a single-row matrix.
 
     **Examples**:
-        * ``transpose(matrix([1,2],[3,4]))``
-        * ``transpose(vector(1,2,3))``
+        * ``transpose(matrix([1,2],[3,4]))`` → ``matrix([1,3],[2,4])``
+        * ``transpose(vector(1,2,3))`` → ``matrix([1,2,3])``
 
-.. jme:function:: id(n)
+.. jme:function:: sum_cells(m)
 
-    Identity matrix with :math:`n` rows and columns.
+    Calculate the sum of all the cells in a matrix.
 
     **Example**:
-        * ``id(3)`` → ``matrix([[1,0,0],[0,1,0],[0,0,1])``
+        * ``sum_cells(matrix([1,2],[3,4]))`` → ``12``
 
 .. _jme-fns-strings:
 
