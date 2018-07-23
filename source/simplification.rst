@@ -107,6 +107,11 @@ The following display options are available:
 
         **Example:** ``\var[fractionNumbers]{0.5}`` produces :math:`\frac{1}{2}`.
 
+    mixedFractions
+        Improper fractions (with numerator larger than the denominator) are displayed in mixed form, as an integer next to a proper fraction.
+
+        **Example:** ``\var[fractionNumbers,mixedFractions]{22/7}`` produces :math:`3 \frac{1}{7}`.
+
     rowVector
         This rule doesn't rewrite expressions, but tells the maths renderer that you'd like vectors to be rendered as rows instead of columns.
 
