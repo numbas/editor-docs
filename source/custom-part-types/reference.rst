@@ -42,6 +42,12 @@ Description
 
 .. _custom-part-type-settings:
 
+Required extensions
+===================
+
+If your part type requires functions from a Numbas extension, select it here.
+Any questions using this part type will automatically load the required extensions.
+
 Part settings
 =============
 
