@@ -54,7 +54,7 @@ On the left is space for your selected questions, and on the right are tabs offe
 The :guilabel:`Recent questions` tab shows questions you have recently edited.
 The :guilabel:`Basket` tab shows questions you've added to your basket: you can browse the question editor to find questions, add them to your basket, and then go back to the exam editing page and add them in.
 
-You can click on any question's name to open it in a new window, so you can check the question does what you want and give it a test run before including it in your exam.
+You can click on any question's name to open it in a new window. This is useful to verify that the question contains content that you find relevant before including it in your exam.
 
 Click the plus icon on one of the question results to add it to your exam. 
 
@@ -66,13 +66,13 @@ You can drag and drop questions in the list on the left to reorder them.
 .. image:: screenshots/exam_edit_drag.png
     :alt: Reordering a question by dragging it down the list.
 
-The changes that you make to the exam content are active straight away, so you can see how your exam looks by clicking on :guilabel:`Test Run` again.
+The changes that you make to the exam content are active immediately. You can see how your exam looks by clicking on :guilabel:`Test Run` again.
 
 Publish your exam
 #################
 
-Once you're happy with your exam, why not publish it the public database, so others can use it?
-Before you can publish an exam, you must fill out its metadata fields so others can find it easily:
+Once you're happy with your exam, why not publish it the public database so others can use it?
+Before you can publish an exam, you must fill out the metadata fields so others can find it easily:
 
 * Give the exam a name.
 * Write a description.
