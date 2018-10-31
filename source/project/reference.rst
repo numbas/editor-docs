@@ -3,13 +3,13 @@
 Projects
 ********
 
-Projects provide a way of collecting together all your work on a particular topic or course, and automatically granting access to your collaborators.
+Projects provide a way of collecting all your work on a particular topic or course and automatically granting access to your collaborators.
 
 In the Numbas editor, every exam or question must belong to a single project. 
-Your account always has one project attached to it - your workspace.
-When you create a new exam or question, you'll be asked which project you want to attach it to, and the default option is your workspace.
+Your account always has at least one project - your workspace.
+When you create a new exam or question, you will be asked which project you want to attach it to.  The default option is your workspace, but this guide will walk you through creating additional projects. 
 
-If you're putting together content for a course you're teaching, it's a good idea to create a new project as a single gathering point for your material. 
+If you're putting together content for a course you're teaching, it is a good idea to create a new project as a single gathering point for your material. 
 A project is effectively a "fenced off" area of the editor where you can concentrate on just the material you want to work on, without having to wade through unrelated items.
 
 Creating a new project
@@ -19,7 +19,7 @@ Creating a new project
     :alt: The "create a new project" form.
 
 Click on the :guilabel:`New` button at the top of the page, and then on :guilabel:`Project`.
-You need to give some information about your new project:
+You need to fill in some information about your new project:
 
 * **A name for the project.**
   This should succinctly describe what the project is for, or what it contains.
@@ -38,11 +38,11 @@ A project's home page shows a *timeline* of activity on the project, the list of
 .. image:: images/project_homepage.png
     :alt: A project's homepage.
 
-The timeline shows all activity on exams or questions belonging to the question, as well as comments attached to the project itself.
-Timeline items belonging to each project you're a member of will also be shown in your personal timeline on the editor homepage.
+The timeline shows all activity on exams or questions belonging to the project and any attached comments.
+Timeline items belonging to each project you are a member of will also be shown in your personal timeline on the editor homepage.
 
 The cog icon at the top of the page takes you to the project's options page. 
-On this page you can change any of the project's settings or, if you're the project's owner and it isn't your personal workspace, delete it.
+On this page you can change any of the project's settings or, if you're the project's owner and it is not your personal workspace, delete it.
 
 
 Finding content inside a project
@@ -68,7 +68,7 @@ Adding someone to a project
 
 From the project's homepage, click on the settings icon at the top of the list of members to go to the member settings page. 
 In the :guilabel:`Add a member` box, type the name of the person you want to invite.
-If they don't have an account yet, their email address; they'll get an email asking them to create an account and when they do, they'll be given access to your project immediately.
+If they don't have an account yet, type their email address; they will get an email asking them to create an account and afterwards they will be given access to your project immediately.
 
 .. image:: images/add_member.png
     :alt: The project members form, in the process of adding a new member.
@@ -101,10 +101,10 @@ Deleting a project
 ==================
 
 To delete a project, you must be its owner.
-You can't delete your personal workspace.
+You cannot delete your personal workspace.
 
 .. warning::
-    Only delete a project if you're absolutely sure you don't need it any more.
+    Only delete a project if you're absolutely sure you do not need it any more.
     Deleting a project is an irreversible action that will result in the loss of data belonging to the project. 
 
 To delete a project, go to the project's :guilabel:`Options` page and click on the :guilabel:`Delete this project` button.
