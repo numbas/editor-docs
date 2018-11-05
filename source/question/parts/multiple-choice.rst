@@ -91,6 +91,14 @@ You can find `the multiple response part's built-in marking algorithm at GitHub 
             If :guilabel:`Custom expression` is selected, give either a list of lists of boolean values, or a matrix with as many rows as the part has choices and as many columns as the part has answers. 
             Any non-zero value in the matrix indicates that the corresponding choice-answer pair should be available to the student.
 
+        Show choice feedback state?
+
+            If ticked, choices selected by the student will be highlighted as 'correct' if they have a positive score, and 'incorrect' if they are worth zero or negative marks.
+            If :term:`show score feedback icon?` is not ticked, the ticked choices will be given a neutral highlight regardless of their scores.
+
+            If this is not ticked, no highlighting will be applied to ticked choices.
+            This is appropriate if the part uses a custom marking algorithm which awards a score based on the set of choices considered as a whole.
+
 .. _choices:
 .. topic:: Choices
 
