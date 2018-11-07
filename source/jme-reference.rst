@@ -857,6 +857,13 @@ Vector and matrix arithmetic
     **Example**:
         * ``angle(vector(1,0),vector(0,1))`` → ``pi/2``
 
+.. jme:function:: is_zero(x)
+
+    Returns ``true`` if every component of the vector ``x`` is zero.
+
+    **Example**:
+        * ``is_zero(vector(0,0,0))`` → ``true``
+
 .. jme:function:: det(x)
 
     Determinant of a matrix.
@@ -1398,13 +1405,16 @@ Lists
     **Example**:
         * ``sum([1,2,3])`` → ``6``
 
-.. jme:function:: product(list1,list2,...,listN)
+.. jme:function:: product(list1,list2,...,listN) or product(list, n)
 
     Cartesian product of lists.
     In other words, every possible combination of choices of one value from each given list.
 
+    If one list and a number are given, then the ``n``-th Cartesian power of the list is returned: the Cartesian product of ``n`` copies of the list.
+
     **Example**:
         * ``product([1,2],[a,b])`` → ``[ [1,a], [1,b], [2,a], [2,b] ]``
+        * ``product([1,2],2)`` → ``[ [1,1], [1,2], [2,1], [2,2] ]``
 
 .. jme:function:: zip(list1,list2,...,listN)
 
