@@ -1327,6 +1327,20 @@ Lists
     **Example**:
         * ``filter(x>5,x,[1,3,5,7,9])`` → ``[7,9]``
 
+.. jme:function:: take(n,expression,name,d)
+
+    Take the first ``n`` elements from list or range ``d``, replacing variable ``name`` with the element from ``d`` each time, returning only the elements for which ``expression`` evaluates to ``true``.
+
+    This operation is lazy - once ``n`` elements satisfying the expression have been found, execution stops.
+    You can use this to filter a few elements from a large list, where the condition might take a long time to calculate.
+
+    .. note::
+        Do not use ``i`` or ``e`` as the variable name to map over - they're already defined as mathematical constants!
+
+    **Example**:
+        * ``take(3,gcd(x,6)=1,x,10..30)`` → ``[11,13,17]``
+
+
 .. jme:function:: let(name,definition,...,expression)
               let(definitions, expression)
 
