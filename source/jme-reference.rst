@@ -1915,4 +1915,8 @@ Inspecting the evaluation scope
 
     Returns ``true`` if the variable with the given name has been defined in the current scope.
 
+.. jme:function:: unset(items,expression)
 
+    Delete the named variables, functions and rulesets before evaluating the given expression.
+
+    ``items`` is a dictionary with keys ``"variables"``, ``"functions"`` and ``"rulesets"``, which are each lists of names to delete.

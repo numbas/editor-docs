@@ -84,6 +84,11 @@ The following variables are available for use by marking algorithms:
     A :data:`list` of the :term:`steps` belonging to this part.
     Each element in the list is a :data:`dict` of the same variables that would be available in the gap's own marking algorithm.
 
+.. data:: question_definitions
+
+    A :data:`dictionary` of the variables, functions and rulesets defined by the question.
+    You can use this with :jme:func:`unset` to evaluate expressions without access to the question's variables, for example if you want the student to use a variable called ``x`` but there's also a question variable ``x``.
+
 .. data:: input_options
 
     (Only for :ref:`custom part types <custom-part-types>`)
