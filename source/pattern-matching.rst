@@ -3,85 +3,240 @@
 Pattern-matching mathematical expressions
 =========================================
 
-.. warning::
-
-    The pattern-matching algorithm is new and experimental. 
-    It opens up many new possibilities for providing adaptive feedback and manipulating mathematical expressions in general, but the interface is currently quite cumbersome. 
-    This documentation will be expanded as the system is used more.
-
 Numbas includes a sophisticated pattern-matching algorithm for mathematical expressions. 
-It's mainly used by the ``\simplify`` command, but can also be used in, for example, custom marking scripts to answer more nuanced questions about the form of the student's answer.
+Pattern-matching is used to power the :ref:`simplification rules <simplification-rules>`, as well as to establish the *form* of mathematical expressions entered by the student.
 
-The pattern-matcher should be considered to work similarly to how a regular expression algorithm, except it operates on algebraic syntax trees instead of text strings. 
-The algorithm will either return ``false``, when the expression doesn't match the pattern, or ``true``, and a dictionary of named matching groups, which are sub-trees of the input expression.
+The pattern-matcher should be considered to work similarly to a `regular expression algorithm <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions>`_, except it operates on algebraic syntax trees instead of text strings. 
+The algorithm decides whether an input expression matches a given pattern, and also identifies `named matching groups`, which are sub-expressions of the input expression.
 
-Using the pattern matcher
--------------------------
-
-The function `Numbas.jme.display.matchExpression(pattern,expression) <http://numbas.github.io/Numbas/Numbas.jme.display.html#matchExpression>`_ matches a JME expression against a pattern. 
-The pattern is also written in JME syntax, but there are extra operators available to allow extra control what does or doesn't match.
-
-The parameters of a commutative operation in the pattern (i.e. addition, multiplication, or equality) can match in any order. 
-The algorithm matches greedily, reading from left to right in both the pattern to match and the input expression.
-
-Pattern-matching should only be used for assigning marks when the *form* of the student's answer is what's being assessed, for example when the student is asked to factorise a quadratic or reduce a fraction to lowest terms. 
-For answers which are the result of a calculation, you should use the normal numerical marking algorithms because pattern-matching can be too restrictive (or, if you're not careful, too accepting!) In such cases, you could use pattern-matching to provide feedback about possible errors the student made, when their answer is marked wrong by the numerical algorithm.
 
 Pattern-matching syntax
 -----------------------
 
-.. object:: ?
+Patterns are written in JME syntax, but there are extra operators available to specify what does or doesn't match.
 
-    Match anything.
+The pattern-matching algorithm uses a few techniques to match different kinds of expression.
 
-.. object:: ??
+**Data elements** such as numbers, strings, booleans are matched by comparison: a pattern consisting of a single data element matches only that exact element.
 
-    Match anything or nothing.
+A pattern consisting of a **function application** function application ``f(arguments...)`` matches any expression consisting of an application of exactly that function, and whose arguments, considered as a sequence, match the sequence of patterns ``arguments``.
+There are some special functions which match differently.
+If the same name is captured by more than one argument, then all the groups captured under that name are gathered into a list.
 
-.. object:: expr;g
+A pattern consisting of a sequence of terms joined by a binary **operator**, or a single term with a unary operator applied, is considered as a sequence. 
+If a way of matching up the terms in the input expression with the terms in the pattern can be found, considering quantifiers and the properties of commutativity and associativity, then the expression matches the pattern.
+If the same name is captured by more than one argument, then all the groups captured under that name are gathered into a sequence joined by the operator being matched.
 
-    Capture ``expr`` in the group named ``g``.
+A pattern consisting of a **list** matches any expression consisting of a single list, whose elements match the elements of the list in the pattern.
+Quantifiers allow you to write a pattern which matches lists with different numbers of terms.
 
-.. function:: m_any(expr1,expr2,...)
+Special names
+#############
 
-    Match any of the expressions ``exprN``.
+.. jme:variable:: ?
 
-.. function:: m_all(expr)
+    Matches anything.
 
-    Capture all terms (in an addition, multiplication, or other commutative operation) matching ``expr``.
+.. jme:variable:: $n
 
-.. function:: m_pm(expr)
+    Matches a number.
+    You can use the following annotations to restrict the kinds of numbers that are matched:
 
-    Capture ``expr`` or ``-(expr)``, i.e. plus or minus the given expression.
+    * ``real`` - has no imaginary part.
+    * ``complex`` - has a non-zero imaginary part.
+    * ``imaginary`` - has a non-zero imaginary part and zero real part.
+    * ``positive`` - real and strictly greater than 0.
+    * ``nonnegative`` - real and greater than or equal to 0.
+    * ``negative`` - real and less than 0.
+    * ``integer`` - an integer.
+    * ``decimal`` - written with at least one digit after the decimal place, or any real number with a fractional part.
+    * ``rational`` - an integer, or the division of one integer by another. This doesn't match a single token - it's equivalent to the pattern ``integer:$n / integer:n`?``.
 
-.. function:: m_not(expr)
+.. jme:variable:: $v
 
-    Match anything *except* ``expr``.
+    Matches any variable name.
 
-.. function:: m_uses(name1,name2,...)
+.. jme:variable:: $z
 
-    Match any expression which uses the given variable names.
+    Match nothing.
+    Use this as the right-hand side of a ``+`` or ``*`` operation to force the pattern-matcher to match a sum or product, respectively, when the pattern would otherwise only contain one term, due to use of a quantifier.
 
-.. function:: m_commute(expr)
+Arithmetic Operators
+####################
 
-    Match the terms in ``expr`` in any order, following the laws of commutativity. (This is only required if you are using ``matchExpression`` with the ``doCommute`` flag set to ``false``, and you only want to use commutativity in certain places)
+.. jme:function:: `+- X
 
-.. object:: m_nothing
+    Match either ``X`` or ``-X``
 
-    Match nothing. 
-    Useful as an empty term to act as the right-hand side of an addition, where you want to capture all terms in the left-hand side.
+.. jme:function:: `*/ X
 
-.. object:: m_number
+    Match either ``X`` or ``1/X``
 
-    Match a single number.
+Combining patterns
+##################
 
-.. function:: m_type(type)
+.. jme:function:: A `| B
 
-    Match a single token of the given type. 
-    For example, ``m_type(vector)`` matches a vector, while ``m_type(op)`` matches any operator. 
-    See :ref:`jme-data-types` for a list of data types.
+    Match either ``A`` or ``B``.
 
-To help with learning the new syntax, there is an online tool to test expressions against patterns at http://www.staff.ncl.ac.uk/christian.perfect/patternmatching/matching.html
+.. jme:function:: A `& B
+
+    The expression must match both ``A`` and ``B``.
+
+.. jme:function:: `! X
+
+    Match anything *except* ``X``.
+
+.. jme:function:: X `where C
+
+    The expression must match ``X``, and then the condition ``C`` is evaluated, with any names corresponding to groups captured in ``X`` substituted in.
+    If the condition ``C`` evaluates to ``true``, the expression matches this pattern.
+
+.. jme:function:: macros `@ X
+
+    ``macros`` is a dictionary of patterns.
+    The macros are substituted into ``X`` to produce a new pattern, which the expression must match.
+
+Quantifiers
+###########
+
+Quantifiers are used to capture terms that may appear a variable number of times in a sequence.
+
+.. jme:function:: X `?
+
+    Either one occurrence of ``X`` or none.
+
+.. jme:function:: X `: Y
+
+    If the expression matches ``X``, match that, otherwise match as the default value ``Y``.
+
+    In a sequence, this acts the same as the `` `?`` quantifier, additionally capturing the default value ``Y`` if ``X`` does not appear in the sequence.
+
+.. jme:function:: X `*
+
+    Any number of occurrences of ``X``, or none.
+
+.. jme:function:: X `+
+
+    At least one occurrence of ``X``.
+
+Capturing named groups
+######################
+
+The *capturing operator* ``;`` captures attaches to a part of a pattern, and captures the part of the input expression matching that pattern under the given name.
+
+.. jme:function:: X;g
+
+    Capture the input expression in the group named ``g`` if it matches the pattern ``X``.
+
+.. jme:function:: X;g:v
+
+    Match ``X``, and capture the value ``v`` in the group named ``g``.
+
+    You can use this to provide a default value for a value that's missing or implied, for example a coefficient of :math:`-1` in :math:`-x`.
+
+.. jme:function:: X;=g
+
+    Match ``X`` only if it's identical to every other occurrence captured under the name ``g``.
+
+Matching modes
+##############
+
+The following functions change the way the matcher works.
+
+.. glossary::
+
+    Allow other terms
+        
+        When matching an associative operation, allow the presence of terms which don't match the pattern, as long as there are other terms which do satisfy the pattern.
+        This allows you to write patterns which pick out particular parts of sums and products, for example, while ignoring the rest.
+        This is equivalent to adding something like `` + ?`*`` to the end of every sum, and likewise for other associative operations.
+
+    Use commutativity
+
+        When matching an associative operation, allow the terms to appear in any order.
+        A sequence matches if an ordering of the terms which satisfies the pattern can be found.
+
+        For non-symmetric operators with converses, suchs as :math:`\lt` and :math:`\leq`, also match the converse relation, reversing the order of the operands.
+
+    Use associativity
+
+        For an associative operator :math:`\circ`, sequences of terms such as :math:`a \circ b \circ c` will be considered together.
+
+        If this mode is not enabled, terms are not gathered into sequences before trying to match, so :math:`(a \circ b) \circ c` is not considered to be the same as :math:`a \circ (b \circ c)`.
+
+    Gather as a list
+
+        For an associative operator, when the same name is captured by multiple terms, the resulting captured group for that name is a list whose elements are the captured subexpressions from each term.
+
+        If this mode is not enabled, the subexpressions from each term are joined together by the associative operator.
+        This doesn't always make sense, particularly if the group captures only portions of each term.
+
+    Strict inverse
+
+        If this mode is not enabled, then :math:``a-b`` is matched as if it's :math:``a+(-b)``, and :math:`a/b` is matched as if it's :math:``a*(1/b)``.
+        This makes matching sums of terms that may have negative coefficients easier.
+
+        If this mode is enabled, then the behaviour described above is not used.
+
+.. jme:function:: m_exactly(X)
+
+    Turn off :term:`allow other terms` mode when matching ``X``.
+
+.. jme:function:: m_commutative(X)
+
+    Turn on :term:`use commutativity` mode when matching ``X``.
+
+.. jme:function:: m_noncommutative(X)
+
+    Turn off :term:`use commutativity` mode when matching ``X``.
+
+.. jme:function:: m_associative(X)
+
+    Turn on :term:`use associativity` mode when matching ``X``.
+
+.. jme:function:: m_nonassociative(X)
+
+    Turn off :term:`use associativity` mode when matching ``X``.
+
+.. jme:function:: m_strictinverse(X)
+
+    Turn on :term:`strict inverse` mode when matching ``X``.
+
+.. jme:function:: m_gather(X)
+
+    Turn on :term:`gather as a list` mode when matching ``X``.
+
+.. jme:function:: m_nogather(X)
+
+    Turn off :term:`gather as a list` mode when matching ``X``.
+
+Special conditions
+##################
+
+.. jme:function:: m_type(type)
+
+    Match any item with the given :ref:`data type <jme-data-types>`.
+
+.. jme:function:: m_func(name,arguments)
+
+    Match a function whose name, as a string, matches the given pattern, and whose arguments, considered as a :data:`list`, match the given pattern.
+
+.. jme:function:: m_op(name,operands)
+
+    Match a binary or unary operator whose name, as a string, matches the given pattern, and whose operands, considered as a :data:`list`, match the given pattern.
+
+.. jme:function:: m_numeric(X)
+
+    Match if a numerical comparison of ``X`` and the expression being considered says they're equivalent.
+
+    Random values are chosen for the free variables, and substituted into both ``X`` and the input expression.
+    If both expressions produce the same result, then the input expression matches this pattern.
+
+.. jme:function:: m_anywhere(X)
+
+    Match if a sub-expression matching the pattern ``X`` can be found anywhere inside the input expression.
+
 
 Examples
 --------

@@ -10,7 +10,7 @@ from sphinx.util.docfields import Field, TypedField
 
 
 jme_sig_re = re.compile(
-    r'''^ ((?:\$?[a-zA-Z_][a-zA-Z0-9_]*'*)|\?\??|[π∞])               # thing name
+    r'''^ ((?:\$?[a-zA-Z_][a-zA-Z0-9_]*'*)|\?|[π∞])               # thing name
           (?: \((.*)\)                  # optional: arguments
           )? $                          # and nothing more
           ''', re.VERBOSE)
@@ -151,6 +151,29 @@ class JMEFunction(JMEObject):
     def get_index_text(self, name_cls):
         return name_cls[0]
 
+class JMEData(JMEObject):
+    """
+    Description of a JME data element (type, variable or constant)
+    """
+
+    def needs_arglist(self):
+        return False
+
+    def get_index_text(self, name_cls):
+        return name_cls[0]
+
+    def handle_signature(self, sig, signode):
+        """Transform a JME signature into RST nodes.
+
+        Return (fully qualified name of the thing, classname if any).
+        """
+        m = jme_sig_re.match(sig)
+        if m is None:
+            raise ValueError
+        name, _ = m.groups()
+        signode['fullname'] = name
+        signode += addnodes.desc_name(name, name)
+        return name, ''
 
 class JMEXRefRole(XRefRole):
     def process_link(self, env, refnode, has_explicit_title, title, target):
@@ -163,13 +186,19 @@ class JMEDomain(Domain):
     label = 'JME'
     object_types = {
         'function': ObjType(l_('function'), 'func', 'obj'),
+        'data': ObjType(l_('data'), 'data', 'obj'),
+        'variable': ObjType(l_('variable'), 'var', 'obj'),
     }
 
     directives = {
         'function': JMEFunction,
+        'data': JMEData,
+        'variable': JMEData,
     }
     roles = {
         'func':  JMEXRefRole(fix_parens=True),
+        'data':  JMEXRefRole(),
+        'var': JMEXRefRole(),
     }
     initial_data = {
         'objects': {},  # fullname -> docname, objtype
