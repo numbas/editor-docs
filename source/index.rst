@@ -47,7 +47,7 @@ If you have any questions, please `email us <mailto:numbas@ncl.ac.uk>`_ or join 
     :caption: Advanced topics
     :maxdepth: 2
 
-    pattern-matching
+    pattern-matching/index
     javascript-api
     extensions
     themes

@@ -1,14 +1,4 @@
-.. _pattern-matching:
-
-Pattern-matching mathematical expressions
-=========================================
-
-Numbas includes a sophisticated pattern-matching algorithm for mathematical expressions. 
-Pattern-matching is used to power the :ref:`simplification rules <simplification-rules>`, as well as to establish the *form* of mathematical expressions entered by the student.
-
-The pattern-matcher should be considered to work similarly to a `regular expression algorithm <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions>`_, except it operates on algebraic syntax trees instead of text strings. 
-The algorithm decides whether an input expression matches a given pattern, and also identifies `named matching groups`, which are sub-expressions of the input expression.
-
+.. _pattern-matching-reference:
 
 Pattern-matching syntax
 -----------------------
@@ -40,6 +30,12 @@ Special names
 .. jme:variable:: $n
 
     Matches a number.
+
+    This only matches single number tokens, not expressions which would evaluate to a number, such as ``-3`` (unary negation) or ``sqrt(2)``.
+
+    This does not match unary negation, but does match negative numbers which have been substituted into an expression.
+    To robustly match a positive or negative number, use ```+- $n``.
+
     You can use the following annotations to restrict the kinds of numbers that are matched:
 
     * ``real`` - has no imaginary part.
@@ -50,7 +46,14 @@ Special names
     * ``negative`` - real and less than 0.
     * ``integer`` - an integer.
     * ``decimal`` - written with at least one digit after the decimal place, or any real number with a fractional part.
-    * ``rational`` - an integer, or the division of one integer by another. This doesn't match a single token - it's equivalent to the pattern ``integer:$n / integer:n`?``.
+    * ``rational`` - an integer, or the division of one integer by another. 
+      This doesn't only match a single token - it's equivalent to the pattern ``integer:$n / integer:n`?``.
+
+    **Examples**:
+        * ``real:$n`` matches ``3`` and ``pi`` but not ``4+i`` or ``sqrt(2)``.
+        * ``complex:$n`` matches ``1+2i`` and ``i`` but not ``3``.
+        * ``decimal:$n`` matches ``4.1`` and ``2.0`` but not ``2``.
+        * ``rational:$n`` matches ``3/4`` and ``2`` but not ``4.1``.
 
 .. jme:variable:: $v
 
@@ -60,6 +63,9 @@ Special names
 
     Match nothing.
     Use this as the right-hand side of a ``+`` or ``*`` operation to force the pattern-matcher to match a sum or product, respectively, when the pattern would otherwise only contain one term, due to use of a quantifier.
+
+    **Example**:
+        * ``($n `| $v)`+ + $z`` matches a sum of any length consisting of numbers or variable names, such as ``3 + x + 1 + 2 + y``.
 
 Arithmetic Operators
 ####################
@@ -72,6 +78,9 @@ Arithmetic Operators
 
     Match either ``X`` or ``1/X``
 
+    **Example**:
+        * ``$n * (`*/ $n)`` matches either the product or the quotient of two numbers, such as ``3*4`` or ``6/2``.
+
 Combining patterns
 ##################
 
@@ -79,46 +88,38 @@ Combining patterns
 
     Match either ``A`` or ``B``.
 
+    **Example**:
+        * ``x*x `| x^2`` matches two different ways of writing "x squared".
+
 .. jme:function:: A `& B
 
     The expression must match both ``A`` and ``B``.
 
+    **Example**:
+        * ``? = ? `& m_uses(x)`` matches an equation which contains the variable ``x`` somewhere.
+
 .. jme:function:: `! X
 
     Match anything *except* ``X``.
+
+    **Example**:
+        * ```! m_uses(x)`` matches any expression which does not use the variable ``x``.
 
 .. jme:function:: X `where C
 
     The expression must match ``X``, and then the condition ``C`` is evaluated, with any names corresponding to groups captured in ``X`` substituted in.
     If the condition ``C`` evaluates to ``true``, the expression matches this pattern.
 
+    **Example**:
+        * ``$n;x + $n;y `where x+y=5`` matches the sum of two numbers which add up to a total of 5.
+
 .. jme:function:: macros `@ X
 
     ``macros`` is a dictionary of patterns.
     The macros are substituted into ``X`` to produce a new pattern, which the expression must match.
 
-Quantifiers
-###########
-
-Quantifiers are used to capture terms that may appear a variable number of times in a sequence.
-
-.. jme:function:: X `?
-
-    Either one occurrence of ``X`` or none.
-
-.. jme:function:: X `: Y
-
-    If the expression matches ``X``, match that, otherwise match as the default value ``Y``.
-
-    In a sequence, this acts the same as the `` `?`` quantifier, additionally capturing the default value ``Y`` if ``X`` does not appear in the sequence.
-
-.. jme:function:: X `*
-
-    Any number of occurrences of ``X``, or none.
-
-.. jme:function:: X `+
-
-    At least one occurrence of ``X``.
+    **Example**:
+        * ``["x": a `| b] `@ ["trig": sin(x) `| cos(x) `| tan(x)] `@ trig*trig + trig*trig`` matches ``sin(a)*cos(b) + cos(a)*sin(b)``.
 
 Capturing named groups
 ######################
@@ -129,15 +130,68 @@ The *capturing operator* ``;`` captures attaches to a part of a pattern, and cap
 
     Capture the input expression in the group named ``g`` if it matches the pattern ``X``.
 
+    **Example**:
+        * ``$n;a`` captures a number as ``a``. 
+          For the expression ``15``, ``a=15``.
+        * ``$n;a + $n;b`` captures two numbers ``a`` and ``b``. 
+          For the expression ``3+4``, ``a=3`` and ``b=4``.
+        * ``(x-$?;root);term`` when matched against the expression ``x-2`` captures ``root = 2`` and ``term = x-2``.
+
 .. jme:function:: X;g:v
 
     Match ``X``, and capture the value ``v`` in the group named ``g``.
 
     You can use this to provide a default value for a value that's missing or implied, for example a coefficient of :math:`-1` in :math:`-x`.
 
+    **Example**:
+        * ``(`+- $n);a * x `| x;a:1 `| -x;a:-1`` captures the coefficient of ``x`` as ``a``. 
+          When the expression is ``-x``, ``a = -1``.
+
 .. jme:function:: X;=g
 
     Match ``X`` only if it's identical to every other occurrence captured under the name ``g``.
+
+    **Example**:
+        * ``?;=t + ?;=t`` matches two copies of the same thing, added together. 
+          It matches ``1 + 1``, ``x+x`` and ``sin(x*pi) + sin(x*pi)``, but not ``1+2`` or ``x+y``. 
+          When the expression is ``2x + 2x``, ``t = 2x``.
+
+Quantifiers
+###########
+
+Quantifiers are used to capture terms that may appear a variable number of times in a sequence.
+
+.. jme:function:: X `?
+
+    Either one occurrence of ``X`` or none.
+
+    **Example**:
+        * ``$n`? * x`` matches ``x`` and ``5x``.
+
+.. jme:function:: X `: Y
+
+    If the expression matches ``X``, match that, otherwise match as the default value ``Y``.
+
+    In a sequence, this acts the same as the ```?`` quantifier, additionally capturing the default value ``Y`` if ``X`` does not appear in the sequence.
+
+    **Example**:
+        * ``($n `: 1);coefficient * x`` matches ``x`` and ``5x``, and captures ``coefficient`` as ``1`` when it's omitted.
+        * ``x^(? `: 1);p`` captures any power of ``x`` as ``p``, setting ``p=1`` when the power is omitted.
+
+.. jme:function:: X `*
+
+    Any number of occurrences of ``X``, or none.
+
+    **Examples**:
+        * ``x * integer:$n`*`` matches the product of ``x`` and any number of integers, such as ``x``, ``x*5`` or ``x*2*3``, but not ``x*x`` or ``x*x*5``.
+        * ``[$n `*]`` matches a list containing any number of numbers, such as ``[]``, ``[1]`` or ``[6,2]]``.
+
+.. jme:function:: X `+
+
+    At least one occurrence of ``X``.
+
+    **Example**:
+        * ``x * integer:$n`+`` matches the product of ``x`` and at least one integer, such as ``x*5`` or ``x*5*6``, but not ``x``.
 
 Matching modes
 ##############
@@ -174,7 +228,7 @@ The following functions change the way the matcher works.
 
     Strict inverse
 
-        If this mode is not enabled, then :math:``a-b`` is matched as if it's :math:``a+(-b)``, and :math:`a/b` is matched as if it's :math:``a*(1/b)``.
+        If this mode is not enabled, then ``a-b`` is matched as if it's ``a+(-b)``, and ``a/b`` is matched as if it's ``a*(1/b)``.
         This makes matching sums of terms that may have negative coefficients easier.
 
         If this mode is enabled, then the behaviour described above is not used.
@@ -218,49 +272,32 @@ Special conditions
 
     Match any item with the given :ref:`data type <jme-data-types>`.
 
+    **Example**:
+        * ``m_type("string")`` matches ``"hi"``, ``"5,000"`` and ``"x"`` but not ``1``, ``true`` or ``x``.
+
 .. jme:function:: m_func(name,arguments)
 
     Match a function whose name, as a string, matches the given pattern, and whose arguments, considered as a :data:`list`, match the given pattern.
+
+    **Example**:
+        * ``m_func(?, [?,?])`` matches any function of two variables.
 
 .. jme:function:: m_op(name,operands)
 
     Match a binary or unary operator whose name, as a string, matches the given pattern, and whose operands, considered as a :data:`list`, match the given pattern.
 
-.. jme:function:: m_numeric(X)
+    Note that any properties of matched operators, such as commutativity or associativity, aren't exploited with this matching method.
 
-    Match if a numerical comparison of ``X`` and the expression being considered says they're equivalent.
+.. jme:function:: m_uses(name)
 
-    Random values are chosen for the free variables, and substituted into both ``X`` and the input expression.
-    If both expressions produce the same result, then the input expression matches this pattern.
+    Match if the expression uses the variable with the given name as a free variable.
+
+    **Example**:
+        * ``m_uses(x)`` matches ``x``, ``1+x`` and ``sin(x/2)`` but not ``y``, ``4-2``, or ``map(2x,x,[1,2,3])``.
 
 .. jme:function:: m_anywhere(X)
 
     Match if a sub-expression matching the pattern ``X`` can be found anywhere inside the input expression.
 
-
-Examples
---------
-
-Get all :math:`x` terms in a polynomial::
-
-    m_all(m_pm(m_all(??)*m_any(x,x^?)));xs+m_all(??);rest
-
-Get the coefficient and degree of an :math:`x` term::
-
-    m_pm(m_all(??);coefficient*m_any(x,x^?;degree))
-
-Get both sides of an equation::
-
-    ?;left=?;right
-
-Check :math:`x` terms are collected on one side of an equation::
-
-    m_uses(x);xside = m_not(m_uses(x));otherside
-
-Check that a quadratic is factorised::
-
-    (m_pm(??*x);a+?;b)*(m_pm(??*x);c+?;d)
-
-Capture multiple powers of :math:`x` and :math:`y`::
-
-    m_all( m_any( ??x, ??y, ??x^??, ??y^??, m_any(x,x^??)*m_any(y,y^??)*?? ) );terms + m_all(??;rest)
+    **Example**:
+        * ``m_anywhere(sin(?))`` matches ``sin(x)`` and ``sin(pi/2) + cos(pi/2)`` but not ``tan(x)``.
