@@ -14,7 +14,7 @@ Use a :ref:`pattern restriction <pattern-restriction>` to check that the student
 You can find `the mathematical expression part's built-in marking algorithm at GitHub <https://github.com/numbas/Numbas/blob/master/marking_scripts/jme.jme>`_.
 
 Marking
--------
+#######
 
 .. glossary::
     Correct answer
@@ -35,14 +35,14 @@ Marking
 .. _mathematical-expression-restrictions:
 
 Restrictions
-------------
+############
 
 The :guilabel:`Restrictions` tab provides several methods for restricting the form of the student's answer.
 
 .. _pattern-restriction:
 
 Pattern restriction
-###################
+-------------------
 
 .. glossary::
 
@@ -64,7 +64,7 @@ Pattern restriction
         If the student's answer does not match the given pattern, their score is multiplied by this percentage.
 
 Variables
-#########
+---------
 
 .. glossary::
 
@@ -78,7 +78,7 @@ Variables
 
 
 String restrictions
-###################
+-------------------
 
 .. note::
 
@@ -108,7 +108,7 @@ Before string restrictions are applied, surplus brackets and whitespace are remo
         If the student's answer contains any of these strings, the penalty is applied.
 
 Accuracy
---------
+########
 
 These settings define the range of points over which the student's answer will be compared with the correct answer, and the method used to compare them.
 
@@ -141,8 +141,8 @@ These settings define the range of points over which the student's answer will b
     Checking range end
         The maximum value sample points can take.
 
-Settings for custom marking algorithms
---------------------------------------
+Marking settings
+################
 
 This part type provides the following properties to the :data:`settings` object:
 
@@ -176,6 +176,23 @@ This part type provides the following properties to the :data:`settings` object:
 .. data:: vsetRangePoints
 
     See :term:`Points to check`.
+
+.. data:: mustMatchPattern
+
+    See :term:`Pattern student's answer must match`.
+
+.. data:: mustMatchPC
+
+    The proportion of credit awarded if the student's answer does not match the pattern.
+
+.. data:: mustMatchMessage
+
+    Message to add to marking feedback if the student's answer does not match the pattern.
+
+.. data:: nameToCompare
+
+    The name of the captured subexpression to compare against the corresponding subexpression in the correct answer.
+    See :term:`Part of expression to mark`.
 
 .. data:: maxLength
 
