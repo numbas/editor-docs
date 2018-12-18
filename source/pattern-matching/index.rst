@@ -14,5 +14,5 @@ The algorithm decides whether an input expression matches a given pattern, and a
     :caption: Pattern-matching
     :maxdepth: 2
 
-    examples
     reference
+    examples
