@@ -5,20 +5,22 @@ Pattern-matching syntax
 
 Patterns are written in JME syntax, but there are extra operators available to specify what does or doesn't match.
 
-The pattern-matching algorithm uses a few techniques to match different kinds of expression.
+The pattern-matching algorithm uses a variety of techniques to match different kinds of expression.
 
 **Data elements** such as numbers, strings, booleans are matched by comparison: a pattern consisting of a single data element matches only that exact element.
 
 A pattern consisting of a **function application** function application ``f(arguments...)`` matches any expression consisting of an application of exactly that function, and whose arguments, considered as a sequence, match the sequence of patterns ``arguments``.
 There are some special functions which match differently.
-If the same name is captured by more than one argument, then all the groups captured under that name are gathered into a list.
+If the same group name is captured by more than one argument, then all the groups captured under that name are gathered into a list.
 
 A pattern consisting of a sequence of terms joined by a binary **operator**, or a single term with a unary operator applied, is considered as a sequence. 
 If a way of matching up the terms in the input expression with the terms in the pattern can be found, considering quantifiers and the properties of commutativity and associativity, then the expression matches the pattern.
-If the same name is captured by more than one argument, then all the groups captured under that name are gathered into a sequence joined by the operator being matched.
+If the same group name is captured by more than one argument, then all the groups captured under that name are gathered into a sequence joined by the operator being matched.
 
 A pattern consisting of a **list** matches any expression consisting of a single list, whose elements match the elements of the list in the pattern.
 Quantifiers allow you to write a pattern which matches lists with different numbers of terms.
+
+
 
 Special names
 #############
@@ -124,7 +126,7 @@ Combining patterns
 Capturing named groups
 ######################
 
-The *capturing operator* ``;`` captures attaches to a part of a pattern, and captures the part of the input expression matching that pattern under the given name.
+The *capturing operator* ``;`` attaches to a part of a pattern, and captures the part of the input expression matching that pattern under the given name.
 
 .. jme:function:: X;g
 
@@ -184,7 +186,7 @@ Quantifiers are used to capture terms that may appear a variable number of times
 
     **Examples**:
         * ``x * integer:$n`*`` matches the product of ``x`` and any number of integers, such as ``x``, ``x*5`` or ``x*2*3``, but not ``x*x`` or ``x*x*5``.
-        * ``[$n `*]`` matches a list containing any number of numbers, such as ``[]``, ``[1]`` or ``[6,2]]``.
+        * ``[$n `*]`` matches a list containing any number of numbers, such as ``[]``, ``[1]`` or ``[6,2]``.
 
 .. jme:function:: X `+
 
@@ -204,14 +206,14 @@ The following functions change the way the matcher works.
         
         When matching an associative operation, allow the presence of terms which don't match the pattern, as long as there are other terms which do satisfy the pattern.
         This allows you to write patterns which pick out particular parts of sums and products, for example, while ignoring the rest.
-        This is equivalent to adding something like `` + ?`*`` to the end of every sum, and likewise for other associative operations.
+        This is equivalent to adding something like ``+ ?`*`` to the end of every sum, and likewise for other associative operations.
 
     Use commutativity
 
         When matching an associative operation, allow the terms to appear in any order.
         A sequence matches if an ordering of the terms which satisfies the pattern can be found.
 
-        For non-symmetric operators with converses, suchs as :math:`\lt` and :math:`\leq`, also match the converse relation, reversing the order of the operands.
+        For non-symmetric operators with converses, such as :math:`\lt` and :math:`\leq`, also match the converse relation, reversing the order of the operands.
 
     Use associativity
 
