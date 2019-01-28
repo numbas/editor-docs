@@ -65,11 +65,20 @@ Include an interactive diagram
 
         <iframe src="https://player.vimeo.com/video/174512376" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
+Substitute random variables into an image
+-----------------------------------------
+
+    Text inside an SVG image follows the same variable substitution rules as prose text: expressions enclosed in curly braces are evaluated and replaced with the resulting string.
+
+    Pay attention to the text alignment options when designing your image: randomly generated values are usually not the same width as the expressions they replace.
+
+    See the question `Volume of a swimming pool <https://numbas.mathcentre.ac.uk/question/18295/volume-of-a-swimming-pool/>`_ for an example of an SVG image with variables substituted into text.
+
 
 Show one of several images based on a random variables
 -----------------------------------------------------------
 
-See the question `Using a randomly chosen image <https://numbas.mathcentre.ac.uk/question/1132/using-a-randomly-chosen-image/>`__ for an example of one method.
+See the question `Using a randomly chosen image <https://numbas.mathcentre.ac.uk/question/1132/using-a-randomly-chosen-image/>`_ for an example of one method.
 
 
 Display a random line in a GeoGebra applet
