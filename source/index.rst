@@ -19,6 +19,7 @@ If you have any questions, please `email us <mailto:numbas@ncl.ac.uk>`_ or join 
     :maxdepth: 1
     :glob:
 
+    what-do-i-need
     tutorials/create-an-account
     tutorials/create-exam
     tutorials/upload-web
