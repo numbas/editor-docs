@@ -25,13 +25,13 @@ See :ref:`recording scores <recording-scores>` for information on integrating Nu
 We have tested Numbas on the following browsers.
 Any more recent versions should be assumed to work.
 
-* **Chrome** version 10.
-* **Firefox** version 7.
-* **Internet Explorer** 9.
-* **Edge** any version.
-* **Safari** 5.0 on desktop.
-* **iOS (iPhone/iPad)** 8.0 with Safari.
-* **Android** 5.0 (Lollipop) with Chrome.
+* **Chrome** version 10 (released in 2011).
+* **Firefox** version 7 (released in 2011).
+* **Internet Explorer** 9 (released in 2011).
+* **Edge** any version (released in 2015).
+* **Safari** 5.0 on desktop (released in 2010).
+* **iOS (iPhone/iPad)** 8.0 with Safari (released in 2010).
+* **Android** 5.0 (Lollipop) with Chrome (released in 2014).
 
 .. _recording-scores:
 
