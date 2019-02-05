@@ -21,6 +21,8 @@ Marking
         The expected answer to the part. 
         Question variables (or, more broadly, JME expressions which should be evaluated to a single value when the question is generated), can be included by enclosing them in curly braces.
 
+        If the answer is an equation, see the note on :ref:`marking-an-equation`.
+
     Show preview of student's answer?
         If ticked, a rendering of the student's answer in mathematical notation is displayed beeside the input box. 
         You should leave this on unless you expect the answer to be veery simple and need the space - the feedback about how their answer is interpreted is very useful to students.
@@ -166,8 +168,10 @@ The variable ``vRange`` represents the :term:`checking range <checking range sta
 The expression for each variable can be written in terms of the other variables, as long as there are no circular dependencies.
 The values will be evaluated in order, like :ref:`question variables <variables>`.
 
+.. _marking-an-equation:
+
 Marking an equation
--------------------
+###################
 
 If the :term:`correct answer` is an equation, such as :math:`A = 6t` or :math:`x^2 + y^2 = 1`, it will produce a :data:`boolean` value, representing whether the values of the variables constitute a solution of the equation.
 
