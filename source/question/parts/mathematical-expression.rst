@@ -5,10 +5,10 @@ Mathematical expression
 
 Mathematical expression parts require the student to enter an algebraic expression, using :ref:`JME <jme>` syntax.
 
-These parts are marked by picking a sample of points uniformly from a given range for the free variables in the expression, and evaluating both the student's answer and the correct answer on those points.
+These parts are marked by picking a sample of random values for the free variables in the expression, and evaluating both the student's answer and the correct answer on those values.
 If the two expressions agree on enough inputs, then they are considered to be equivalent and the student's answer is marked as correct.
 
-For questions where the student is asked to rearrange an expression, clearly just evaluating both answers won't detect the difference - you want to look at the *form* of the student's answer, as well as the values it produces.
+For questions where the student is asked to rearrange an expression, just evaluating both answers won't detect the difference - you want to look at the *form* of the student's answer, as well as the values it produces.
 Use a :ref:`pattern restriction <pattern-restriction>` to check that the student's answer is in the form you want.
     
 You can find `the mathematical expression part's built-in marking algorithm at GitHub <https://github.com/numbas/Numbas/blob/master/marking_scripts/jme.jme>`_.
@@ -112,6 +112,16 @@ Accuracy
 
 These settings define the range of points over which the student's answer will be compared with the correct answer, and the method used to compare them.
 
+For each of the variables in the :term:`correct answer`, a value is chosen at random.
+How this value is chosen depends on the type of the variable: for example, in the expression :math:`k \det(A)`, the variable :math:`A` must be a matrix, and :math:`k` can be assumed to be a number. 
+The system can usually infer the type of each variable and pick an appropriate value automatically.
+
+Numbers are chosen uniformly at random from the defined :term:`checking range <checking range start>`.
+Matrices and vectors have entries chosen uniformly at random from the defined checking range.
+
+Care must be taken if the :term:`correct answer` has a singularity or is undefined for some values of the variables.
+Either set the :term:`checking range <checking range start>` to a safe interval on which the expression is always defined, or write a :ref:`variable value generator <variable-value-generators>`.
+
 .. glossary::
     Checking type
         The rule to use to compare the student's answer with the correct answer.
@@ -141,6 +151,40 @@ These settings define the range of points over which the student's answer will b
     Checking range end
         The maximum value sample points can take.
 
+.. _variable-value-generators:
+
+Variable value generators
+-------------------------
+
+Variable value generators override the default method used to pick values for variables when comparing the correct answer with the student's answer.
+
+A text field for each variable used in the :term:`correct answer` appears in this section.
+If left blank, the default value generator will be used.
+To override it, enter a :ref:`JME` expression producing a value for the variable.
+The variable ``vRange`` represents the :term:`checking range <checking range start>` defined for this part: a continuous interval between the :term:`checking range start` and :term:`checking range end`.
+
+The expression for each variable can be written in terms of the other variables, as long as there are no circular dependencies.
+The values will be evaluated in order, like :ref:`question variables <variables>`.
+
+Marking an equation
+-------------------
+
+If the :term:`correct answer` is an equation, such as :math:`A = 6t` or :math:`x^2 + y^2 = 1`, it will produce a :data:`boolean` value, representing whether the values of the variables constitute a solution of the equation.
+
+Two equations are equivalent if they have the same solution sets. 
+For example, the equations :math:`y=2x` and :math:`y-2x=0` are equivalent because exactly the same sets of :math:`(x,y)` pairs satisfy them both.
+We can make a fairly confident decision about whether two equations are equivalent by checking that they agree on a few randomly-chosen values.
+
+We need to check both solutions and non-solutions of the expected equation.
+If we don't check any solutions, then an equation which can never be satisfied would be marked correct. 
+Conversely, if we don't check any non-solutions, then an equation which holds for any input would be marked correct.
+
+It's extremely unlikely that randomly-chosen values for the variables will satisfy any given equation, so you need to change the way values are chosen to produce solutions about half of the time, using :ref:`variable value generators <variable-value-generators>`.
+
+For example, in a part with correct answer :math:`x^2+y^2=1`, the expression ``random(sqrt(1-x^2), random(vRange))`` for the variable :math:`y` will produce a solution of the equation roughly half of the time.
+By setting the :term:`points to check` to a big enough number, say 10, we can be reasonably confident that the student's answer is equivalent to the expected answer.
+
+
 Marking settings
 ################
 
@@ -150,6 +194,10 @@ This part type provides the following properties to the :data:`settings` object:
     :noindex:
 
     The :term:`Correct answer` to the question. 
+
+.. data:: answerSimplification
+
+    See :term:`Answer simplification rules`.
 
 .. data:: checkingType
 
@@ -176,6 +224,18 @@ This part type provides the following properties to the :data:`settings` object:
 .. data:: vsetRangePoints
 
     See :term:`Points to check`.
+
+.. data:: valueGenerators
+
+    A dictionary of :ref:`variable value generator expressions <variable-value-generators>`.
+
+.. data:: expectedVariableNames
+
+    See :term:`Expected variable names`.
+
+.. data:: checkVariableNames
+
+    See :term:`Warn if student uses an unexpected variable name?`
 
 .. data:: mustMatchPattern
 
@@ -249,4 +309,3 @@ This part type provides the following properties to the :data:`settings` object:
 .. data:: notAllowedShowStrings
 
     Tell the students which strings must not be included in the marking feedback, if they've used a not-allowed string?
-

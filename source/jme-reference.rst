@@ -1136,6 +1136,14 @@ Logic
         * ``vector(1,2)=vector(1,2,0)``
         * ``4.0=4``
 
+.. jme:function:: isclose(x,y,rel_tol,abs_tol)
+
+    Returns ``true`` if ``x`` is close to ``y``.
+
+    Equivalent to the following expression::
+
+        abs(x-y) <= max( rel_tol*max(abs(a),abs(b)), abs_tol )
+
 .. jme:function:: resultsequal(a,b,checkingFunction,accuracy)
 
     Returns ``true`` if ``a`` and ``b`` are both of the same data type, and "close enough" according to the given checking function.
@@ -1402,12 +1410,28 @@ Lists
         * ``list(vector(1,2))`` → ``[1,2]``
         * ``list(matrix([1,2],[3,4]))`` → ``[[1,2], [3,4]]``
 
+.. jme:function:: make_variables(definitions)
+
+    Evaluate a dictionary of variable definitions and return a dictionary containing the generated values.
+
+    ``definitions`` is a dictionary mapping variable names to :data:`expression` values corresponding to definitions.
+
+    The definitions can refer to other variables to be evaluated, or variables already defined in the current scope.
+    Variables named in the dictionary which have already been defined will be removed before evaluation begins.
+
+    **Example**:
+        * ``make_variables(["a": expression("random(1..5)"), "b": expression("a^2")])`` → ``["a": 3, "b": 9]``
+
 .. jme:function:: satisfy(names,definitions,conditions,maxRuns)
 
     Each variable name in ``names`` should have a corresponding definition expression in ``definitions``.
     ``conditions`` is a list of expressions which you want to evaluate to ``true``.
     The definitions will be evaluated repeatedly until all the conditions are satisfied, or the number of attempts is greater than ``maxRuns``.
     If ``maxRuns`` isn't given, it defaults to 100 attempts.
+
+    .. note::
+        This function is deprecated, and retained only for backwards compatibility.
+        Use :jme:func:`make_variables` instead.
 
     **Example**:
         * ``satisfy([a,b,c],[random(1..10),random(1..10),random(1..10)],[b^2-4*a*c>0])``
@@ -1849,9 +1873,6 @@ Pattern-matching sub-expressions
 
     If ``expr`` matches ``pattern``, return a dictionary of the form ``["match": boolean, "groups": dict]``, where ``"groups"`` is a dictionary mapping names of matches to sub-expressions.
 
-    The match is non-commutative, so for example ``x*y`` is not considered to be the same as ``y*x``.
-    You can use :jme:func:`m_commute` to allow matching up to rearrangement of arguments.
-
     See ``pattern-matching`` for more on matching mathematical expressions.
 
     If you don't need to use any parts of the matched expression, use :jme:func:`matches` instead.
@@ -1859,8 +1880,7 @@ Pattern-matching sub-expressions
     **Examples**:
         * ``match(expression("x+1"),"?;a + ?;b")`` → ``["match": true, "groups": ["a": expression("x"), "b": expression("1")])``
         * ``match(expression("sin(x)", "?;a + ?;b")`` → ``["match": false, "groups": []]``
-        * ``match(expression("x+1"),"1+?;a")`` → ``["match": false, "groups": []]``
-        * ``match(expression("x+1"),"m_commute(1+?;a)")`` → ``["match": true, "groups": ["a": expression("x")]]``
+        * ``match(expression("x+1"),"1+?;a")`` → ``["match": true, "groups": ["a": expression("x")]]``
 
 .. jme:function:: matches(expr, pattern)
 
@@ -1902,6 +1922,22 @@ Identifying data types
         * ``x isa "name"`` → ``true`` (if ``x`` is not defined in this scope)
         * ``x isa "number"`` → ``true`` (if ``x`` has a numerical value in this scope)
 
+.. jme:function:: infer_variable_types(expression)
+
+    Attempt to infer the types of free variables in the given expression.
+
+    There can be more than one valid assignment of types to the variables in an expression.
+    For example, in the expression ``a+a``, the variable ``a`` can be any type which has a defined addition operation.
+
+    Returns a list of possible assignments of types to variables.
+    Each assignment is a dictionary mapping variable names to the name of its type.
+    If a variable name is missing from the dictionary, the algorithm can't establish any constraint on it.
+
+    **Example**:
+        * ``infer_variable_types(expression("x^2"))`` → ``[ ["x": "number"] ]``
+        * ``infer_variable_types(expression("union(a,b)"))`` → ``[ ["a": "set", "b": "set"] ]``
+        * ``infer_variable_types(expression("k*det(a)"))`` → ``[ [ "k": "number", "a": "matrix" ], [ "k": "matrix", "a": "matrix" ], [ "k": "vector", "a": "matrix" ] ]``
+
 .. _jme-fns-inspecting-the-scope:
 
 Inspecting the evaluation scope
@@ -1915,4 +1951,8 @@ Inspecting the evaluation scope
 
     Returns ``true`` if the variable with the given name has been defined in the current scope.
 
+.. jme:function:: unset(names, expression)
 
+    Temporarily remove the named variables, functions and rulesets from the scope, and evaluate the given expression.
+
+    ``names`` is a dictionary of the form ``["variables": list, "functions": list, "rulesets": list]``.
