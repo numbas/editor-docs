@@ -208,6 +208,10 @@ Definition
 
         The :guilabel:`JSON data` option allows you to enter raw `JSON <http://json.org/>`_ data, which is parsed into JME data.
 
+        The :guilabel:`Short text string` and :guilabel:`Long text string` options have a checkbox labelled :guilabel:`Is this a template?`. 
+        If ticked, the string will be marked as :jme:func:`safe <safe>`, and variable values will not be substituted into it.
+        Use this in conjunction with the :jme:func:`render` function to write reusable pieces of text.
+
     Value
         Define the variable's value. 
         The format of this field depends on the data type.

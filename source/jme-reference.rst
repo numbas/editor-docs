@@ -936,6 +936,24 @@ Strings
     **Example**:
         * ``safe('From { to }')``
 
+.. jme:function:: render(x, values)
+
+    Substitute variable values into the string ``x``, even if it's marked as safe (see :jme:func:`safe`).
+
+    The optional dictionary ``values`` overrides any previously-defined values of variables.
+
+    **Example**:
+        * ``render("I have {num_apples} apples.", ["num_apples": 5])`` → ``"I have 5 apples"``
+        * ``render("Let $x = \\var{x}$", ["x": 2])`` → ``"Let $x = {2}$"``
+
+    .. note::
+        The variable dependency checker can't establish which variables will be used in the string until ``render`` is evaluated, so you may encounter errors if using ``render`` in the definition of a question variable.
+        You can ensure a variable has been evaluated by including it in the ``values`` argument, e.g.::
+
+            render("a is {}",["a": a])
+
+        This function is intended for use primarily in content areas.
+
 .. jme:function:: capitalise(x)
 
     Capitalise the first letter of a string.

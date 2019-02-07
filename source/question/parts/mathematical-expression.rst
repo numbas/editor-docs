@@ -71,13 +71,9 @@ Variables
 .. glossary::
 
     Warn if student uses an unexpected variable name?
-        If this is ticked, all variable names used in the student's are checked against the list you provide. 
-        The first variable name which is not in the list will trigger a warning. 
+        If this is ticked, all variable names used in the student's are checked against the variable names used in the :term:`correct answer <Correct answer>`.
+        The first variable name which is not used in the correct answer will trigger a warning. 
         You can use this option to prevent students incorrectly entering answers such as ``xy``, which is interpreted as a single variable, when they mean ``x*y``, the product of two variables.
-
-    Expected variable names
-        Variable names in this list will not prompt the "unexpected variable name" warning when the student uses them. 
-
 
 String restrictions
 -------------------
@@ -232,10 +228,6 @@ This part type provides the following properties to the :data:`settings` object:
 .. data:: valueGenerators
 
     A dictionary of :ref:`variable value generator expressions <variable-value-generators>`.
-
-.. data:: expectedVariableNames
-
-    See :term:`Expected variable names`.
 
 .. data:: checkVariableNames
 
