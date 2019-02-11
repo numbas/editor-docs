@@ -137,6 +137,9 @@ Navigation
 The navigation settings control how the student can move through the exam, and whether to give them warnings if they 
 
 .. glossary::
+    Password to begin the exam
+        If not blank, the student must enter the given password before they can begin the exam.
+
     Allow user to regenerate questions?
         If ticked, then the :guilabel:`Try another question like this one` button is displayed at the bottom of each question, allowing the student to re-randomise the question and have another attempt at it.
 
