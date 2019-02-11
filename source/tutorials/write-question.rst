@@ -233,10 +233,18 @@ Add two new variables ``x0`` and ``x1``::
 
 The ``except`` operator in the definition of ``x1`` ensures that it doesn’t take the same value as ``x0``, so the quadratic doesn’t have repeated roots.
 
-.. note:: 
-    It’s a good idea to add comments to your variable definitions to explain what they represent and how they’re generated.
-
+It’s a good idea to add comments to your variable definitions to explain what they represent and how they’re generated.
 A comment starts with two forward slashes ``//`` and continues until the end of the line.
+
+A reasonable comment for ``x0`` would be:
+
+    A root of the quadratic equation. 
+    Chosen not to be zero.
+
+A reasonable comment for ``x1`` would be:
+
+    The other root of the quadratic equation. 
+    Not the same as ``x1``.
 
 Now the *Prompt* for the part might go something like this:
 
@@ -270,10 +278,10 @@ Click on the part’s :guilabel:`Marking` tab and set the :term:`Correct answer`
 Numbas marks *Mathematical expression* parts by choosing a random sample of points on which to evaluate them, and comparing the result given by the student’s answer with that given by the :term:`Correct answer`.
 Because it doesn’t pay any attention to the form of the student’s answer, it has no way of distinguishing between the factorised and expanded forms of our quadratic - the student could just enter the same expression they’re given and it would be marked correct.
 
-To prevent this, you can specify some :ref:`string restrictions <string-restrictions>` to constrain the student’s answer.
-It isn’t a perfect method, but it’s usually good enough. 
+To prevent this, you can specify a :ref:`pattern restrictions <pattern-restriction>` to constrain the form of the student’s answer.
 
-Go to the part’s :guilabel:`Accuracy and string restrictions` tab and enter ``(`` and ``)`` in the :guilabel:`Required strings` field (make sure to press the Enter key between each character, to enter each character as a separate item), and ``^`` in the :guilabel:`Forbidden strings` field.
+Go to the part’s :guilabel:`Restrictions` tab and enter ``(x + ?`?)(x + ?`?) `| (x + ?`?)^2`` in the :guilabel:`Pattern student's answer must match` field.
+This accepts either the product of two linear factors, or a single linear factor, squared.
 
 Click :guilabel:`Test Run` and check that your question is marked correctly.
 

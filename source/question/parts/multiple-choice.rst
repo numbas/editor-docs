@@ -101,6 +101,7 @@ Marking
         This is appropriate if the part uses a custom marking algorithm which awards a score based on the set of choices considered as a whole.
 
 .. _choices:
+
 Choices
 #######
 
@@ -119,6 +120,7 @@ Choices
         It can be useful to give some explanation of why a choice is incorrect.
 
 .. _answers:
+
 Answers
 #######
 
@@ -132,6 +134,7 @@ Only `Match choices with answers` parts have answers as well as choices.
         If :guilabel:`Variable list of answers?` is ticked, this JME expression defines the list of answer strings to display to the student. 
 
 .. _marking-matrix:
+
 Marking matrix 
 ##############
 Only :term:`Match choices with answers` parts have a marking matrix tab: for the other part types, the marking matrix is defined implicitly by the score for each choice.
