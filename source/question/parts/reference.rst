@@ -21,6 +21,12 @@ Generic part properties
 The following properties are available on every type of part.
 
 .. glossary::
+    Name
+        Every part is automatically assigned a name, displayed at the top of the editing area, next to the part's type.
+        Click the part's name to edit it.
+
+        Question variables can be substituted into the name by enclosing them in curly braces.
+
     Prompt
         A content area used to prompt the student for an answer.
 
