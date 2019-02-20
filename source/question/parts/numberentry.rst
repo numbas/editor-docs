@@ -37,6 +37,9 @@ Marking
         For example, consider a part whose correct answer is :math:`5/4`. 
         If this is ticked, ``10/8`` will be marked as incorrect.
 
+    Show fraction input hint?
+        If this is ticked and :term:`Must the fraction be reduced?` is ticked, then text explaining that the student must reduce their fraction to lowest terms is shown next to the input box.
+
     Display the correct answer as a fraction?
         This option is only available when no precision restriction is applied. 
         If this is ticked, the correct answer to the part will be rendered as a fraction of two whole numbers instead of a decimal. 
