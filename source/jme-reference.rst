@@ -1396,6 +1396,28 @@ Lists
         * ``sort_destinations([4,2,1,3])`` → ``[3,1,0,2]``
         * ``sort_destinations([1,2,3,4])`` → ``[0,1,2,3]``
 
+.. jme:function:: sort_by(key,list)
+
+    Sort the given list of either :data:`list` or :data:`dict` values by their entries corresponding to the given key.
+    When sorting a list of lists, the key is a number representing the index of each list to look at.
+    When sorting a list of dictionaries, the key is a string.
+
+    **Examples**:
+        * ``sort_by(0, [[5,0], [3,2], [4,4]])`` → ``[[3,2], [4,4], [5,0]]``
+        * ``sort_by("width", [["label": "M", "width": 20], ["label": "L", "width": 30], ["label": "S", "width": 10]]`` → ``[["label": "S", "width": 10], ["label": "M", "width": 20], ["label": "L", "width": 30]]``
+
+.. jme:function:: group_by(key,list)
+
+    Group the entries in the given list of either :data:`list` or :data:`dict` values by their entries corresponding to the given key.
+    The returned value is a list of lists of the form ``[key, group]``, where ``key`` is the value all elements of the list ``group`` have in common.
+
+    When grouping a list of lists, the ``key`` argument is a number representing the index of each list to look at.
+    When grouping a list of dictionaries, the ``key`` argument is a string.
+
+    **Examples**:
+        * ``group_by(0, [[0,0], [3,2], [0,4]])`` → ``[[0, [[0,0], [0,4]]], [3, [[3,2]]]``
+        * ``group_by("a", [["a": 1, "b": "M"], ["a": 2, "b": "S"], ["a": 1, "b": "XL"]])`` → ``[[1,[["a": 1, "b": "M"], ["a: 1, "b": "XL"]]], [2, [["a": 2, "b": "S"]]]]``
+
 .. jme:function:: reverse(x)
 
     Reverse list ``x``.
